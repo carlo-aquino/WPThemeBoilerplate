@@ -1,0 +1,178 @@
+.wpcf7-form {
+    position: relative;
+
+    & div.subscription {
+        align-items: center;
+        display: flex;
+        flex-flow: row wrap;
+    
+        &-heading {
+            width: 40%;
+    
+            @include break(tabletxl) {
+                padding-bottom: 1.88em;
+                width: 100%;
+            }
+            
+            &__wrapper {
+                margin-right: 2em;
+    
+                h2 {
+                    color: #fff;
+                    font-size: 1.8rem;
+                    margin-bottom: 0.3em;
+                }
+    
+                p {
+                    color: #fff;
+                    line-height: 1.6;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    
+        &-form {
+            width: 60%;
+    
+            @include break(tabletxl) {
+                padding-bottom: 0.94em;
+                width: 100%;
+            }
+    
+            &__wrapper {
+                display: flex;
+                position: relative;
+    
+                @include break(phablet) {
+                    flex-flow: row wrap;
+                }
+    
+                span.wpcf7-form-control-wrap {
+                    flex-grow: 1;
+                    padding-right: 0.8em;
+    
+                    @include break(phablet) {
+                        padding-right: 0;
+                        padding-bottom: 0.94em;
+                        width: 100%;
+                    }
+    
+                    input {
+                        border-radius: 4px;
+                        border: 0;
+                        color: #555;
+                        height: 3.2rem;
+                        padding: 16px;
+                        transition: 200ms all ease-out;
+                        width: 100%;
+    
+                        &:focus {
+                            outline: none !important;
+                            box-shadow: 0 0 10px rgba(#000, 0.32);
+                        }
+                    }
+                }
+    
+                input[type="submit"] {
+                    height: 3.2rem;
+                    padding: 0 2.78em;
+                } 
+    
+                span.wpcf7-spinner {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
+                
+                span.wpcf7-spinner {
+                    margin: 0;
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    @include break(phablet) {
+                        top: 75%;
+                    }
+                }
+
+                span.wpcf7-not-valid-tip {
+                    color: #fff;
+                    font-size: 0.7rem;
+                    position: absolute;
+                    top: -25px;
+                }
+            }
+        }
+    }
+
+    & div.contact-us__form {
+
+        & div.colgroup {
+            display: flex;
+            gap: 2em;
+
+            @include break(tablet) {
+                flex-flow: row wrap;
+                gap: 0;   
+            }
+
+            span {
+                width: 100%;
+            }
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        textarea {
+            background-color: #fff;
+            border-radius: 1.19em;
+            border: 1px solid rgba(#000, 0.08);
+            // box-shadow: 0 0 30px rgba(#000, 0.04);
+            margin-bottom: 1.48em;
+            padding: 1.19em;
+            transition: 300ms all ease-out;
+            width: 100%;
+            width: 100%;
+            
+            // &:focus {
+            //     outline: 2px solid $primaryColor;
+            // }
+        }
+
+        &-footer {
+            align-items: center;
+            display: flex;
+            gap: 2em;
+            justify-content: space-between;
+            position: relative;
+
+            @include break(mobile) {
+                flex-flow: row wrap;
+                gap: 1em;
+            }
+
+            span.wpcf7-acceptance span.wpcf7-list-item {
+                margin: 0;
+            }
+
+            span.wpcf7-spinner {
+                position: absolute;
+                right: 0;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+
+    & div.wpcf7-response-output {
+        border: 0;
+        bottom: -18px;
+        color: #fff;
+        font-size: 0.7rem;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: 0;
+    }
+}

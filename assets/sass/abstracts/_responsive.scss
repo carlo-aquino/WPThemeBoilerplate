@@ -1,0 +1,39 @@
+@mixin break($point) {
+    @if $point == ldesktop {
+        @media ( max-width: 1600px ) {
+            @content;
+        }
+    } @else if $point == desktop {
+        @media ( max-width: 1366px ) {
+            @content;
+        }
+    } @else if $point == llaptop {
+        @media ( max-width: 1280px ) {
+            @content;
+        }
+    } @else if $point == laptop {
+        @media ( max-width: 1024px ) {
+            @content;
+        }
+    } @else if $point == tabletxl {
+        @media ( max-width: 980px ) {
+            @content;
+        }
+    } @else if $point == tablet {
+        @media ( max-width: 768px ) {
+            @content;
+        }
+    } @else if $point == phablet {
+        @media ( max-width: 640px ) {
+            @content;
+        }
+    } @else if $point == mobile {
+        @media ( max-width: 425px ) {
+            @content;
+        }
+    } @else if $point == tabletheight {
+        @media ( max-height: 768px ) {
+            @content;
+        }
+    }
+}

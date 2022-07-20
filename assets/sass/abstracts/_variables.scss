@@ -1,0 +1,25 @@
+//colors
+$primaryColor: #a74799;
+$secondaryColor: #a74799;
+$accentColor: #fab631;
+
+@font-face {
+  font-family: "GothamBold";
+  src:  url('../font/gotham-bold.woff') format('woff'),
+        url('../font/gotham-bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PoppinsLight';
+  src:  url('../font/poppins-light.woff') format('woff'),
+        url('../font/poppins-light.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+$headingText: 'GothamBold', serif;
+$bodyText: 'PoppinsLight', sans-serif;

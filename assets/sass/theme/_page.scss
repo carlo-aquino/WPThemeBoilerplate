@@ -1,0 +1,6 @@
+.theme__main {
+
+    @include break(phablet) {
+        margin-top: -3.29em;
+    }
+}

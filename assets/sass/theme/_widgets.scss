@@ -1,0 +1,26 @@
+.site-widget {
+    list-style: none;
+}
+
+.header-widget-01 {
+    align-items: center;
+    display: flex;
+    margin-right: -0.4em;
+    margin-left: 1.8em;
+
+    li {
+        padding: 0.4em;
+
+        ul {
+
+            li {
+                padding: 0;
+            }
+        }
+    }
+
+    & > li:first-child {
+        border-left: 1px solid rgba(#fff, 0.08);
+        padding-left: 1.2em;
+    }
+}

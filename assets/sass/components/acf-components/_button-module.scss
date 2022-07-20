@@ -1,0 +1,30 @@
+.button-module {
+
+    &__wrapper {
+
+        span {
+            background: $accentColor;
+            border-radius: 4px;
+            border: 1px solid $accentColor;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-top: 2.22em;
+            padding: 1.5em 3em;
+            transition: 200ms all ease-out;
+
+            @include break(mobile) {
+                width: 100%;
+                text-align: center;
+            }
+
+            &:hover {
+                background: transparent;
+                border-color: $accentColor;
+                color: $accentColor;
+            }
+        }
+    }
+}

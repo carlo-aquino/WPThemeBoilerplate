@@ -1,0 +1,64 @@
+.one-column-layout {
+
+    &__wrapper {
+        position: relative;
+        z-index: 5;
+    }
+}
+
+.two-column-layout,
+.special-column-layout {
+
+    &__wrapper {
+        display: flex;   
+        flex-flow: column nowrap;
+        height: 100%;
+        padding: 0;
+        position: relative;
+        z-index: 5;
+        overflow: hidden;
+    }
+
+    &__row {
+        flex-grow: 1;
+
+        @include break(tabletxl) {
+            margin: -1.2em 0;
+        }
+    }
+
+    &__column {
+        display: flex;
+        flex-flow: column nowrap;
+
+        @include break(tabletxl) {
+            padding-top: 1.2em;
+            padding-bottom: 1.2em;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        &-wrapper {
+            height: 100%;
+            position: relative;
+            z-index: 5;
+
+            @include break(tabletxl) {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+            }
+
+            &__container {
+                height: 100%;
+            }
+        }
+    }
+}
+
+.mobile-spacer {
+    
+    @include break(phablet) {
+        padding-top: 3.29em !important;
+        padding-bottom: 3.29em !important;
+    }
+}

@@ -1,0 +1,59 @@
+.page-banner {
+    height: 22.22rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0, 0.2);
+    }
+
+    & img, & video  {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    &__heading {
+        display: flex;
+        height: 100%;
+        margin: auto;
+        padding: 0 2.22em;
+        position: relative;
+        z-index: 2;
+
+        &-container {
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            max-width: 900px;
+            line-height: 1.67em;
+
+            h1 {
+                color: #fff;
+                line-height: 1.2em;
+                margin-bottom: 0;
+                text-align: left;
+                text-shadow: 6px 2px 8px rgba(0,0,0, 0.3);
+                width: 100%;
+
+                @include break(phablet) {
+                    font-size: 2.67rem;
+                }
+            }
+
+            p {
+                color: #fff;
+                text-shadow: 6px 2px 8px rgba(0,0,0, 0.3);
+            }
+        } 
+    }
+}

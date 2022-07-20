@@ -1,0 +1,16 @@
+.text-module {
+    position: relative;
+    z-index: 5;
+
+    &__wrapper {
+
+        p, li {
+            line-height: 1.78em;
+            margin-bottom: 1.33em;
+        
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

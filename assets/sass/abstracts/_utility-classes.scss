@@ -1,0 +1,169 @@
+.background-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.button {
+    border-radius: 4px;
+    border: 1px solid $primaryColor;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: $headingText;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 1.5em 3em;
+    text-transform: uppercase;
+    transition: 200ms all ease-out;
+
+    @include break(mobile) {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.button-light {
+    background: #fff !important;
+    border: 1px solid #fff !important;
+    color: $primaryColor !important;
+
+    &:hover {
+        background: transparent !important;
+        border-color: #fff !important;
+        color: #fff !important;
+    }
+}
+
+.button-primary {
+    background: $accentColor;
+    border: 1px solid $accentColor;
+    color: #fff;
+
+    &:hover {
+        background: transparent !important;
+        border-color: $accentColor;
+        color: $accentColor;
+    }
+}
+
+.column-center {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.column-link {
+    cursor: pointer;
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 15;
+}
+
+.content-limit {
+    width: 100%;
+    max-width: 1248px;
+    margin: 0 auto;
+}
+
+.full-bleed {
+    padding: 0 !important;
+}
+
+.grid-per-row__01 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.grid-per-row__02 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include break(phablet) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.grid-per-row__03 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @include break(tablet) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include break(phablet) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.grid-per-row__04 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+    @include break(laptop) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include break(tablet) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include break(phablet) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.h-center {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.hit-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 15;
+}
+
+.section-heading {
+    font-size: 2rem;
+    margin-bottom: 0.7em;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.display-none {
+    display: none !important;
+}
+
+.v-center {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
+
+// [data-aos] {
+//     visibility: hidden;
+// }
+
+// [data-aos].animated {
+//     visibility: visible;
+// }

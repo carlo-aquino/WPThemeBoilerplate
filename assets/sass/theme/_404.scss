@@ -1,0 +1,116 @@
+.page-404 {
+    padding: 5.8em 0;
+
+    &__container {
+        display: flex;
+    }
+
+    &__left-content {
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 35.83rem;
+        width: 100%;
+
+        @include break(laptop) {
+            background-position: center;
+            background-size: contain;
+        }
+
+        @include break(mobile) {
+            height: 27rem;
+        }
+    }
+
+    &__right-content {
+        align-items: center;
+        display: flex;
+        padding: 3.11em;
+        width: 100%;
+
+        @include break(mobile) {
+            padding: 0 2.22em;
+        }
+
+        &__container {
+            h2 {
+                font-family: $headingText;
+                font-size: 5.33rem;
+                line-height: 1.15;
+                margin-bottom: 0.17em;
+
+                &::after {
+                    color: #a7a7a7;
+                    content: '404';
+                    font-size: 0.8rem;
+                    font-weight: bold;
+                }
+            }
+    
+            h1 {
+                color: #77797c;
+                font-size: 2.67rem;
+                font-weight: 700;
+                margin-bottom: 0.8em;
+            }
+    
+            p {
+                color: #9f9f9f;
+                font-size: 1.33rem;
+                margin-bottom: 1em;
+            }
+    
+            
+        }
+
+        &__quick-links {
+            display: inline-block;
+
+            &__links {
+                margin: 0 -4px;
+                position: relative;
+                padding-right: 2.67em;
+
+                ul {
+                    list-style: none;
+                    display: flex;
+                    margin: -8px 0;
+                    flex-flow: row wrap;
+                    
+                    li {
+                        margin: 8px 0;
+
+                        a {
+                            background-color: $accentColor;
+                            border-radius: 8px;
+                            border: 1px solid $accentColor;
+                            color: #fff;
+                            display: inline-block;
+                            font-size: 0.89rem;
+                            font-weight: 600;
+                            margin: 0 4px;
+                            padding: 0.5em 1.6em;
+                            text-decoration: none;
+                            text-transform: uppercase;
+                            transition: 200ms all ease-out;
+
+                            &:hover {
+                                background-color: transparent;
+                                color: $accentColor;
+                            }
+                        }
+                    }
+                }
+            }
+
+            img {
+                position: absolute;
+                width: 1.67rem;
+                height: auto;
+                object-fit: contain;
+                top: -1.33rem;
+                right: 0;
+            }
+        }
+    }
+}
