@@ -40,16 +40,10 @@
             'menu_title'	=> 'Footer',
             'parent_slug'	=> 'site-general-settings',
         ));
-
-        acf_add_options_sub_page( array(
-            'page_title' 	=> 'Search Settings',
-            'menu_title'	=> 'Search',
-            'parent_slug'	=> 'site-general-settings',
-        ));
         
         acf_add_options_sub_page( array(
-            'page_title' 	=> 'Google Map Settings',
-            'menu_title'	=> 'Google Map',
+            'page_title' 	=> 'APIs/IDs/Shortcodes Settings',
+            'menu_title'	=> 'APIs/IDs/Shortcodes',
             'parent_slug'	=> 'site-general-settings',
         ));
 
