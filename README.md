@@ -1,1 +1,1 @@
-# FGenInsurance Boilerplate
+# Wordpress Boilerplate - Booking
