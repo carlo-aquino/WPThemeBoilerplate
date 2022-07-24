@@ -209,6 +209,8 @@
 
     @include break(tabletxl) {
         display: flex;
+        position: relative;
+        z-index: 100;
     }
 
     .mobile-header__left {

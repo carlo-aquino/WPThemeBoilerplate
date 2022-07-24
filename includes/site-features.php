@@ -62,6 +62,17 @@
         echo wp_kses_post($menu);
     }
 
+    //Checking for pagination
+    function is_paginated() {
+        global $wp_query;
+        
+        if ( $wp_query->max_num_pages > 1 ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     // Image sizes
     add_image_size('theme-xsmall', 425, 425, false);
     add_image_size('theme-small', 640, 640, false);

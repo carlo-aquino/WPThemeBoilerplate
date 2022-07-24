@@ -44,6 +44,10 @@
     &-item {
         border-bottom: 1px solid rgba(0,0,0, 0.05);
         padding: 1.78em 0;
+
+        &:last-child {
+            border-bottom: 0;
+        }
     
         h2 {
             font-size: 1.39rem;
@@ -73,11 +77,7 @@
         }
     
         p {
-            // font-size: 1rem;
-            // max-height: 64px;
-            // margin-bottom: 0;
             overflow: hidden;
-            // color: #979594;
         }
     
         @supports (-webkit-line-clamp: 2) {

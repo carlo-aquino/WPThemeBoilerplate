@@ -72,9 +72,11 @@
 
                     </div>
 
-                    <div class="page-content__search-pagination">
-                        <?php echo paginate_links(); ?>
-                    </div>
+                    <?php if( is_paginated() ): ?>
+                        <div class="page-content__search-pagination">
+                            <?php echo paginate_links(); ?>
+                        </div>
+                    <?php endif; ?>
 
                 </div>
 
