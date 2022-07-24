@@ -99,9 +99,20 @@
                     color: #fff;
                     font-size: 0.7rem;
                     position: absolute;
-                    top: -25px;
+                    top: -1.25rem;
                 }
             }
+        }
+
+        & + div.wpcf7-response-output {
+            border: 0;
+            bottom: -18px;
+            color: #fff;
+            font-size: 0.7rem;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            right: 0;
         }
     }
 
@@ -128,16 +139,14 @@
             background-color: #fff;
             border-radius: 1.19em;
             border: 1px solid rgba(#000, 0.08);
-            // box-shadow: 0 0 30px rgba(#000, 0.04);
             margin-bottom: 1.48em;
             padding: 1.19em;
-            transition: 300ms all ease-out;
             width: 100%;
             width: 100%;
             
-            // &:focus {
-            //     outline: 2px solid $primaryColor;
-            // }
+            &:focus {
+                outline-color: $primaryColor;
+            }
         }
 
         &-footer {
@@ -152,8 +161,16 @@
                 gap: 1em;
             }
 
+            p {
+
+                @include break(mobile) {
+                    width: 100%;
+                }
+            }
+
             span.wpcf7-acceptance span.wpcf7-list-item {
                 margin: 0;
+                color: #595959;
             }
 
             span.wpcf7-spinner {
@@ -163,16 +180,34 @@
                 transform: translateY(-50%);
             }
         }
+
+        & div.wpcf7-response-output {
+            border: 0;
+            bottom: 4rem;
+            color: #69cb72;
+            font-size: 0.7rem;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 0;
+        }
+
+        & + div.wpcf7-response-output {
+            border: 0;
+            bottom: 4rem;
+            color: #ff7272;
+            font-size: 0.7rem;
+            margin: 0;
+            padding: 0;
+            position: absolute;
+            left: 0;
+
+            @include break(mobile) {
+                bottom: 6.2rem;
+                line-height: 1.2;
+            }
+        }
     }
 
-    & div.wpcf7-response-output {
-        border: 0;
-        bottom: -18px;
-        color: #fff;
-        font-size: 0.7rem;
-        margin: 0;
-        padding: 0;
-        position: absolute;
-        right: 0;
-    }
+    
 }

@@ -16,7 +16,7 @@
     font-family: $headingText;
     font-size: 0.8rem;
     font-weight: bold;
-    padding: 1.5em 3em;
+    padding: 1em 3em;
     text-transform: uppercase;
     transition: 200ms all ease-out;
 
@@ -73,10 +73,6 @@
     width: 100%;
     max-width: 1248px;
     margin: 0 auto;
-}
-
-.full-bleed {
-    padding: 0 !important;
 }
 
 .grid-per-row__01 {
@@ -137,6 +133,18 @@
     height: 100%;
     opacity: 0;
     z-index: 15;
+}
+
+.mobile-spacer {
+    
+    @include break(phablet) {
+        padding-top: 3.29em !important;
+        padding-bottom: 3.29em !important;
+    }
+}
+
+.full-bleed {
+    padding: 0 !important;
 }
 
 .section-heading {

@@ -1,8 +1,13 @@
 .page-404 {
-    padding: 5.8em 0;
 
     &__container {
         display: flex;
+        padding-bottom: 6em;
+        padding-top: 6em;
+
+        @include break(tabletxl) {
+            flex-flow: row wrap;
+        }
     }
 
     &__left-content {
@@ -10,11 +15,16 @@
         background-repeat: no-repeat;
         background-size: contain;
         height: 35.83rem;
+        margin-right: 3.11em;
         width: 100%;
 
         @include break(laptop) {
             background-position: center;
             background-size: contain;
+        }
+        
+        @include break(tabletxl) {
+            margin-right: 0;
         }
 
         @include break(mobile) {
@@ -25,12 +35,7 @@
     &__right-content {
         align-items: center;
         display: flex;
-        padding: 3.11em;
         width: 100%;
-
-        @include break(mobile) {
-            padding: 0 2.22em;
-        }
 
         &__container {
             h2 {

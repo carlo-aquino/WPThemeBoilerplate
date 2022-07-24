@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
     <main class="page-404">
-        <div class="page-404__container">
+        <section class="page-404__container mobile-spacer">
             <div class="page-404__left-content" style="background-image: url('<?php bloginfo('template_directory'); ?>/dist/img/page-404-bg-img.svg');"></div>
 
             <div class="page-404__right-content">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </div>
-        </div>    
+        </section>    
     </main>
 
 <?php get_footer(); ?>

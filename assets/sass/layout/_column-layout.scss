@@ -54,11 +54,3 @@
         }
     }
 }
-
-.mobile-spacer {
-    
-    @include break(phablet) {
-        padding-top: 3.29em !important;
-        padding-bottom: 3.29em !important;
-    }
-}

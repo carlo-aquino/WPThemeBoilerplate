@@ -164,6 +164,13 @@
             .accordion-module__content label {
                 background-color: <?php echo $primary_color; ?>;
             }
+
+            .wpcf7-form div.contact-us__form input[type=email]:focus,
+            .wpcf7-form div.contact-us__form input[type=tel]:focus,
+            .wpcf7-form div.contact-us__form input[type=text]:focus,
+            .wpcf7-form div.contact-us__form textarea:focus {
+                outline-color: <?php echo $primary_color; ?>;
+            }
         <?php endif; ?>
 
         <?php if( $secondary_color ): ?>
@@ -326,6 +333,10 @@
             }
 
             .grid-module__cards__card.type-one {
+                color: <?php echo $body_text_color; ?>;
+            }
+
+            .wpcf7-form div.contact-us__form-footer span.wpcf7-acceptance span.wpcf7-list-item {
                 color: <?php echo $body_text_color; ?>;
             }
         <?php endif; ?>

@@ -107,7 +107,7 @@
                     </header>
 
                 </article>
-            <?php endwhile; ?>
+            <?php $ctr = $ctr+200; endwhile; ?>
             
         </div>
 
