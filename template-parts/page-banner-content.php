@@ -32,8 +32,9 @@
 
     <?php endif; ?>
 
-    <?php if( is_single() ): ?>
-        <img src="<?php bloginfo('template_directory'); ?>/dist/img/blogpage-banner.jpg" alt="Blog page banner" loading="lazy">
+
+    <?php if( is_category()  ): ?>
+        <img src="<?php bloginfo('template_directory'); ?>/dist/img/portfolio-banner.jpg" alt="Archive page banner" loading="lazy">
     <?php endif; ?>
 
     <?php if( is_post_type_archive( 'portfolio' )  ): ?>
@@ -51,5 +52,3 @@
         </video>
 
     <?php endif; ?>
-
-

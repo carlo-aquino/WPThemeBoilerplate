@@ -857,7 +857,7 @@ li {
 }
 .blog-posts__cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
   gap: 2em;
 }
 @media (max-width: 640px) {
@@ -1042,20 +1042,9 @@ li {
   padding-top: 4em;
   padding-bottom: 6em;
 }
-@media (max-width: 640px) {
-  .single__main {
-    padding-top: 2em;
-    padding-bottom: 0;
-  }
-}
 
 .single-template {
   padding-bottom: 2em;
-}
-@media (max-width: 640px) {
-  .single-template {
-    padding-bottom: 0;
-  }
 }
 
 .single__width-limit {
@@ -1064,6 +1053,14 @@ li {
   margin: 0 auto;
 }
 
+.single__header-breadcrumbs {
+  color: #d7d7d7;
+  font-size: 0.9rem;
+}
+.single__header-breadcrumbs a {
+  font-size: 0.9rem;
+  font-weight: normal;
+}
 .single__header h1 {
   font-family: "GothamBold", serif;
   font-size: 2.22rem;

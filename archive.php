@@ -1,21 +1,58 @@
 <?php get_header(); ?>
 
-    <section class="page-banner">
-        <img src="<?php bloginfo('template_directory'); ?>/assets/img/articles-banner.jpg" alt="Page banner" loading="lazy">
+<main class="archive__main">
         
-        <div class="page-banner__overlay"></div>
+        <?php get_template_part( 'template-parts/page', 'banner' ); ?>
 
-        <div class="page-banner__heading content-limit section-width">
-            <div class="page-banner__heading-container">
-                <h2>Archive</h2>
-            </div>
-        </div>
+        <?php if( have_posts() ): ?>
+            <section class="blog-posts mobile-spacer">
 
-        <div class="page-banner__mobile-accent"></div>
-    </section>
+                <div class="blog-posts__wrapper content-limit">
 
-    <main class="page__main">
-       
+                    <div class="blog-posts__cards">
+
+                        <?php while( have_posts() ): the_post(); ?>
+
+                        <article class="blog-posts__cards__card" data-aos="fade-left" data-aos-duration="800" data-aos-delay="<?php echo $ctr; ?>">
+                                
+                                <a href="<?php the_permalink(); ?>"><span class="hit-area"></span></a>
+
+                                <?php if( is_sticky() ): ?>
+                                    <div class="features-module__cards__card-violator">
+                                        <strong>PINNED</strong>
+                                    </div>
+                                <?php endif; ?>
+                                    
+                                <div class="blog-posts__cards__card-overlay background-overlay"></div>
+                                
+                                <?php the_post_thumbnail( 'theme-small',
+                                    array(
+                                        'class' => 'img-fluid',
+                                        'width' => 640,
+                                        'alt'   => get_the_title(),
+                                    ) 
+                                ); ?>
+                                
+                                <header class="blog-posts__cards__card-content">
+                                    <h2><?php the_title(); ?></h2>
+                                    <span class="grid-date"><strong><?php the_time('F j, Y'); ?></strong></span>
+                                </header>
+
+                            </article>
+
+                        <?php $ctr = $ctr+200; endwhile; ?>
+
+                    </div>
+
+                    <?php if( is_paginated() ): ?>
+                        <div class="page-content__search-pagination">
+                            <?php echo paginate_links(); ?>
+                        </div>
+                    <?php endif; ?>    
+                </div>
+
+            </section>
+        <?php endif; ?>
     </main>
 
 <?php get_footer(); ?>

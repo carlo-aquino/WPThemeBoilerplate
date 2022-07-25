@@ -1,6 +1,6 @@
 <?php get_header(); global $wp_query; $search_counter = 0; ?>    
     
-    <main class="search__main theme__main">
+    <main class="search__main">
 
         <?php get_template_part( 'template-parts/page', 'banner' ); ?>
 

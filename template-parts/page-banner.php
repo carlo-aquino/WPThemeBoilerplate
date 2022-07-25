@@ -1,7 +1,8 @@
 <?php 
     $banner_text_toggle = get_sub_field( 'banner_text_toggle' );
     $banner_text = get_sub_field( 'banner_text' );
-    $banner_subtitle = get_sub_field( 'banner_subtitle' ); ?>
+    $banner_subtitle = get_sub_field( 'banner_subtitle' );
+    $current_category = get_queried_object(); ?>
 
     <section class="page-banner full-bleed">
 
@@ -23,10 +24,13 @@
 
                 <?php if( is_search() ) { echo '<h1>Search Results</h1>'; } ?>
 
+                <?php if( is_category() ) { echo '<h1>Archive: ' . $current_category->name . '</h1>'; } ?>
+
                 <?php if( is_post_type_archive( 'portfolio' ) ) { echo '<h1>Portfolio</h1>'; } ?>
 
                 <?php if( $banner_text_toggle && $banner_subtitle ): ?>
                     <p><?php echo $banner_subtitle; ?></p>
+                    
                 <?php endif; ?>
             </div>
         </div>
