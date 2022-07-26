@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<main class="archive__main">
+    <main class="archive__main">
         
         <?php get_template_part( 'template-parts/page', 'banner' ); ?>
 

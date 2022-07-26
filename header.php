@@ -45,6 +45,8 @@
         <?php
             if( is_search() ) {
                 echo 'Search Results';
+            } elseif( is_category() ) {
+                echo 'Archive';
             } elseif( is_post_type_archive( 'portfolio' ) ) {
                 echo 'Portfolio';
             } elseif( is_404() ) {
