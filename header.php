@@ -32,6 +32,8 @@
     $body_code_content = get_field( 'body_code_content', 'option' );
 
     $page_color = get_field( 'page_color' );
+
+    $current_category = get_queried_object();
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +48,7 @@
             if( is_search() ) {
                 echo 'Search Results';
             } elseif( is_category() ) {
-                echo 'Archive';
+                echo 'Archive - ' .  $current_category->name;
             } elseif( is_post_type_archive( 'portfolio' ) ) {
                 echo 'Portfolio';
             } elseif( is_404() ) {
