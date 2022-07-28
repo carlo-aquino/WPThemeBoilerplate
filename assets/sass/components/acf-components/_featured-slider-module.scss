@@ -3,7 +3,7 @@
     &__container {
         display: grid;
         grid-template-columns: minmax(17.59rem, 50%) 50%;
-        // width: 106%;
+        gap: 2em;
 
         @include break(tabletxl) {
             display: none;
@@ -23,13 +23,12 @@
 
     &__wrapper.swiper-wrapper--left {
         align-items: center;
-        justify-content: flex-end;
-        padding-right: 30%;
+        padding-left: 29.7%;
     }
 
     &__cards.slider-left {
         height: fit-content;
-        max-width: 800px;
+        max-width: 550px;
         overflow: hidden;
 
         .text-module {
@@ -65,9 +64,33 @@
     }
 
     &__wrapper.swiper-wrapper--right {
-        position: relative;
         align-items: center;
-        padding-right: 3.85em;
+
+        .swiper-button-prev {
+            background: $primaryColor;
+            border-radius: 50%;
+            height: 2.22rem;
+            width: 2.22rem;
+            left: 5%;
+
+            &::after {
+                color: #fff;
+                font-size: 1rem;
+            }
+        }
+
+        .swiper-button-next {
+            background: $primaryColor;
+            border-radius: 50%;
+            height: 2.22rem;
+            width: 2.22rem;
+            right: 5%;
+
+            &::after {
+                color: #fff;
+                font-size: 1rem;
+            }
+        }
     }
 
     &__cards.slider-right {
@@ -75,15 +98,10 @@
         overflow: hidden;
         padding: 1em 0;
         position: relative;
-
-        .swiper-wrapper {
-            left: 40%;
-        }
         
         .swiper-slide {
             background-color: #fff;
             border-radius: 0.74em;
-            box-shadow: 0 6px 16px rgba(0,0,0, 0.1);
             filter: brightness(100%);
             height: 24.37rem;
             overflow: hidden;
@@ -92,9 +110,7 @@
             width: 17.59rem;
 
             .background-overlay {
-                background: rgb(225,143,34);
-                background: linear-gradient(0deg, rgba(225,143,34,0.9023984593837535) 0%, rgba(255,255,255,0) 40%);
-                display: block;
+                background: transparent;
             }
 
             .title-overlay {
@@ -122,18 +138,6 @@
                 height: 100%;
                 object-fit: cover;
                 width: 100%;
-            }
-        }
-
-        .swiper-button-next {
-            background: $primaryColor;
-            border-radius: 50%;
-            padding: 1rem;
-            right: 0;
-
-            &::after {
-                color: #fff;
-                font-size: 1rem;
             }
         }
 

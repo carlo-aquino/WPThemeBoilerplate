@@ -45,6 +45,14 @@
         'orderby'               => 'title',
         'order'                 => 'ASC',
         'ignore_sticky_posts'   => 1,
+
+        // 'tax_query' => array(
+        //     array (
+        //         'taxonomy' => 'portfolio_categories',
+        //         'field' => 'slug',
+        //         'terms' => 'residential',
+        //     )
+        // ),
     ));
     
 ?>
@@ -54,14 +62,11 @@
         <div class="featured-slider-module__container row g-0">
 
             <div class="featured-slider-module__wrapper swiper-wrapper--left">
-            
-                <div class="featured-slider-module__cards slider-left">
-
-                    <div class="text-module">
-                        <div class="text-module__wrapper"> 
-                            <h3><span>BRANDS</span></h3>
-                        </div>
-                    </div>
+                
+                <div class="featured-slider-module__cards slider-left"
+                    data-aos="fade-right"
+                    data-aos-duration="800"
+                >
 
                     <div class="featured-slider-module__cards-wrapper swiper-wrapper">
                         
@@ -72,14 +77,14 @@
                                     <h2><?php the_title(); ?></h2>
                                 </header>
 
-                                <?php the_content(); ?>
+                                <?php the_excerpt(); ?>
 
                                 <div class="featured-slider-module__cards__card-buttons">
                                     <div class="button-module">
                                         <div class="button-module__wrapper">
                                             
-                                            <a href="<?php echo site_url('/schools'); ?>">
-                                                <span>INQUIRE NOW</span>
+                                            <a href="<?php the_permalink(); ?>">
+                                                <span class="custom-primary-btn">MORE INFO</span>
                                             </a> 
 
                                         </div>
@@ -88,78 +93,76 @@
 
                             </article>
                         <?php endwhile; endif; wp_reset_postdata(); ?>
-                    </div>
-                    
+                    </div>    
+
                 </div>       
             </div>
 
             <div class="featured-slider-module__wrapper swiper-wrapper--right">
-            
-                <div class="featured-slider-module__cards slider-right">
+                
+                <div class="featured-slider-module__cards slider-right"
+                    data-aos="slide-left"
+                    data-aos-duration="700"
+                    data-aos-easing="ease-out-sine" 
+                >
 
                     <div class="featured-slider-module__cards-wrapper swiper-wrapper">
-                        <?php if( $slider_post_query->have_posts() ): while( $slider_post_query->have_posts() ): $slider_post_query->the_post();
-                        
-                            $school_logo = get_field( 'school_logo' );
-
-                            if( $school_logo ) {
-                                $school_logo_url = $school_logo['url'];
-                                $school_logo_size = $school_logo['sizes']['medium'];
-                                $school_logo_width = $school_logo['sizes']['medium-width'];
-                                $school_logo_height = $school_logo['medium-height'];
-                                $school_logo_alt = $school_logo['alt'];
-                            } ?>
+                        <?php if( $slider_post_query->have_posts() ): while( $slider_post_query->have_posts() ): $slider_post_query->the_post(); ?>
 
                             <article class="featured-slider-module__cards__card swiper-slide column-center">
                                     
                                 <div class="featured-slider-module__cards__card-overlay background-overlay"></div>
                                 
-                                <img src="<?php echo $school_logo_size; ?>" width="<?php echo $school_logo_width; ?>" alt="<?php echo $school_logo_alt; ?>" class="img-fluid">
+                                <?php the_post_thumbnail( 'theme-small',
+                                    array(
+                                        'class' => 'img-fluid',
+                                        'width' => 640,
+                                        'alt'   => get_the_title(),
+                                    ) 
+                                ); ?>
 
                             </article>
+
                         <?php endwhile; endif; wp_reset_postdata(); ?>
                     </div>
 
-                    <div class="swiper-scrollbar"></div>
-                    
                 </div> 
-                
+
+                <div class="swiper-button-prev"></div>   
+                <div class="swiper-button-next"></div>   
             </div>
 
         </div>
 
         <div class="featured-slider-module__container-mobile">
 
-            <div class="featured-slider-module__wrapper swiper-wrapper--right">
+            <div class="featured-slider-module__wrapper">
                 
-                <div class="featured-slider-module__cards slider-mobile mobile-spacer">
-
-                    <div class="text-module">
-                        <div class="text-module__wrapper"> 
-                            <h3><span>BRANDS</span></h3>
-                        </div>
-                    </div>
+                <div class="featured-slider-module__cards slider-mobile">
 
                     <div class="featured-slider-module__cards-wrapper swiper-wrapper">
-                        <?php if( $slider_post_query->have_posts() ): while( $slider_post_query->have_posts() ): $slider_post_query->the_post();
+                        <?php if( $slider_post_query->have_posts() ): while( $slider_post_query->have_posts() ): $slider_post_query->the_post(); ?>
                         
-                            $school_logo = get_field( 'school_logo' );
-
-                            if( $school_logo ) {
-                                $school_logo_url = $school_logo['url'];
-                                $school_logo_size = $school_logo['sizes']['medium'];
-                                $school_logo_width = $school_logo['sizes']['medium-width'];
-                                $school_logo_height = $school_logo['medium-height'];
-                                $school_logo_alt = $school_logo['alt'];
-                            } ?>
-
                             <article class="featured-slider-module__cards__card swiper-slide column-center">
-                                    
+                                        
+                                <a href="<?php the_permalink(); ?>"><span class="hit-area"></span></a>
+
                                 <div class="featured-slider-module__cards__card-overlay background-overlay"></div>
+
+                                <div class="featured-slider-module__cards__card-heading title-overlay">
+                                    <h2><?php the_title(); ?></h2>
+                                </div>
                                 
-                                <img src="<?php echo $school_logo_size; ?>" width="<?php echo $school_logo_width; ?>" alt="<?php echo $school_logo_alt; ?>" class="img-fluid">
+                                <?php the_post_thumbnail( 'theme-xsmall',
+                                    array(
+                                        'class' => 'img-fluid',
+                                        'width' => 640,
+                                        'alt'   => get_the_title(),
+                                    ) 
+                                ); ?>
 
                             </article>
+
                         <?php endwhile; endif; wp_reset_postdata(); ?>
                     </div>
                     
@@ -172,43 +175,29 @@
     </div>
 
 
-
 <script type="module">
 
     var sliderLeft = new Swiper('.slider-left', {
         grabCursor: true,
-        spaceBetween: 200,
+        spaceBetween: 40,
         centeredSlides: true,
-        // loop: true,
-        loopedSlides: 2
+        loop: true,
+        loopedSlides: 3
     });
 
     var sliderRight = new Swiper('.slider-right', {
-        effect: 'coverflow',
+        slidesPerView: 2.5,
+        spaceBetween: 24,
         grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 'auto',
-        initialSlide: 0,
-        slidesPerGroup: 1,
-        spaceBetween: 80,
 
         touchRatio: 0.2,
         slideToClickedSlide: false,
-        // loop: true,
-        loopedSlides: 2,
+        loop: true,
+        loopedSlides: 3,
 
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 5,
-            depth: 100,
-            modifier: 2,
-            slideShadows: true,
-        },
-
-        scrollbar: {
-            el: '.swiper-scrollbar',
-            hide: false,
-            draggable: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
         },
     });
 
@@ -216,19 +205,12 @@
     sliderRight.controller.control = sliderLeft;
 
     var sliderMobile = new Swiper('.slider-mobile', {
-        effect: 'coverflow',
         grabCursor: true,
         centeredSlides: true,
         slidesPerView: 'auto',
-
-        coverflowEffect: {
-            rotate: 0,
-            stretch: 20,
-            depth: 150,
-            modifier: 2,
-            slideShadows: true,
-        },
-
+        initialSlide: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 24,
         loop: true,
     });
 

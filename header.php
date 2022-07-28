@@ -148,8 +148,9 @@
                 background-color: <?php echo $primary_color; ?>;
             }
 
-            .featured-slider-module__wrapper.swiper-wrapper--right {
-                background-color: <?php echo $primary_color; ?>;
+            .featured-slider-module__wrapper.swiper-wrapper--right .swiper-button-prev,
+            .featured-slider-module__wrapper.swiper-wrapper--right .swiper-button-next {
+                background: <?php echo $primary_color; ?>
             }
 
             .slider-module__arrow.swiper-button-prev::after,
@@ -281,6 +282,7 @@
 
             .button-module__wrapper span {
                 background: <?php echo $accent_color; ?>;
+                border-color: <?php echo $accent_color; ?>;
             }
 
             .button-module__wrapper span:hover {
