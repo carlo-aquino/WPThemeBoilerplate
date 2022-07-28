@@ -11,8 +11,8 @@
         add_theme_support('title-tag');
         add_theme_support('widgets');
 
-        // deactivate new block editor
-        remove_theme_support( 'widgets-block-editor' );
+        // deactivate new block editor for widgets
+        // remove_theme_support( 'widgets-block-editor' );
     }
 
     add_action( 'after_setup_theme', 'site_features' );
@@ -70,6 +70,21 @@
             return true;
         } else {
             return false;
+        }
+    }
+
+    // IP retrieval function
+    function get_ip_address() {
+        foreach (array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR') as $key){
+            if (array_key_exists($key, $_SERVER) === true){
+                foreach (explode(',', $_SERVER[$key]) as $ip){
+                    $ip = trim($ip); // just to be safe
+
+                    if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_NO_PRIV_RANGE | FILTER_FLAG_NO_RES_RANGE) !== false){
+                        return $ip;
+                    }
+                }
+            }
         }
     }
 

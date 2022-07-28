@@ -1,5 +1,6 @@
 <?php if( have_rows( 'grid_module_settings' ) ): while( have_rows( 'grid_module_settings' ) ): the_row();
     $grid_heading = get_sub_field( 'grid_heading' );
+    $grid_description_toggle = get_sub_field( 'grid_description_toggle' );
     $grid_type = get_sub_field( 'grid_type' );
 
     $grid_items_per_row = get_sub_field( 'grid_items_per_row' );
@@ -94,7 +95,7 @@
                         <?php endif; ?>
                     </header>
                         
-                    <?php if( $grid_custom_description ): ?>
+                    <?php if( $grid_description_toggle && $grid_custom_description ): ?>
                         <p><?php echo $grid_custom_description; ?></p>
                     <?php endif; ?>
 

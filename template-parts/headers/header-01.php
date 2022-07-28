@@ -179,7 +179,7 @@
         <div class="mobile-header__drawer-overlay"></div>
 
         <div class="mobile-header__drawer-container">
-            <?php if( $header_widget_01 ): ?>
+            <?php if( $header_widget_01 && !is_active_sidebar('header-widget-01') ): ?>
                 <div class="mobile-header__drawer-header">
                     <?php echo do_shortcode( $search_object_shortcode ); ?>
                 </div>

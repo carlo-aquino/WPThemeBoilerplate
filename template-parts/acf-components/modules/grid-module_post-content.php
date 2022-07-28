@@ -111,7 +111,7 @@
             
         </div>
 
-        <?php if( $grid_pagination ): ?>
+        <?php if( $grid_data_source == 'post' && $grid_pagination ): ?>
             <div class="grid-module__pagination">
                 <?php
                     $total_pages = $grid_post_query->max_num_pages;
