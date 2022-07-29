@@ -4,7 +4,6 @@
             the_row();
 
             $booking_heading = get_sub_field( 'booking_heading' );
-            $booking_heading_type = get_sub_field( 'booking_heading_type' );
             $booking_heading_content = get_sub_field( 'booking_heading_content' );
             $booking_target_location = get_sub_field( 'booking_target_location' );
             $booking_location_id = get_sub_field( 'booking_location_id' );
@@ -92,7 +91,7 @@
 
             <?php if( $booking_heading && $booking_heading_content ): ?>
                 <div class="booking-module__heading">
-                    <?php echo '<' . $booking_heading_type . '>'; ?><?php echo $booking_heading_content; ?>
+                    <?php echo $booking_heading_content; ?>
                 </div>
             <?php endif; ?>
 

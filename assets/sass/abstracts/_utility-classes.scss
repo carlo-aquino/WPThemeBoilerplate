@@ -57,8 +57,19 @@
 
     &:hover {
         background: transparent !important;
-        border-color: $accentColor;
         color: $accentColor;
+    }
+}
+
+.button-reverse {
+    background: transparent !important;
+    border: 1px solid $accentColor;
+    color: $accentColor !important;
+
+    &:hover {
+        background: $accentColor !important;
+        border-color: $accentColor;
+        color: #fff !important;
     }
 }
 

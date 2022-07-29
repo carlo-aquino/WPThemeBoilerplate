@@ -280,6 +280,24 @@
                 color: <?php echo $accent_color; ?>;
             }
 
+            .button-primary {
+                background: <?php echo $accent_color; ?> !important;
+                border-color: <?php echo $accent_color; ?>;
+            }
+
+            .button-primary:hover {
+                border-color: <?php echo $accent_color; ?> !important;
+                color: <?php echo $accent_color; ?>;
+            }
+
+            .button-reverse {
+                color: <?php echo $accent_color; ?> !important;
+            }
+
+            .button-reverse:hover {
+                background: <?php echo $accent_color; ?> !important;
+            }
+
             .button-module__wrapper span {
                 background: <?php echo $accent_color; ?>;
                 border-color: <?php echo $accent_color; ?>;
@@ -315,6 +333,11 @@
 
             .booking-module div.ea-bootstrap form div.final div.form-group div.ea-actions-group button.ea-cancel:hover {
                 background-color: <?php echo $accent_color; ?>;
+            }
+
+            .featured-slider-module__wrapper.swiper-wrapper--right .swiper-button-prev:hover,
+            .featured-slider-module__wrapper.swiper-wrapper--right .swiper-button-next:hover {
+                background: <?php echo $accent_color; ?>;
             }
 
             .featured-slider-module__cards.slider-left .text-module h3 span,

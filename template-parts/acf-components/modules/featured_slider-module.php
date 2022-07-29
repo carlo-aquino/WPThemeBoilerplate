@@ -45,14 +45,6 @@
         'orderby'               => 'title',
         'order'                 => 'ASC',
         'ignore_sticky_posts'   => 1,
-
-        // 'tax_query' => array(
-        //     array (
-        //         'taxonomy' => 'portfolio_categories',
-        //         'field' => 'slug',
-        //         'terms' => 'residential',
-        //     )
-        // ),
     ));
     
 ?>
@@ -84,7 +76,7 @@
                                         <div class="button-module__wrapper">
                                             
                                             <a href="<?php the_permalink(); ?>">
-                                                <span class="custom-primary-btn">MORE INFO</span>
+                                                <span class="custom-primary-btn">More Info</span>
                                             </a> 
 
                                         </div>
@@ -126,6 +118,8 @@
                         <?php endwhile; endif; wp_reset_postdata(); ?>
                     </div>
 
+                    <div class="featured-slider-module__cards-overlay cards-overlay"></div>
+
                 </div> 
 
                 <div class="swiper-button-prev"></div>   
@@ -165,7 +159,7 @@
 
                         <?php endwhile; endif; wp_reset_postdata(); ?>
                     </div>
-                    
+
                 </div>      
                 
             </div>

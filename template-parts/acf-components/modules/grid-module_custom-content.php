@@ -1,5 +1,6 @@
 <?php if( have_rows( 'grid_module_settings' ) ): while( have_rows( 'grid_module_settings' ) ): the_row();
     $grid_heading = get_sub_field( 'grid_heading' );
+    $grid_image_toggle = get_sub_field( 'grid_image_toggle' );
     $grid_description_toggle = get_sub_field( 'grid_description_toggle' );
     $grid_type = get_sub_field( 'grid_type' );
 
@@ -76,7 +77,7 @@
                     
                 <div class="grid-module__cards__card-overlay background-overlay<?php echo ' ' . $grid_type; ?>"></div>
                 
-                <?php if( $grid_custom_image ): ?>
+                <?php if( $grid_image_toggle && $grid_custom_image ): ?>
                     <div class="grid-module__cards__card-image">
                         <img src="<?php echo $grid_custom_image_size; ?>" width="<?php echo $grid_custom_image_width; ?>" alt="<?php echo $grid_custom_image_alt; ?>" class="img-fluid<?php echo ' ' . $grid_type; ?>">
                     </div>

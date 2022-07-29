@@ -1,12 +1,12 @@
 @font-face {
-  font-family: "GothamBold";
+  font-family: "HeadingFont";
   src: url("../font/gotham-bold.woff") format("woff"), url("../font/gotham-bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "PoppinsLight";
+  font-family: "BodyFont";
   src: url("../font/poppins-light.woff") format("woff"), url("../font/poppins-light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -26,7 +26,7 @@ html {
 
 body {
   width: 100%;
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -39,7 +39,7 @@ section {
 
 h1, h2, h3, h4, h5, h6 {
   color: #a74799;
-  font-family: "GothamBold", serif;
+  font-family: "HeadingFont", serif;
   line-height: 1.15em;
   margin-bottom: 0.7em;
   position: relative;
@@ -75,7 +75,7 @@ img[src$=".png"], img[src$=".jpg"] {
 
 p {
   color: #595959;
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   line-height: 1.78em;
   margin-bottom: 1.33em;
 }
@@ -224,7 +224,7 @@ li {
   width: 100%;
 }
 .page-404__right-content__container h2 {
-  font-family: "GothamBold", serif;
+  font-family: "HeadingFont", serif;
   font-size: 5.33rem;
   line-height: 1.15;
   margin-bottom: 0.17em;
@@ -341,10 +341,6 @@ li {
 }
 #footer-02 div.global-footer__row-02 ul {
   list-style: none;
-}
-#footer-02 div.global-footer__row-02 a {
-  color: #a3a3a3;
-  font-size: 0.9rem;
 }
 #footer-02 div.global-footer__row-02 p {
   color: #a3a3a3;
@@ -683,7 +679,7 @@ li {
 .mobile-header__drawer-header form input[type=search] {
   border-radius: 20px 0 0 20px !important;
   border: 0 !important;
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   height: 40px !important;
 }
 .mobile-header__drawer-header form button[type=submit] {
@@ -1001,7 +997,7 @@ li {
   font-weight: normal;
 }
 .single__header h1 {
-  font-family: "GothamBold", serif;
+  font-family: "HeadingFont", serif;
   font-size: 2.22rem;
   line-height: 1.3em;
   margin: 0;
@@ -1110,7 +1106,7 @@ li {
 }
 .booking-module__heading h2, .booking-module__heading h3, .booking-module__heading h3, .booking-module__heading h4, .booking-module__heading h5, .booking-module__heading h6 {
   color: #fff;
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   font-size: 1.6rem;
   font-weight: bold;
   line-height: 1.5em;
@@ -1138,7 +1134,7 @@ li {
 }
 .booking-module div.bootstrap form label {
   color: #fff;
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   font-weight: normal;
   padding-top: 0 !important;
 }
@@ -1147,7 +1143,7 @@ li {
   border: 1px solid rgba(255, 255, 255, 0.32);
   box-shadow: none;
   color: #fff;
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   height: 2.73rem;
   margin-bottom: 0.8em;
 }
@@ -1182,7 +1178,7 @@ li {
   color: #fff;
 }
 .booking-module div.bootstrap form .calendar .ui-datepicker-title {
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   font-size: 0.8rem;
 }
 .booking-module div.bootstrap form .calendar .ui-datepicker-prev::before {
@@ -1194,7 +1190,7 @@ li {
   font-family: "FontAwesome";
 }
 .booking-module div.bootstrap form .calendar .ui-datepicker-calendar th {
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   border: 1px solid rgba(255, 255, 255, 0.24);
 }
 .booking-module div.bootstrap form .calendar .ui-datepicker-calendar th span {
@@ -1223,7 +1219,7 @@ li {
 }
 .booking-module div.bootstrap form .calendar .ui-datepicker-calendar td {
   border: 1px solid rgba(255, 255, 255, 0.24);
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   font-size: 0.9rem;
 }
 .booking-module div.bootstrap form .calendar .ui-datepicker-calendar td:hover {
@@ -1253,14 +1249,14 @@ li {
 }
 .booking-module div.bootstrap form div.final h3 {
   color: #fff;
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 8px;
 }
 .booking-module div.bootstrap form div.final small {
   color: #fff;
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   display: inline-block;
   margin-bottom: 2em;
 }
@@ -1279,7 +1275,7 @@ li {
   border: 1px solid rgba(255, 255, 255, 0.32);
   box-shadow: none;
   color: #fff;
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   height: 2.73rem;
   margin-bottom: 0.8em;
 }
@@ -1295,7 +1291,7 @@ li {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   font-size: 0.8rem;
   font-weight: bold;
   margin-top: 2.22em;
@@ -1332,7 +1328,7 @@ li {
   margin-bottom: 1em;
 }
 .booking-module div.bootstrap form div.final #booking-overview td {
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   font-size: 0.75rem;
   color: #fff;
 }
@@ -1449,23 +1445,31 @@ li {
   background: #a74799;
   border-radius: 50%;
   height: 2.22rem;
-  width: 2.22rem;
   left: 5%;
+  transition: 200ms all ease-out;
+  width: 2.22rem;
 }
 .featured-slider-module__wrapper.swiper-wrapper--right .swiper-button-prev::after {
   color: #fff;
   font-size: 1rem;
 }
+.featured-slider-module__wrapper.swiper-wrapper--right .swiper-button-prev:hover {
+  background: #fab631;
+}
 .featured-slider-module__wrapper.swiper-wrapper--right .swiper-button-next {
   background: #a74799;
   border-radius: 50%;
   height: 2.22rem;
-  width: 2.22rem;
   right: 5%;
+  transition: 200ms all ease-out;
+  width: 2.22rem;
 }
 .featured-slider-module__wrapper.swiper-wrapper--right .swiper-button-next::after {
   color: #fff;
   font-size: 1rem;
+}
+.featured-slider-module__wrapper.swiper-wrapper--right .swiper-button-next:hover {
+  background: #fab631;
 }
 .featured-slider-module__cards.slider-right {
   height: max-content;
@@ -1473,11 +1477,21 @@ li {
   padding: 1em 0;
   position: relative;
 }
+.featured-slider-module__cards.slider-right .cards-overlay {
+  top: 0;
+  right: 0;
+  position: absolute;
+  width: 40%;
+  height: 100%;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 100%);
+  z-index: 100;
+}
 .featured-slider-module__cards.slider-right .swiper-slide {
   background-color: #fff;
   border-radius: 0.74em;
   filter: brightness(100%);
-  height: 24.37rem;
+  height: 27.56rem;
   overflow: hidden;
   position: relative;
   transition: 200ms all ease-out;
@@ -2074,7 +2088,7 @@ li {
   border-radius: 8px 0 0 8px;
   border-width: 2px !important;
   color: #fff;
-  font-family: "PoppinsLight", sans-serif;
+  font-family: "BodyFont", sans-serif;
   font-size: 1.78rem !important;
   height: 4rem;
   padding: 0 1em;
@@ -2327,7 +2341,7 @@ li {
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: "GothamBold", serif;
+  font-family: "HeadingFont", serif;
   font-size: 0.8rem;
   font-weight: bold;
   padding: 1em 3em;
@@ -2359,8 +2373,18 @@ li {
 }
 .button-primary:hover {
   background: transparent !important;
-  border-color: #fab631;
   color: #fab631;
+}
+
+.button-reverse {
+  background: transparent !important;
+  border: 1px solid #fab631;
+  color: #fab631 !important;
+}
+.button-reverse:hover {
+  background: #fab631 !important;
+  border-color: #fab631;
+  color: #fff !important;
 }
 
 .column-center {
