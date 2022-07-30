@@ -6,73 +6,86 @@
             $text_content = get_sub_field( 'text_content' );
             $text_link = get_sub_field( 'text_link' );
 
-            $text_transition_animation = get_sub_field( 'text_transition_animation' );
-            $text_transition_direction = get_sub_field( 'text_transition_direction' );
-            $text_transition_zoom_direction = get_sub_field( 'text_transition_zoom_direction' );
-            $text_transition_duration = get_sub_field( 'text_transition_duration' );
-            $text_transition_delay = get_sub_field( 'text_transition_delay' );
-
-            $text_css_id = get_sub_field( 'text_css_id' );
-            $text_css_class = get_sub_field( 'text_css_class' );
-
             if( $text_link ) {
                 $text_link_url = $text_link['url'];
                 $text_link_title = $text_link['title'];
                 $text_link_target = $text_link['target'] ? $text_link['target'] : '_self';
             } 
 
-            if( have_rows( 'text_margin_settings' ) ) {
-                while( have_rows( 'text_margin_settings' ) ) {
+            if( have_rows( 'margin_settings' ) ) {
+                while( have_rows( 'margin_settings' ) ) {
                     the_row();
         
-                    $text_margin_top = get_sub_field( 'text_margin_top' );
-                    $text_margin_bottom = get_sub_field( 'text_margin_bottom' );
-                    $text_margin_left = get_sub_field( 'text_margin_left' );
-                    $text_margin_right = get_sub_field( 'text_margin_right' );
+                    $margin_top = get_sub_field( 'margin_top' );
+                    $margin_bottom = get_sub_field( 'margin_bottom' );
+                    $margin_left = get_sub_field( 'margin_left' );
+                    $margin_right = get_sub_field( 'margin_right' );
+                }
+            }
+        
+            if( have_rows( 'padding_settings' ) ) {
+                while( have_rows( 'padding_settings' ) ) {
+                    the_row();
+        
+                    $padding_top = get_sub_field( 'padding_top' );
+                    $padding_bottom = get_sub_field( 'padding_bottom' );
+                    $padding_left = get_sub_field( 'padding_left' );
+                    $padding_right = get_sub_field( 'padding_right' );
+                }
+            }
+            
+            if( have_rows( 'animation_settings' ) ) {
+                while( have_rows( 'animation_settings' ) ) {
+                    the_row();
+        
+                    $transition_animation = get_sub_field( 'transition_animation' );
+                    $transition_direction = get_sub_field( 'transition_direction' );
+                    $transition_zoom_direction = get_sub_field( 'transition_zoom_direction' );
+                    $transition_duration = get_sub_field( 'transition_duration' );
+                    $transition_delay = get_sub_field( 'transition_delay' );
                 }
             }
 
-            if( have_rows( 'text_padding_settings' ) ) {
-                while( have_rows( 'text_padding_settings' ) ) {
+            if( have_rows( 'id_classes_settings' ) ) {
+                while( have_rows( 'id_classes_settings' ) ) {
                     the_row();
         
-                    $text_padding_top = get_sub_field( 'text_padding_top' );
-                    $text_padding_bottom = get_sub_field( 'text_padding_bottom' );
-                    $text_padding_left = get_sub_field( 'text_padding_left' );
-                    $text_padding_right = get_sub_field( 'text_padding_right' );
+                    $css_id = get_sub_field( 'css_id' );
+                    $css_class = get_sub_field( 'css_class' );
                 }
             }
         }
     } 
 ?>
 
-    <div id="<?php if( $text_css_id ) { echo ' ' . $text_css_id; } ?>" class="text-module<?php if( $text_css_class ) { echo ' ' . $text_css_class; } ?>">
+    <div id="<?php if( $css_id ) { echo ' ' . $css_id; } ?>" class="text-module<?php if( $css_class ) { echo ' ' . $css_class; } ?>">
+        
         <div class="text-module__wrapper"
             style="
-                <?php if( $text_margin_top ) { echo 'margin-top:' . $text_margin_top . 'em;'; } ?>
-                <?php if( $text_margin_bottom ) { echo 'margin-bottom:' . $text_margin_bottom . 'em;'; } ?>
-                <?php if( $text_margin_left ) { echo 'margin-left:' . $text_margin_left . 'em;'; } ?>
-                <?php if( $text_margin_right ) { echo 'margin-right:' . $text_margin_right . 'em;'; } ?>
+                <?php if( $margin_top ) { echo 'margin-top:' . $margin_top . 'em;'; } ?>
+                <?php if( $margin_bottom ) { echo 'margin-bottom:' . $margin_bottom . 'em;'; } ?>
+                <?php if( $margin_left ) { echo 'margin-left:' . $margin_left . 'em;'; } ?>
+                <?php if( $margin_right ) { echo 'margin-right:' . $margin_right . 'em;'; } ?>
 
-                <?php if( $text_padding_top ) { echo 'padding-top:' . $text_padding_top . 'em;'; } ?>
-                <?php if( $text_padding_bottom ) { echo 'padding-bottom:' . $text_padding_bottom . 'em;'; } ?>
-                <?php if( $text_padding_left ) { echo 'padding-left:' . $text_padding_left . 'em;'; } ?>
-                <?php if( $text_padding_right ) { echo 'padding-right:' . $text_padding_right . 'em;'; } ?>
+                <?php if( $padding_top ) { echo 'padding-top:' . $padding_top . 'em;'; } ?>
+                <?php if( $padding_bottom ) { echo 'padding-bottom:' . $padding_bottom . 'em;'; } ?>
+                <?php if( $padding_left ) { echo 'padding-left:' . $padding_left . 'em;'; } ?>
+                <?php if( $padding_right ) { echo 'padding-right:' . $padding_right . 'em;'; } ?>
             "
 
-            <?php if( $text_transition_animation == 'fade' || $text_transition_animation == 'flip' || $text_transition_animation == 'slide' ): ?>
-                data-aos="<?php echo $text_transition_animation . '-' . $text_transition_direction; ?>"
+            <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
+                data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
             <?php endif; ?>
             
-            <?php if( $text_transition_animation == 'zoom' ): ?>
-                data-aos="<?php echo $text_transition_animation . '-' . $text_transition_zoom_direction; ?>"
+            <?php if( $transition_animation == 'zoom' ): ?>
+                data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
             <?php endif; ?>
 
-            <?php if( $text_transition_duration ): ?>
-                data-aos-duration="<?php echo $text_transition_duration; ?>"
+            <?php if( $transition_duration ): ?>
+                data-aos-duration="<?php echo $transition_duration; ?>"
             <?php endif; ?>
             
-            data-aos-delay="<?php echo $text_transition_delay; ?>"
+            data-aos-delay="<?php echo $transition_delay; ?>"
         >
 
             <?php if( $text_link ): ?>
@@ -86,4 +99,5 @@
             <?php endif; ?>  
 
         </div>
+
     </div>

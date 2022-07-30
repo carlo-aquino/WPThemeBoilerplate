@@ -11,14 +11,18 @@
             $grid_data_source = get_sub_field( 'grid_data_source' );
             $grid_items_per_row = get_sub_field( 'grid_items_per_row' );
             $grid_gap = get_sub_field( 'grid_gap' );
-            $grid_css_id = get_sub_field( 'grid_css_id' );
-            $grid_css_class = get_sub_field( 'grid_css_class' );
-
-            $grid_transition_animation = get_sub_field( 'grid_transition_animation' );
-            $grid_transition_direction = get_sub_field( 'grid_transition_direction' );
-            $grid_transition_zoom_direction = get_sub_field( 'grid_transition_zoom_direction' );
-            $grid_transition_duration = get_sub_field( 'grid_transition_duration' );
-            $grid_transition_delay = get_sub_field( 'grid_transition_delay' );
+            
+            if( have_rows( 'animation_settings' ) ) {
+                while( have_rows( 'animation_settings' ) ) {
+                    the_row();
+        
+                    $transition_animation = get_sub_field( 'transition_animation' );
+                    $transition_direction = get_sub_field( 'transition_direction' );
+                    $transition_zoom_direction = get_sub_field( 'transition_zoom_direction' );
+                    $transition_duration = get_sub_field( 'transition_duration' );
+                    $transition_delay = get_sub_field( 'transition_delay' );
+                }
+            }
             
             $ctr = $grid_transition_delay;
 
@@ -65,16 +69,16 @@
             
             <?php while( $grid_post_query->have_posts() ): $grid_post_query->the_post(); ?>
                 <article class="grid-module__cards__card<?php echo ' ' . $grid_type; ?>"
-                    <?php if( $grid_transition_animation == 'fade' || $grid_transition_animation == 'flip' || $grid_transition_animation == 'slide' ): ?>
-                        data-aos="<?php echo $grid_transition_animation . '-' . $grid_transition_direction; ?>"
+                    <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
+                        data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
                     <?php endif; ?>
                     
-                    <?php if( $grid_transition_animation == 'zoom' ): ?>
-                        data-aos="<?php echo $grid_transition_animation . '-' . $grid_transition_zoom_direction; ?>"
+                    <?php if( $transition_animation == 'zoom' ): ?>
+                        data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
                     <?php endif; ?>
 
-                    <?php if( $grid_transition_duration ): ?>
-                        data-aos-duration="<?php echo $grid_transition_duration; ?>"
+                    <?php if( $transition_duration ): ?>
+                        data-aos-duration="<?php echo $transition_duration; ?>"
                     <?php endif; ?>
                     
                     data-aos-delay="<?php echo $ctr; ?>"

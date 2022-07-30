@@ -3,20 +3,6 @@
     $section_height = get_sub_field( 'section_height' );
     $column_distribution = get_sub_field( 'column_distribution' ); 
     $column_gap = get_sub_field( 'column_gap' ); 
-    $section_css_id = get_sub_field( 'section_css_id' );
-    $section_css_class = get_sub_field( 'section_css_class' );
-    $section_background_type = get_sub_field( 'section_background_type' );
-    $section_background_color = get_sub_field( 'section_background_color' );
-    $section_background_image = get_sub_field( 'section_background_image' );
-    $section_background_image_overlay = get_sub_field( 'section_background_image_overlay' );
-    $section_background_image_overlay_color = get_sub_field( 'section_background_image_overlay_color' );
-    $section_background_image_overlay_opacity = get_sub_field( 'section_background_image_overlay_opacity' );
-
-    $section_transition_animation = get_sub_field( 'section_transition_animation' );
-    $section_transition_direction = get_sub_field( 'section_transition_direction' );
-    $section_transition_zoom_direction = get_sub_field( 'section_transition_zoom_direction' );
-    $section_transition_duration = get_sub_field( 'section_transition_duration' );
-    $section_transition_delay = get_sub_field( 'section_transition_delay' );
     
     if( have_rows( 'section_heading' ) ) {
         while( have_rows( 'section_heading' ) ) {
@@ -28,67 +14,101 @@
             $section_heading_align = get_sub_field( 'section_heading_align' );
         }
     } 
-    
-    if( have_rows( 'section_margin_settings' ) ) {
-        while( have_rows( 'section_margin_settings' ) ) {
+
+    if( have_rows( 'background_settings' ) ) {
+        while( have_rows( 'background_settings' ) ) {
             the_row();
 
-            $section_margin_top = get_sub_field( 'section_margin_top' );
-            $section_margin_bottom = get_sub_field( 'section_margin_bottom' );
-            $section_margin_left = get_sub_field( 'section_margin_left' );
-            $section_margin_right = get_sub_field( 'section_margin_right' );
+            $background_type = get_sub_field( 'background_type' );
+            $background_color = get_sub_field( 'background_color' );
+            $background_image = get_sub_field( 'background_image' );
+            $background_image_overlay = get_sub_field( 'background_image_overlay' );
+            $background_image_overlay_color = get_sub_field( 'background_image_overlay_color' );
+            $background_image_overlay_opacity = get_sub_field( 'background_image_overlay_opacity' );
+        }
+    }
+    
+    if( have_rows( 'margin_settings' ) ) {
+        while( have_rows( 'margin_settings' ) ) {
+            the_row();
+
+            $margin_top = get_sub_field( 'margin_top' );
+            $margin_bottom = get_sub_field( 'margin_bottom' );
+            $margin_left = get_sub_field( 'margin_left' );
+            $margin_right = get_sub_field( 'margin_right' );
         }
     }
 
-    if( have_rows( 'section_padding_settings' ) ) {
-        while( have_rows( 'section_padding_settings' ) ) {
+    if( have_rows( 'padding_settings' ) ) {
+        while( have_rows( 'padding_settings' ) ) {
             the_row();
 
-            $section_padding_top = get_sub_field( 'section_padding_top' );
-            $section_padding_bottom = get_sub_field( 'section_padding_bottom' );
-            $section_padding_left = get_sub_field( 'section_padding_left' );
-            $section_padding_right = get_sub_field( 'section_padding_right' );
+            $padding_top = get_sub_field( 'padding_top' );
+            $padding_bottom = get_sub_field( 'padding_bottom' );
+            $padding_left = get_sub_field( 'padding_left' );
+            $padding_right = get_sub_field( 'padding_right' );
+        }
+    }
+    
+    if( have_rows( 'animation_settings' ) ) {
+        while( have_rows( 'animation_settings' ) ) {
+            the_row();
+
+            $transition_animation = get_sub_field( 'transition_animation' );
+            $transition_direction = get_sub_field( 'transition_direction' );
+            $transition_zoom_direction = get_sub_field( 'transition_zoom_direction' );
+            $transition_duration = get_sub_field( 'transition_duration' );
+            $transition_delay = get_sub_field( 'transition_delay' );
+        }
+    }
+
+    if( have_rows( 'id_classes_settings' ) ) {
+        while( have_rows( 'id_classes_settings' ) ) {
+            the_row();
+
+            $css_id = get_sub_field( 'css_id' );
+            $css_class = get_sub_field( 'css_class' );
         }
     } ?>
 
-    <section id="<?php if( $section_css_id ) { echo $section_css_id; } ?>" class="two-column-layout mobile-spacer<?php if( $section_css_class ) { echo ' ' . $section_css_class; } ?><?php if( $full_width ) { echo ' px-0'; } ?>"
+    <section id="<?php if( $css_id ) { echo $css_id; } ?>" class="two-column-layout mobile-spacer<?php if( $css_class ) { echo ' ' . $css_class; } ?><?php if( $full_width ) { echo ' px-0'; } ?>"
         style="
 
             <?php if( $section_height ) { echo 'height:' . $section_height . 'px;'; } ?>
 
-            <?php if( $section_background_type=='color' ) { echo 'background:' . $section_background_color . ';'; } ?>
-            <?php if( $section_background_type=='image' ) { echo 'background-image:url(' . $section_background_image . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; } ?>
+            <?php if( $background_type=='color' ) { echo 'background-color:' . $background_color . ';'; } ?>
+            <?php if( $background_type=='image' ) { echo 'background-image:url(' . $background_image . ');'; } ?>
 
-            <?php if( $section_margin_top ) { echo 'margin-top:' . $section_margin_top . 'em;'; } ?>
-            <?php if( $section_margin_bottom ) { echo 'margin-bottom:' . $section_margin_bottom . 'em;'; } ?>
-            <?php if( $section_margin_left ) { echo 'margin-left:' . $section_margin_left . 'em;'; } ?>
-            <?php if( $section_margin_right ) { echo 'margin-right:' . $section_margin_right . 'em;'; } ?>
+            <?php if( $margin_top ) { echo 'margin-top:' . $margin_top . 'em;'; } ?>
+            <?php if( $margin_bottom ) { echo 'margin-bottom:' . $margin_bottom . 'em;'; } ?>
+            <?php if( $margin_left ) { echo 'margin-left:' . $margin_left . 'em;'; } ?>
+            <?php if( $margin_right ) { echo 'margin-right:' . $margin_right . 'em;'; } ?>
 
-            <?php if( $section_padding_top ) { echo 'padding-top:' . $section_padding_top . 'em;'; } ?>
-            <?php if( $section_padding_bottom ) { echo 'padding-bottom:' . $section_padding_bottom . 'em;'; } ?>
-            <?php if( $section_padding_left ) { echo 'padding-left:' . $section_padding_left . 'em;'; } ?>
-            <?php if( $section_padding_right ) { echo 'padding-right:' . $section_padding_right . 'em;'; } ?>
+            <?php if( $padding_top ) { echo 'padding-top:' . $padding_top . 'em;'; } ?>
+            <?php if( $padding_bottom ) { echo 'padding-bottom:' . $padding_bottom . 'em;'; } ?>
+            <?php if( $padding_left ) { echo 'padding-left:' . $padding_left . 'em;'; } ?>
+            <?php if( $padding_right ) { echo 'padding-right:' . $padding_right . 'em;'; } ?>
         "
 
-        <?php if( $section_transition_animation == 'fade' || $section_transition_animation == 'flip' || $section_transition_animation == 'slide' ): ?>
-            data-aos="<?php echo $section_transition_animation . '-' . $section_transition_direction; ?>"
+        <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
+            data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
         <?php endif; ?>
         
-        <?php if( $section_transition_animation == 'zoom' ): ?>
-            data-aos="<?php echo $section_transition_animation . '-' . $section_transition_zoom_direction; ?>"
+        <?php if( $transition_animation == 'zoom' ): ?>
+            data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
         <?php endif; ?>
 
-        <?php if( $section_transition_duration ): ?>
-            data-aos-duration="<?php echo $section_transition_duration; ?>"
+        <?php if( $transition_duration ): ?>
+            data-aos-duration="<?php echo $transition_duration; ?>"
         <?php endif; ?>
         
-        data-aos-delay="<?php echo $section_transition_delay; ?>"
+        data-aos-delay="<?php echo $transition_delay; ?>"
     >
         <div class="background-overlay"
             style="
-                <?php if( $section_background_type=='image' && $section_background_image_overlay ) { echo 'display:block;'; } ?>
-                <?php if( $section_background_type=='image' && $section_background_image_overlay && $section_background_image_overlay_color ) { echo 'background:' . $section_background_image_overlay_color . ';'; } ?>
-                <?php if( $section_background_type=='image' && $section_background_image_overlay && $section_background_image_overlay_color && $section_background_image_overlay_opacity ) { echo 'opacity:' . $section_background_image_overlay_opacity . '%;'; } ?>
+                <?php if( $background_type=='image' && $background_image_overlay ) { echo 'display:block;'; } ?>
+                <?php if( $background_type=='image' && $background_image_overlay && $background_image_overlay_color ) { echo 'background:' . $background_image_overlay_color . ';'; } ?>
+                <?php if( $background_type=='image' && $background_image_overlay && $background_image_overlay_color && $background_image_overlay_opacity ) { echo 'opacity:' . $background_image_overlay_opacity . '%;'; } ?>
             "
         ></div>
 
@@ -101,29 +121,50 @@
             <div class="row <?php if( !$column_gap ) { echo 'g-0 '; } ?>two-column-layout__row">
 
             <?php if( have_rows('column_01_settings') ): while( have_rows('column_01_settings') ): the_row();
-                $column_background_type = get_sub_field( 'column_background_type' );
-                $column_background_color = get_sub_field( 'column_background_color' );
-                $column_background_image = get_sub_field( 'column_background_image' );
-                $column_background_overlay = get_sub_field( 'column_background_overlay' );
-                $column_background_overlay_color = get_sub_field( 'column_background_overlay_color' );
-                $column_background_overlay_opacity = get_sub_field( 'column_background_overlay_opacity' );
-                $column_css_id = get_sub_field( 'column_css_id' );
-                $column_css_class = get_sub_field( 'column_css_class' );
                 $column_link = get_sub_field( 'column_link' );
 
-                $column_transition_animation = get_sub_field( 'column_transition_animation' );
-                $column_transition_direction = get_sub_field( 'column_transition_direction' );
-                $column_transition_zoom_direction = get_sub_field( 'column_transition_zoom_direction' );
-                $column_transition_duration = get_sub_field( 'column_transition_duration' );
-                $column_transition_delay = get_sub_field( 'column_transition_delay' );
-                
-                if( have_rows( 'column_left_padding_settings' ) ) {
-                    while( have_rows( 'column_left_padding_settings' ) ) {
+                if( have_rows( 'background_settings' ) ) {
+                    while( have_rows( 'background_settings' ) ) {
                         the_row();
-                        $column_left_padding_top = get_sub_field( 'column_left_padding_top' );
-                        $column_left_padding_bottom = get_sub_field( 'column_left_padding_bottom' );
-                        $column_left_padding_left = get_sub_field( 'column_left_padding_left' );
-                        $column_left_padding_right = get_sub_field( 'column_left_padding_right' );
+            
+                        $background_type = get_sub_field( 'background_type' );
+                        $background_color = get_sub_field( 'background_color' );
+                        $background_image = get_sub_field( 'background_image' );
+                        $background_image_overlay = get_sub_field( 'background_image_overlay' );
+                        $background_image_overlay_color = get_sub_field( 'background_image_overlay_color' );
+                        $background_image_overlay_opacity = get_sub_field( 'background_image_overlay_opacity' );
+                    }
+                }
+                
+                if( have_rows( 'padding_settings' ) ) {
+                    while( have_rows( 'padding_settings' ) ) {
+                        the_row();
+            
+                        $padding_top = get_sub_field( 'padding_top' );
+                        $padding_bottom = get_sub_field( 'padding_bottom' );
+                        $padding_left = get_sub_field( 'padding_left' );
+                        $padding_right = get_sub_field( 'padding_right' );
+                    }
+                }
+                
+                if( have_rows( 'animation_settings' ) ) {
+                    while( have_rows( 'animation_settings' ) ) {
+                        the_row();
+            
+                        $transition_animation = get_sub_field( 'transition_animation' );
+                        $transition_direction = get_sub_field( 'transition_direction' );
+                        $transition_zoom_direction = get_sub_field( 'transition_zoom_direction' );
+                        $transition_duration = get_sub_field( 'transition_duration' );
+                        $transition_delay = get_sub_field( 'transition_delay' );
+                    }
+                }
+
+                if( have_rows( 'id_classes_settings' ) ) {
+                    while( have_rows( 'id_classes_settings' ) ) {
+                        the_row();
+            
+                        $css_id = get_sub_field( 'css_id' );
+                        $css_class = get_sub_field( 'css_class' );
                     }
                 }
                 
@@ -134,39 +175,39 @@
                 } ?>
 
                     <?php if ( $column_distribution=='fraction-01'): ?>
-                        <div class="col-lg-6 two-column-layout__column two-column-layout__column-left <?php if( $full_width ) { echo 'p-0'; } ?> <?php if( $column_background_type=='image' && $column_background_image  ) { echo 'px-0'; } ?>">
+                        <div class="col-lg-6 two-column-layout__column two-column-layout__column-left <?php if( $full_width ) { echo 'p-0'; } ?> <?php if( $background_type=='image' && $background_image  ) { echo 'px-0'; } ?>">
                     <?php elseif ( $column_distribution=='fraction-02' ): ?>
-                        <div class="col-lg-5 two-column-layout__column two-column-layout__column-left <?php if( $full_width ) { echo 'p-0'; } ?> <?php if( $column_background_type=='image' && $column_background_image  ) { echo 'px-0'; } ?>">
+                        <div class="col-lg-5 two-column-layout__column two-column-layout__column-left <?php if( $full_width ) { echo 'p-0'; } ?> <?php if( $background_type=='image' && $background_image  ) { echo 'px-0'; } ?>">
                     <?php else: ?>        
-                        <div class="col-lg-7 two-column-layout__column two-column-layout__column-left <?php if( $full_width ) { echo 'p-0'; } ?> <?php if( $column_background_type=='image' && $column_background_image  ) { echo 'px-0'; } ?>">
+                        <div class="col-lg-7 two-column-layout__column two-column-layout__column-left <?php if( $full_width ) { echo 'p-0'; } ?> <?php if( $background_type=='image' && $background_image  ) { echo 'px-0'; } ?>">
                     <?php endif; ?>
 
-                        <div id="<?php if( $column_css_id ) { echo $column_css_id; } ?>" class="two-column-layout__column-wrapper <?php if( $column_css_class ) { echo $column_css_class; } ?> <?php if( !$column_gap ) { echo 'p-0 '; } ?>"
+                        <div id="<?php if( $css_id ) { echo $css_id; } ?>" class="two-column-layout__column-wrapper <?php if( $css_class ) { echo $css_class; } ?> <?php if( !$column_gap ) { echo 'p-0 '; } ?>"
                             style="
-                                <?php if( $column_background_type=='color' ) { echo 'background:' . $column_background_color . ';'; } ?>
-                                <?php if( $column_background_type=='image' ) { echo 'background-image:url(' . $column_background_image . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; } ?>
+                                <?php if( $background_type=='color' ) { echo 'background-color:' . $background_color . ';'; } ?>
+                                <?php if( $background_type=='image' ) { echo 'background-image:url(' . $background_image . ');'; } ?>
                             " 
                             
-                            <?php if( $column_transition_animation == 'fade' || $column_transition_animation == 'flip' || $column_transition_animation == 'slide' ): ?>
-                                data-aos="<?php echo $column_transition_animation . '-' . $column_transition_direction; ?>"
+                            <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
+                                data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
                             <?php endif; ?>
                             
-                            <?php if( $column_transition_animation == 'zoom' ): ?>
-                                data-aos="<?php echo $column_transition_animation . '-' . $column_transition_zoom_direction; ?>"
+                            <?php if( $transition_animation == 'zoom' ): ?>
+                                data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
                             <?php endif; ?>
 
-                            <?php if( $column_transition_duration ): ?>
-                                data-aos-duration="<?php echo $column_transition_duration; ?>"
+                            <?php if( $transition_duration ): ?>
+                                data-aos-duration="<?php echo $transition_duration; ?>"
                             <?php endif; ?>
                             
-                            data-aos-delay="<?php echo $column_transition_delay; ?>"
+                            data-aos-delay="<?php echo $transition_delay; ?>"
                         >
 
                             <div class="background-overlay"
                                 style="
-                                    <?php if( $column_background_type=='image' && $column_background_overlay ) { echo 'display:block;'; } ?>
-                                    <?php if( $column_background_type=='image' && $column_background_overlay && $column_background_overlay_color ) { echo 'background:' . $column_background_overlay_color . ';'; } ?>
-                                    <?php if( $column_background_type=='image' && $column_background_overlay && $column_background_overlay_color && $column_background_overlay_opacity ) { echo 'opacity:' . $column_background_overlay_opacity . '%;'; } ?>
+                                    <?php if( $background_type=='image' && $background_overlay ) { echo 'display:block;'; } ?>
+                                    <?php if( $background_type=='image' && $background_overlay && $background_overlay_color ) { echo 'background:' . $background_overlay_color . ';'; } ?>
+                                    <?php if( $background_type=='image' && $background_overlay && $background_overlay_color && $background_overlay_opacity ) { echo 'opacity:' . $background_overlay_opacity . '%;'; } ?>
                                 "
                             ></div>
 
@@ -178,10 +219,10 @@
 
                             <div class="two-column-layout__column-wrapper__container"
                                 style="
-                                    <?php if( $column_left_padding_top ) { echo 'padding-top:' . $column_left_padding_top . 'em;'; } ?>
-                                    <?php if( $column_left_padding_bottom ) { echo 'padding-bottom:' . $column_left_padding_bottom . 'em;'; } ?>
-                                    <?php if( $column_left_padding_left ) { echo 'padding-left:' . $column_left_padding_left . 'em;'; } ?>
-                                    <?php if( $column_left_padding_right ) { echo 'padding-right:' . $column_left_padding_right . 'em;'; } ?>
+                                    <?php if( $padding_top ) { echo 'padding-top:' . $padding_top . 'em;'; } ?>
+                                    <?php if( $padding_bottom ) { echo 'padding-bottom:' . $padding_bottom . 'em;'; } ?>
+                                    <?php if( $padding_left ) { echo 'padding-left:' . $padding_left . 'em;'; } ?>
+                                    <?php if( $padding_right ) { echo 'padding-right:' . $padding_right . 'em;'; } ?>
                                 " 
                             >
                                 <?php
@@ -248,31 +289,52 @@
                 <?php endwhile; endif; ?>
 
                 <?php if( have_rows('column_02_settings') ): while( have_rows('column_02_settings') ): the_row();
-                    $column_background_type = get_sub_field( 'column_background_type' );
-                    $column_background_color = get_sub_field( 'column_background_color' );
-                    $column_background_image = get_sub_field( 'column_background_image' );
-                    $column_background_overlay = get_sub_field( 'column_background_overlay' );
-                    $column_background_overlay_color = get_sub_field( 'column_background_overlay_color' );
-                    $column_background_overlay_opacity = get_sub_field( 'column_background_overlay_opacity' );
-                    $column_css_id = get_sub_field( 'column_css_id' );
-                    $column_css_class = get_sub_field( 'column_css_class' );
                     $column_link = get_sub_field( 'column_link' );
 
-                    $column_transition_animation = get_sub_field( 'column_transition_animation' );
-                    $column_transition_direction = get_sub_field( 'column_transition_direction' );
-                    $column_transition_zoom_direction = get_sub_field( 'column_transition_zoom_direction' );
-                    $column_transition_duration = get_sub_field( 'column_transition_duration' );
-                    $column_transition_delay = get_sub_field( 'column_transition_delay' );
-                    
-                    if( have_rows( 'column_right_padding_settings' ) ) {
-                        while( have_rows( 'column_right_padding_settings' ) ) {
+                    if( have_rows( 'background_settings' ) ) {
+                        while( have_rows( 'background_settings' ) ) {
                             the_row();
-                            $column_right_padding_top = get_sub_field( 'column_right_padding_top' );
-                            $column_right_padding_bottom = get_sub_field( 'column_right_padding_bottom' );
-                            $column_right_padding_left = get_sub_field( 'column_right_padding_left' );
-                            $column_right_padding_right = get_sub_field( 'columnn_right_padding_right' );
+                
+                            $background_type = get_sub_field( 'background_type' );
+                            $background_color = get_sub_field( 'background_color' );
+                            $background_image = get_sub_field( 'background_image' );
+                            $background_image_overlay = get_sub_field( 'background_image_overlay' );
+                            $background_image_overlay_color = get_sub_field( 'background_image_overlay_color' );
+                            $background_image_overlay_opacity = get_sub_field( 'background_image_overlay_opacity' );
+                        }
+                    }
+                    
+                    if( have_rows( 'padding_settings' ) ) {
+                        while( have_rows( 'padding_settings' ) ) {
+                            the_row();
+                
+                            $padding_top = get_sub_field( 'padding_top' );
+                            $padding_bottom = get_sub_field( 'padding_bottom' );
+                            $padding_left = get_sub_field( 'padding_left' );
+                            $padding_right = get_sub_field( 'padding_right' );
+                        }
+                    }
+                    
+                    if( have_rows( 'animation_settings' ) ) {
+                        while( have_rows( 'animation_settings' ) ) {
+                            the_row();
+                
+                            $transition_animation = get_sub_field( 'transition_animation' );
+                            $transition_direction = get_sub_field( 'transition_direction' );
+                            $transition_zoom_direction = get_sub_field( 'transition_zoom_direction' );
+                            $transition_duration = get_sub_field( 'transition_duration' );
+                            $transition_delay = get_sub_field( 'transition_delay' );
                         }
                     } 
+
+                    if( have_rows( 'id_classes_settings' ) ) {
+                        while( have_rows( 'id_classes_settings' ) ) {
+                            the_row();
+                
+                            $css_id = get_sub_field( 'css_id' );
+                            $css_class = get_sub_field( 'css_class' );
+                        }
+                    }
                     
                     if( $column_link ) {
                         $column_link_url = $column_link['url'];
@@ -281,39 +343,39 @@
                     } ?>
 
                     <?php if ( $column_distribution=='fraction-01'): ?>
-                        <div class="col-lg-6 two-column-layout__column two-column-layout__column-right <?php if( $full_width ) { echo 'p-0'; } ?> <?php if( $column_background_type=='image' && $column_background_image  ) { echo 'px-0'; } ?>">
+                        <div class="col-lg-6 two-column-layout__column two-column-layout__column-right <?php if( $full_width ) { echo 'p-0'; } ?> <?php if( $background_type=='image' && $background_image  ) { echo 'px-0'; } ?>">
                     <?php elseif ( $column_distribution=='fraction-02' ): ?>
-                        <div class="col-lg-7 two-column-layout__column two-column-layout__column-right <?php if( $full_width ) { echo 'p-0'; } ?> <?php if( $column_background_type=='image' && $column_background_image  ) { echo 'px-0'; } ?>">
+                        <div class="col-lg-7 two-column-layout__column two-column-layout__column-right <?php if( $full_width ) { echo 'p-0'; } ?> <?php if( $background_type=='image' && $background_image  ) { echo 'px-0'; } ?>">
                     <?php else: ?>        
-                        <div class="col-lg-5 two-column-layout__column two-column-layout__column-right <?php if( $full_width ) { echo 'p-0'; } ?> <?php if( $column_background_type=='image' && $column_background_image  ) { echo 'px-0'; } ?>">
+                        <div class="col-lg-5 two-column-layout__column two-column-layout__column-right <?php if( $full_width ) { echo 'p-0'; } ?> <?php if( $background_type=='image' && $background_image  ) { echo 'px-0'; } ?>">
                     <?php endif; ?>
 
-                        <div id="<?php if( $column_css_id ) { echo $column_css_id; } ?>" class="two-column-layout__column-wrapper <?php if( $column_css_class ) { echo $column_css_class; } ?> <?php if( !$column_gap ) { echo 'p-0 '; } ?>"
+                        <div id="<?php if( $css_id ) { echo $css_id; } ?>" class="two-column-layout__column-wrapper <?php if( $css_class ) { echo $css_class; } ?> <?php if( !$column_gap ) { echo 'p-0 '; } ?>"
                             style="
-                                <?php if( $column_background_type=='color' ) { echo 'background:' . $column_background_color . ';'; } ?>
-                                <?php if( $column_background_type=='image' ) { echo 'background-image:url(' . $column_background_image . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; } ?>
+                                <?php if( $background_type=='color' ) { echo 'background-color:' . $background_color . ';'; } ?>
+                                <?php if( $background_type=='image' ) { echo 'background-image:url(' . $background_image . ');'; } ?>
                             "    
                         
-                            <?php if( $column_transition_animation == 'fade' || $column_transition_animation == 'flip' || $column_transition_animation == 'slide' ): ?>
-                                data-aos="<?php echo $column_transition_animation . '-' . $column_transition_direction; ?>"
+                            <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
+                                data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
                             <?php endif; ?>
                             
-                            <?php if( $column_transition_animation == 'zoom' ): ?>
-                                data-aos="<?php echo $column_transition_animation . '-' . $column_transition_zoom_direction; ?>"
+                            <?php if( $transition_animation == 'zoom' ): ?>
+                                data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
                             <?php endif; ?>
 
-                            <?php if( $column_transition_duration ): ?>
-                                data-aos-duration="<?php echo $column_transition_duration; ?>"
+                            <?php if( $transition_duration ): ?>
+                                data-aos-duration="<?php echo $transition_duration; ?>"
                             <?php endif; ?>
                             
-                            data-aos-delay="<?php echo $column_transition_delay; ?>"
+                            data-aos-delay="<?php echo $transition_delay; ?>"
                         >
 
                             <div class="background-overlay"
                                 style="
-                                    <?php if( $column_background_type=='image' && $column_background_overlay ) { echo 'display:block;'; } ?>
-                                    <?php if( $column_background_type=='image' && $column_background_overlay && $column_background_overlay_color ) { echo 'background:' . $column_background_overlay_color . ';'; } ?>
-                                    <?php if( $column_background_type=='image' && $column_background_overlay && $column_background_overlay_color && $column_background_overlay_opacity ) { echo 'opacity:' . $column_background_overlay_opacity . '%;'; } ?>
+                                    <?php if( $background_type=='image' && $background_image_overlay ) { echo 'display:block;'; } ?>
+                                    <?php if( $background_type=='image' && $background_image_overlay && $background_image_overlay_color ) { echo 'background:' . $background_image_overlay_color . ';'; } ?>
+                                    <?php if( $background_type=='image' && $background_image_overlay && $background_image_overlay_color && $background_image_overlay_opacity ) { echo 'opacity:' . $background_image_overlay_opacity . '%;'; } ?>
                                 "
                             ></div>
                             
@@ -325,10 +387,10 @@
 
                             <div class="two-column-layout__column-wrapper__container"
                                 style="
-                                    <?php if( $column_right_padding_top ) { echo 'padding-top:' . $column_right_padding_top . 'em;'; } ?>
-                                    <?php if( $column_right_padding_bottom ) { echo 'padding-bottom:' . $column_right_padding_bottom . 'em;'; } ?>
-                                    <?php if( $column_right_padding_left ) { echo 'padding-left:' . $column_right_padding_left . 'em;'; } ?>
-                                    <?php if( $column_right_padding_right ) { echo 'padding-right:' . $column_right_padding_right . 'em;'; } ?>
+                                    <?php if( $padding_top ) { echo 'padding-top:' . $padding_top . 'em;'; } ?>
+                                    <?php if( $padding_bottom ) { echo 'padding-bottom:' . $padding_bottom . 'em;'; } ?>
+                                    <?php if( $padding_left ) { echo 'padding-left:' . $padding_left . 'em;'; } ?>
+                                    <?php if( $padding_right ) { echo 'padding-right:' . $padding_right . 'em;'; } ?>
                                 "  
                             >
                                 <?php

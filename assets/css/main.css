@@ -127,11 +127,22 @@ li {
     font-size: 20px;
   }
 }
+.one-column-layout {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .one-column-layout__wrapper {
   position: relative;
   z-index: 5;
 }
 
+.two-column-layout,
+.special-column-layout {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 .two-column-layout__wrapper,
 .special-column-layout__wrapper {
   display: flex;
@@ -168,6 +179,9 @@ li {
 }
 .two-column-layout__column-wrapper,
 .special-column-layout__column-wrapper {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100%;
   position: relative;
   z-index: 5;
@@ -1944,6 +1958,9 @@ li {
 .text-module {
   position: relative;
   z-index: 5;
+}
+.text-module__wrapper ul, .text-module__wrapper ol {
+  margin-left: 2.5em;
 }
 .text-module__wrapper p, .text-module__wrapper li {
   line-height: 1.78em;

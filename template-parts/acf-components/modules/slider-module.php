@@ -5,47 +5,53 @@
 
             $slider_data_source = get_sub_field( 'slider_data_source' );
 
-            $slider_css_id = get_sub_field( 'slider_css_id' );
-            $slider_css_class = get_sub_field( 'slider_css_class' );
-
-            if( have_rows( 'slider_margin_settings' ) ) {
-                while( have_rows( 'slider_margin_settings' ) ) {
+            if( have_rows( 'margin_settings' ) ) {
+                while( have_rows( 'margin_settings' ) ) {
                     the_row();
         
-                    $slider_margin_top = get_sub_field( 'slider_margin_top' );
-                    $slider_margin_bottom = get_sub_field( 'slider_margin_bottom' );
-                    $slider_margin_left = get_sub_field( 'slider_margin_left' );
-                    $slider_margin_right = get_sub_field( 'slider_margin_right' );
+                    $margin_top = get_sub_field( 'margin_top' );
+                    $margin_bottom = get_sub_field( 'margin_bottom' );
+                    $margin_left = get_sub_field( 'margin_left' );
+                    $margin_right = get_sub_field( 'margin_right' );
+                }
+            }
+        
+            if( have_rows( 'padding_settings' ) ) {
+                while( have_rows( 'padding_settings' ) ) {
+                    the_row();
+        
+                    $padding_top = get_sub_field( 'padding_top' );
+                    $padding_bottom = get_sub_field( 'padding_bottom' );
+                    $padding_left = get_sub_field( 'padding_left' );
+                    $padding_right = get_sub_field( 'padding_right' );
                 }
             }
 
-            if( have_rows( 'slider_padding_settings' ) ) {
-                while( have_rows( 'slider_padding_settings' ) ) {
+            if( have_rows( 'id_classes_settings' ) ) {
+                while( have_rows( 'id_classes_settings' ) ) {
                     the_row();
         
-                    $slider_padding_top = get_sub_field( 'slider_padding_top' );
-                    $slider_padding_bottom = get_sub_field( 'slider_padding_bottom' );
-                    $slider_padding_left = get_sub_field( 'slider_padding_left' );
-                    $slider_padding_right = get_sub_field( 'slider_padding_right' );
+                    $css_id = get_sub_field( 'css_id' );
+                    $css_class = get_sub_field( 'css_class' );
                 }
             }
         }
     }
 ?>    
 
-    <div id="<?php if( $slider_css_id ) { echo ' ' . $slider_css_id; } ?>" class="slider-module<?php if( $slider_css_class ) { echo ' ' . $slider_css_class; } ?>">
+    <div id="<?php if( $css_id ) { echo ' ' . $css_id; } ?>" class="slider-module<?php if( $css_class ) { echo ' ' . $css_class; } ?>">
        
         <div class="slider-module__container"
             style="
-                <?php if( $slider_margin_top ) { echo 'margin-top:' . $slider_margin_top . 'em;'; } ?>
-                <?php if( $slider_margin_bottom ) { echo 'margin-bottom:' . $slider_margin_bottom . 'em;'; } ?>
-                <?php if( $slider_margin_left ) { echo 'margin-left:' . $slider_margin_left . 'em;'; } ?>
-                <?php if( $slider_margin_right ) { echo 'margin-right:' . $slider_margin_right . 'em;'; } ?>
+                <?php if( $margin_top ) { echo 'margin-top:' . $margin_top . 'em;'; } ?>
+                <?php if( $margin_bottom ) { echo 'margin-bottom:' . $margin_bottom . 'em;'; } ?>
+                <?php if( $margin_left ) { echo 'margin-left:' . $margin_left . 'em;'; } ?>
+                <?php if( $margin_right ) { echo 'margin-right:' . $margin_right . 'em;'; } ?>
 
-                <?php if( $slider_padding_top ) { echo 'padding-top:' . $slider_padding_top . 'em;'; } ?>
-                <?php if( $slider_padding_bottom ) { echo 'padding-bottom:' . $slider_padding_bottom . 'em;'; } ?>
-                <?php if( $slider_padding_left ) { echo 'padding-left:' . $slider_padding_left . 'em;'; } ?>
-                <?php if( $slider_padding_right ) { echo 'padding-right:' . $slider_padding_right . 'em;'; } ?>
+                <?php if( $padding_top ) { echo 'padding-top:' . $padding_top . 'em;'; } ?>
+                <?php if( $padding_bottom ) { echo 'padding-bottom:' . $padding_bottom . 'em;'; } ?>
+                <?php if( $padding_left ) { echo 'padding-left:' . $padding_left . 'em;'; } ?>
+                <?php if( $padding_right ) { echo 'padding-right:' . $padding_right . 'em;'; } ?>
             "
         >
 

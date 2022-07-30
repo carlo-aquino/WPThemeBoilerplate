@@ -1,4 +1,7 @@
 .one-column-layout {
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
     &__wrapper {
         position: relative;
@@ -8,6 +11,9 @@
 
 .two-column-layout,
 .special-column-layout {
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
 
     &__wrapper {
         display: flex;   
@@ -39,6 +45,9 @@
         }
 
         &-wrapper {
+            background-position:center;
+            background-repeat:no-repeat;
+            background-size:cover;
             height: 100%;
             position: relative;
             z-index: 5;

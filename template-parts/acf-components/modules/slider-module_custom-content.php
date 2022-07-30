@@ -42,11 +42,17 @@
                 }
             }
 
-            $slider_transition_animation = get_sub_field( 'slider_transition_animation' );
-            $slider_transition_direction = get_sub_field( 'slider_transition_direction' );
-            $slider_transition_zoom_direction = get_sub_field( 'slider_transition_zoom_direction' );
-            $slider_transition_duration = get_sub_field( 'slider_transition_duration' );
-            $slider_transition_delay = get_sub_field( 'slider_transition_delay' );
+            if( have_rows( 'animation_settings' ) ) {
+                while( have_rows( 'animation_settings' ) ) {
+                    the_row();
+        
+                    $transition_animation = get_sub_field( 'transition_animation' );
+                    $transition_direction = get_sub_field( 'transition_direction' );
+                    $transition_zoom_direction = get_sub_field( 'transition_zoom_direction' );
+                    $transition_duration = get_sub_field( 'transition_duration' );
+                    $transition_delay = get_sub_field( 'transition_delay' );
+                }
+            }
         }
     }
     
@@ -55,19 +61,19 @@
     <?php if( $slider_type=='slider-type-three' ): ?>
 
         <div class="slider-module__wrapper slider-type-three__gallery-top"
-            <?php if( $slider_transition_animation == 'fade' || $slider_transition_animation == 'flip' || $slider_transition_animation == 'slide' ): ?>
-                data-aos="<?php echo $slider_transition_animation . '-' . $slider_transition_direction; ?>"
+            <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
+                data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
             <?php endif; ?>
             
-            <?php if( $slider_transition_animation == 'zoom' ): ?>
-                data-aos="<?php echo $slider_transition_animation . '-' . $slider_transition_zoom_direction; ?>"
+            <?php if( $transition_animation == 'zoom' ): ?>
+                data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
             <?php endif; ?>
 
-            <?php if( $slider_transition_duration ): ?>
-                data-aos-duration="<?php echo $slider_transition_duration; ?>"
+            <?php if( $transition_duration ): ?>
+                data-aos-duration="<?php echo $transition_duration; ?>"
             <?php endif; ?>
             
-            data-aos-delay="<?php echo $slider_transition_delay; ?>"
+            data-aos-delay="<?php echo $transition_delay; ?>"
         >
         
             <div class="slider-module__cards swiper-wrapper">
@@ -122,7 +128,6 @@
             spaceBetween: 16,
             slidesPerView: 3,
             // loop: true,
-            // freeMode: true,
             loopedSlides: 3,
             watchSlidesProgress: true,
         });
