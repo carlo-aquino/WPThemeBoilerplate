@@ -8,30 +8,26 @@
 
     <?php if( $banner_options=='image' ): ?>
 
-        <?php if( $pageBanner_featuredIMG[0] ): ?>
-            <img src="<?php echo $pageBanner_featuredIMG[0]; ?>" loading="lazy">
+        <?php if( the_post_thumbnail() ): ?>
+            <?php the_post_thumbnail('thumbnail'); ?>
         <?php else: ?>
 
             <?php if( is_front_page() ): ?>
                 <img src="<?php bloginfo('template_directory'); ?>/dist/img/homepage-banner.jpg" alt="Homepage banner" loading="lazy">
-            <?php endif; ?>
 
-            <?php if( is_home() ): ?>
+            <?php elseif( is_home() ): ?>
                 <img src="<?php bloginfo('template_directory'); ?>/dist/img/homepage-banner.jpg" alt="Blog page banner" loading="lazy">
-            <?php endif; ?>
 
-            <?php if( is_page() ): ?>
-                <img src="<?php bloginfo('template_directory'); ?>/dist/img/homepage-banner.jpg" alt="Blog page banner" loading="lazy">
-            <?php endif; ?>
-
-            <?php if( is_singular( 'portfolio' )  ): ?>
+            <?php elseif( is_singular( 'portfolio' )  ): ?>
                 <img src="<?php bloginfo('template_directory'); ?>/dist/img/portfolio-banner.jpg" alt="Portfolio page banner" loading="lazy">
+
+            <?php else: ?>
+                <img src="<?php bloginfo('template_directory'); ?>/dist/img/homepage-banner.jpg" alt="Blog page banner" loading="lazy">    
             <?php endif; ?>
 
         <?php endif; ?>
 
     <?php endif; ?>
-
 
     <?php if( is_category()  ): ?>
         <img src="<?php bloginfo('template_directory'); ?>/dist/img/portfolio-banner.jpg" alt="Archive page banner" loading="lazy">

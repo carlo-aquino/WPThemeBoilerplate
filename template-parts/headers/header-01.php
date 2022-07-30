@@ -63,19 +63,7 @@
         } 
     } 
 
-    if( have_rows( 'page_banner' ) ) {
-        while( have_rows( 'page_banner' ) ){
-            the_row(); 
-            $page_bg_enable = get_sub_field( 'page_bg_enable' );
-
-            if( have_rows( 'banner_type' ) ) {
-                while( have_rows( 'banner_type' ) ){
-                    the_row(); 
-                    $banner_text_toggle = get_sub_field( 'banner_text_toggle' );
-                }  
-            }
-        }  
-    }
+    
 ?>
     
     <header id="header-01" class="header <?php if($sticky_header) { echo 'sticky'; } ?>"
@@ -86,9 +74,28 @@
     >
         <div class="header-container <?php if( !$header_section_width ) { echo 'content-limit'; } ?>">
             <div class="header-left">
-                <a href="<?php echo site_url(''); ?>">
+                <a href="<?php echo get_home_url(); ?>">
                     
-                    <?php if( !$page_bg_enable || !$banner_text_toggle ) { echo '<h1>' . $company_name . '</h1>'; } ?>
+                    <?php 
+                        if( have_rows( 'page_banner' ) ) {
+                            while( have_rows( 'page_banner' ) ){
+                                the_row(); 
+                                $page_bg_enable = get_sub_field( 'page_bg_enable' );
+                    
+                                if( have_rows( 'banner_type' ) ) {
+                                    while( have_rows( 'banner_type' ) ){
+                                        the_row(); 
+                                        $banner_text_toggle = get_sub_field( 'banner_text_toggle' );
+
+                                        if( !$page_bg_enable || !$banner_text_toggle ) { echo '<h1>' . $company_name . '</h1>'; }
+                                    }  
+                                }
+                            }  
+                        }
+                    ?>
+
+                    <?php $banner = get_field('page_banner'); if( !$banner ) { echo '<h1>' . $company_name . '</h1>'; } ?>
+
                     <img class="header-logo"
                         src="
                             <?php

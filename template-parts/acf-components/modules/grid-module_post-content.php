@@ -9,6 +9,7 @@
             $grid_type = get_sub_field( 'grid_type' );
 
             $grid_data_source = get_sub_field( 'grid_data_source' );
+            $grid_data_source_filter = get_sub_field( 'grid_data_source_filter' );
             $grid_items_per_row = get_sub_field( 'grid_items_per_row' );
             $grid_gap = get_sub_field( 'grid_gap' );
             
@@ -24,7 +25,7 @@
                 }
             }
             
-            $ctr = $grid_transition_delay;
+            $ctr = $transition_delay;
 
             if( have_rows( 'grid_post_settings' ) ) {
                 while( have_rows( 'grid_post_settings' ) ) {
@@ -49,8 +50,6 @@
         'paged'                 => $paged,
         'ignore_sticky_posts'   => 1,
     ));
-
-    
 ?>
     <?php if( $grid_post_query->have_posts() ): ?>
 

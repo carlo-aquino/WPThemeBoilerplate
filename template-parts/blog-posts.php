@@ -1,4 +1,4 @@
-<?php if( have_posts() ): ?>
+<?php $ctr = 0; if( have_posts() ): ?>
 
     <section class="blog-posts mobile-spacer">
 
