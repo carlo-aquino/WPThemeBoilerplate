@@ -12,7 +12,7 @@
         add_theme_support('widgets');
 
         // deactivate new block editor for widgets
-        remove_theme_support( 'widgets-block-editor' );
+        // remove_theme_support( 'widgets-block-editor' );
     }
 
     add_action( 'after_setup_theme', 'site_features' );

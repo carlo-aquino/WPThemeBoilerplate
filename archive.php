@@ -5,7 +5,6 @@
         <?php
 
             get_template_part( 'template-parts/page', 'banner' );
-
             get_template_part( 'template-parts/blog', 'posts' );
             
         ?>
