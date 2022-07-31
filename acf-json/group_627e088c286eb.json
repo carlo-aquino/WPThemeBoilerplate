@@ -552,7 +552,7 @@
                                                                             "display": "block",
                                                                             "sub_fields": [
                                                                                 {
-                                                                                    "key": "field_62d5235ea9772",
+                                                                                    "key": "field_62e67a76f841b",
                                                                                     "label": "Image Settings",
                                                                                     "name": "image_module_settings",
                                                                                     "type": "clone",
@@ -565,7 +565,7 @@
                                                                                         "id": ""
                                                                                     },
                                                                                     "clone": [
-                                                                                        "field_622ee2700a64f"
+                                                                                        "field_62e661597c44c"
                                                                                     ],
                                                                                     "display": "seamless",
                                                                                     "layout": "block",
@@ -2889,6 +2889,263 @@
                                             "acfe_flexible_render_script": false,
                                             "acfe_flexible_category": false
                                         },
+                                        "layout_622ed799c2a60": {
+                                            "key": "layout_622ed799c2a60",
+                                            "name": "google_map_module",
+                                            "label": "Google Map",
+                                            "display": "block",
+                                            "sub_fields": [
+                                                {
+                                                    "key": "field_622ee2700a64f",
+                                                    "label": "Google Map settings",
+                                                    "name": "google_map_module_settings",
+                                                    "type": "group",
+                                                    "instructions": "",
+                                                    "required": 0,
+                                                    "conditional_logic": 0,
+                                                    "wrapper": {
+                                                        "width": "",
+                                                        "class": "",
+                                                        "id": ""
+                                                    },
+                                                    "layout": "block",
+                                                    "acfe_seamless_style": 0,
+                                                    "acfe_group_modal": 0,
+                                                    "sub_fields": [
+                                                        {
+                                                            "key": "field_622ee2700a650",
+                                                            "label": "Content",
+                                                            "name": "",
+                                                            "type": "tab",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "placement": "top",
+                                                            "endpoint": 0
+                                                        },
+                                                        {
+                                                            "key": "field_622ee2700a651",
+                                                            "label": "Content",
+                                                            "name": "",
+                                                            "type": "accordion",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "open": 0,
+                                                            "multi_expand": 0,
+                                                            "endpoint": 1
+                                                        },
+                                                        {
+                                                            "key": "field_622ee2700a652",
+                                                            "label": "Address",
+                                                            "name": "google_map_address",
+                                                            "type": "textarea",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "default_value": "",
+                                                            "placeholder": "",
+                                                            "maxlength": "",
+                                                            "rows": "",
+                                                            "new_lines": "",
+                                                            "acfe_textarea_code": 0
+                                                        },
+                                                        {
+                                                            "key": "field_622ee2700a655",
+                                                            "label": "Design",
+                                                            "name": "",
+                                                            "type": "tab",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "placement": "top",
+                                                            "endpoint": 0
+                                                        },
+                                                        {
+                                                            "key": "field_622ee2700a657",
+                                                            "label": "Spacing",
+                                                            "name": "",
+                                                            "type": "accordion",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "open": 0,
+                                                            "multi_expand": 0,
+                                                            "endpoint": 1
+                                                        },
+                                                        {
+                                                            "key": "field_62e508d189533",
+                                                            "label": "Margin",
+                                                            "name": "margin",
+                                                            "type": "clone",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "clone": [
+                                                                "field_622ee2700a69e"
+                                                            ],
+                                                            "display": "seamless",
+                                                            "layout": "block",
+                                                            "prefix_label": 0,
+                                                            "prefix_name": 0
+                                                        },
+                                                        {
+                                                            "key": "field_62e508e289534",
+                                                            "label": "Padding",
+                                                            "name": "padding",
+                                                            "type": "clone",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "clone": [
+                                                                "field_622ee2700a6a3"
+                                                            ],
+                                                            "display": "seamless",
+                                                            "layout": "block",
+                                                            "prefix_label": 0,
+                                                            "prefix_name": 0
+                                                        },
+                                                        {
+                                                            "key": "field_622ee2700a662",
+                                                            "label": "Advanced",
+                                                            "name": "",
+                                                            "type": "tab",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "placement": "top",
+                                                            "endpoint": 0
+                                                        },
+                                                        {
+                                                            "key": "field_62b18777455a4",
+                                                            "label": "Transition",
+                                                            "name": "",
+                                                            "type": "accordion",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "open": 0,
+                                                            "multi_expand": 0,
+                                                            "endpoint": 0
+                                                        },
+                                                        {
+                                                            "key": "field_62e5091089535",
+                                                            "label": "Animation",
+                                                            "name": "animation",
+                                                            "type": "clone",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "clone": [
+                                                                "field_62e4bb361fbd7"
+                                                            ],
+                                                            "display": "seamless",
+                                                            "layout": "block",
+                                                            "prefix_label": 0,
+                                                            "prefix_name": 0
+                                                        },
+                                                        {
+                                                            "key": "field_622ee2700a663",
+                                                            "label": "CSS ID & Classes",
+                                                            "name": "",
+                                                            "type": "accordion",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "open": 0,
+                                                            "multi_expand": 0,
+                                                            "endpoint": 0
+                                                        },
+                                                        {
+                                                            "key": "field_62e5095289536",
+                                                            "label": "ID & Classes",
+                                                            "name": "id_&_classes",
+                                                            "type": "clone",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "clone": [
+                                                                "field_62e4c11e04ff7"
+                                                            ],
+                                                            "display": "seamless",
+                                                            "layout": "block",
+                                                            "prefix_label": 0,
+                                                            "prefix_name": 0
+                                                        }
+                                                    ]
+                                                }
+                                            ],
+                                            "min": "",
+                                            "max": "",
+                                            "acfe_flexible_modal_edit_size": "",
+                                            "acfe_flexible_settings": "",
+                                            "acfe_flexible_settings_size": "medium",
+                                            "acfe_flexible_thumbnail": "",
+                                            "acfe_flexible_render_template": false,
+                                            "acfe_flexible_render_style": false,
+                                            "acfe_flexible_render_script": false,
+                                            "acfe_flexible_category": false
+                                        },
                                         "layout_626b1e877ac4c": {
                                             "key": "layout_626b1e877ac4c",
                                             "name": "grid_module",
@@ -3693,14 +3950,14 @@
                                             "acfe_flexible_render_script": false,
                                             "acfe_flexible_category": false
                                         },
-                                        "layout_622ed799c2a60": {
-                                            "key": "layout_622ed799c2a60",
+                                        "layout_62e661597c44b": {
+                                            "key": "layout_62e661597c44b",
                                             "name": "image_module",
                                             "label": "Image",
                                             "display": "block",
                                             "sub_fields": [
                                                 {
-                                                    "key": "field_622ee2700a64f",
+                                                    "key": "field_62e661597c44c",
                                                     "label": "Image settings",
                                                     "name": "image_module_settings",
                                                     "type": "group",
@@ -3715,12 +3972,9 @@
                                                     "layout": "block",
                                                     "acfe_seamless_style": 0,
                                                     "acfe_group_modal": 0,
-                                                    "acfe_group_modal_close": 0,
-                                                    "acfe_group_modal_button": "",
-                                                    "acfe_group_modal_size": "large",
                                                     "sub_fields": [
                                                         {
-                                                            "key": "field_622ee2700a650",
+                                                            "key": "field_62e661597c44d",
                                                             "label": "Content",
                                                             "name": "",
                                                             "type": "tab",
@@ -3736,7 +3990,7 @@
                                                             "endpoint": 0
                                                         },
                                                         {
-                                                            "key": "field_622ee2700a651",
+                                                            "key": "field_62e661597c44e",
                                                             "label": "Image",
                                                             "name": "",
                                                             "type": "accordion",
@@ -3753,7 +4007,7 @@
                                                             "endpoint": 0
                                                         },
                                                         {
-                                                            "key": "field_622ee2700a652",
+                                                            "key": "field_62e661597c44f",
                                                             "label": "Content",
                                                             "name": "image_content",
                                                             "type": "image",
@@ -3769,17 +4023,17 @@
                                                             "acfe_thumbnail": 0,
                                                             "return_format": "array",
                                                             "preview_size": "medium",
+                                                            "library": "all",
                                                             "min_width": "",
                                                             "min_height": "",
                                                             "min_size": "",
                                                             "max_width": "",
                                                             "max_height": "",
                                                             "max_size": "",
-                                                            "mime_types": "",
-                                                            "library": "all"
+                                                            "mime_types": ""
                                                         },
                                                         {
-                                                            "key": "field_624e90339792e",
+                                                            "key": "field_62e661597c450",
                                                             "label": "Size",
                                                             "name": "image_size",
                                                             "type": "select",
@@ -3801,12 +4055,14 @@
                                                             "allow_null": 0,
                                                             "multiple": 0,
                                                             "ui": 0,
-                                                            "return_format": "value",
                                                             "ajax": 0,
-                                                            "placeholder": ""
+                                                            "return_format": "value",
+                                                            "allow_custom": 0,
+                                                            "placeholder": "",
+                                                            "search_placeholder": ""
                                                         },
                                                         {
-                                                            "key": "field_622ee2700a653",
+                                                            "key": "field_62e661597c451",
                                                             "label": "Link",
                                                             "name": "",
                                                             "type": "accordion",
@@ -3823,7 +4079,7 @@
                                                             "endpoint": 1
                                                         },
                                                         {
-                                                            "key": "field_62336d619efb4",
+                                                            "key": "field_62e661597c452",
                                                             "label": "Lightbox",
                                                             "name": "image_lightbox",
                                                             "type": "true_false",
@@ -3842,7 +4098,7 @@
                                                             "ui_off_text": ""
                                                         },
                                                         {
-                                                            "key": "field_622ee2700a654",
+                                                            "key": "field_62e661597c453",
                                                             "label": "Image link URL",
                                                             "name": "image_link",
                                                             "type": "link",
@@ -3851,7 +4107,7 @@
                                                             "conditional_logic": [
                                                                 [
                                                                     {
-                                                                        "field": "field_62336d619efb4",
+                                                                        "field": "field_62e661597c452",
                                                                         "operator": "!=",
                                                                         "value": "1"
                                                                     }
@@ -3865,7 +4121,7 @@
                                                             "return_format": "array"
                                                         },
                                                         {
-                                                            "key": "field_622ee2700a655",
+                                                            "key": "field_62e661597c454",
                                                             "label": "Design",
                                                             "name": "",
                                                             "type": "tab",
@@ -3881,7 +4137,7 @@
                                                             "endpoint": 0
                                                         },
                                                         {
-                                                            "key": "field_622ee2700a656",
+                                                            "key": "field_62e661597c455",
                                                             "label": "Sizing",
                                                             "name": "",
                                                             "type": "accordion",
@@ -3898,7 +4154,7 @@
                                                             "endpoint": 0
                                                         },
                                                         {
-                                                            "key": "field_624e6e01b5b50",
+                                                            "key": "field_62e661597c456",
                                                             "label": "Width",
                                                             "name": "image_width",
                                                             "type": "range",
@@ -3918,7 +4174,7 @@
                                                             "append": "px"
                                                         },
                                                         {
-                                                            "key": "field_624e6e45b5b51",
+                                                            "key": "field_62e661597c457",
                                                             "label": "Height",
                                                             "name": "image_height",
                                                             "type": "range",
@@ -3938,7 +4194,7 @@
                                                             "append": "px"
                                                         },
                                                         {
-                                                            "key": "field_624e6e7bb5b52",
+                                                            "key": "field_62e661597c458",
                                                             "label": "Max width",
                                                             "name": "image_max_width",
                                                             "type": "range",
@@ -3958,7 +4214,7 @@
                                                             "append": "px"
                                                         },
                                                         {
-                                                            "key": "field_624e6ea5b5b53",
+                                                            "key": "field_62e661597c459",
                                                             "label": "Max height",
                                                             "name": "image_max_height",
                                                             "type": "range",
@@ -3978,7 +4234,7 @@
                                                             "append": "px"
                                                         },
                                                         {
-                                                            "key": "field_622ee2700a657",
+                                                            "key": "field_62e661597c45a",
                                                             "label": "Spacing",
                                                             "name": "",
                                                             "type": "accordion",
@@ -3995,7 +4251,7 @@
                                                             "endpoint": 1
                                                         },
                                                         {
-                                                            "key": "field_62e508d189533",
+                                                            "key": "field_62e661597c45b",
                                                             "label": "Margin",
                                                             "name": "margin",
                                                             "type": "clone",
@@ -4013,10 +4269,15 @@
                                                             "display": "seamless",
                                                             "layout": "block",
                                                             "prefix_label": 0,
-                                                            "prefix_name": 0
+                                                            "prefix_name": 0,
+                                                            "acfe_seamless_style": 0,
+                                                            "acfe_clone_modal": 0,
+                                                            "acfe_clone_modal_close": 0,
+                                                            "acfe_clone_modal_button": "",
+                                                            "acfe_clone_modal_size": "large"
                                                         },
                                                         {
-                                                            "key": "field_62e508e289534",
+                                                            "key": "field_62e661597c45c",
                                                             "label": "Padding",
                                                             "name": "padding",
                                                             "type": "clone",
@@ -4034,10 +4295,15 @@
                                                             "display": "seamless",
                                                             "layout": "block",
                                                             "prefix_label": 0,
-                                                            "prefix_name": 0
+                                                            "prefix_name": 0,
+                                                            "acfe_seamless_style": 0,
+                                                            "acfe_clone_modal": 0,
+                                                            "acfe_clone_modal_close": 0,
+                                                            "acfe_clone_modal_button": "",
+                                                            "acfe_clone_modal_size": "large"
                                                         },
                                                         {
-                                                            "key": "field_622ee2700a662",
+                                                            "key": "field_62e661597c45d",
                                                             "label": "Advanced",
                                                             "name": "",
                                                             "type": "tab",
@@ -4053,7 +4319,7 @@
                                                             "endpoint": 0
                                                         },
                                                         {
-                                                            "key": "field_62b18777455a4",
+                                                            "key": "field_62e661597c45e",
                                                             "label": "Transition",
                                                             "name": "",
                                                             "type": "accordion",
@@ -4070,7 +4336,7 @@
                                                             "endpoint": 0
                                                         },
                                                         {
-                                                            "key": "field_62e5091089535",
+                                                            "key": "field_62e661597c45f",
                                                             "label": "Animation",
                                                             "name": "animation",
                                                             "type": "clone",
@@ -4088,10 +4354,15 @@
                                                             "display": "seamless",
                                                             "layout": "block",
                                                             "prefix_label": 0,
-                                                            "prefix_name": 0
+                                                            "prefix_name": 0,
+                                                            "acfe_seamless_style": 0,
+                                                            "acfe_clone_modal": 0,
+                                                            "acfe_clone_modal_close": 0,
+                                                            "acfe_clone_modal_button": "",
+                                                            "acfe_clone_modal_size": "large"
                                                         },
                                                         {
-                                                            "key": "field_622ee2700a663",
+                                                            "key": "field_62e661597c460",
                                                             "label": "CSS ID & Classes",
                                                             "name": "",
                                                             "type": "accordion",
@@ -4108,7 +4379,7 @@
                                                             "endpoint": 0
                                                         },
                                                         {
-                                                            "key": "field_62e5095289536",
+                                                            "key": "field_62e661597c461",
                                                             "label": "ID & Classes",
                                                             "name": "id_&_classes",
                                                             "type": "clone",
@@ -4126,7 +4397,12 @@
                                                             "display": "seamless",
                                                             "layout": "block",
                                                             "prefix_label": 0,
-                                                            "prefix_name": 0
+                                                            "prefix_name": 0,
+                                                            "acfe_seamless_style": 0,
+                                                            "acfe_clone_modal": 0,
+                                                            "acfe_clone_modal_close": 0,
+                                                            "acfe_clone_modal_button": "",
+                                                            "acfe_clone_modal_size": "large"
                                                         }
                                                     ]
                                                 }
@@ -5370,7 +5646,7 @@
                                                                             "display": "block",
                                                                             "sub_fields": [
                                                                                 {
-                                                                                    "key": "field_62d65908c42f2",
+                                                                                    "key": "field_62e67a11f841a",
                                                                                     "label": "Image Settings",
                                                                                     "name": "image_module_settings",
                                                                                     "type": "clone",
@@ -5383,17 +5659,12 @@
                                                                                         "id": ""
                                                                                     },
                                                                                     "clone": [
-                                                                                        "field_622ee2700a64f"
+                                                                                        "field_62e661597c44c"
                                                                                     ],
                                                                                     "display": "seamless",
                                                                                     "layout": "block",
                                                                                     "prefix_label": 0,
-                                                                                    "prefix_name": 0,
-                                                                                    "acfe_seamless_style": 0,
-                                                                                    "acfe_clone_modal": 0,
-                                                                                    "acfe_clone_modal_close": 0,
-                                                                                    "acfe_clone_modal_button": "",
-                                                                                    "acfe_clone_modal_size": "large"
+                                                                                    "prefix_name": 0
                                                                                 }
                                                                             ],
                                                                             "min": "",
@@ -9199,5 +9470,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1659263997
+    "modified": 1659271831
 }

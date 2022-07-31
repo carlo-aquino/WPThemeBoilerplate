@@ -253,6 +253,10 @@
                                             if( get_row_layout() == 'gallery_module' ) {
                                                 get_template_part( 'template-parts/acf-components/modules/gallery', 'module' );
                                             }
+
+                                            if( get_row_layout() == 'google_map_module' ) {
+                                                get_template_part( 'template-parts/acf-components/modules/google_map', 'module' );
+                                            }
                 
                                             if( get_row_layout() == 'grid_module' ) {
                                                 get_template_part( 'template-parts/acf-components/modules/grid', 'module' );
@@ -419,12 +423,12 @@
                                                 get_template_part( 'template-parts/acf-components/modules/empty_space', 'module' );
                                             }
                 
-                                            if( get_row_layout() == 'featured_slider_module' ) {
-                                                get_template_part( 'template-parts/acf-components/modules/featured_slider', 'module' );
-                                            }
-                
                                             if( get_row_layout() == 'gallery_module' ) {
                                                 get_template_part( 'template-parts/acf-components/modules/gallery', 'module' );
+                                            }
+
+                                            if( get_row_layout() == 'google_map_module' ) {
+                                                get_template_part( 'template-parts/acf-components/modules/google_map', 'module' );
                                             }
                 
                                             if( get_row_layout() == 'grid_module' ) {
@@ -591,12 +595,12 @@
                                                 get_template_part( 'template-parts/acf-components/modules/empty_space', 'module' );
                                             }
                 
-                                            if( get_row_layout() == 'featured_slider_module' ) {
-                                                get_template_part( 'template-parts/acf-components/modules/featured_slider', 'module' );
-                                            }
-                
                                             if( get_row_layout() == 'gallery_module' ) {
                                                 get_template_part( 'template-parts/acf-components/modules/gallery', 'module' );
+                                            }
+
+                                            if( get_row_layout() == 'google_map_module' ) {
+                                                get_template_part( 'template-parts/acf-components/modules/google_map', 'module' );
                                             }
                 
                                             if( get_row_layout() == 'grid_module' ) {

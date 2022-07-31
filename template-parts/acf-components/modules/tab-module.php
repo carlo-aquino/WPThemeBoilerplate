@@ -104,7 +104,7 @@
                                 }
                             ?>
 
-                                <li class="tab-module__tab<?php if( $css_class ) { echo ' ' . $css_class; } ?>" data-tab-target="<?php echo '#tab-content-' . $randID . '-' . $tabHeadingCTR; ?>">
+                                <li class="tab-module__tab<?php if( $css_class ) { echo ' ' . $css_class; } if( $tabHeadingCTR == 1 ) { echo ' active'; } ?>" data-tab-target="<?php echo '#tab-content-' . $randID . '-' . $tabHeadingCTR; ?>">
                                     <?php echo $tab_heading; ?>
                                 </li>
 
@@ -133,7 +133,7 @@
 
                             <div
                                 id="<?php echo 'tab-content-' . $randID . '-' . $tabContentCTR; if( $css_id ) { echo ' ' . $css_id; } ?>"
-                                class="tab-module__content-container<?php if( $css_class ) { echo ' ' . $css_class; } ?>"
+                                class="tab-module__content-container<?php if( $css_class ) { echo ' ' . $css_class; } if( $tabContentCTR == 1 ) { echo ' active'; } ?>"
                                 data-tab-content>  
                                 
                                 <?php

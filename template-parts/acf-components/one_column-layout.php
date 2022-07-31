@@ -137,6 +137,10 @@
                                 get_template_part( 'template-parts/acf-components/modules/gallery', 'module' );
                             }
 
+                            if( get_row_layout() == 'google_map_module' ) {
+                                get_template_part( 'template-parts/acf-components/modules/google_map', 'module' );
+                            }
+
                             if( get_row_layout() == 'grid_module' ) {
                                 get_template_part( 'template-parts/acf-components/modules/grid', 'module' );
                             }

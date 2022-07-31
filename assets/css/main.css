@@ -443,6 +443,7 @@ li {
 #header-01 {
   align-items: center;
   background: #a74799;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
   display: flex;
   height: 4.4rem;
   padding: 0 2.22em;
@@ -611,6 +612,7 @@ li {
 
 #header-01-mobile-header {
   background: #a74799;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.08);
   display: none;
   height: 88px;
   padding: 0 2.22em;
@@ -1608,6 +1610,15 @@ li {
   .gallery-module__content.grid-per-row__02, .gallery-module__content.grid-per-row__03, .gallery-module__content.grid-per-row__04 {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.google-map-module {
+  height: 100%;
+  width: 100%;
+}
+.google-map-module__wrapper {
+  height: 100%;
+  width: 100%;
 }
 
 .grid-module__wrapper {

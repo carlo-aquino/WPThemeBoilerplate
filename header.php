@@ -12,6 +12,7 @@
         while( have_rows('custom_header', 'option') ) {
             the_row();
             $header_type = get_sub_field( 'header_type', 'option' );
+            $header_navigation_color = get_sub_field( 'header_navigation_color', 'option' );
         } 
     }   
 
@@ -347,6 +348,12 @@
 
             .featured-slider-module__cards.slider-right .swiper-scrollbar-drag {
                 background: <?php echo $accent_color; ?>;
+            }
+        <?php endif; ?>
+
+        <?php if( $header_navigation_color ): ?>
+            #header-01 .header-right nav ul li a {
+                color: <?php echo $header_navigation_color; ?>;
             }
         <?php endif; ?>
 
