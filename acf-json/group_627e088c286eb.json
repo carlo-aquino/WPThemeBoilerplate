@@ -108,7 +108,7 @@
                                     "acfe_flexible_remove_button": [],
                                     "acfe_flexible_modal_edit": {
                                         "acfe_flexible_modal_edit_enabled": "1",
-                                        "acfe_flexible_modal_edit_size": "small"
+                                        "acfe_flexible_modal_edit_size": "medium"
                                     },
                                     "acfe_flexible_modal": {
                                         "acfe_flexible_modal_enabled": "1",
@@ -5828,7 +5828,7 @@
                                                             "required": 0,
                                                             "conditional_logic": 0,
                                                             "wrapper": {
-                                                                "width": "",
+                                                                "width": "50",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -5849,7 +5849,7 @@
                                                             "required": 0,
                                                             "conditional_logic": 0,
                                                             "wrapper": {
-                                                                "width": "",
+                                                                "width": "50",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -6092,7 +6092,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "20",
+                                                "width": "40",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6126,7 +6126,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": "80",
+                                                "width": "60",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6149,7 +6149,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": "20",
+                                                "width": "60",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6183,7 +6183,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": "10",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6210,7 +6210,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": "25",
+                                                "width": "37.5",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6233,7 +6233,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": "25",
+                                                "width": "37.5",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6289,7 +6289,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "12.5",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6310,7 +6310,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "12.5",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6331,7 +6331,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "12.5",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6352,7 +6352,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "12.5",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6392,7 +6392,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "12.5",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6413,7 +6413,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "12.5",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6434,7 +6434,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "12.5",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6455,7 +6455,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "12.5",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6528,7 +6528,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "35",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6568,7 +6568,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": "35",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6604,7 +6604,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": "35",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6630,7 +6630,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "15",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6651,7 +6651,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "15",
+                                                "width": "25",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6708,7 +6708,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "55",
+                                                "width": "100",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -6727,7 +6727,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "55",
+                                                "width": "100",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -9199,5 +9199,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1659206065
+    "modified": 1659263997
 }
