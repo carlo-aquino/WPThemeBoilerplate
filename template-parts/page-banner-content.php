@@ -1,15 +1,16 @@
 <?php 
     $page_for_posts = get_queried_object_id();
-    $pageBanner_featuredIMG = wp_get_attachment_image_src( get_post_thumbnail_id( $page_for_posts ), 'full' ); 
     $banner_options = get_sub_field( 'banner_options' ); 
     $banner_video_file =  get_sub_field('banner_video_file');
+
+    $featuredimage = get_the_post_thumbnail_url();
 ?>
 
 
     <?php if( $banner_options=='image' ): ?>
 
-        <?php if( the_post_thumbnail() ): ?>
-            <?php the_post_thumbnail('thumbnail'); ?>
+        <?php if( $featuredimage ): ?>
+            <img src="<?php echo $featuredimage; ?>" alt="<?php the_title(); ?>">
         <?php else: ?>
 
             <?php if( is_front_page() ): ?>
