@@ -199,16 +199,6 @@
                 border-color: <?php echo $secondary_color; ?>;
             }
 
-            .page-404__right-content__quick-links__links ul li a {
-                background-color: <?php echo $secondary_color; ?>;
-                border-color: <?php echo $secondary_color; ?>;
-            }
-
-            .page-404__right-content__quick-links__links ul li a:hover {
-                border-color: <?php echo $secondary_color; ?>;
-                color: <?php echo $secondary_color; ?>;
-            }
-
             .button-module__wrapper span {
                 background: <?php echo $secondary_color; ?>;
                 border: 1px solid <?php echo $secondary_color; ?>;
@@ -260,6 +250,15 @@
             }
 
             .add-icon-03 {
+                color: <?php echo $accent_color; ?>;
+            }
+
+            .page-404__right-content__quick-links__links ul li a {
+                background-color: <?php echo $accent_color; ?>;
+                border-color: <?php echo $accent_color; ?>;
+            }
+
+            .page-404__right-content__quick-links__links ul li a:hover {
                 color: <?php echo $accent_color; ?>;
             }
 

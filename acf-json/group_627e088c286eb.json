@@ -2961,9 +2961,30 @@
                                                             "default_value": "",
                                                             "placeholder": "",
                                                             "maxlength": "",
-                                                            "rows": "",
+                                                            "rows": 4,
                                                             "new_lines": "",
                                                             "acfe_textarea_code": 0
+                                                        },
+                                                        {
+                                                            "key": "field_62e77788938fe",
+                                                            "label": "Map height",
+                                                            "name": "google_map_height",
+                                                            "type": "number",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "50",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "default_value": "",
+                                                            "placeholder": "",
+                                                            "prepend": "",
+                                                            "append": "",
+                                                            "min": "",
+                                                            "max": "",
+                                                            "step": ""
                                                         },
                                                         {
                                                             "key": "field_622ee2700a655",
@@ -9470,5 +9491,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1659271831
+    "modified": 1659336741
 }

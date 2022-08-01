@@ -198,8 +198,8 @@
             width: 20.67rem;
 
             .background-overlay {
-                background: rgb(225,143,34);
-                background: linear-gradient(0deg, rgba(225,143,34,0.9023984593837535) 0%, rgba(255,255,255,0) 40%);
+                background: $primaryColor;
+                background: linear-gradient(0deg, rgba($primaryColor, 0.9023984593837535) 0%, rgba(255,255,255,0) 40%);
                 display: block;
             }
 

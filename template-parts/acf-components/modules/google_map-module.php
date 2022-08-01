@@ -4,6 +4,7 @@
         the_row();
 
         $google_map_address = get_sub_field( 'google_map_address' );
+        $google_map_height = get_sub_field( 'google_map_height' );
 
         if( have_rows( 'margin_settings' ) ) {
             while( have_rows( 'margin_settings' ) ) {
@@ -81,7 +82,7 @@
 
                 <iframe
                     width="100%"
-                    height="100%"
+                    height="<?php if( $google_map_height ) { echo $google_map_height; } else { echo '100%'; } ?>"
                     style="border:0"
                     loading="lazy"
                     allowfullscreen
