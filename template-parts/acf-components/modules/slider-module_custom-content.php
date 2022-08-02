@@ -99,8 +99,8 @@
 
             <?php if( $slider_arrow ): ?>
                 <div class="slider-module__arrows slider-03">
-                    <div class="slider-module__arrow slider-module__arrow-prev"></div>
-                    <div class="slider-module__arrow slider-module__arrow-next"></div>    
+                    <div class="slider-module__arrow swiper-button-prev slider-module__arrow-prev"></div>
+                    <div class="slider-module__arrow swiper-button-next slider-module__arrow-next"></div>    
                 </div>
             <?php endif; ?>           
         </div>
@@ -138,8 +138,8 @@
             loop: true,
             loopedSlides: 3,
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.slider-module__arrow-next',
+                prevEl: '.slider-module__arrow-prev',
             },
 
             thumbs: {
