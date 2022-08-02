@@ -62,13 +62,13 @@
         'order'                 => $slider_order,
         'ignore_sticky_posts'   => 1,
 
-        'tax_query' => array(
-            array (
-                'taxonomy' => $slider_data_source_category->taxonomy,
-                'field' => 'slug',
-                'terms' => $slider_data_source_category->slug,
-            )
-        ),
+        // 'tax_query' => array(
+        //     array (
+        //         'taxonomy' => $slider_data_source_category->taxonomy,
+        //         'field' => 'slug',
+        //         'terms' => $slider_data_source_category->slug,
+        //     )
+        // ),
     ));
     
 ?>        

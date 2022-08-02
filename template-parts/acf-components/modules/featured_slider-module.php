@@ -42,19 +42,19 @@
     }
 
     $slider_post_query = new WP_Query(array(
-        'post_type'             => $featured_slider_data_source,
+        'post_type'             => $featured_slider_data_source->name,
         'posts_per_page'        => -1,
         'orderby'               => 'title',
         'order'                 => 'ASC',
         'ignore_sticky_posts'   => 1,
 
-        'tax_query' => array(
-            array (
-                'taxonomy' => $featured_slider_data_source_filter->taxonomy,
-                'field' => 'slug',
-                'terms' => $featured_slider_data_source_filter->slug,
-            )
-        ),
+        // 'tax_query' => array(
+        //     array (
+        //         'taxonomy' => $featured_slider_data_source_filter,
+        //         'field' => 'slug',
+        //         'terms' => $featured_slider_data_source_filter,
+        //     )
+        // ),
     )); 
 ?>
 

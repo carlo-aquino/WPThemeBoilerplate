@@ -8,7 +8,7 @@
             'menu_position'     => 5,
             'has_archive'       => false,
             'labels'            => array (
-                                    'name'          => 'Portfolio',
+                                    'name'          => 'portfolio',
                                     'add_new_item'  => 'Add New Portfolio',
                                     'all_items'     => 'All Portfolios',
                                     'singular_name' => 'Portfolio'
