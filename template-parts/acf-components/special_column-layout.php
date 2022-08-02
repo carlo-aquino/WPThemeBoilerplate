@@ -98,6 +98,8 @@
             data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
         <?php endif; ?>
 
+        data-aos="<?php echo $transition_animation; ?>"
+
         <?php if( $transition_duration ): ?>
             data-aos-duration="<?php echo $transition_duration; ?>"
         <?php endif; ?>
@@ -191,6 +193,8 @@
                             <?php if( $transition_animation == 'zoom' ): ?>
                                 data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
                             <?php endif; ?>
+
+                            data-aos="<?php echo $transition_animation; ?>"
 
                             <?php if( $transition_duration ): ?>
                                 data-aos-duration="<?php echo $transition_duration; ?>"
@@ -365,6 +369,8 @@
                                 data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
                             <?php endif; ?>
 
+                            data-aos="<?php echo $transition_animation; ?>"
+
                             <?php if( $transition_duration ): ?>
                                 data-aos-duration="<?php echo $transition_duration; ?>"
                             <?php endif; ?>
@@ -536,6 +542,8 @@
                             <?php if( $transition_animation == 'zoom' ): ?>
                                 data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
                             <?php endif; ?>
+
+                            data-aos="<?php echo $transition_animation; ?>"
 
                             <?php if( $transition_duration ): ?>
                                 data-aos-duration="<?php echo $transition_duration; ?>"

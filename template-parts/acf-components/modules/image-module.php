@@ -88,6 +88,8 @@
             <?php if( $transition_duration ): ?>
                 data-aos-duration="<?php echo $transition_duration; ?>"
             <?php endif; ?>
+
+            data-aos="<?php echo $transition_animation; ?>"
             
             data-aos-delay="<?php echo $transition_delay; ?>"
         >

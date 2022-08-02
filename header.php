@@ -233,8 +233,8 @@
                 background: <?php echo $accent_color; ?>;
             }
 
-            #header-01 .header-right nav ul li:hover > a {
-                border-bottom: 5px solid <?php echo $accent_color; ?>;
+            #header-01 .header-right nav ul li a {
+                background-image: linear-gradient(90deg, <?php echo $accent_color; ?>, <?php echo $accent_color; ?>);
             }
 
             .mobile-header__drawer-content nav ul li ul li {

@@ -190,8 +190,6 @@
     });
 
     var sliderRight = new Swiper('.slider-right', {
-        // slidesPerView: 2.5,
-        // spaceBetween: 24,
         grabCursor: true,
 
         touchRatio: 0.2,
@@ -206,11 +204,16 @@
 
         breakpoints: {
             980: {
+                slidesPerView: 1.5,
+                spaceBetween: 20,
+            },
+
+            1280: {
                 slidesPerView: 2,
                 spaceBetween: 20,
             },
 
-            1400: {
+            1600: {
                 slidesPerView: 2.5,
                 spaceBetween: 24,
             },
@@ -223,8 +226,8 @@
     var sliderMobile = new Swiper('.slider-mobile', {
         grabCursor: true,
         centeredSlides: true,
-        slidesPerView: 'auto',
-        initialSlide: 1,
+        slidesPerView: 1.5,
+        initialSlide: 2,
         slidesPerGroup: 1,
         spaceBetween: 24,
         loop: true,

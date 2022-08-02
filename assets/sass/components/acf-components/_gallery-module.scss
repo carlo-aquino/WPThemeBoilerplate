@@ -3,10 +3,15 @@
     &__content {
         display: grid;
         gap: 0.8em;
+        grid-auto-rows: 19.56rem;
+
+        @include break(mobile) {
+            grid-auto-rows: 11rem;
+        }
 
         img {
             border-radius: 4px;
-            height: 15rem;
+            height: 100%;
             object-fit: cover;
             width: 100%;
         }
@@ -17,7 +22,7 @@
     &__content.grid-per-row__04 {
 
         @include break(phablet) {
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }

@@ -74,7 +74,7 @@
 
             <?php if( $gallery_images ): ?>
 
-                <div class="gallery-module__content
+                <div class="gallery-module__content grid
                     <?php 
                         if( $gallery_items_per_row=='one' ) { echo ' grid-per-row__01'; } 
                         if( $gallery_items_per_row=='two' ) { echo ' grid-per-row__02'; } 
@@ -89,38 +89,44 @@
 
                     <?php foreach( $gallery_images as $image ): ?>
 
-                        <a href="<?php echo $image['sizes']['theme-xlarge']; ?>" data-fancybox="gallery-module-image">
-                            <picture>
-                                <source media="(max-width:980px)"
-                                        srcset="<?php echo $image['sizes']['theme-large']; ?> 980w">
-                                <source media="(max-width:768px)"
-                                        srcset="<?php echo $image['sizes']['theme-medium']; ?> 768w">
-                                <source media="(max-width:640px)"
-                                        srcset="<?php echo $image['sizes']['theme-small']; ?> 640w">
-                                <source media="(max-width:425px)"
-                                        srcset="<?php echo $image['sizes']['theme-xsmall']; ?> 425w">
+                        <div class="grid-item">
+                            
+                            <a href="<?php echo $image['sizes']['theme-xlarge']; ?>" data-fancybox="gallery-module-image">
+                                <picture>
+                                    <source media="(max-width:980px)"
+                                            srcset="<?php echo $image['sizes']['theme-large']; ?> 980w">
+                                    <source media="(max-width:768px)"
+                                            srcset="<?php echo $image['sizes']['theme-medium']; ?> 768w">
+                                    <source media="(max-width:640px)"
+                                            srcset="<?php echo $image['sizes']['theme-small']; ?> 640w">
+                                    <source media="(max-width:425px)"
+                                            srcset="<?php echo $image['sizes']['theme-xsmall']; ?> 425w">
 
-                                <img src="<?php echo $image['sizes']['theme-small']; ?>" class="img-fluid" width="<?php echo $image['sizes']['theme-small-width']; ?>"
-                                    style="
-                                        <?php if( $gallery_image_height ) { echo 'height: ' . $gallery_image_height . 'rem'; } ?>
-                                    "
+                                    <img src="<?php echo $image['sizes']['theme-small']; ?>" class="img-fluid" width="<?php echo $image['sizes']['theme-small-width']; ?>"
+                                        style="
+                                            <?php if( $gallery_image_height ) { echo 'height: ' . $gallery_image_height . 'rem'; } ?>
+                                        "
 
-                                    <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
-                                        data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
-                                    <?php endif; ?>
-                                    
-                                    <?php if( $transition_animation == 'zoom' ): ?>
-                                        data-aos="<?php echo $transition_animation . '-in'; ?>"
-                                    <?php endif; ?>
+                                        <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
+                                            data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
+                                        <?php endif; ?>
+                                        
+                                        <?php if( $transition_animation == 'zoom' ): ?>
+                                            data-aos="<?php echo $transition_animation . '-in'; ?>"
+                                        <?php endif; ?>
 
-                                    <?php if( $transition_duration ): ?>
-                                        data-aos-duration="<?php echo $transition_duration; ?>"
-                                    <?php endif; ?>
-                                    
-                                    data-aos-delay="<?php echo $gallery_ctr; ?>"
-                                >
-                            </picture>
-                        </a>
+                                        data-aos="<?php echo $transition_animation; ?>"
+
+                                        <?php if( $transition_duration ): ?>
+                                            data-aos-duration="<?php echo $transition_duration; ?>"
+                                        <?php endif; ?>
+                                        
+                                        data-aos-delay="<?php echo $gallery_ctr; ?>"
+                                    >
+                                </picture>
+                            </a>
+
+                        </div>
                                        
                     <?php $gallery_ctr = $gallery_ctr+200; endforeach; ?>
 

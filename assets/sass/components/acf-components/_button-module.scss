@@ -2,15 +2,20 @@
 
     &__wrapper {
 
+        a {
+            text-decoration: none;
+        }
+
         span {
+            align-items: center;
             background: $accentColor;
             border-radius: 4px;
             border: 1px solid $accentColor;
             color: #fff;
             cursor: pointer;
-            display: inline-block;
+            display: inline-flex;
             font-size: 0.8rem;
-            font-weight: bold;
+            justify-content: center;
             margin-top: 2.22em;
             padding: 1.5em 3em;
             transition: 200ms all ease-out;
