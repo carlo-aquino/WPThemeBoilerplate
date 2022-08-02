@@ -2329,13 +2329,100 @@
                                                             },
                                                             "open": 0,
                                                             "multi_expand": 0,
-                                                            "endpoint": 0
+                                                            "endpoint": 1
                                                         },
                                                         {
-                                                            "key": "field_62944b9e8f681",
-                                                            "label": "Slide dimensions",
-                                                            "name": "slide_dimensions",
-                                                            "type": "group",
+                                                            "key": "field_62e8a60110ef9",
+                                                            "label": "Narrow data source",
+                                                            "name": "featured_slider_data_source",
+                                                            "type": "acfe_post_types",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "30",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "post_type": [
+                                                                "post",
+                                                                "portfolio"
+                                                            ],
+                                                            "field_type": "select",
+                                                            "default_value": [
+                                                                "post"
+                                                            ],
+                                                            "return_format": "object",
+                                                            "allow_null": 0,
+                                                            "multiple": 0,
+                                                            "ui": 0,
+                                                            "choices": [],
+                                                            "ajax": 0,
+                                                            "placeholder": "",
+                                                            "search_placeholder": "",
+                                                            "layout": "",
+                                                            "toggle": 0,
+                                                            "allow_custom": 0
+                                                        },
+                                                        {
+                                                            "key": "field_62e8a6d410efa",
+                                                            "label": "Filter data source",
+                                                            "name": "featured_slider_data_source_filter",
+                                                            "type": "acfe_taxonomy_terms",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "70",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "taxonomy": "",
+                                                            "allow_terms": "",
+                                                            "allow_level": "",
+                                                            "field_type": "select",
+                                                            "default_value": [],
+                                                            "return_format": "object",
+                                                            "ui": 0,
+                                                            "allow_null": 0,
+                                                            "multiple": 0,
+                                                            "save_terms": 0,
+                                                            "load_terms": 0,
+                                                            "choices": [],
+                                                            "ajax": 0,
+                                                            "placeholder": "",
+                                                            "search_placeholder": "",
+                                                            "layout": "",
+                                                            "toggle": 0,
+                                                            "allow_custom": 0,
+                                                            "other_choice": 0
+                                                        },
+                                                        {
+                                                            "key": "field_62944b9f8f683",
+                                                            "label": "Height",
+                                                            "name": "featured_slider_height",
+                                                            "type": "number",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "30",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "default_value": "",
+                                                            "placeholder": "",
+                                                            "prepend": "",
+                                                            "append": "rem",
+                                                            "min": "",
+                                                            "max": "",
+                                                            "step": ""
+                                                        },
+                                                        {
+                                                            "key": "field_62944b9f8f684",
+                                                            "label": "Design",
+                                                            "name": "",
+                                                            "type": "tab",
                                                             "instructions": "",
                                                             "required": 0,
                                                             "conditional_logic": 0,
@@ -2344,59 +2431,11 @@
                                                                 "class": "",
                                                                 "id": ""
                                                             },
-                                                            "layout": "",
-                                                            "acfe_seamless_style": 0,
-                                                            "acfe_group_modal": 0,
-                                                            "acfe_group_modal_close": 0,
-                                                            "acfe_group_modal_button": "",
-                                                            "acfe_group_modal_size": "large",
-                                                            "sub_fields": [
-                                                                {
-                                                                    "key": "field_62944b9f8f682",
-                                                                    "label": "Width",
-                                                                    "name": "slider_slide_width",
-                                                                    "type": "number",
-                                                                    "instructions": "",
-                                                                    "required": 0,
-                                                                    "conditional_logic": 0,
-                                                                    "wrapper": {
-                                                                        "width": "50",
-                                                                        "class": "",
-                                                                        "id": ""
-                                                                    },
-                                                                    "default_value": "",
-                                                                    "placeholder": "",
-                                                                    "prepend": "",
-                                                                    "append": "rem",
-                                                                    "min": "",
-                                                                    "max": "",
-                                                                    "step": ""
-                                                                },
-                                                                {
-                                                                    "key": "field_62944b9f8f683",
-                                                                    "label": "Height",
-                                                                    "name": "slider_slide_height",
-                                                                    "type": "number",
-                                                                    "instructions": "",
-                                                                    "required": 0,
-                                                                    "conditional_logic": 0,
-                                                                    "wrapper": {
-                                                                        "width": "50",
-                                                                        "class": "",
-                                                                        "id": ""
-                                                                    },
-                                                                    "default_value": "",
-                                                                    "placeholder": "",
-                                                                    "prepend": "",
-                                                                    "append": "rem",
-                                                                    "min": "",
-                                                                    "max": "",
-                                                                    "step": ""
-                                                                }
-                                                            ]
+                                                            "placement": "top",
+                                                            "endpoint": 0
                                                         },
                                                         {
-                                                            "key": "field_62944b9f8f684",
+                                                            "key": "field_62e8a42a10ef8",
                                                             "label": "Spacing",
                                                             "name": "",
                                                             "type": "accordion",
@@ -4611,10 +4650,10 @@
                                                             "allow_level": "",
                                                             "field_type": "select",
                                                             "default_value": [],
-                                                            "return_format": "name",
+                                                            "return_format": "object",
                                                             "ui": 0,
                                                             "allow_null": 0,
-                                                            "multiple": 1,
+                                                            "multiple": 0,
                                                             "save_terms": 0,
                                                             "load_terms": 0,
                                                             "choices": [],
@@ -9491,5 +9530,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1659336741
+    "modified": 1659419800
 }

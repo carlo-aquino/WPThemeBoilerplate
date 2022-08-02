@@ -3,14 +3,10 @@
         while( have_rows( 'featured_slider_module_settings' ) ) {
             the_row();
 
-            if( have_rows( 'slide_dimensions' ) ) {
-                while( have_rows( 'slide_dimensions' ) ) {
-                    the_row();
-        
-                    $slider_slide_width = get_sub_field( 'slider_slide_width' );
-                    $slider_slide_height = get_sub_field( 'slider_slide_height' );
-                }
-            }
+            $featured_slider_data_source = get_sub_field( 'featured_slider_data_source' );
+            $featured_slider_data_source_filter = get_sub_field( 'featured_slider_data_source_filter' );
+            $featured_slider_height = get_sub_field( 'featured_slider_height' );
+
 
             if( have_rows( 'margin_settings' ) ) {
                 while( have_rows( 'margin_settings' ) ) {
@@ -46,13 +42,20 @@
     }
 
     $slider_post_query = new WP_Query(array(
-        'post_type'             => 'portfolio',
+        'post_type'             => $featured_slider_data_source,
         'posts_per_page'        => -1,
         'orderby'               => 'title',
         'order'                 => 'ASC',
         'ignore_sticky_posts'   => 1,
-    ));
-    
+
+        'tax_query' => array(
+            array (
+                'taxonomy' => $featured_slider_data_source_filter->taxonomy,
+                'field' => 'slug',
+                'terms' => $featured_slider_data_source_filter->slug,
+            )
+        ),
+    )); 
 ?>
 
     <div id="<?php if( $css_id ) { echo ' ' . $css_id; } ?>" class="featured-slider-module container-fluid g-0<?php if( $css_class ) { echo ' ' . $css_class; } ?>">
@@ -91,6 +94,7 @@
 
                             </article>
                         <?php endwhile; endif; wp_reset_postdata(); ?>
+
                     </div>    
 
                 </div>       
@@ -98,9 +102,9 @@
 
             <div class="featured-slider-module__wrapper swiper-wrapper--right">
                 
-                <div class="featured-slider-module__cards slider-right"
+                <div class="featured-slider-module__cards slider-right"<?php if( $featured_slider_height ){ echo ' style="height: ' . $featured_slider_height . 'rem";'; } ?>
                     data-aos="slide-left"
-                    data-aos-duration="700"
+                    data-aos-duration="1000"
                     data-aos-easing="ease-out-sine" 
                 >
 
@@ -128,8 +132,8 @@
 
                 </div> 
 
-                <div class="swiper-button-prev"></div>   
-                <div class="swiper-button-next"></div>   
+                <div class="swiper-button-prev featured-slider-module__arrow-prev"></div>   
+                <div class="swiper-button-next featured-slider-module__arrow-next"></div>   
             </div>
 
         </div>
@@ -186,8 +190,8 @@
     });
 
     var sliderRight = new Swiper('.slider-right', {
-        slidesPerView: 2.5,
-        spaceBetween: 24,
+        // slidesPerView: 2.5,
+        // spaceBetween: 24,
         grabCursor: true,
 
         touchRatio: 0.2,
@@ -196,8 +200,20 @@
         loopedSlides: 3,
 
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.featured-slider-module__arrow-next',
+            prevEl: '.featured-slider-module__arrow-prev',
+        },
+
+        breakpoints: {
+            980: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+
+            1400: {
+                slidesPerView: 2.5,
+                spaceBetween: 24,
+            },
         },
     });
 

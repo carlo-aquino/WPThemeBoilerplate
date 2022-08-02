@@ -61,6 +61,14 @@
         'orderby'               => $slider_order_by,
         'order'                 => $slider_order,
         'ignore_sticky_posts'   => 1,
+
+        'tax_query' => array(
+            array (
+                'taxonomy' => $slider_data_source_category->taxonomy,
+                'field' => 'slug',
+                'terms' => $slider_data_source_category->slug,
+            )
+        ),
     ));
     
 ?>        
@@ -114,9 +122,9 @@
         </div> 
 
         <?php if( $slider_arrow ): ?>
-            <div class="slider-module__arrows">
-                <div class="slider-module__arrow swiper-button-prev"></div>
-                <div class="slider-module__arrow swiper-button-next"></div>    
+            <div class="slider-module__arrow">
+                <div class="swiper-button-prev slider-module__arrow-prev"></div>
+                <div class="swiper-button-next slider-module__arrow-next"></div>    
             </div>
         <?php endif; ?>
         
@@ -160,8 +168,8 @@
             loop: true,
 
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.slider-module__arrow-next',
+                prevEl: '.slider-module__arrow-prev',
             },
         });
     </script>
@@ -200,8 +208,8 @@
             loop: true,
 
             navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
+                nextEl: '.slider-module__arrow-next',
+                prevEl: '.slider-module__arrow-prev',
             },
         });
     </script>

@@ -96,9 +96,8 @@
     }
 
     &__arrow {
-        
 
-        &.swiper-button-prev {
+        &-prev {
             left: 0;
 
             &::after {
@@ -108,7 +107,7 @@
             }
         }
 
-        &.swiper-button-next {
+        &-next {
             right: 0;
 
             &::after {
