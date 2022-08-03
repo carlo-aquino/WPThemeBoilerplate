@@ -105,7 +105,7 @@
                 <div class="featured-slider-module__cards slider-right"<?php if( $featured_slider_height ){ echo ' style="height: ' . $featured_slider_height . 'rem";'; } ?>
                     data-aos="slide-left"
                     data-aos-duration="1000"
-                    data-aos-easing="ease-out-sine" 
+                     data-aos-easing="ease-out-sine" 
                 >
 
                     <div class="featured-slider-module__cards-wrapper swiper-wrapper">
@@ -132,8 +132,8 @@
 
                 </div> 
 
-                <div class="swiper-button-prev featured-slider-module__arrow-prev"></div>   
-                <div class="swiper-button-next featured-slider-module__arrow-next"></div>   
+                <div class="swiper-button-prev featured-slider-module__arrow-prev" data-aos="custom-fade" data-aos-duration="1000" data-aos-delay="200" data-aos-easing="ease-out-sine"></div>   
+                <div class="swiper-button-next featured-slider-module__arrow-next" data-aos="custom-fade" data-aos-duration="1000" data-aos-delay="200" data-aos-easing="ease-out-sine"></div>   
             </div>
 
         </div>

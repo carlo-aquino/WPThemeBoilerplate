@@ -4,6 +4,7 @@
     $post = get_post( $page_for_posts ); 
     setup_postdata( $post ); 
 
+    $header_toggle = get_field( 'header_toggle', 'option' );
     $company_name = get_field( 'company_name', 'option' );
     $favicon = get_field( 'favicon', 'option' );
     $site_width = get_field( 'site_width', 'option' );
@@ -388,8 +389,10 @@
 
         }  
 
-        if( $header_type == 'header-01' ) {
-            get_template_part( 'template-parts/headers/header', '01' );
+        if( $header_toggle ) {
+            if( $header_type == 'header-01' ) {
+                get_template_part( 'template-parts/headers/header', '01' );
+            }
         }
     ?>   
     

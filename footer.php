@@ -1,5 +1,7 @@
     <?php
 
+        $footer_toggle = get_field( 'footer_toggle', 'option' );
+
         if( have_rows('custom_footer', 'option') ) {
             while( have_rows('custom_footer', 'option') ) {
                 the_row();
@@ -8,12 +10,14 @@
             } 
         }
 
-        if( $footer_type == 'footer-01' ) {
-            get_template_part( 'template-parts/footers/footer', '01' );
-        }
-
-        if( $footer_type == 'footer-02' ) {
-            get_template_part( 'template-parts/footers/footer', '02' );
+        if( $footer_toggle ) {
+            if( $footer_type == 'footer-01' ) {
+                get_template_part( 'template-parts/footers/footer', '01' );
+            }
+    
+            if( $footer_type == 'footer-02' ) {
+                get_template_part( 'template-parts/footers/footer', '02' );
+            }
         }
 
         wp_footer();
@@ -28,11 +32,6 @@
             duration: 1000,
             once: true,
             disable: 'mobile',
-        });
-
-        var colc = new Colcade( '.grid', {
-            columns: '.grid-col',
-            items: '.grid-item'
         });
     </script>
 </body>
