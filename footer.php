@@ -26,8 +26,13 @@
         AOS.init({
             offset: 200,
             duration: 1000,
-            once: false,
+            once: true,
             disable: 'mobile',
+        });
+
+        var colc = new Colcade( '.grid', {
+            columns: '.grid-col',
+            items: '.grid-item'
         });
     </script>
 </body>

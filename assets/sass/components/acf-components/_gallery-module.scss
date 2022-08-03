@@ -26,3 +26,38 @@
         }
     }
 }
+
+.grid {
+    display: flex;
+    grid-auto-rows: unset;
+
+    &-col {
+        display: flex;
+        flex-flow: column;
+        flex: 1;
+    }
+
+    &-col--4 {
+
+        @include break(tabletxl) {
+            display: none;
+        }
+    }
+
+    &-col--3 {
+
+        @include break(tablet) {
+            display: none;
+        }
+    }
+
+    &-item {
+
+        img {
+            border-radius: unset;
+            height: unset;
+            object-fit: unset;
+            width: 100%;
+        }
+    }
+}

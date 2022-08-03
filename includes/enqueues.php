@@ -9,6 +9,7 @@
 
         //include JS
         wp_enqueue_script('aosJS', get_theme_file_uri('/dist/js/aos.js'), array( 'jquery' ), '1.0', true);
+        wp_enqueue_script('colcadeJS', get_theme_file_uri('/dist/js/colcade.js'), array( 'jquery' ), '1.0', true);
         wp_enqueue_script('swiperJS_js', get_theme_file_uri('/dist/js/swiper-bundle.min.js'), array( 'jquery' ), '1.0', true);
         wp_enqueue_script('customJS', get_theme_file_uri('/dist/js/main.js'), array( 'jquery' ), '1.0', true);
     }

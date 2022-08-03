@@ -1635,6 +1635,32 @@ li {
   }
 }
 
+.grid {
+  display: flex;
+  grid-auto-rows: unset;
+}
+.grid-col {
+  display: flex;
+  flex-flow: column;
+  flex: 1;
+}
+@media (max-width: 980px) {
+  .grid-col--4 {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .grid-col--3 {
+    display: none;
+  }
+}
+.grid-item img {
+  border-radius: unset;
+  height: unset;
+  object-fit: unset;
+  width: 100%;
+}
+
 .google-map-module {
   height: 100%;
   width: 100%;

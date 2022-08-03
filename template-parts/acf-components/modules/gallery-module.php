@@ -6,6 +6,7 @@
             $gallery_images = get_sub_field( 'gallery_images' );
             $gallery_items_per_row = get_sub_field( 'gallery_items_per_row' );
             $gallery_gap = get_sub_field( 'gallery_gap' );
+            $gallery_masonry_toggle = get_sub_field( 'gallery_masonry_toggle' );
             $gallery_image_height = get_sub_field( 'gallery_image_height' );
 
             if( have_rows( 'margin_settings' ) ) {
@@ -52,6 +53,12 @@
             }
 
             $gallery_ctr = $transition_delay;
+            $column_count = 0;
+
+            if( $gallery_items_per_row == 'one') { $column_count = 1; }
+            if( $gallery_items_per_row == 'two') { $column_count = 2; }
+            if( $gallery_items_per_row == 'three') { $column_count = 3; }
+            if( $gallery_items_per_row == 'four') { $column_count = 4; }
         }
     }   
 ?>    
@@ -74,7 +81,7 @@
 
             <?php if( $gallery_images ): ?>
 
-                <div class="gallery-module__content grid
+                <div class="gallery-module__content<?php if( $gallery_masonry_toggle ) { echo ' grid'; } ?>
                     <?php 
                         if( $gallery_items_per_row=='one' ) { echo ' grid-per-row__01'; } 
                         if( $gallery_items_per_row=='two' ) { echo ' grid-per-row__02'; } 
@@ -86,10 +93,17 @@
                         <?php if( $gallery_gap ) { echo 'gap: ' . $gallery_gap . 'em'; } ?>
                     "
                 >
+                    <?php
+                        if( $gallery_masonry_toggle ){
+                            for ( $x = 1; $x <= $column_count; $x++ ) {
+                                echo '<div style="gap: ' . $gallery_gap . 'em" class="grid-col grid-col--' . $x .'"></div>';
+                            }
+                        }
+                    ?>
 
                     <?php foreach( $gallery_images as $image ): ?>
 
-                        <div class="grid-item">
+                        <div class="gallery-module__item<?php if( $gallery_masonry_toggle ) { echo ' grid-item'; } ?>">
                             
                             <a href="<?php echo $image['sizes']['theme-xlarge']; ?>" data-fancybox="gallery-module-image">
                                 <picture>
@@ -102,7 +116,7 @@
                                     <source media="(max-width:425px)"
                                             srcset="<?php echo $image['sizes']['theme-xsmall']; ?> 425w">
 
-                                    <img src="<?php echo $image['sizes']['theme-small']; ?>" class="img-fluid" width="<?php echo $image['sizes']['theme-small-width']; ?>"
+                                    <img src="<?php echo $image['sizes']['theme-medium']; ?>" class="img-fluid" width="<?php echo $image['sizes']['theme-small-width']; ?>"
                                         style="
                                             <?php if( $gallery_image_height ) { echo 'height: ' . $gallery_image_height . 'rem'; } ?>
                                         "
