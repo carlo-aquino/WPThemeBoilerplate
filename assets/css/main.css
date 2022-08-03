@@ -1,16 +1,14 @@
 @font-face {
   font-family: "HeadingFont";
-  src: url("../font/gotham-bold.woff") format("woff"), url("../font/gotham-bold.ttf") format("truetype");
+  src: url("../font/gotham-bold-webfont.woff2") format("woff2"), url("../font/gotham-bold-webfont.woff") format("woff"), url("../font/gotham-bold.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 @font-face {
   font-family: "BodyFont";
   src: url("../font/poppins-light.woff") format("woff"), url("../font/poppins-light.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
 }
 *, *::before, *::after {
   padding: 0;

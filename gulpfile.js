@@ -10,7 +10,7 @@ gulp.task('copyImages', async function() {
 });
 
 gulp.task('copyFonts', async function() {
-    gulp.src('assets/font/*.{ttf,woff}')
+    gulp.src('assets/font/*.{ttf,woff,woff2}')
         .pipe(gulp.dest('dist/font'));
 });
 
