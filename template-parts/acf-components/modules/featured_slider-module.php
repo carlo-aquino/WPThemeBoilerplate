@@ -227,7 +227,6 @@
         grabCursor: true,
         centeredSlides: true,
         slidesPerView: 1.5,
-        initialSlide: 2,
         slidesPerGroup: 1,
         spaceBetween: 24,
         loop: true,

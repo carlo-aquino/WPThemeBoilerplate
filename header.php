@@ -230,6 +230,10 @@
                 background-color: <?php echo $accent_color; ?>;
             }
 
+            #header-01 .header-right nav ul li.featured-link > a:hover {
+                color: <?php echo $accent_color; ?>;
+            }
+
             #header-01 .header-right nav ul li ul li:hover {
                 background: <?php echo $accent_color; ?>;
             }
