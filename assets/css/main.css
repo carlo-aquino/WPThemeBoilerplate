@@ -129,6 +129,12 @@ li {
     font-size: 20px;
   }
 }
+@media (max-width: 768px) {
+  .page-container section:last-child {
+    padding-bottom: 3.29em !important;
+  }
+}
+
 .one-column-layout {
   background-size: cover;
   background-position: center;
@@ -2554,10 +2560,16 @@ li {
   z-index: 15;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .mobile-spacer {
     padding-top: 3.29em !important;
     padding-bottom: 3.29em !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobile-spacer--custom {
+    padding-bottom: 0 !important;
   }
 }
 

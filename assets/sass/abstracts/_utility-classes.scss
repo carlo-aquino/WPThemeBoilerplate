@@ -149,9 +149,16 @@
 
 .mobile-spacer {
     
-    @include break(phablet) {
+    @include break(tablet) {
         padding-top: 3.29em !important;
         padding-bottom: 3.29em !important;
+    }
+}
+
+.mobile-spacer--custom {
+    
+    @include break(tablet) {
+        padding-bottom: 0 !important;
     }
 }
 

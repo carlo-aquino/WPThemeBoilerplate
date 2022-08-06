@@ -1,3 +1,10 @@
+.page-container section:last-child {
+
+    @include break(tablet) {
+        padding-bottom: 3.29em !important;
+    }
+}
+
 .one-column-layout {
     background-size:cover;
     background-position:center;

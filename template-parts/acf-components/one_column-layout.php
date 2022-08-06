@@ -58,7 +58,12 @@
         }
     } ?>
 
-        <section id="<?php if( $css_id ) { echo $css_id; } ?>" class="one-column-layout mobile-spacer<?php if( $css_class ) { echo ' ' . $css_class; } ?><?php if( $full_width ) { echo ' px-0'; } ?>"
+        <section id="<?php if( $css_id ) { echo $css_id; } ?>" class="one-column-layout mobile-spacer
+            <?php
+                if( $background_type == 'select' ) { echo 'mobile-spacer--custom'; }
+                if( $css_class ) { echo ' ' . $css_class; }
+                if( $full_width ) { echo ' px-0'; }
+            ?>"
             style="
                 <?php if( $section_height ) { echo 'height:' . $section_height . 'rem;'; } ?>
                 
