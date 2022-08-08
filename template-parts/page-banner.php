@@ -6,7 +6,15 @@
             the_row(); 
             $banner_text_toggle = get_sub_field( 'banner_text_toggle' );
             $banner_text = get_sub_field( 'banner_text' );
-            $banner_subtitle = get_sub_field( 'banner_subtitle' ); ?>
+            $banner_subtitle = get_sub_field( 'banner_subtitle' );
+            $banner_cta_button = get_sub_field( 'banner_cta_button' );
+
+            if( $banner_cta_button ) {
+                $banner_cta_button_url = $banner_cta_button['url'];
+                $banner_cta_button_title = $banner_cta_button['title'];
+                $banner_cta_button_target = $banner_cta_button['target'] ? $banner_cta_button['target'] : '_self';
+            }     
+        ?>
 
             <?php if ( $page_bg_enable ): ?>
                 <section class="page-banner full-bleed">
@@ -31,6 +39,16 @@
 
                             <?php if( $banner_text_toggle && $banner_subtitle ): ?>
                                 <p><?php echo $banner_subtitle; ?></p>
+                            <?php endif; ?>
+
+                            <?php if ( $banner_cta_button_url ): ?>
+                                <div class="button-module">
+                                    <div class="button-module__wrapper">
+                                        <a href="<?php echo esc_url( $banner_cta_button_url ); ?>" target="<?php echo esc_attr( $banner_cta_button_target ); ?>">
+                                            <span><?php echo esc_html( $banner_cta_button_title ); ?></span>
+                                        </a>
+                                    </div>
+                                </div>
                             <?php endif; ?>
 
                         </div>

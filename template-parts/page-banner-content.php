@@ -1,6 +1,8 @@
 <?php 
     $page_for_posts = get_queried_object_id();
     $banner_options = get_sub_field( 'banner_options' ); 
+    $banner_image_source = get_sub_field( 'banner_image_source' ); 
+    $banner_custom_image = get_sub_field( 'banner_custom_image' ); 
     $banner_video_file =  get_sub_field('banner_video_file');
 
     $featuredimage = get_the_post_thumbnail_url();
@@ -9,8 +11,10 @@
 
     <?php if( $banner_options=='image' ): ?>
 
-        <?php if( $featuredimage ): ?>
+        <?php if( $banner_image_source == 'featured' && $featuredimage ): ?>
             <img src="<?php echo $featuredimage; ?>" alt="<?php the_title(); ?>">
+        <?php elseif( $banner_image_source == 'custom' && $banner_custom_image ): ?>
+            <img src="<?php echo $banner_custom_image; ?>" alt="<?php the_title(); ?>">
         <?php else: ?>
 
             <?php if( is_front_page() ): ?>

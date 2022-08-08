@@ -80,7 +80,7 @@
 
         style="
 
-            <?php if( $section_height ) { echo 'height:' . $section_height . 'px;'; } ?>
+            <?php if( $section_height ) { echo 'height:' . $section_height . 'rem;'; } ?>
 
             <?php if( $background_type=='color' ) { echo 'background-color:' . $background_color . ';'; } ?>
             <?php if( $background_type=='image' ) { echo 'background-image:url(' . $background_image . ');'; } ?>

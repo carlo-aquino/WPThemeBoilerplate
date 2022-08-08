@@ -88,6 +88,73 @@
                             "save_other_choice": 0
                         },
                         {
+                            "key": "field_62f13ac9a01e8",
+                            "label": "Image source",
+                            "name": "banner_image_source",
+                            "type": "select",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_60ea736809ce4",
+                                        "operator": "==",
+                                        "value": "image"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "25",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "featured": "Featured Image",
+                                "custom": "Custom Image"
+                            },
+                            "default_value": "featured",
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "ui": 0,
+                            "return_format": "value",
+                            "ajax": 0,
+                            "placeholder": ""
+                        },
+                        {
+                            "key": "field_62f13b4ea01e9",
+                            "label": "Image",
+                            "name": "banner_custom_image",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": [
+                                [
+                                    {
+                                        "field": "field_62f13ac9a01e8",
+                                        "operator": "==",
+                                        "value": "custom"
+                                    }
+                                ]
+                            ],
+                            "wrapper": {
+                                "width": "50",
+                                "class": "",
+                                "id": ""
+                            },
+                            "uploader": "",
+                            "acfe_thumbnail": 0,
+                            "return_format": "url",
+                            "preview_size": "medium",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": "",
+                            "library": "all"
+                        },
+                        {
                             "key": "field_60ea73ff09ce5",
                             "label": "File",
                             "name": "banner_video_file",
@@ -132,7 +199,7 @@
                                 ]
                             ],
                             "wrapper": {
-                                "width": "25",
+                                "width": "",
                                 "class": "",
                                 "id": ""
                             },
@@ -196,6 +263,21 @@
                             "rows": 4,
                             "new_lines": "",
                             "acfe_textarea_code": 0
+                        },
+                        {
+                            "key": "field_62f139bba01e7",
+                            "label": "CTA Button",
+                            "name": "banner_cta_button",
+                            "type": "link",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array"
                         }
                     ]
                 }
@@ -243,9 +325,23 @@
                 "operator": "==",
                 "value": "default"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "portfolio"
+            }
+        ],
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-company-info"
+            }
         ]
     ],
-    "menu_order": 3,
+    "menu_order": 10,
     "position": "normal",
     "style": "default",
     "label_placement": "left",
@@ -260,5 +356,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1658372893
+    "modified": 1659978251
 }

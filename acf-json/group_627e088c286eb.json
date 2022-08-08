@@ -3329,7 +3329,8 @@
                                                             },
                                                             "post_type": [
                                                                 "post",
-                                                                "portfolio"
+                                                                "portfolio",
+                                                                "careers"
                                                             ],
                                                             "field_type": "select",
                                                             "default_value": [],
@@ -7879,7 +7880,7 @@
                                     "default_value": "",
                                     "placeholder": "",
                                     "prepend": "",
-                                    "append": "px",
+                                    "append": "rem",
                                     "min": "",
                                     "max": "",
                                     "step": ""
@@ -9251,7 +9252,7 @@
                                     "default_value": "",
                                     "placeholder": "",
                                     "prepend": "",
-                                    "append": "px",
+                                    "append": "rem",
                                     "min": "",
                                     "max": "",
                                     "step": ""
@@ -9550,5 +9551,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1659515105
+    "modified": 1659835113
 }
