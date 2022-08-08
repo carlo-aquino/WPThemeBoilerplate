@@ -41,7 +41,7 @@
                                 <p><?php echo $banner_subtitle; ?></p>
                             <?php endif; ?>
 
-                            <?php if ( $banner_cta_button_url ): ?>
+                            <?php if ( $banner_cta_button ): ?>
                                 <div class="button-module">
                                     <div class="button-module__wrapper">
                                         <a href="<?php echo esc_url( $banner_cta_button_url ); ?>" target="<?php echo esc_attr( $banner_cta_button_target ); ?>">
