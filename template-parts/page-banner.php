@@ -25,21 +25,23 @@
 
                         <div class="page-banner__heading-container">
 
-                            <?php if( $banner_text_toggle ): ?>
-                                <h1><?php 
-                                    if( $banner_text ) {
-                                        echo $banner_text;
-                                    } elseif( is_home() ) {
-                                        single_post_title();
-                                    } else {
-                                        the_title();
-                                    }
-                                ?></h1>
-                            <?php endif; ?>
+                            <div class="page-banner__blurb">
+                                <?php if( $banner_text_toggle ): ?>
+                                    <h1><?php 
+                                        if( $banner_text ) {
+                                            echo $banner_text;
+                                        } elseif( is_home() ) {
+                                            single_post_title();
+                                        } else {
+                                            the_title();
+                                        }
+                                    ?></h1>
+                                <?php endif; ?>
 
-                            <?php if( $banner_text_toggle && $banner_subtitle ): ?>
-                                <p><?php echo $banner_subtitle; ?></p>
-                            <?php endif; ?>
+                                <?php if( $banner_text_toggle && $banner_subtitle ): ?>
+                                    <p><?php echo $banner_subtitle; ?></p>
+                                <?php endif; ?>
+                            </div>
 
                             <?php if ( $banner_cta_button ): ?>
                                 <div class="button-module">
