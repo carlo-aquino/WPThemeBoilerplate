@@ -152,26 +152,9 @@
         <div class="mobile-header__left">
             <a href="<?php echo site_url(''); ?>">
                 <img class="header-logo"
-                    src="
-                        <?php
-                            if( $header_logo=='colored' ) {
-                                echo $logo_colored_size;
-                            } else {
-                                echo $logo_white_size;
-                            }
-                        ?>
-                    "
-
-                    width="
-                        <?php
-                            if( $header_logo=='colored' ) {
-                                echo $logo_colored_width;
-                            } else {
-                                echo $logo_white_width;
-                            }
-                        ?>
-                    "
-
+                    src="<?php if( $header_logo=='colored' ) { echo $logo_colored_size; } else { echo $logo_white_size; } ?>"
+                    width="<?php if( $header_logo=='colored' ) { echo $logo_colored_width; } else { echo $logo_white_width; } ?>"
+                    height="<?php if( $header_logo=='colored' ) { echo $logo_colored_height; } else { echo $logo_white_height; } ?>"
                     alt="<?php echo $company_name; ?> logo" loading="lazy"
                 >
             </a>

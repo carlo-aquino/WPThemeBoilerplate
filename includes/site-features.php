@@ -5,7 +5,7 @@
         register_nav_menu('global_menu', 'Global Menu');
         register_nav_menu('footer_menu', 'Footer Menu');
         register_nav_menu('menu_404', '404 Menu');
-        register_nav_menu('search_menu', 'Search Menu');
+        register_nav_menu('widget_menu', 'Widget Menu');
         
         add_theme_support('post-thumbnails');
         add_theme_support('title-tag');
@@ -51,9 +51,9 @@
         echo wp_kses_post($menu);
     }
 
-    function searchMenu() {
+    function widgetMenu() {
         $menu = wp_nav_menu( array(
-            'theme_location'    => 'search_menu',
+            'theme_location'    => 'widget_menu',
             'container'         => 'div'
         ));
 

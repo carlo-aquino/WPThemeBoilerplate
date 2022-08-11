@@ -84,6 +84,7 @@
             >
 
                 <iframe
+                    title="Google Map"
                     width="100%"
                     height="<?php if( $google_map_height ) { echo $google_map_height; } else { echo '100%'; } ?>"
                     style="border:0"
