@@ -229,6 +229,10 @@
         justify-content: flex-start;
         position: relative;
         width: 25%;
+
+        img {
+            object-fit: contain;
+        }
     }
 
     .mobile-header__right {

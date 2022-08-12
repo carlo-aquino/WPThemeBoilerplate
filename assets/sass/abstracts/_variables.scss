@@ -10,6 +10,7 @@ $accentColor: #fab631;
         url('../font/gotham-bold.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -18,7 +19,8 @@ $accentColor: #fab631;
         url('../font/poppins-light.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
-$headingText: 'HeadingFont', serif;
+$headingText: 'HeadingFont', sans-serif;
 $bodyText: 'BodyFont', sans-serif;
