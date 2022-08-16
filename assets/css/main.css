@@ -1683,7 +1683,7 @@ li {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  overflow: hidden;
+  overflow: visible;
 }
 .grid-module__cards {
   display: grid;
