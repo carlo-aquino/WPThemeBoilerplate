@@ -6,6 +6,7 @@
 
     $grid_items_per_row = get_sub_field( 'grid_items_per_row' );
     $grid_gap = get_sub_field( 'grid_gap' );
+    $grid_masonry_toggle = get_sub_field( 'grid_masonry_toggle' );
     
     if( have_rows( 'animation_settings' ) ) {
         while( have_rows( 'animation_settings' ) ) {
@@ -19,9 +20,17 @@
         }
     }
     
-    $ctr = $transition_delay; ?>
+    $ctr = $transition_delay;
 
-    <div class="grid-module__cards
+    $grid_column_count = 0;
+
+    if( $grid_items_per_row == 'one') { $grid_column_count = 1; }
+    if( $grid_items_per_row == 'two') { $grid_column_count = 2; }
+    if( $grid_items_per_row == 'three') { $grid_column_count = 3; }
+    if( $grid_items_per_row == 'four') { $grid_column_count = 4; }
+?>
+
+    <div class="grid-module__cards<?php if( $grid_masonry_toggle ) { echo ' grid'; } ?>
         <?php 
             if( $grid_items_per_row=='one' ) { echo ' grid-per-row__01'; } 
             if( $grid_items_per_row=='two' ) { echo ' grid-per-row__02'; } 
@@ -33,6 +42,14 @@
             <?php if( $grid_gap ) { echo 'gap: ' . $grid_gap . 'em'; } ?>
         "
     >
+
+        <?php
+            if( $grid_masonry_toggle ){
+                for ( $x = 1; $x <= $grid_column_count; $x++ ) {
+                    echo '<div style="gap: ' . $grid_gap . 'em" class="grid-col grid-col--' . $x .'"></div>';
+                }
+            }
+        ?>
 
         <?php if( have_rows( 'grid_custom_settings' ) ): while( have_rows( 'grid_custom_settings' ) ):
             
@@ -57,7 +74,9 @@
             } 
         ?>   
 
-            <article class="grid-module__cards__card<?php echo ' ' . $grid_type; ?>"
+            <article class="grid-module__cards__card<?php echo ' ' . $grid_type; ?><?php if( $grid_masonry_toggle ) { echo ' grid-item'; } ?>"
+                style=" <?php if( $grid_type == 'type-two' ) { echo 'height: 100%;'; } ?>"
+
                 <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
                     data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
                 <?php endif; ?>
@@ -102,7 +121,7 @@
                         <?php endif; ?>
                     </header>
                         
-                    <?php if( $grid_description_toggle && $grid_custom_description ): ?>
+                    <?php if( $grid_description_toggle && $grid_custom_description && $grid_type != 'type-two' ): ?>
                         <p><?php echo $grid_custom_description; ?></p>
                     <?php endif; ?>
 
@@ -116,4 +135,14 @@
     </div>
 
 <?php endwhile; endif; ?>
+
+
+<?php if( $grid_masonry_toggle ): ?>
+    <script type="module">
+        var colc = new Colcade( '.grid', {
+            columns: '.grid-col',
+            items: '.grid-item'
+        });
+    </script>
+<?php endif; ?>
     

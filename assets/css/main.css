@@ -1690,6 +1690,9 @@ li {
   gap: 1.6em;
   width: 100%;
 }
+.grid-module__cards .grid-col {
+  gap: 1.6em;
+}
 .grid-module__cards__card {
   display: flex;
   flex-flow: column nowrap;
@@ -1728,9 +1731,9 @@ li {
   background: rgba(89, 74, 66, 0.5);
 }
 .grid-module__cards__card-content {
-  align-items: center;
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column nowrap;
+  justify-content: center;
   position: relative;
   z-index: 10;
 }

@@ -3785,7 +3785,7 @@
                                                             "required": 0,
                                                             "conditional_logic": 0,
                                                             "wrapper": {
-                                                                "width": "33.33",
+                                                                "width": "25",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -3810,7 +3810,7 @@
                                                             "required": 0,
                                                             "conditional_logic": 0,
                                                             "wrapper": {
-                                                                "width": "33.33",
+                                                                "width": "25",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -3837,7 +3837,7 @@
                                                             "required": 0,
                                                             "conditional_logic": 0,
                                                             "wrapper": {
-                                                                "width": "33.33",
+                                                                "width": "25",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -3848,6 +3848,25 @@
                                                             "min": "",
                                                             "max": "",
                                                             "step": "0.1"
+                                                        },
+                                                        {
+                                                            "key": "field_62fb3277f8144",
+                                                            "label": "Masonry",
+                                                            "name": "grid_masonry_toggle",
+                                                            "type": "true_false",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "25",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "message": "",
+                                                            "default_value": 0,
+                                                            "ui": 1,
+                                                            "ui_on_text": "",
+                                                            "ui_off_text": ""
                                                         },
                                                         {
                                                             "key": "field_626b1f017ac4f",
@@ -9551,5 +9570,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1659835113
+    "modified": 1660630163
 }

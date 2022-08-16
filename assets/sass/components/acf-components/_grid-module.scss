@@ -12,6 +12,10 @@
         gap: 1.6em;
         width: 100%;
 
+        .grid-col {
+            gap: 1.6em;
+        }
+
         &__card {
             display: flex;
             flex-flow: column nowrap;
@@ -55,9 +59,9 @@
             }
 
             &-content {
-                align-items: center;
                 display: flex;
-                flex-flow: row wrap;
+                flex-flow: column nowrap;
+                justify-content: center;
                 position: relative;
                 z-index: 10;
 
