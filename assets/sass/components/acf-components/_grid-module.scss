@@ -16,6 +16,13 @@
             gap: 1.6em;
         }
 
+        .grid-col--2 {
+
+            @include break(phablet) {
+                display: none;
+            }
+        }
+
         &__card {
             display: flex;
             flex-flow: column nowrap;

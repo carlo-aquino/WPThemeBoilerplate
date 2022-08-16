@@ -1693,6 +1693,11 @@ li {
 .grid-module__cards .grid-col {
   gap: 1.6em;
 }
+@media (max-width: 640px) {
+  .grid-module__cards .grid-col--2 {
+    display: none;
+  }
+}
 .grid-module__cards__card {
   display: flex;
   flex-flow: column nowrap;

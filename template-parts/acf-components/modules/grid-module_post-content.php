@@ -86,7 +86,7 @@
             
             <?php while( $grid_post_query->have_posts() ): $grid_post_query->the_post(); ?>
                 <article class="grid-module__cards__card<?php echo ' ' . $grid_type; ?><?php if( $grid_masonry_toggle ) { echo ' grid-item'; } ?>"
-                    style=" <?php if( $grid_type == 'type-two' ) { echo 'height: 100%;'; } ?>"
+                    style=" <?php if( $grid_masonry_toggle && $grid_type == 'type-two' ) { echo 'height: 100%;'; } ?>"
 
                     <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
                         data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
