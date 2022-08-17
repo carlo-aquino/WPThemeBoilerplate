@@ -172,7 +172,7 @@
                 background-color: <?php echo $primary_color; ?>;
             }
 
-            .wpcf7-form .form-column label {
+            .wpcf7-form label {
                 color: <?php echo $primary_color; ?>;
             }
 
@@ -271,9 +271,9 @@
                 color: <?php echo $accent_color; ?>;
             }
 
-            .wpcf7-form .form-column span input:focus,
-            .wpcf7-form .form-column span select:focus,
-            .wpcf7-form .form-column span textarea:focus {
+            .wpcf7-form span input:focus,
+            .wpcf7-form span select:focus,
+            .wpcf7-form span textarea:focus {
                 outline-color: <?php echo $accent_color; ?>;
             }
 

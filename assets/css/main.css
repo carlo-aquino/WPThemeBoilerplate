@@ -2229,6 +2229,30 @@ li {
 .wpcf7-form {
   position: relative;
 }
+.wpcf7-form label {
+  color: #a74799;
+  font-weight: bold;
+  width: 100%;
+}
+.wpcf7-form span input, .wpcf7-form span select, .wpcf7-form span textarea {
+  background-color: #e6e5e5;
+  border: 0;
+  border-radius: 4px;
+  padding: 1.33em;
+  width: 100%;
+}
+.wpcf7-form span input[type=checkbox] {
+  width: unset;
+}
+.wpcf7-form span textarea {
+  height: 100%;
+}
+.wpcf7-form span input:focus, .wpcf7-form span select:focus, .wpcf7-form span textarea:focus {
+  outline-color: #fab631;
+}
+.wpcf7-form span span.wpcf7-not-valid-tip {
+  font-size: 0.85rem;
+}
 .wpcf7-form .form-column {
   display: flex;
   gap: 4.44em;
@@ -2245,11 +2269,6 @@ li {
 .wpcf7-form .form-column__right {
   width: 100%;
 }
-.wpcf7-form .form-column label {
-  color: #a74799;
-  font-weight: bold;
-  width: 100%;
-}
 .wpcf7-form .form-column label.form__max-content {
   display: flex;
   flex-flow: column nowrap;
@@ -2257,20 +2276,6 @@ li {
 }
 .wpcf7-form .form-column label.form__max-content span {
   flex-grow: 1;
-}
-.wpcf7-form .form-column span input, .wpcf7-form .form-column span select, .wpcf7-form .form-column span textarea {
-  background-color: #e6e5e5;
-  border: 0;
-  border-radius: 4px;
-  padding: 1.33em;
-  width: 100%;
-  height: 100%;
-}
-.wpcf7-form .form-column span input:focus, .wpcf7-form .form-column span select:focus, .wpcf7-form .form-column span textarea:focus {
-  outline-color: #fab631;
-}
-.wpcf7-form .form-column span span.wpcf7-not-valid-tip {
-  font-size: 0.85rem;
 }
 .wpcf7-form .form-footer {
   align-items: center;
