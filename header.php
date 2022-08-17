@@ -172,6 +172,10 @@
                 background-color: <?php echo $primary_color; ?>;
             }
 
+            .wpcf7-form .form-column label {
+                color: <?php echo $primary_color; ?>;
+            }
+
             .wpcf7-form div.contact-us__form input[type=email]:focus,
             .wpcf7-form div.contact-us__form input[type=tel]:focus,
             .wpcf7-form div.contact-us__form input[type=text]:focus,
@@ -265,6 +269,12 @@
 
             .page-404__right-content__quick-links__links ul li a:hover {
                 color: <?php echo $accent_color; ?>;
+            }
+
+            .wpcf7-form .form-column span input:focus,
+            .wpcf7-form .form-column span select:focus,
+            .wpcf7-form .form-column span textarea:focus {
+                outline-color: <?php echo $accent_color; ?>;
             }
 
             .wpcf7-form div.subscription-form__wrapper input[type=submit] {

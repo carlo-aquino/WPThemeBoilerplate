@@ -2229,6 +2229,73 @@ li {
 .wpcf7-form {
   position: relative;
 }
+.wpcf7-form .form-column {
+  display: flex;
+  gap: 4.44em;
+}
+@media (max-width: 980px) {
+  .wpcf7-form .form-column {
+    flex-flow: row wrap;
+    gap: 1.5em;
+  }
+}
+.wpcf7-form .form-column__left {
+  width: 100%;
+}
+.wpcf7-form .form-column__right {
+  width: 100%;
+}
+.wpcf7-form .form-column label {
+  color: #a74799;
+  font-weight: bold;
+  width: 100%;
+}
+.wpcf7-form .form-column label.form__max-content {
+  display: flex;
+  flex-flow: column nowrap;
+  height: 100%;
+}
+.wpcf7-form .form-column label.form__max-content span {
+  flex-grow: 1;
+}
+.wpcf7-form .form-column span input, .wpcf7-form .form-column span select, .wpcf7-form .form-column span textarea {
+  background-color: #e6e5e5;
+  border: 0;
+  border-radius: 4px;
+  padding: 1.33em;
+  width: 100%;
+  height: 100%;
+}
+.wpcf7-form .form-column span input:focus, .wpcf7-form .form-column span select:focus, .wpcf7-form .form-column span textarea:focus {
+  outline-color: #fab631;
+}
+.wpcf7-form .form-footer {
+  align-items: center;
+  display: flex;
+  flex-flow: column nowrap;
+  padding-top: 4.89em;
+  position: relative;
+}
+@media (max-width: 425px) {
+  .wpcf7-form .form-footer {
+    padding-top: 3em;
+  }
+}
+.wpcf7-form .form-footer input[type=submit] {
+  width: max-content;
+}
+@media (max-width: 425px) {
+  .wpcf7-form .form-footer input[type=submit] {
+    width: 100%;
+  }
+}
+.wpcf7-form .form-footer span.wpcf7-spinner {
+  position: absolute;
+}
+.wpcf7-form .form-footer span.form-violator {
+  font-size: 0.83rem;
+  padding-top: 1.6em;
+}
 .wpcf7-form div.subscription {
   align-items: center;
   display: flex;
