@@ -1013,6 +1013,30 @@ li {
   padding-bottom: 6em;
 }
 
+.single-page__heading {
+  padding-top: 6em;
+  padding-bottom: 3em;
+}
+.single-page__breadcrumbs {
+  padding-bottom: 3em;
+}
+.single-page__title ul {
+  display: flex;
+  gap: 2.67em;
+  list-style: none;
+}
+@media (max-width: 640px) {
+  .single-page__title ul {
+    flex-flow: column nowrap;
+    gap: 1.5em;
+  }
+}
+.single-page__title ul li {
+  align-items: center;
+  display: flex;
+  gap: 0.89em;
+}
+
 .single-template {
   padding-bottom: 2em;
 }

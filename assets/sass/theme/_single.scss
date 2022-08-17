@@ -3,6 +3,39 @@
     padding-bottom: 6em;
 }
 
+.single-page {
+
+    &__heading {
+        padding-top: 6em;
+        padding-bottom: 3em;
+    }
+
+    &__breadcrumbs {
+        padding-bottom: 3em;
+    }
+
+    &__title {
+
+        ul {
+            display: flex;
+            gap: 2.67em;
+            list-style: none;
+
+            @include break(phablet) {
+                flex-flow: column nowrap;
+                gap: 1.5em;
+            }
+
+            li {
+                align-items: center;
+                display: flex;
+                gap: 0.89em; 
+            }
+        }
+    }
+}
+
+
 .single-template {
     padding-bottom: 2em;
 }
