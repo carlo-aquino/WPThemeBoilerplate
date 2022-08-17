@@ -386,6 +386,12 @@
                 color: <?php echo $body_text_color; ?>;
             }
 
+            .wpcf7 form.invalid .wpcf7-response-output,
+            .wpcf7 form.unaccepted .wpcf7-response-output,
+            .wpcf7 form.payment-required .wpcf7-response-output {
+                color: <?php echo $body_text_color; ?>;
+            }
+
             .wpcf7-form div.contact-us__form-footer span.wpcf7-acceptance span.wpcf7-list-item {
                 color: <?php echo $body_text_color; ?>;
             }

@@ -48,6 +48,10 @@
             input:focus, select:focus, textarea:focus {
                 outline-color: $accentColor;
             }
+
+            span.wpcf7-not-valid-tip {
+                font-size: 0.85rem;
+            }
         }
     }
 
@@ -78,6 +82,11 @@
             font-size: 0.83rem;
             padding-top: 1.6em;
         }
+    }
+
+    .wpcf7-response-output {
+        text-align: center;
+        color: #595959;
     }
 
     & div.subscription {
@@ -192,99 +201,6 @@
             padding: 0;
             position: absolute;
             right: 0;
-        }
-    }
-
-    & div.contact-us__form {
-
-        & div.colgroup {
-            display: flex;
-            gap: 2em;
-
-            @include break(tablet) {
-                flex-flow: row wrap;
-                gap: 0;   
-            }
-
-            span {
-                width: 100%;
-            }
-        }
-
-        input[type="text"],
-        input[type="tel"],
-        input[type="email"],
-        textarea {
-            background-color: #fff;
-            border-radius: 1.19em;
-            border: 1px solid rgba(#000, 0.08);
-            margin-bottom: 1.48em;
-            padding: 1.19em;
-            width: 100%;
-            width: 100%;
-            
-            &:focus {
-                outline-color: $primaryColor;
-            }
-        }
-
-        &-footer {
-            align-items: center;
-            display: flex;
-            gap: 2em;
-            justify-content: space-between;
-            position: relative;
-
-            @include break(mobile) {
-                flex-flow: row wrap;
-                gap: 1em;
-            }
-
-            p {
-
-                @include break(mobile) {
-                    width: 100%;
-                }
-            }
-
-            span.wpcf7-acceptance span.wpcf7-list-item {
-                margin: 0;
-                color: #595959;
-            }
-
-            span.wpcf7-spinner {
-                position: absolute;
-                right: 0;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-        }
-
-        & div.wpcf7-response-output {
-            border: 0;
-            bottom: 4rem;
-            color: #69cb72;
-            font-size: 0.7rem;
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            left: 0;
-        }
-
-        & + div.wpcf7-response-output {
-            border: 0;
-            bottom: 4rem;
-            color: #b5b5b5;
-            font-size: 0.7rem;
-            margin: 0;
-            padding: 0;
-            position: absolute;
-            left: 0;
-
-            @include break(mobile) {
-                bottom: 6.2rem;
-                line-height: 1.2;
-            }
         }
     }
 
