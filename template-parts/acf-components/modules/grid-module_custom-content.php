@@ -1,9 +1,11 @@
 <?php if( have_rows( 'grid_module_settings' ) ): while( have_rows( 'grid_module_settings' ) ): the_row();
     $grid_heading = get_sub_field( 'grid_heading' );
     $grid_image_toggle = get_sub_field( 'grid_image_toggle' );
+    $grid_title_toggle = get_sub_field( 'grid_title_toggle' );
     $grid_description_toggle = get_sub_field( 'grid_description_toggle' );
-    $grid_type = get_sub_field( 'grid_type' );
+    $grid_button_toggle = get_sub_field( 'grid_button_toggle' );
 
+    $grid_type = get_sub_field( 'grid_type' );
     $grid_items_per_row = get_sub_field( 'grid_items_per_row' );
     $grid_gap = get_sub_field( 'grid_gap' );
     $grid_masonry_toggle = get_sub_field( 'grid_masonry_toggle' );
@@ -94,7 +96,7 @@
                 data-aos-delay="<?php echo $ctr; ?>"
             >
                 
-                <?php if( $grid_custom_link ): ?>
+                <?php if( $grid_custom_link && !$grid_button_toggle ): ?>
                     <a href="<?php echo esc_url( $grid_custom_link_url ); ?>" target="<?php echo esc_attr( $grid_custom_link_target ); ?>">
                         <span class="hit-area"></span>
                     </a>
@@ -108,25 +110,37 @@
                     </div>
                 <?php endif; ?>
                 
-                <?php if( $grid_custom_title || $grid_custom_description ): ?>
+                <?php if( ($grid_custom_title && $grid_title_toggle) || ($grid_description_toggle && $grid_custom_description) ): ?>
                     <div class="grid-module__cards__card-content">
 
-                    <header class="grid-module__cards__card-content__header">
-                        <?php if( $grid_custom_title ): ?>
+                        <header class="grid-module__cards__card-content__header">
+                            <?php if( $grid_custom_title ): ?>
 
-                            <?php echo '<' . $grid_heading . '>'; ?>
-                                <?php echo $grid_custom_title; ?>
-                            <?php echo '</' . $grid_heading . '>'; ?>
+                                <?php echo '<' . $grid_heading . '>'; ?>
+                                    <?php echo $grid_custom_title; ?>
+                                <?php echo '</' . $grid_heading . '>'; ?>
 
+                            <?php endif; ?>
+                        </header>
+                            
+                        <?php if( $grid_description_toggle && $grid_custom_description && $grid_type != 'type-two' ): ?>
+                            <p><?php echo $grid_custom_description; ?></p>
                         <?php endif; ?>
-                    </header>
-                        
-                    <?php if( $grid_description_toggle && $grid_custom_description && $grid_type != 'type-two' ): ?>
-                        <p><?php echo $grid_custom_description; ?></p>
-                    <?php endif; ?>
 
                     </div>
                 <?php endif; ?>
+
+                <?php if( $grid_button_toggle && $grid_custom_link ): ?>
+                    <div class="grid-module__cards__card-cta button-module">
+                        <div class="button-module__wrapper">
+                            <a href="<?php echo esc_url( $grid_custom_link_url ); ?>" target="<?php echo esc_attr( $grid_custom_link_target ); ?>">  
+                                <span>
+                                    <?php echo $grid_custom_link_title; ?>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                <?php endif; ?>  
 
             </article>
             

@@ -3330,7 +3330,8 @@
                                                             "post_type": [
                                                                 "post",
                                                                 "portfolio",
-                                                                "careers"
+                                                                "careers",
+                                                                "community"
                                                             ],
                                                             "field_type": "select",
                                                             "default_value": [],
@@ -3363,7 +3364,7 @@
                                                                 ]
                                                             ],
                                                             "wrapper": {
-                                                                "width": "40",
+                                                                "width": "60",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -3396,7 +3397,7 @@
                                                             "required": 0,
                                                             "conditional_logic": 0,
                                                             "wrapper": {
-                                                                "width": "23.33",
+                                                                "width": "20",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -3415,7 +3416,7 @@
                                                             "required": 0,
                                                             "conditional_logic": 0,
                                                             "wrapper": {
-                                                                "width": "23.33",
+                                                                "width": "20",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -3442,7 +3443,7 @@
                                                                 ]
                                                             ],
                                                             "wrapper": {
-                                                                "width": "10",
+                                                                "width": "20",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -3470,7 +3471,7 @@
                                                             "required": 0,
                                                             "conditional_logic": 0,
                                                             "wrapper": {
-                                                                "width": "23.33",
+                                                                "width": "20",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -3479,6 +3480,84 @@
                                                             "ui": 1,
                                                             "ui_on_text": "Enabled",
                                                             "ui_off_text": "Disabled"
+                                                        },
+                                                        {
+                                                            "key": "field_63048e0065a91",
+                                                            "label": "CTA Button",
+                                                            "name": "grid_button_group",
+                                                            "type": "group",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": [
+                                                                [
+                                                                    {
+                                                                        "field": "field_626b2519ef576",
+                                                                        "operator": "==",
+                                                                        "value": "post"
+                                                                    }
+                                                                ]
+                                                            ],
+                                                            "wrapper": {
+                                                                "width": "20",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "layout": "block",
+                                                            "acfe_seamless_style": 0,
+                                                            "acfe_group_modal": 0,
+                                                            "sub_fields": [
+                                                                {
+                                                                    "key": "field_630475c502be0",
+                                                                    "label": "Button",
+                                                                    "name": "grid_button_toggle",
+                                                                    "type": "true_false",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "message": "",
+                                                                    "default_value": 1,
+                                                                    "ui": 1,
+                                                                    "ui_on_text": "Enabled",
+                                                                    "ui_off_text": "Disabled"
+                                                                },
+                                                                {
+                                                                    "key": "field_63048ad502f14",
+                                                                    "label": "Text",
+                                                                    "name": "grid_button_text",
+                                                                    "type": "text",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": [
+                                                                        [
+                                                                            {
+                                                                                "field": "field_626b2519ef576",
+                                                                                "operator": "==",
+                                                                                "value": "post"
+                                                                            },
+                                                                            {
+                                                                                "field": "field_630475c502be0",
+                                                                                "operator": "==",
+                                                                                "value": "1"
+                                                                            }
+                                                                        ]
+                                                                    ],
+                                                                    "wrapper": {
+                                                                        "width": "",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "",
+                                                                    "maxlength": ""
+                                                                }
+                                                            ]
                                                         },
                                                         {
                                                             "key": "field_628eb73b9452c",
@@ -9550,6 +9629,20 @@
                 "operator": "==",
                 "value": "portfolio"
             }
+        ],
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "all"
+            }
+        ],
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-company-info"
+            }
         ]
     ],
     "menu_order": 0,
@@ -9570,5 +9663,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1660630163
+    "modified": 1661243737
 }

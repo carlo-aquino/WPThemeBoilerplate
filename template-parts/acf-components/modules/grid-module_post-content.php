@@ -5,16 +5,25 @@
             
             the_row();
             $grid_image_toggle = get_sub_field( 'grid_image_toggle' );
+            $grid_title_toggle = get_sub_field( 'grid_title_toggle' );
             $grid_description_toggle = get_sub_field( 'grid_description_toggle' );
             $grid_heading = get_sub_field( 'grid_heading' );
+            
             $grid_type = get_sub_field( 'grid_type' );
-
             $grid_data_source = get_sub_field( 'grid_data_source' );
             $grid_data_source_filter = get_sub_field( 'grid_data_source_filter' );
             $grid_items_per_row = get_sub_field( 'grid_items_per_row' );
             $grid_gap = get_sub_field( 'grid_gap' );
             $grid_masonry_toggle = get_sub_field( 'grid_masonry_toggle' );
-            
+
+            if( have_rows( 'grid_button_group' ) ) {
+                while( have_rows( 'grid_button_group' ) ) {
+                    the_row();
+        
+                    $grid_button_toggle = get_sub_field( 'grid_button_toggle' );
+                    $grid_button_text = get_sub_field( 'grid_button_text' );
+                }
+            }
             
             if( have_rows( 'animation_settings' ) ) {
                 while( have_rows( 'animation_settings' ) ) {
@@ -105,7 +114,9 @@
                     data-aos-delay="<?php echo $ctr; ?>"
                 >
                     
-                    <a href="<?php the_permalink(); ?>"><span class="hit-area"></span></a>
+                    <?php if( !$grid_button_toggle || !$grid_button_text ): ?>
+                        <a href="<?php the_permalink(); ?>"><span class="hit-area"></span></a>
+                    <?php endif;?>
 
                     <?php if( is_sticky() ): ?>
                         <div class="features-module__cards__card-violator">
@@ -127,23 +138,39 @@
                         }
                     ?>
                     
-                    <header class="grid-module__cards__card-content">
-                        <?php echo '<' . $grid_heading . '>'; ?>
-                            <?php the_title(); ?>
-                        <?php echo '</' . $grid_heading . '>'; ?>
+                    <?php if( ($grid_custom_title && $grid_title_toggle) || ($grid_description_toggle && $grid_custom_description) ): ?>
+                        <div class="grid-module__cards__card-content">
 
-                        <span class="grid-date"><strong><?php the_time('F j, Y'); ?></strong></span>
+                            <header class="grid-module__cards__card-header">
+                                <?php echo '<' . $grid_heading . '>'; ?>
+                                    <?php the_title(); ?>
+                                <?php echo '</' . $grid_heading . '>'; ?>
 
-                        <?php
-                            if( $grid_description_toggle ) {
-                                if( get_the_content() ) {
-                                    the_content();
-                                } else {
-                                    the_excerpt();
-                                }
-                            }
-                        ?>
-                    </header>
+                                <span class="grid-date"><strong><?php the_time('F j, Y'); ?></strong></span>
+
+                                <?php
+                                    if( $grid_description_toggle ) {
+                                        if( get_the_content() ) {
+                                            the_content();
+                                        } else {
+                                            the_excerpt();
+                                        }
+                                    }
+                                ?>
+                            </header>
+
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if( $grid_button_toggle && $grid_button_text ): ?>
+                        <div class="grid-module__cards__card-cta button-module">
+                            <div class="button-module__wrapper">
+                                <a href="<?php the_permalink(); ?>">  
+                                    <span><?php echo $grid_button_text; ?></span>
+                                </a>
+                            </div>
+                        </div>
+                    <?php endif; ?>  
 
                 </article>
             <?php $ctr = $ctr+200; endwhile; ?>

@@ -1783,6 +1783,10 @@ li {
 .grid-module__cards__card-content p {
   margin-top: 0.56em;
 }
+.grid-module__cards__card-cta {
+  position: relative;
+  z-index: 10;
+}
 .grid-module__cards__card.type-two {
   border-radius: 8px;
   box-shadow: 0 16px 24px rgba(167, 71, 153, 0.06);

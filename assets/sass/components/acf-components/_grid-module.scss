@@ -94,6 +94,11 @@
                     margin-top: 0.56em;
                 }
             }
+
+            &-cta {
+                position: relative;
+                z-index: 10;
+            }
         }
 
         &__card.type-two {
