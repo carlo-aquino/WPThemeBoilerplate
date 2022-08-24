@@ -103,7 +103,7 @@
                 data-aos-delay="<?php echo $ctr; ?>"
             >
                 
-                <?php if( $grid_custom_link && $grid_button_toggle ): ?>
+                <?php if( $grid_custom_link && !$grid_button_toggle ): ?>
                     <a href="<?php echo esc_url( $grid_custom_link_url ); ?>" target="<?php echo esc_attr( $grid_custom_link_target ); ?>">
                         <span class="hit-area"></span>
                     </a>
@@ -111,7 +111,7 @@
                     
                 <div class="grid-module__cards__card-overlay background-overlay<?php echo ' ' . $grid_type; ?>"></div>
                 
-                <?php if( $grid_image_toggle && !$grid_custom_image ): ?>
+                <?php if( $grid_image_toggle && $grid_custom_image ): ?>
                     <div class="grid-module__cards__card-image">
                         <img src="<?php echo $grid_custom_image_size; ?>" width="<?php echo $grid_custom_image_width; ?>" alt="<?php echo $grid_custom_image_alt; ?>" class="img-fluid<?php echo ' ' . $grid_type; ?>">
                     </div>
