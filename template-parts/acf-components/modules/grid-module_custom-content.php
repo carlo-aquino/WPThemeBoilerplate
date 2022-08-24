@@ -3,12 +3,19 @@
     $grid_image_toggle = get_sub_field( 'grid_image_toggle' );
     $grid_title_toggle = get_sub_field( 'grid_title_toggle' );
     $grid_description_toggle = get_sub_field( 'grid_description_toggle' );
-    $grid_button_toggle = get_sub_field( 'grid_button_toggle' );
 
     $grid_type = get_sub_field( 'grid_type' );
     $grid_items_per_row = get_sub_field( 'grid_items_per_row' );
     $grid_gap = get_sub_field( 'grid_gap' );
     $grid_masonry_toggle = get_sub_field( 'grid_masonry_toggle' );
+
+    if( have_rows( 'grid_button_group' ) ) {
+        while( have_rows( 'grid_button_group' ) ) {
+            the_row();
+
+            $grid_button_toggle = get_sub_field( 'grid_button_toggle' );
+        }
+    }
     
     if( have_rows( 'animation_settings' ) ) {
         while( have_rows( 'animation_settings' ) ) {
@@ -96,7 +103,7 @@
                 data-aos-delay="<?php echo $ctr; ?>"
             >
                 
-                <?php if( $grid_custom_link && !$grid_button_toggle ): ?>
+                <?php if( $grid_custom_link && $grid_button_toggle ): ?>
                     <a href="<?php echo esc_url( $grid_custom_link_url ); ?>" target="<?php echo esc_attr( $grid_custom_link_target ); ?>">
                         <span class="hit-area"></span>
                     </a>
@@ -104,7 +111,7 @@
                     
                 <div class="grid-module__cards__card-overlay background-overlay<?php echo ' ' . $grid_type; ?>"></div>
                 
-                <?php if( $grid_image_toggle && $grid_custom_image ): ?>
+                <?php if( $grid_image_toggle && !$grid_custom_image ): ?>
                     <div class="grid-module__cards__card-image">
                         <img src="<?php echo $grid_custom_image_size; ?>" width="<?php echo $grid_custom_image_width; ?>" alt="<?php echo $grid_custom_image_alt; ?>" class="img-fluid<?php echo ' ' . $grid_type; ?>">
                     </div>
