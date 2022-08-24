@@ -111,43 +111,47 @@
                     
                 <div class="grid-module__cards__card-overlay background-overlay<?php echo ' ' . $grid_type; ?>"></div>
                 
-                <?php if( $grid_image_toggle && $grid_custom_image ): ?>
-                    <div class="grid-module__cards__card-image">
-                        <img src="<?php echo $grid_custom_image_size; ?>" width="<?php echo $grid_custom_image_width; ?>" alt="<?php echo $grid_custom_image_alt; ?>" class="img-fluid<?php echo ' ' . $grid_type; ?>">
-                    </div>
-                <?php endif; ?>
-                
-                <?php if( ($grid_custom_title && $grid_title_toggle) || ($grid_description_toggle && $grid_custom_description) ): ?>
-                    <div class="grid-module__cards__card-content">
-
-                        <header class="grid-module__cards__card-content__header">
-                            <?php if( $grid_custom_title ): ?>
-
-                                <?php echo '<' . $grid_heading . '>'; ?>
-                                    <?php echo $grid_custom_title; ?>
-                                <?php echo '</' . $grid_heading . '>'; ?>
-
-                            <?php endif; ?>
-                        </header>
-                            
-                        <?php if( $grid_description_toggle && $grid_custom_description && $grid_type != 'type-two' ): ?>
-                            <p><?php echo $grid_custom_description; ?></p>
-                        <?php endif; ?>
-
-                    </div>
-                <?php endif; ?>
-
-                <?php if( $grid_button_toggle && $grid_custom_link ): ?>
-                    <div class="grid-module__cards__card-cta button-module">
-                        <div class="button-module__wrapper">
-                            <a href="<?php echo esc_url( $grid_custom_link_url ); ?>" target="<?php echo esc_attr( $grid_custom_link_target ); ?>">  
-                                <span>
-                                    <?php echo $grid_custom_link_title; ?>
-                                </span>
-                            </a>
+                <div class="grid-module__cards__card-container">
+                    
+                    <?php if( $grid_image_toggle && $grid_custom_image ): ?>
+                        <div class="grid-module__cards__card-image">
+                            <img src="<?php echo $grid_custom_image_size; ?>" width="<?php echo $grid_custom_image_width; ?>" alt="<?php echo $grid_custom_image_alt; ?>" class="img-fluid<?php echo ' ' . $grid_type; ?>">
                         </div>
-                    </div>
-                <?php endif; ?>  
+                    <?php endif; ?>
+                    
+                    <?php if( ($grid_custom_title && $grid_title_toggle) || ($grid_description_toggle && $grid_custom_description) ): ?>
+                        <div class="grid-module__cards__card-content">
+
+                            <header class="grid-module__cards__card-content__header">
+                                <?php if( $grid_custom_title ): ?>
+
+                                    <?php echo '<' . $grid_heading . '>'; ?>
+                                        <?php echo $grid_custom_title; ?>
+                                    <?php echo '</' . $grid_heading . '>'; ?>
+
+                                <?php endif; ?>
+                            </header>
+                                
+                            <?php if( $grid_description_toggle && $grid_custom_description && $grid_type != 'type-two' ): ?>
+                                <p><?php echo $grid_custom_description; ?></p>
+                            <?php endif; ?>
+
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if( $grid_button_toggle && $grid_custom_link ): ?>
+                        <div class="grid-module__cards__card-cta button-module">
+                            <div class="button-module__wrapper">
+                                <a href="<?php echo esc_url( $grid_custom_link_url ); ?>" target="<?php echo esc_attr( $grid_custom_link_target ); ?>">  
+                                    <span>
+                                        <?php echo $grid_custom_link_title; ?>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    <?php endif; ?> 
+
+                </div>
 
             </article>
             
