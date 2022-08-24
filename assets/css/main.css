@@ -25,10 +25,13 @@ html {
 }
 
 body {
-  width: 100%;
-  font-family: "BodyFont", sans-serif;
   -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-flow: column nowrap;
+  font-family: "BodyFont", sans-serif;
+  min-height: 100%;
   text-rendering: optimizeLegibility;
+  width: 100%;
 }
 
 section {
@@ -321,6 +324,7 @@ li {
 
 #footer-01 {
   background-color: #f4f4f2;
+  margin-top: auto;
   padding: 6em 2.22em;
   width: 100%;
 }
@@ -350,6 +354,7 @@ li {
 
 #footer-02 {
   background-color: #f4f4f2;
+  margin-top: auto;
   width: 100%;
 }
 #footer-02 div.global-footer__row-01 {

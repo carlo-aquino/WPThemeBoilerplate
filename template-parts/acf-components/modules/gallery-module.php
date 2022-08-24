@@ -102,10 +102,10 @@
                     ?>
 
                     <?php foreach( $gallery_images as $image ): ?>
-
+                        
                         <div class="gallery-module__item<?php if( $gallery_masonry_toggle ) { echo ' grid-item'; } ?>">
-                            
-                            <a href="<?php echo $image['sizes']['theme-xlarge']; ?>" data-fancybox="gallery-module-image">
+                        
+                            <a href="<?php echo $image['sizes']['theme-xlarge']; ?>" data-fancybox="gallery-module-image" data-caption="<?php echo $image['caption']; ?>">
                                 <picture>
                                     <source media="(max-width:980px)"
                                             srcset="<?php echo $image['sizes']['theme-large']; ?> 980w">
@@ -141,7 +141,7 @@
                             </a>
 
                         </div>
-                                       
+                         
                     <?php $gallery_ctr = $gallery_ctr+200; endforeach; ?>
 
                 </div>

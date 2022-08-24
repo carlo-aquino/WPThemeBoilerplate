@@ -11,10 +11,13 @@ html {
 }
 
 body {
-    width: 100%;
-    font-family: $bodyText;
     -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-flow: column nowrap;
+    font-family: $bodyText;
+    min-height: 100%;
     text-rendering: optimizeLegibility;
+    width: 100%;
 }
 
 section {
