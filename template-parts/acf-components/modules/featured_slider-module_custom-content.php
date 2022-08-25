@@ -15,6 +15,12 @@
                             $featured_slider_custom_title = get_sub_field('featured_slider_custom_title');
                             $featured_slider_custom_description = get_sub_field('featured_slider_custom_description');
                             $featured_slider_custom_link = get_sub_field('featured_slider_custom_link');
+
+                            if( $featured_slider_custom_link ) {
+                                $featured_slider_custom_link_url = $featured_slider_custom_link['url'];
+                                $featured_slider_custom_link_title = $featured_slider_custom_link['title'];
+                                $featured_slider_custom_link_target = $featured_slider_custom_link['target'] ? $featured_slider_custom_link['target'] : '_self';
+                            }
                         ?>
                             <article class="featured-slider-module__cards__card swiper-slide">
                                 
@@ -33,8 +39,8 @@
                                         <div class="button-module">
                                             <div class="button-module__wrapper">
                                                 
-                                                <a href="<?php the_permalink(); ?>">
-                                                    <span class="custom-primary-btn">More Info</span>
+                                                <a href="<?php echo $featured_slider_custom_link_url; ?>" target="<?php echo $featured_slider_custom_link_target; ?>">
+                                                    <span class="custom-primary-btn"><?php echo $featured_slider_custom_link_title; ?></span>
                                                 </a> 
 
                                             </div>
@@ -58,13 +64,33 @@
 
                         <?php while( have_rows( 'featured_slider_custom_content' ) ): the_row();
                             $featured_slider_custom_image = get_sub_field('featured_slider_custom_image');
+
+                            if( $featured_slider_custom_image ) {
+                                $featured_slider_custom_image_size = $featured_slider_custom_image['sizes']['theme-small'];
+                                $featured_slider_custom_image_width = $featured_slider_custom_image['sizes'][ 'theme-small-width'];
+                                $featured_slider_custom_image_height = $featured_slider_custom_image['sizes'][ 'theme-small-height'];
+                                $featured_slider_custom_image_alt = $featured_slider_custom_image['alt'];
+                            }
                         ?>
 
                             <article class="featured-slider-module__cards__card swiper-slide column-center">
                                     
                                 <div class="featured-slider-module__cards__card-overlay background-overlay"></div>
                                 
-                                <?php var_dump($featured_slider_custom_image); ?>
+                                <?php if( $featured_slider_custom_image ): ?>
+                                    <picture>
+                                        <source media="(max-width:980px)"
+                                                srcset="<?php echo $featured_slider_custom_image['sizes']['theme-large']; ?> 980w">
+                                        <source media="(max-width:768px)"
+                                                srcset="<?php echo $featured_slider_custom_image['sizes']['theme-medium']; ?> 768w">
+                                        <source media="(max-width:640px)"
+                                                srcset="<?php echo $featured_slider_custom_image['sizes']['theme-small']; ?> 640w">
+                                        <source media="(max-width:425px)"
+                                                srcset="<?php echo $featured_slider_custom_image['sizes']['theme-xsmall']; ?> 425w">
+
+                                        <img src="<?php echo $featured_slider_custom_image_size; ?>" width="<?php echo $featured_slider_custom_image_width; ?>" height="<?php echo $featured_slider_custom_image_height; ?>" alt="<?php echo $featured_slider_custom_image_alt; ?>" class="img-fluid" loading="lazy">
+                                    </picture>       
+                                <?php endif; ?>
 
                             </article>
 
@@ -75,8 +101,8 @@
 
                 </div> 
 
-                <div class="swiper-button-prev featured-slider-module__arrow-prev" data-aos="custom-fade" data-aos-duration="1000" data-aos-delay="200" data-aos-easing="ease-out-sine"></div>   
-                <div class="swiper-button-next featured-slider-module__arrow-next" data-aos="custom-fade" data-aos-duration="1000" data-aos-delay="200" data-aos-easing="ease-out-sine"></div>   
+                <div class="swiper-button-prev featured-slider-module__arrow-prev featured-slider-module-custom__arrow-prev" data-aos="custom-fade" data-aos-duration="1000" data-aos-delay="200" data-aos-easing="ease-out-sine"></div>   
+                <div class="swiper-button-next featured-slider-module__arrow-next featured-slider-module-custom__arrow-next" data-aos="custom-fade" data-aos-duration="1000" data-aos-delay="200" data-aos-easing="ease-out-sine"></div>   
             </div>
 
         </div>
@@ -88,29 +114,54 @@
                 <div class="featured-slider-module__cards slider-mobile">
 
                     <div class="featured-slider-module__cards-wrapper swiper-wrapper">
-                        <?php if( $slider_post_query->have_posts() ): while( $slider_post_query->have_posts() ): $slider_post_query->the_post(); ?>
+
+                        <?php while( have_rows( 'featured_slider_custom_content' ) ): the_row();
+                            $featured_slider_custom_image = get_sub_field('featured_slider_custom_image');
+                            $featured_slider_custom_title = get_sub_field('featured_slider_custom_title');
+                            $featured_slider_custom_link = get_sub_field('featured_slider_custom_link');
+
+                            if( $featured_slider_custom_link ) {
+                                $featured_slider_custom_link_url = $featured_slider_custom_link['url'];
+                                $featured_slider_custom_link_title = $featured_slider_custom_link['title'];
+                                $featured_slider_custom_link_target = $featured_slider_custom_link['target'] ? $featured_slider_custom_link['target'] : '_self';
+                            }    
+
+                            if( $featured_slider_custom_image ) {
+                                $featured_slider_custom_image_size = $featured_slider_custom_image['sizes']['theme-small'];
+                                $featured_slider_custom_image_width = $featured_slider_custom_image['sizes'][ 'theme-small-width'];
+                                $featured_slider_custom_image_height = $featured_slider_custom_image['sizes'][ 'theme-small-height'];
+                                $featured_slider_custom_image_alt = $featured_slider_custom_image['alt'];
+                            }
+                        ?>
                         
                             <article class="featured-slider-module__cards__card swiper-slide column-center">
                                         
-                                <a href="<?php the_permalink(); ?>"><span class="hit-area"></span></a>
+                                <a href="<?php echo $featured_slider_custom_link_url; ?>"><span class="hit-area"></span></a>
 
                                 <div class="featured-slider-module__cards__card-overlay background-overlay"></div>
 
                                 <div class="featured-slider-module__cards__card-heading title-overlay">
-                                    <h2><?php the_title(); ?></h2>
+                                    <h2><?php echo $featured_slider_custom_title; ?></h2>
                                 </div>
                                 
-                                <?php the_post_thumbnail( 'theme-xsmall',
-                                    array(
-                                        'class' => 'img-fluid',
-                                        'width' => 640,
-                                        'alt'   => get_the_title(),
-                                    ) 
-                                ); ?>
+                                <?php if( $featured_slider_custom_image ): ?>
+                                    <picture>
+                                        <source media="(max-width:980px)"
+                                                srcset="<?php echo $featured_slider_custom_image['sizes']['theme-large']; ?> 980w">
+                                        <source media="(max-width:768px)"
+                                                srcset="<?php echo $featured_slider_custom_image['sizes']['theme-medium']; ?> 768w">
+                                        <source media="(max-width:640px)"
+                                                srcset="<?php echo $featured_slider_custom_image['sizes']['theme-small']; ?> 640w">
+                                        <source media="(max-width:425px)"
+                                                srcset="<?php echo $featured_slider_custom_image['sizes']['theme-xsmall']; ?> 425w">
+
+                                        <img src="<?php echo $featured_slider_custom_image_size; ?>" width="<?php echo $featured_slider_custom_image_width; ?>" height="<?php echo $featured_slider_custom_image_height; ?>" alt="<?php echo $featured_slider_custom_image_alt; ?>" class="img-fluid" loading="lazy">
+                                    </picture>       
+                                <?php endif; ?>
 
                             </article>
 
-                        <?php endwhile; endif; wp_reset_postdata(); ?>
+                        <?php endwhile; ?>
                     </div>
 
                 </div>      
@@ -118,6 +169,7 @@
             </div>
             
         </div>
+
     <?php endif;?>
 
 <?php endwhile; endif; ?>
@@ -141,8 +193,8 @@
             loopedSlides: 3,
 
             navigation: {
-                nextEl: '.featured-slider-module__arrow-next',
-                prevEl: '.featured-slider-module__arrow-prev',
+                nextEl: '.featured-slider-module-custom__arrow-next',
+                prevEl: '.featured-slider-module-custom__arrow-prev',
             },
 
             breakpoints: {

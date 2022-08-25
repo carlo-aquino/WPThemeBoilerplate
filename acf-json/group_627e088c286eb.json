@@ -2395,6 +2395,116 @@
                                                             "endpoint": 1
                                                         },
                                                         {
+                                                            "key": "field_6306ec639d308",
+                                                            "label": "Custom Content",
+                                                            "name": "featured_slider_custom_content",
+                                                            "type": "repeater",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": [
+                                                                [
+                                                                    {
+                                                                        "field": "field_6306dda176ffe",
+                                                                        "operator": "==",
+                                                                        "value": "custom"
+                                                                    }
+                                                                ]
+                                                            ],
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "acfe_repeater_stylised_button": 0,
+                                                            "collapsed": "field_6306ece69d30a",
+                                                            "min": 0,
+                                                            "max": 0,
+                                                            "layout": "table",
+                                                            "button_label": "Add Slide",
+                                                            "sub_fields": [
+                                                                {
+                                                                    "key": "field_6306ecc79d309",
+                                                                    "label": "Image",
+                                                                    "name": "featured_slider_custom_image",
+                                                                    "type": "image",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "uploader": "",
+                                                                    "acfe_thumbnail": 0,
+                                                                    "return_format": "array",
+                                                                    "preview_size": "medium",
+                                                                    "min_width": "",
+                                                                    "min_height": "",
+                                                                    "min_size": "",
+                                                                    "max_width": "",
+                                                                    "max_height": "",
+                                                                    "max_size": "",
+                                                                    "mime_types": "",
+                                                                    "library": "all"
+                                                                },
+                                                                {
+                                                                    "key": "field_6306ece69d30a",
+                                                                    "label": "Title",
+                                                                    "name": "featured_slider_custom_title",
+                                                                    "type": "text",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "",
+                                                                    "maxlength": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_6306ed069d30b",
+                                                                    "label": "Description",
+                                                                    "name": "featured_slider_custom_description",
+                                                                    "type": "textarea",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "placeholder": "",
+                                                                    "maxlength": "",
+                                                                    "rows": 4,
+                                                                    "new_lines": "br",
+                                                                    "acfe_textarea_code": 0
+                                                                },
+                                                                {
+                                                                    "key": "field_6306ed309d30c",
+                                                                    "label": "Link",
+                                                                    "name": "featured_slider_custom_link",
+                                                                    "type": "link",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "return_format": "array"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
                                                             "key": "field_62e8a60110ef9",
                                                             "label": "Narrow data source",
                                                             "name": "featured_slider_narrow_data_source",
@@ -2610,7 +2720,7 @@
                                             ],
                                             "min": "",
                                             "max": "",
-                                            "acfe_flexible_modal_edit_size": "",
+                                            "acfe_flexible_modal_edit_size": "large",
                                             "acfe_flexible_settings": "",
                                             "acfe_flexible_settings_size": "medium",
                                             "acfe_flexible_thumbnail": "",
@@ -9699,5 +9809,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1661394779
+    "modified": 1661398554
 }
