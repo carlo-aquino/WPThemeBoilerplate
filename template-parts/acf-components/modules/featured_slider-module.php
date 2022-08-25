@@ -43,6 +43,10 @@
         
         <?php
 
+            if( $featured_slider_data_source=='custom' ) {
+                get_template_part( 'template-parts/acf-components/modules/featured_slider', 'module_custom-content' );        
+            }
+
             if( $featured_slider_data_source=='post' ) {
                 get_template_part( 'template-parts/acf-components/modules/featured_slider', 'module_post-content' );        
             }
