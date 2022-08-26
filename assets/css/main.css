@@ -1590,6 +1590,7 @@ li {
 }
 .featured-slider-module__cards.slider-right .swiper-slide picture {
   height: 100%;
+  width: 100%;
 }
 .featured-slider-module__cards.slider-right .swiper-slide img {
   height: 100%;
@@ -1646,6 +1647,7 @@ li {
 }
 .featured-slider-module__cards.slider-mobile .swiper-slide picture {
   height: 100%;
+  width: 100%;
 }
 .featured-slider-module__cards.slider-mobile .swiper-slide img {
   height: 100%;
