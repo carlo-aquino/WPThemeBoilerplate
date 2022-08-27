@@ -3541,10 +3541,10 @@
                                                             "allow_level": "",
                                                             "field_type": "select",
                                                             "default_value": [],
-                                                            "return_format": "name",
+                                                            "return_format": "object",
                                                             "ui": 0,
                                                             "allow_null": 0,
-                                                            "multiple": 1,
+                                                            "multiple": 0,
                                                             "save_terms": 0,
                                                             "load_terms": 0,
                                                             "choices": [],
@@ -9809,5 +9809,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1661398554
+    "modified": 1661625239
 }

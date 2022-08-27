@@ -12,6 +12,7 @@
             $grid_type = get_sub_field( 'grid_type' );
             $grid_data_source = get_sub_field( 'grid_data_source' );
             $grid_data_source_filter = get_sub_field( 'grid_data_source_filter' );
+            $grid_data_source_category = get_sub_field( 'grid_data_source_category' );
             $grid_items_per_row = get_sub_field( 'grid_items_per_row' );
             $grid_gap = get_sub_field( 'grid_gap' );
             $grid_masonry_toggle = get_sub_field( 'grid_masonry_toggle' );
@@ -68,10 +69,19 @@
         'order'                 => $grid_order,
         'paged'                 => $paged,
         'ignore_sticky_posts'   => 1,
+
+        'tax_query' => array(
+            array (
+                'taxonomy' => $grid_data_source_category->taxonomy,
+                'field' => 'slug',
+                'terms' => $grid_data_source_category->slug,
+            )
+        ),
     ));
 ?>
-    <?php if( $grid_post_query->have_posts() ): ?>
 
+    <?php if( $grid_post_query->have_posts() ): ?>
+        
         <div class="grid-module__cards<?php if( $grid_masonry_toggle ) { echo ' grid'; } ?>
             <?php 
                 if( $grid_items_per_row=='one' ) { echo ' grid-per-row__01'; } 
@@ -139,13 +149,15 @@
                             }
                         ?>
                         
-                        <?php if( ($grid_custom_title && $grid_title_toggle) || ($grid_description_toggle && $grid_custom_description) ): ?>
+                        <?php if( $grid_title_toggle || $grid_description_toggle ): ?>
                             <div class="grid-module__cards__card-content">
 
                                 <header class="grid-module__cards__card-header">
-                                    <?php echo '<' . $grid_heading . '>'; ?>
-                                        <?php the_title(); ?>
-                                    <?php echo '</' . $grid_heading . '>'; ?>
+                                    <?php if( $grid_title_toggle ): ?>
+                                        <?php echo '<' . $grid_heading . '>'; ?>
+                                            <?php the_title(); ?>
+                                        <?php echo '</' . $grid_heading . '>'; ?>
+                                    <?php endif; ?>
 
                                     <span class="grid-date"><strong><?php the_time('F j, Y'); ?></strong></span>
 
