@@ -2301,7 +2301,8 @@ li {
 }
 .wpcf7-form .form-container {
   display: flex;
-  gap: 4.44em;
+  flex-flow: column nowrap;
+  gap: 2.22em;
 }
 .wpcf7-form .form-column {
   display: flex;
