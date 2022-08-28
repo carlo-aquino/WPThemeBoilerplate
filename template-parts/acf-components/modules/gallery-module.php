@@ -103,7 +103,11 @@
 
                     <?php foreach( $gallery_images as $image ): ?>
                         
-                        <div class="gallery-module__item<?php if( $gallery_masonry_toggle ) { echo ' grid-item'; } ?>">
+                        <div class="gallery-module__item<?php if( $gallery_masonry_toggle ) { echo ' grid-item'; } ?>"
+                            style="
+                                <?php if( $gallery_image_height ) { echo 'height: ' . $gallery_image_height . 'rem'; } ?>
+                            "
+                        >
                         
                             <a href="<?php echo $image['sizes']['theme-xlarge']; ?>" data-fancybox="gallery-module-image" data-caption="<?php echo $image['caption']; ?>">
                                 <picture>
@@ -117,9 +121,6 @@
                                             srcset="<?php echo $image['sizes']['theme-xsmall']; ?> 425w">
 
                                     <img src="<?php echo $image['sizes']['theme-medium']; ?>" class="img-fluid" width="<?php echo $image['sizes']['theme-small-width']; ?>"
-                                        style="
-                                            <?php if( $gallery_image_height ) { echo 'height: ' . $gallery_image_height . 'rem'; } ?>
-                                        "
 
                                         <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
                                             data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
