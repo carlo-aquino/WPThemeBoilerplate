@@ -2299,6 +2299,10 @@ li {
   position: absolute;
   right: 0;
 }
+.wpcf7-form .form-container {
+  display: flex;
+  gap: 4.44em;
+}
 .wpcf7-form .form-column {
   display: flex;
   gap: 4.44em;
