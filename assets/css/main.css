@@ -1661,23 +1661,27 @@ li {
 .gallery-module__content {
   display: grid;
   gap: 0.8em;
-  grid-auto-rows: 19.56rem;
 }
 @media (max-width: 425px) {
   .gallery-module__content {
     grid-auto-rows: 11rem;
   }
 }
-.gallery-module__content img {
-  border-radius: 4px;
-  height: 100%;
-  object-fit: cover;
-  width: 100%;
-}
 @media (max-width: 640px) {
   .gallery-module__content.grid-per-row__02, .gallery-module__content.grid-per-row__03, .gallery-module__content.grid-per-row__04 {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+@media (max-width: 425px) {
+  .gallery-module__item {
+    height: unset !important;
+  }
+}
+.gallery-module__item img {
+  border-radius: 4px;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
 }
 
 .grid {

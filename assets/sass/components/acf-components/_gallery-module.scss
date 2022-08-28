@@ -3,17 +3,9 @@
     &__content {
         display: grid;
         gap: 0.8em;
-        grid-auto-rows: 19.56rem;
 
         @include break(mobile) {
             grid-auto-rows: 11rem;
-        }
-
-        img {
-            border-radius: 4px;
-            height: 100%;
-            object-fit: cover;
-            width: 100%;
         }
     }
 
@@ -23,6 +15,20 @@
 
         @include break(phablet) {
             grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__item {
+
+        @include break(mobile) {
+            height: unset !important;
+        }
+        
+        img {
+            border-radius: 4px;
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
         }
     }
 }
