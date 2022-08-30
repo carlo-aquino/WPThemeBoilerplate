@@ -3543,13 +3543,13 @@
                                                             "default_value": [],
                                                             "return_format": "object",
                                                             "ui": 0,
-                                                            "allow_null": 0,
+                                                            "allow_null": 1,
+                                                            "placeholder": "",
                                                             "multiple": 0,
                                                             "save_terms": 0,
                                                             "load_terms": 0,
                                                             "choices": [],
                                                             "ajax": 0,
-                                                            "placeholder": "",
                                                             "search_placeholder": "",
                                                             "layout": "",
                                                             "toggle": 0,
@@ -9809,5 +9809,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1661625239
+    "modified": 1661848540
 }
