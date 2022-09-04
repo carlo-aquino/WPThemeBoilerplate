@@ -24,6 +24,10 @@ section {
     overflow: auto;
     padding: 0 2.22em;
     position: relative;
+
+    @include break(tablet) {
+        overflow: visible;
+    }
 }
 
 h1, h2, h3, h4, h5, h6 {
