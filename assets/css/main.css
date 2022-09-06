@@ -566,6 +566,7 @@ li {
   color: #fff;
   border-bottom: 0;
   transform: translateX(0.5em);
+  background-size: 0 5px;
 }
 #header-01 .header-right nav ul li ul li ul {
   position: absolute;

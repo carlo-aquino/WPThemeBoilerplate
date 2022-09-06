@@ -215,9 +215,9 @@
 
                             <div class="background-overlay"
                                 style="
-                                    <?php if( $background_type=='image' && $background_overlay ) { echo 'display:block;'; } ?>
-                                    <?php if( $background_type=='image' && $background_overlay && $background_overlay_color ) { echo 'background:' . $background_overlay_color . ';'; } ?>
-                                    <?php if( $background_type=='image' && $background_overlay && $background_overlay_color && $background_overlay_opacity ) { echo 'opacity:' . $background_overlay_opacity . '%;'; } ?>
+                                    <?php if( $background_type=='image' && $background_image_overlay ) { echo 'display:block;'; } ?>
+                                    <?php if( $background_type=='image' && $background_image_overlay && $background_image_overlay_color ) { echo 'background:' . $background_image_overlay_color . ';'; } ?>
+                                    <?php if( $background_type=='image' && $background_image_overlay && $background_image_overlay_color && $background_image_overlay_opacity ) { echo 'opacity:' . $background_image_overlay_opacity . '%;'; } ?>
                                 "
                             ></div>
 
