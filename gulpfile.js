@@ -34,6 +34,16 @@ gulp.task('copyAosCSS', async function() {
         .pipe(gulp.dest('dist/css'));
 });
 
+gulp.task('copyFancyJS', async function() {
+    gulp.src('assets/fancybox/*.js')
+        .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('copyFancyCSS', async function() {
+    gulp.src('assets/fancybox/*.css')
+        .pipe(gulp.dest('dist/css'));
+});
+
 gulp.task('copyColcadeJS', async function() {
     gulp.src('assets/colcade/*.js')
         .pipe(gulp.dest('dist/js'));
@@ -59,7 +69,7 @@ gulp.task('concatCSS', async function() {
         .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('default', gulp.series('copyImages', 'copyFonts', 'copySwiperJS', 'copySwiperCSS', 'copyAosJS', 'copyAosCSS', 'copyColcadeJS', 'sass', 'concatCSS', 'concatJS'));
+gulp.task('default', gulp.series('copyImages', 'copyFonts', 'copySwiperJS', 'copySwiperCSS', 'copyAosJS', 'copyAosCSS', 'copyFancyJS', 'copyFancyCSS', 'copyColcadeJS', 'sass', 'concatCSS', 'concatJS'));
 
 gulp.task('watch', async function() {
     gulp.watch('assets/img/*.{jpg,png,svg}', gulp.series('copyImages'));
@@ -68,6 +78,8 @@ gulp.task('watch', async function() {
     gulp.watch('assets/swiperjs/*.css', gulp.series('copySwiperCSS'));
     gulp.watch('assets/aos/*.js', gulp.series('copyAosJS'));
     gulp.watch('assets/aos/*.css', gulp.series('copyAosCSS'));
+    gulp.watch('assets/fancy/*.js', gulp.series('copyFancyJS'));
+    gulp.watch('assets/fancy/*.css', gulp.series('copyFancyCSS'));
     gulp.watch('assets/colcade/*.js', gulp.series('copyColcadeJS'));
     gulp.watch('assets/sass/**/*.scss', gulp.series('sass'));
     gulp.watch('assets/js/*.js', gulp.series('concatJS'));
