@@ -113,7 +113,7 @@
                         <source media="(max-width:425px)"
                                 srcset="<?php echo $image_content['sizes']['theme-xsmall']; ?> 425w">
 
-                        <img src="<?php echo $image_content_size; ?>" width="<?php echo $image_content_width; ?>" height="<?php echo $image_content_height; ?>" alt="<?php echo $image_content_alt; ?>" class="img-fluid" loading="lazy">
+                        <img src="<?php echo $image_content_size; ?>" width="<?php echo $image_content_width; ?>" height="<?php echo $image_content_height; ?>" alt="<?php echo $image_content_alt; ?>" class="img-fluid">
                     </picture>       
                 <?php endif; ?>
 

@@ -88,7 +88,7 @@
                                         <source media="(max-width:425px)"
                                                 srcset="<?php echo $featured_slider_custom_image['sizes']['theme-xsmall']; ?> 425w">
 
-                                        <img src="<?php echo $featured_slider_custom_image_size; ?>" width="<?php echo $featured_slider_custom_image_width; ?>" height="<?php echo $featured_slider_custom_image_height; ?>" alt="<?php echo $featured_slider_custom_image_alt; ?>" class="img-fluid" loading="lazy">
+                                        <img src="<?php echo $featured_slider_custom_image_size; ?>" width="<?php echo $featured_slider_custom_image_width; ?>" height="<?php echo $featured_slider_custom_image_height; ?>" alt="<?php echo $featured_slider_custom_image_alt; ?>" class="img-fluid">
                                     </picture>       
                                 <?php endif; ?>
 
@@ -155,7 +155,7 @@
                                         <source media="(max-width:425px)"
                                                 srcset="<?php echo $featured_slider_custom_image['sizes']['theme-xsmall']; ?> 425w">
 
-                                        <img src="<?php echo $featured_slider_custom_image_size; ?>" width="<?php echo $featured_slider_custom_image_width; ?>" height="<?php echo $featured_slider_custom_image_height; ?>" alt="<?php echo $featured_slider_custom_image_alt; ?>" class="img-fluid" loading="lazy">
+                                        <img src="<?php echo $featured_slider_custom_image_size; ?>" width="<?php echo $featured_slider_custom_image_width; ?>" height="<?php echo $featured_slider_custom_image_height; ?>" alt="<?php echo $featured_slider_custom_image_alt; ?>" class="img-fluid">
                                     </picture>       
                                 <?php endif; ?>
 

@@ -18,16 +18,16 @@
         <?php else: ?>
 
             <?php if( is_front_page() ): ?>
-                <img src="<?php bloginfo('template_directory'); ?>/dist/img/homepage-banner.jpg" alt="Homepage banner" loading="lazy">
+                <img src="<?php bloginfo('template_directory'); ?>/dist/img/homepage-banner.jpg" alt="Homepage banner">
 
             <?php elseif( is_home() ): ?>
-                <img src="<?php bloginfo('template_directory'); ?>/dist/img/homepage-banner.jpg" alt="Blog page banner" loading="lazy">
+                <img src="<?php bloginfo('template_directory'); ?>/dist/img/homepage-banner.jpg" alt="Blog page banner">
 
             <?php elseif( is_singular( 'portfolio' )  ): ?>
-                <img src="<?php bloginfo('template_directory'); ?>/dist/img/portfolio-banner.jpg" alt="Portfolio page banner" loading="lazy">
+                <img src="<?php bloginfo('template_directory'); ?>/dist/img/portfolio-banner.jpg" alt="Portfolio page banner">
 
             <?php else: ?>
-                <img src="<?php bloginfo('template_directory'); ?>/dist/img/homepage-banner.jpg" alt="Blog page banner" loading="lazy">    
+                <img src="<?php bloginfo('template_directory'); ?>/dist/img/homepage-banner.jpg" alt="Blog page banner">    
             <?php endif; ?>
 
         <?php endif; ?>
@@ -35,15 +35,15 @@
     <?php endif; ?>
 
     <?php if( is_category()  ): ?>
-        <img src="<?php bloginfo('template_directory'); ?>/dist/img/portfolio-banner.jpg" alt="Archive page banner" loading="lazy">
+        <img src="<?php bloginfo('template_directory'); ?>/dist/img/portfolio-banner.jpg" alt="Archive page banner">
     <?php endif; ?>
 
     <?php if( is_post_type_archive( 'portfolio' )  ): ?>
-        <img src="<?php bloginfo('template_directory'); ?>/dist/img/portfolio-banner.jpg" alt="Portfolio page banner" loading="lazy">
+        <img src="<?php bloginfo('template_directory'); ?>/dist/img/portfolio-banner.jpg" alt="Portfolio page banner">
     <?php endif; ?>
 
     <?php if( is_search() ): ?>
-        <img src="<?php bloginfo('template_directory'); ?>/dist/img/search-banner.jpg" alt="Search page banner" loading="lazy">
+        <img src="<?php bloginfo('template_directory'); ?>/dist/img/search-banner.jpg" alt="Search page banner">
     <?php endif; ?>
 
     <?php if( $banner_options=='video' ): ?>

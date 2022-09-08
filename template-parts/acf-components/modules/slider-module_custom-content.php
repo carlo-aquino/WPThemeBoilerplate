@@ -92,7 +92,7 @@
                         <source media="(max-width:425px)"
                                 srcset="<?php echo $image['sizes']['theme-xsmall']; ?> 425w">
 
-                        <img <?php if( $image['alt'] ) { echo 'alt="' . $image['alt'] . '"'; } ?> src="<?php echo $image['sizes']['theme-xlarge']; ?>" class="img-fluid" width="<?php echo $image['sizes']['theme-xlarge-width']; ?>" loading="lazy">
+                        <img <?php if( $image['alt'] ) { echo 'alt="' . $image['alt'] . '"'; } ?> src="<?php echo $image['sizes']['theme-xlarge']; ?>" class="img-fluid" width="<?php echo $image['sizes']['theme-xlarge-width']; ?>">
                     </picture>
                             
                 <?php endforeach; ?>  
