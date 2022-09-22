@@ -399,7 +399,7 @@
     </style> 
 </head>
 
-<body>
+<body <?php body_class(); ?>>
     <?php 
         if( $body_code_toggle ) {
 
