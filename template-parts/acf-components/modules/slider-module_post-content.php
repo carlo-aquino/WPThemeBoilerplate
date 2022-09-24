@@ -143,44 +143,42 @@
         <?php endif; ?>             
     </div>
 
-
-
 <?php if( $slider_type == 'slider-type-one' ): ?>
     <!-- Initialize Swiper -->
     <script type="module">
-        var swiper01 = new Swiper('.slider-type-one', {
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: 'auto',
-            initialSlide: 1,
-            slidesPerGroup: 1,
-            spaceBetween: 16,
+        let swiper01 = new Swiper('.slider-type-one', {
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        initialSlide: 1,
+        slidesPerGroup: 1,
+        spaceBetween: 16,
 
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
 
-            scrollbar: {
-                el: '.swiper-scrollbar',
-                hide: false,
-                draggable: true,
-            },
+        scrollbar: {
+            el: '.swiper-scrollbar',
+            hide: false,
+            draggable: true,
+        },
 
-            loop: true,
+        loop: true,
 
-            navigation: {
-                nextEl: '.slider-module__arrow-next',
-                prevEl: '.slider-module__arrow-prev',
-            },
-        });
+        navigation: {
+            nextEl: '.slider-module__arrow-next',
+            prevEl: '.slider-module__arrow-prev',
+        },
+    });
     </script>
 <?php endif; ?>
 
 <?php if( $slider_type == 'slider-type-two' ): ?>
     <!-- Initialize Swiper -->
     <script type="module">
-        var swiper02 = new Swiper('.slider-type-two', {
+        let swiper02 = new Swiper('.slider-type-two', {
             effect: 'coverflow',
             grabCursor: true,
             centeredSlides: true,

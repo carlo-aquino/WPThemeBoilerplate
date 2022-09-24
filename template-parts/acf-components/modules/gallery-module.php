@@ -151,12 +151,3 @@
             
         </div>
     </div>
-
-    <?php if( $gallery_masonry_toggle ): ?>
-        <script type="module">
-            var colc = new Colcade( '.grid', {
-                columns: '.grid-col',
-                items: '.grid-item'
-            });
-        </script>
-    <?php endif; ?>

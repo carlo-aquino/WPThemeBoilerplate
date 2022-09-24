@@ -30,7 +30,7 @@
 
         <div class="featured-slider-module__wrapper swiper-wrapper--left">
             
-            <div class="featured-slider-module__cards slider-left" data-aos="fade-right" data-aos-duration="800">
+            <div class="featured-slider-module__cards featured-slider__left slider-left" data-aos="fade-right" data-aos-duration="800">
 
                 <div class="featured-slider-module__cards-wrapper swiper-wrapper">
                     
@@ -65,7 +65,7 @@
 
         <div class="featured-slider-module__wrapper swiper-wrapper--right">
             
-            <div class="featured-slider-module__cards slider-right"<?php if( $featured_slider_height ){ echo ' style="height: ' . $featured_slider_height . 'rem";'; } ?> data-aos="slide-left" data-aos-duration="1000" data-aos-easing="ease-out-sine">
+            <div class="featured-slider-module__cards featured-slider__right slider-right"<?php if( $featured_slider_height ){ echo ' style="height: ' . $featured_slider_height . 'rem";'; } ?> data-aos="slide-left" data-aos-duration="1000" data-aos-easing="ease-out-sine">
 
                 <div class="featured-slider-module__cards-wrapper swiper-wrapper">
                     <?php if( $slider_post_query->have_posts() ): while( $slider_post_query->have_posts() ): $slider_post_query->the_post(); ?>
@@ -135,57 +135,55 @@
         
     </div>
 
-    <script type="module">
+<script type="module">
+    let featuredSliderLeft = new Swiper('.featured-slider__left', {
+        grabCursor: true,
+        spaceBetween: 40,
+        centeredSlides: true,
+        loop: true,
+        loopedSlides: 3
+    });
 
-        var sliderLeft = new Swiper('.slider-left', {
-            grabCursor: true,
-            spaceBetween: 40,
-            centeredSlides: true,
-            loop: true,
-            loopedSlides: 3
-        });
+    let featuredSliderRight = new Swiper('.featured-slider__right', {
+        grabCursor: true,
 
-        var sliderRight = new Swiper('.slider-right', {
-            grabCursor: true,
+        touchRatio: 0.2,
+        slideToClickedSlide: false,
+        loop: true,
+        loopedSlides: 3,
 
-            touchRatio: 0.2,
-            slideToClickedSlide: false,
-            loop: true,
-            loopedSlides: 3,
+        navigation: {
+            nextEl: '.featured-slider-module__arrow-next',
+            prevEl: '.featured-slider-module__arrow-prev',
+        },
 
-            navigation: {
-                nextEl: '.featured-slider-module__arrow-next',
-                prevEl: '.featured-slider-module__arrow-prev',
+        breakpoints: {
+            980: {
+                slidesPerView: 1.5,
+                spaceBetween: 20,
             },
 
-            breakpoints: {
-                980: {
-                    slidesPerView: 1.5,
-                    spaceBetween: 20,
-                },
-
-                1280: {
-                    slidesPerView: 2,
-                    spaceBetween: 20,
-                },
-
-                1600: {
-                    slidesPerView: 2.5,
-                    spaceBetween: 24,
-                },
+            1280: {
+                slidesPerView: 2,
+                spaceBetween: 20,
             },
-        });
 
-        sliderLeft.controller.control = sliderRight;
-        sliderRight.controller.control = sliderLeft;
+            1600: {
+                slidesPerView: 2.5,
+                spaceBetween: 24,
+            },
+        },
+    });
 
-        var sliderMobile = new Swiper('.slider-mobile', {
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: 1.5,
-            slidesPerGroup: 1,
-            spaceBetween: 24,
-            loop: true,
-        });
+    featuredSliderLeft.controller.control = featuredSliderRight;
+    featuredSliderRight.controller.control = featuredSliderLeft;
 
-    </script>
+    let sliderMobile = new Swiper('.slider-mobile', {
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 1.5,
+        slidesPerGroup: 1,
+        spaceBetween: 24,
+        loop: true,
+    });
+</script>

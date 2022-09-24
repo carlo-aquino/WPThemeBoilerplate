@@ -123,29 +123,28 @@
 
     <?php endif; ?>
 
+<script type="module">
+    let galleryThumbs = new Swiper('.slider-type-three__gallery-thumbs', {
+        grabCursor: true,
+        spaceBetween: 16,
+        slidesPerView: 3,
+        // loop: true,
+        loopedSlides: 3,
+        watchSlidesProgress: true,
+    });
 
-    <script type="module">
-        var galleryThumbs = new Swiper('.slider-type-three__gallery-thumbs', {
-            grabCursor: true,
-            spaceBetween: 16,
-            slidesPerView: 3,
-            // loop: true,
-            loopedSlides: 3,
-            watchSlidesProgress: true,
-        });
+    let galleryTop = new Swiper('.slider-type-three__gallery-top', {
+        grabCursor: true,
+        spaceBetween: 10,
+        loop: true,
+        loopedSlides: 3,
+        navigation: {
+            nextEl: '.slider-module__arrow-next',
+            prevEl: '.slider-module__arrow-prev',
+        },
 
-        var galleryTop = new Swiper('.slider-type-three__gallery-top', {
-            grabCursor: true,
-            spaceBetween: 10,
-            loop: true,
-            loopedSlides: 3,
-            navigation: {
-                nextEl: '.slider-module__arrow-next',
-                prevEl: '.slider-module__arrow-prev',
-            },
-
-            thumbs: {
-                swiper: galleryThumbs,
-            },
-        });
-    </script>
+        thumbs: {
+            swiper: galleryThumbs,
+        },
+    });
+</script>

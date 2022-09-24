@@ -1,87 +1,80 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
+const autoprefixer = require('gulp-autoprefixer');
+const sourcemaps = require('gulp-sourcemaps');
+const rename = require('gulp-rename');
+const browserify = require('browserify');
+const babelify = require('babelify');
+const source = require('vinyl-source-stream');
+const buffer = require('vinyl-buffer');
 const uglify = require('gulp-uglify');
-const cleanCSS = require('gulp-clean-css');
-const concat = require('gulp-concat');
 
-gulp.task('copyImages', async function() {
-    gulp.src('assets/img/*.{jpg,png,svg}')
-        .pipe(gulp.dest('dist/img'));
+const styleSRC = 'src/scss/main.scss';
+const styleDIST = './dist/css/';
+const styleWATCH = 'src/scss/**/*.scss';
+
+const jsSRC = 'main.js';
+const jsFOLDER = 'src/js/';
+const jsFILES = [jsSRC];
+const jsDIST = './dist/js/';
+const jsWATCH = 'src/js/**/*.js';
+
+gulp.task('style', async function() {
+    gulp.src( styleSRC )
+        .pipe( sourcemaps.init() )
+        .pipe( sass( {
+            errorLogToConsole: true,
+            outputStyle: 'compressed'
+        } ) )
+        .on( 'error', console.error.bind( console ) )
+        .pipe( autoprefixer( {
+			cascade: false
+		} ) )
+        .pipe( rename( { suffix: '.min' } ) )
+        .pipe( sourcemaps.write( './' ) )
+        .pipe( gulp.dest( styleDIST ) );
 });
 
-gulp.task('copyFonts', async function() {
-    gulp.src('assets/font/*.{ttf,woff,woff2}')
-        .pipe(gulp.dest('dist/font'));
+gulp.task('script', async function() {
+    jsFILES.map( function( entry ) {
+        return browserify( {
+            entries: [ jsFOLDER + entry ]
+        } )
+        .transform( babelify, { presets: ["@babel/preset-env"] } )
+        .bundle()
+        .pipe( source( entry ) )
+        .pipe( rename( { suffix: '.min' } ) )
+        .pipe( buffer() )
+        .pipe( sourcemaps.init( { loadMaps: true } ) )
+        .pipe( uglify() )
+        .pipe( sourcemaps.write( './' ) )
+        .pipe( gulp.dest( jsDIST ) );
+    } )
 });
 
-gulp.task('copySwiperJS', async function() {
-    gulp.src('assets/swiperjs/*.js')
-        .pipe(gulp.dest('dist/js'));
+gulp.task('jsLIB', async function() {
+    gulp.src( 'src/js/libraries/*' )
+        .pipe( gulp.dest( 'dist/js' ) );
 });
 
-gulp.task('copySwiperCSS', async function() {
-    gulp.src('assets/swiperjs/*.css')
-        .pipe(gulp.dest('dist/css'));
+gulp.task('cssLIB', async function() {
+    gulp.src( 'src/css/libraries/*' )
+        .pipe( gulp.dest( 'dist/css' ) );
 });
 
-gulp.task('copyAosJS', async function() {
-    gulp.src('assets/aos/*.js')
-        .pipe(gulp.dest('dist/js'));
+gulp.task('images', async function() {
+    gulp.src( 'src/img/*.{jpg,png,svg}' )
+        .pipe( gulp.dest( 'dist/img' ) );
 });
 
-gulp.task('copyAosCSS', async function() {
-    gulp.src('assets/aos/*.css')
-        .pipe(gulp.dest('dist/css'));
+gulp.task('fonts', async function() {
+    gulp.src( 'src/font/*.{ttf,woff,woff2}' )
+        .pipe( gulp.dest( 'dist/font' ) );
 });
 
-gulp.task('copyFancyJS', async function() {
-    gulp.src('assets/fancybox/*.js')
-        .pipe(gulp.dest('dist/js'));
-});
+gulp.task( 'default', gulp.series( 'style', 'script', 'jsLIB', 'cssLIB', 'images', 'fonts' ) );
 
-gulp.task('copyFancyCSS', async function() {
-    gulp.src('assets/fancybox/*.css')
-        .pipe(gulp.dest('dist/css'));
-});
-
-gulp.task('copyColcadeJS', async function() {
-    gulp.src('assets/colcade/*.js')
-        .pipe(gulp.dest('dist/js'));
-});
-
-gulp.task('sass', async function() {
-    gulp.src('assets/sass/*.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('assets/css'));
-});
-
-gulp.task('concatJS', async function() {
-    gulp.src('assets/js/*.js')
-        .pipe(concat('main.js'))
-        .pipe(uglify())
-        .pipe(gulp.dest('dist/js'));
-});
-
-gulp.task('concatCSS', async function() {
-    gulp.src('assets/css/*.css')
-        .pipe(concat('main.css'))
-        .pipe(cleanCSS())
-        .pipe(gulp.dest('dist/css'));
-});
-
-gulp.task('default', gulp.series('copyImages', 'copyFonts', 'copySwiperJS', 'copySwiperCSS', 'copyAosJS', 'copyAosCSS', 'copyFancyJS', 'copyFancyCSS', 'copyColcadeJS', 'sass', 'concatCSS', 'concatJS'));
-
-gulp.task('watch', async function() {
-    gulp.watch('assets/img/*.{jpg,png,svg}', gulp.series('copyImages'));
-    gulp.watch('assets/font/*.{ttf,woff}', gulp.series('copyFonts'));
-    gulp.watch('assets/swiperjs/*.js', gulp.series('copySwiperJS'));
-    gulp.watch('assets/swiperjs/*.css', gulp.series('copySwiperCSS'));
-    gulp.watch('assets/aos/*.js', gulp.series('copyAosJS'));
-    gulp.watch('assets/aos/*.css', gulp.series('copyAosCSS'));
-    gulp.watch('assets/fancy/*.js', gulp.series('copyFancyJS'));
-    gulp.watch('assets/fancy/*.css', gulp.series('copyFancyCSS'));
-    gulp.watch('assets/colcade/*.js', gulp.series('copyColcadeJS'));
-    gulp.watch('assets/sass/**/*.scss', gulp.series('sass'));
-    gulp.watch('assets/js/*.js', gulp.series('concatJS'));
-    gulp.watch('assets/css/*.css', gulp.series('concatCSS'));
-});
+gulp.task( 'watch', function() {
+    gulp.watch( styleWATCH, gulp.series( 'style' ) );
+    gulp.watch( jsWATCH, gulp.series( 'script' ) );
+} )

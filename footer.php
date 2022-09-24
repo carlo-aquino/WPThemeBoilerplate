@@ -25,15 +25,7 @@
     ?>   
 
     <script src="https://kit.fontawesome.com/a182dff85a.js" crossorigin="anonymous"></script>
-
-    <script>
-        AOS.init({
-            offset: 200,
-            duration: 1000,
-            once: true,
-            disable: 'mobile',
-        });
-    </script>
+  
 </body>
 
 </html>

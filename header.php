@@ -72,8 +72,8 @@
         }  
     ?>
 
-    <link rel="preload" as="font">
-    <link rel="shortcut icon" type="image/jpg" href="<?php if( $favicon ): echo $favicon; endif; ?>">
+    
+    <link rel="shortcut icon" type="image/x-icon" href="<?php if( $favicon ): echo $favicon; endif; ?>">
     <?php wp_head(); ?>
     
     <style>

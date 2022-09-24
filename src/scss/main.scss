@@ -1,4 +1,9 @@
 // General
+@import 'node_modules/bootstrap/scss/bootstrap';
+@import 'node_modules/aos/src/sass/aos';
+@import 'node_modules/@fancyapps/ui/src/Fancybox/Fancybox';
+
+// General
 @import 'abstracts/responsive';
 @import 'abstracts/variables';
 @import 'base-layout/reset';
