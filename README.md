@@ -1,1 +1,1 @@
-# Wordpress Boilerplate - Booking
+# Wordpress Boilerplate
