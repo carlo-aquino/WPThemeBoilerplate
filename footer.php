@@ -23,8 +23,6 @@
         wp_footer();
 
     ?>   
-
-    <script src="https://kit.fontawesome.com/a182dff85a.js" crossorigin="anonymous"></script>
   
 </body>
 

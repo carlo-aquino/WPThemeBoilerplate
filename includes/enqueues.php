@@ -3,6 +3,7 @@
     function site_scripts() {
         //include CSS
         wp_enqueue_style('swiperCSS', get_template_directory_uri() . '/dist/css/swiper-bundle.min.css');
+        wp_enqueue_style('bootstrapIcons', get_template_directory_uri() . '/dist/css/bootstrap-icons.css');
         wp_enqueue_style('mainCSS', get_template_directory_uri() . '/dist/css/main.min.css');
         wp_enqueue_style('defaultCSS', get_template_directory_uri() . '/style.css');
 

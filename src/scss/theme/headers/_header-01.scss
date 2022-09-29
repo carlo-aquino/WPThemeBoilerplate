@@ -443,8 +443,8 @@
     color: $secondaryColor;
 
     &::after {
-        content: "\f078";
-        font-family: FontAwesome;
+        content: '\F282';
+        font-family: BootstrapIcons;
         font-size: 0.7rem;
         margin-left: 0.22em;
         vertical-align: text-bottom;
