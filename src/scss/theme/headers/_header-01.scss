@@ -455,12 +455,12 @@
     color: $secondaryColor;
 
     &::before {
-        content: "\f078";
+        content: '\F285';
         position: absolute;
         right: 16px;
         top: 50%;
-        transform: translateY(-50%) rotate(-90deg);
-        font-family: FontAwesome;
+        transform: translateY(-50%);
+        font-family: BootstrapIcons;
         font-size: 0.7rem;
         margin-left: 0.22em;
         vertical-align: text-bottom;
@@ -477,8 +477,8 @@
     color: $accentColor;
 
     &::after {
-        content: "\f054";
-        font-family: FontAwesome;
+        content: '\F285';
+        font-family: BootstrapIcons;
         font-size: 0.89rem;
         margin-left: 0.625em;
         vertical-align: top;

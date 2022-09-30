@@ -67,7 +67,7 @@
             }
 
             &:checked + label::after {
-                transform: translateY(-50%) rotate(0.5turn);
+                transform: translateY(-50%) rotate(90deg);
             }
         }
 
@@ -87,8 +87,8 @@
             }
 
             &::after {
-                content: "\f078";
-                font-family: FontAwesome;
+                content: '\F285';
+                font-family: 'BootstrapIcons';
                 position: absolute;
                 right: 0.89em;
                 top: 50%;
