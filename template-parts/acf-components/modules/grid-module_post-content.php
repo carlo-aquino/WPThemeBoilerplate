@@ -70,13 +70,13 @@
         'paged'                 => $paged,
         'ignore_sticky_posts'   => 1,
 
-        'tax_query' => array(
+        'tax_query' => $grid_data_source_category ? array(
             array (
                 'taxonomy' => $grid_data_source_category->taxonomy,
                 'field' => 'slug',
                 'terms' => $grid_data_source_category->slug,
             )
-        ),
+        ) : '',
     ));
 ?>
 
@@ -215,14 +215,4 @@
         <?php endif; ?>
 
     <?php endif; wp_reset_postdata();?>
-
-
-<?php if( $grid_masonry_toggle ): ?>
-    <script type="module">
-        var colc = new Colcade( '.grid', {
-            columns: '.grid-col',
-            items: '.grid-item'
-        });
-    </script>
-<?php endif; ?>
     

@@ -10,9 +10,10 @@ AOS.init({
     disable: 'mobile',
 });
 
-let masonryGrid = document.querySelector('.gallery-module .grid');
+let masonryGrid = document.querySelector('.grid-module .grid .grid-item');
+let masonryGallery = document.querySelector('.gallery-module .grid .grid-item');
 
-if( masonryGrid ) {
+if( masonryGrid || masonryGallery ) {
     const colc = new Colcade( '.grid', {
         columns: '.grid-col',
         items: '.grid-item'
