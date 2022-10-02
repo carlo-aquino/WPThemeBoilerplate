@@ -62,6 +62,16 @@
 
     $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
+    if( $grid_data_source_category ) {
+        $results = array(); 
+        $ctr = 0;
+
+        while( $ctr < sizeof( $grid_data_source_category ) ) {
+            array_push( $results, $grid_data_source_category[$ctr]->slug );
+            $ctr++;
+        }
+    }
+
     $grid_post_query = new WP_Query(array(
         'post_type'             => $grid_data_source_filter,
         'posts_per_page'        => $grid_total_items,
@@ -72,9 +82,9 @@
 
         'tax_query' => $grid_data_source_category ? array(
             array (
-                'taxonomy' => $grid_data_source_category->taxonomy,
+                'taxonomy' => $grid_data_source_category[0]->taxonomy,
                 'field' => 'slug',
-                'terms' => $grid_data_source_category->slug,
+                'terms' => $results,
             )
         ) : '',
     ));
