@@ -2699,14 +2699,9 @@
                                                                 "class": "",
                                                                 "id": ""
                                                             },
-                                                            "post_type": [
-                                                                "post",
-                                                                "portfolio"
-                                                            ],
+                                                            "post_type": "",
                                                             "field_type": "select",
-                                                            "default_value": [
-                                                                "post"
-                                                            ],
+                                                            "default_value": [],
                                                             "return_format": "object",
                                                             "allow_null": 0,
                                                             "multiple": 0,
@@ -2748,8 +2743,8 @@
                                                             "default_value": [],
                                                             "return_format": "object",
                                                             "ui": 0,
-                                                            "allow_null": 0,
-                                                            "multiple": 0,
+                                                            "allow_null": 1,
+                                                            "multiple": 1,
                                                             "save_terms": 0,
                                                             "load_terms": 0,
                                                             "choices": [],
@@ -10391,5 +10386,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1664691526
+    "modified": 1664698006
 }
