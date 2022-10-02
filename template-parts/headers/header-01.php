@@ -144,7 +144,7 @@
         </div>
 
         <div class="mobile-header__right">
-            <i class="fa fa-bars" aria-hidden="true" id="mobile-header__icon-menu"></i>
+            <i class="bi bi-list" id="mobile-header__icon-menu"></i>
         </div>
     </header>
 

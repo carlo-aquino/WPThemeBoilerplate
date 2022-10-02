@@ -76,6 +76,8 @@
             width: 2.22rem;
 
             &::after {
+                content: '\F12F';
+                font-family: BootstrapIcons;
                 color: #fff;
                 font-size: 1rem;
             }
@@ -94,6 +96,8 @@
             width: 2.22rem;
 
             &::after {
+                content: '\F138';
+                font-family: BootstrapIcons;
                 color: #fff;
                 font-size: 1rem;
             }
