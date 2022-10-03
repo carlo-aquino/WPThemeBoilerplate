@@ -4,6 +4,9 @@
         register_post_type('portfolio', array(
             'supports'          => array('title', 'editor', 'thumbnail', 'excerpt'),
             'public'            => true,
+            'publicly_queryable'    => true,
+            'show_in_rest'          => true,
+            'show_ui'               => true,
             'menu_icon'         => 'dashicons-portfolio',
             'menu_position'     => 5,
             'has_archive'       => false,
