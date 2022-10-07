@@ -142,6 +142,11 @@
                 background: <?php echo $primary_color; ?>;
             }
 
+            .booking-module div.bootstrap form .block {
+                opacity: 0.8;
+                background-color: <?php echo $primary_color; ?>;
+            }
+
             .booking-module div.ea-bootstrap form .calendar .ui-datepicker-calendar td:hover {
                 background-color: <?php echo $primary_color; ?>;
             }
