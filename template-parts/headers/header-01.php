@@ -117,7 +117,7 @@
                     <?php else: ?>
                         <ul class="site-widget header-widget-01">
                             <li>
-                                <?php searchMenu(); ?>
+                                <?php widgetMenu(); ?>
                             </li>
                         </ul>
                     <?php endif; ?>
