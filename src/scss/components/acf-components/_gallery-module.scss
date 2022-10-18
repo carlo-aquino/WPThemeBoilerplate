@@ -7,14 +7,9 @@
         @include break(mobile) {
             grid-auto-rows: 11rem;
         }
-    }
 
-    &__content.grid-per-row__02,
-    &__content.grid-per-row__03,
-    &__content.grid-per-row__04 {
-
-        @include break(phablet) {
-            grid-template-columns: repeat(2, 1fr);
+        @include break(tablet) {
+            grid-template-columns: repeat(2, 1fr) !important;
         }
     }
 
@@ -37,33 +32,18 @@
     display: flex;
     grid-auto-rows: unset;
 
-    &-col {
-        display: flex;
-        flex-flow: column;
-        flex: 1;
-    }
-
-    &-col--4 {
-
-        @include break(tabletxl) {
-            display: none;
-        }
-    }
-
-    &-col--3 {
-
-        @include break(tablet) {
-            display: none;
-        }
-    }
-
     &-item {
+        padding: 0.4em;
 
         img {
             border-radius: unset;
             height: unset;
             object-fit: unset;
             width: 100%;
+        }
+
+        @include break(tablet) {
+            width: 50% !important;
         }
     }
 }

@@ -1,7 +1,7 @@
 // JS Libraries
 import AOS from 'aos';
 import { Fancybox } from '@fancyapps/ui';
-import Colcade from 'colcade';
+import Masonry from 'masonry-layout';
 
 AOS.init({
     offset: 200,
@@ -10,15 +10,19 @@ AOS.init({
     disable: 'mobile',
 });
 
-let masonryGrid = document.querySelector('.grid-module .grid .grid-item');
-let masonryGallery = document.querySelector('.gallery-module .grid .grid-item');
+window.onload = ()=> {
+    const galleryGrid = document.querySelector('.grid');
 
-if( masonryGrid || masonryGallery ) {
-    const colc = new Colcade( '.grid', {
-        columns: '.grid-col',
-        items: '.grid-item'
-    });
-}
+    if( galleryGrid ) {
+        const masonry = new Masonry( galleryGrid, {
+            itemSelector: '.grid-item',
+            // horizontalOrder: true,
+            percentPosition: true,
+        }); 
+    }
+    
+};
+
 
 // Theme modules
 import navMarker from './modules/navParentMarker';

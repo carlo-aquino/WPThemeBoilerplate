@@ -34,6 +34,6 @@
     "@fancyapps/ui": "^4.0.31",
     "aos": "^2.3.4",
     "bootstrap": "^5.2.1",
-    "colcade": "^0.2.0"
+    "masonry-layout": "^4.2.2"
   }
 }

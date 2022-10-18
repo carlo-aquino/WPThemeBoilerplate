@@ -108,9 +108,9 @@
         align-items: center;
         display: flex;
         flex-flow: row wrap;
+        gap: 1em;
     
         &-heading {
-            width: 40%;
     
             @include break(tabletxl) {
                 padding-bottom: 1.88em;
@@ -135,7 +135,7 @@
         }
     
         &-form {
-            width: 60%;
+            flex-grow: 1;
     
             @include break(tabletxl) {
                 padding-bottom: 0.94em;
