@@ -115,7 +115,18 @@
                     
                     <?php if( $grid_image_toggle && $grid_custom_image ): ?>
                         <div class="grid-module__cards__card-image">
-                            <img src="<?php echo $grid_custom_image_size; ?>" width="<?php echo $grid_custom_image_width; ?>" alt="<?php echo $grid_custom_image_alt; ?>" class="img-fluid<?php echo ' ' . $grid_type; ?>">
+                            <picture>
+                                <source media="(max-width:980px)"
+                                        srcset="<?php echo $grid_custom_image['sizes']['theme-large']; ?> 980w">
+                                <source media="(max-width:768px)"
+                                        srcset="<?php echo $grid_custom_image['sizes']['theme-medium']; ?> 768w">
+                                <source media="(max-width:640px)"
+                                        srcset="<?php echo $grid_custom_image['sizes']['theme-small']; ?> 640w">
+                                <source media="(max-width:425px)"
+                                        srcset="<?php echo $grid_custom_image['sizes']['theme-xsmall']; ?> 425w">
+
+                                <img src="<?php echo $grid_custom_image_size; ?>" width="<?php echo $grid_custom_image_width; ?>" alt="<?php echo $grid_custom_image_alt; ?>" class="img-fluid<?php echo ' ' . $grid_type; ?>">
+                            </picture>
                         </div>
                     <?php endif; ?>
                     
@@ -160,14 +171,4 @@
     </div>
 
 <?php endwhile; endif; ?>
-
-
-<?php if( $grid_masonry_toggle ): ?>
-    <script type="module">
-        var colc = new Colcade( '.grid', {
-            columns: '.grid-col',
-            items: '.grid-item'
-        });
-    </script>
-<?php endif; ?>
     

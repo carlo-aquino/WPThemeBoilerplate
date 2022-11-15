@@ -160,9 +160,9 @@
                 background: <?php echo $primary_color; ?>
             }
 
-            .slider-module__arrow.swiper-button-prev::after,
-            .slider-module__arrow.swiper-button-next::after {
-                color: <?php echo $primary_color; ?>;
+            .slider-module__arrow .swiper-button-prev,
+            .slider-module__arrow .swiper-button-next {
+                background: <?php echo $primary_color; ?>;
             }
 
             .tab-module__heading-wrapper li.active {
@@ -366,6 +366,15 @@
             }
 
             .featured-slider-module__cards.slider-right .swiper-scrollbar-drag {
+                background: <?php echo $accent_color; ?>;
+            }
+
+            .slider-module__arrow .swiper-button-prev:hover,
+            .slider-module__arrow .swiper-button-next:hover {
+                background: <?php echo $accent_color; ?>;
+            }
+
+            .slider-module__pagination--bullet .swiper-pagination-bullet-active {
                 background: <?php echo $accent_color; ?>;
             }
         <?php endif; ?>

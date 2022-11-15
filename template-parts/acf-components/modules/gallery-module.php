@@ -94,10 +94,12 @@
                             style="
                                 <?php if( !$gallery_masonry_toggle && $gallery_image_height ) { echo 'height: ' . $gallery_image_height . 'rem'; } ?>
                                 <?php
-                                    if( $gallery_items_per_row == 'four' ) echo 'width: 25%;';
-                                    if( $gallery_items_per_row == 'three' ) echo 'width: 33.33%;';
-                                    if( $gallery_items_per_row == 'two' ) echo 'width: 50%;';
-                                    if( $gallery_items_per_row == 'one' ) echo 'width: 100%;';
+                                    if( $gallery_masonry_toggle ) {
+                                        if( $gallery_items_per_row == 'four' ) echo 'width: 25%;';
+                                        if( $gallery_items_per_row == 'three' ) echo 'width: 33.33%;';
+                                        if( $gallery_items_per_row == 'two' ) echo 'width: 50%;';
+                                        if( $gallery_items_per_row == 'one' ) echo 'width: 100%;';        
+                                    } 
                                 ?>
 
                                 <?php if( $gallery_gap ) echo 'padding:' . ( $gallery_gap / 2 )  . 'em;'; ?>

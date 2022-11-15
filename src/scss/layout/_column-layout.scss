@@ -33,6 +33,8 @@
 
     &__row {
         flex-grow: 1;
+        margin: 0;
+        width: 100%;
 
         @include break(tabletxl) {
             margin: -1.2em 0;

@@ -2720,7 +2720,7 @@
                                                             "label": "Filter data source",
                                                             "name": "featured_slider_data_source_filter",
                                                             "type": "acfe_taxonomy_terms",
-                                                            "instructions": "",
+                                                            "instructions": "(Hold CTRL to select multiple values)",
                                                             "required": 0,
                                                             "conditional_logic": [
                                                                 [
@@ -5102,14 +5102,14 @@
                                                             "required": 0,
                                                             "conditional_logic": 0,
                                                             "wrapper": {
-                                                                "width": "",
+                                                                "width": "30",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
                                                             "choices": {
-                                                                "slider-type-one": "Type 1",
-                                                                "slider-type-two": "Type 2",
-                                                                "slider-type-three": "Type 3"
+                                                                "slider-type-one": "Basic",
+                                                                "slider-type-two": "Coverflow",
+                                                                "slider-type-three": "Thumbs Gallery"
                                                             },
                                                             "default_value": "slider-type-one",
                                                             "allow_null": 0,
@@ -5122,6 +5122,375 @@
                                                             "search_placeholder": ""
                                                         },
                                                         {
+                                                            "key": "field_636e0f4c91aa9",
+                                                            "label": "Slider Settings",
+                                                            "name": "slider_settings",
+                                                            "type": "group",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "layout": "block",
+                                                            "acfe_seamless_style": 0,
+                                                            "acfe_group_modal": 0,
+                                                            "sub_fields": [
+                                                                {
+                                                                    "key": "field_636e0f9891aaa",
+                                                                    "label": "Loop",
+                                                                    "name": "slider_loop",
+                                                                    "type": "true_false",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "33.33",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "message": "",
+                                                                    "default_value": 0,
+                                                                    "ui": 1,
+                                                                    "ui_on_text": "",
+                                                                    "ui_off_text": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_636e0fcc91aab",
+                                                                    "label": "Centered slides",
+                                                                    "name": "slider_centered_slides",
+                                                                    "type": "true_false",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "33.33",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "message": "",
+                                                                    "default_value": 0,
+                                                                    "ui": 1,
+                                                                    "ui_on_text": "",
+                                                                    "ui_off_text": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_636e102291aac",
+                                                                    "label": "Initial slide",
+                                                                    "name": "slider_initial_slide",
+                                                                    "type": "number",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "33.33",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": 0,
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "",
+                                                                    "min": "",
+                                                                    "max": "",
+                                                                    "step": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_636e104691aad",
+                                                                    "label": "Slides per group",
+                                                                    "name": "slider_slides_per_group",
+                                                                    "type": "number",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "33.33",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": 1,
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "",
+                                                                    "min": 1,
+                                                                    "max": 5,
+                                                                    "step": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_636e10cc91aae",
+                                                                    "label": "Slides per view",
+                                                                    "name": "slider_slides_per_view",
+                                                                    "type": "number",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "33.33",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": 0,
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "",
+                                                                    "min": 0,
+                                                                    "max": 5,
+                                                                    "step": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_636e114f91aaf",
+                                                                    "label": "Space between",
+                                                                    "name": "slider_space_between",
+                                                                    "type": "number",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "33.33",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": 16,
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "",
+                                                                    "min": 0,
+                                                                    "max": "",
+                                                                    "step": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_6371fa9b87f58",
+                                                                    "label": "Carousel",
+                                                                    "name": "slider_carousel",
+                                                                    "type": "true_false",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "33.33",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "message": "",
+                                                                    "default_value": 0,
+                                                                    "ui": 1,
+                                                                    "ui_on_text": "",
+                                                                    "ui_off_text": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_6371faf687f59",
+                                                                    "label": "Autoplay",
+                                                                    "name": "slider_carousel_autoplay",
+                                                                    "type": "true_false",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": [
+                                                                        [
+                                                                            {
+                                                                                "field": "field_6371fa9b87f58",
+                                                                                "operator": "==",
+                                                                                "value": "1"
+                                                                            }
+                                                                        ]
+                                                                    ],
+                                                                    "wrapper": {
+                                                                        "width": "33.33",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "message": "",
+                                                                    "default_value": 0,
+                                                                    "ui": 1,
+                                                                    "ui_on_text": "",
+                                                                    "ui_off_text": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_6371fba887f5a",
+                                                                    "label": "Delay",
+                                                                    "name": "slider_carousel_delay",
+                                                                    "type": "number",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": [
+                                                                        [
+                                                                            {
+                                                                                "field": "field_6371faf687f59",
+                                                                                "operator": "==",
+                                                                                "value": "1"
+                                                                            }
+                                                                        ]
+                                                                    ],
+                                                                    "wrapper": {
+                                                                        "width": "33.33",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "ms",
+                                                                    "min": "",
+                                                                    "max": "",
+                                                                    "step": ""
+                                                                }
+                                                            ],
+                                                            "acfe_group_modal_close": 0,
+                                                            "acfe_group_modal_button": "",
+                                                            "acfe_group_modal_size": "large"
+                                                        },
+                                                        {
+                                                            "key": "field_636e3e7e3d00c",
+                                                            "label": "Coverflow settings",
+                                                            "name": "coverflow_settings",
+                                                            "type": "group",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": [
+                                                                [
+                                                                    {
+                                                                        "field": "field_62837a9ed69bc",
+                                                                        "operator": "==",
+                                                                        "value": "slider-type-two"
+                                                                    }
+                                                                ]
+                                                            ],
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "layout": "block",
+                                                            "acfe_seamless_style": 0,
+                                                            "acfe_group_modal": 0,
+                                                            "sub_fields": [
+                                                                {
+                                                                    "key": "field_636e3ea63d00d",
+                                                                    "label": "Rotate",
+                                                                    "name": "coverflow_rotate",
+                                                                    "type": "number",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "20",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": 50,
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "",
+                                                                    "min": "",
+                                                                    "max": "",
+                                                                    "step": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_636e3ed43d00e",
+                                                                    "label": "Stretch",
+                                                                    "name": "coverflow_stretch",
+                                                                    "type": "number",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "20",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": 0,
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "",
+                                                                    "min": "",
+                                                                    "max": "",
+                                                                    "step": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_636e3eeb3d00f",
+                                                                    "label": "Depth",
+                                                                    "name": "coverflow_depth",
+                                                                    "type": "number",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "20",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": 150,
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "",
+                                                                    "min": "",
+                                                                    "max": "",
+                                                                    "step": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_636e3f493d010",
+                                                                    "label": "Modifier",
+                                                                    "name": "coverflow_modifier",
+                                                                    "type": "number",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "20",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": 1,
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "",
+                                                                    "min": "",
+                                                                    "max": 5,
+                                                                    "step": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_636e3f633d011",
+                                                                    "label": "Shadows",
+                                                                    "name": "coverflow_shadows",
+                                                                    "type": "true_false",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "20",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "message": "",
+                                                                    "default_value": 0,
+                                                                    "ui": 1,
+                                                                    "ui_on_text": "",
+                                                                    "ui_off_text": ""
+                                                                }
+                                                            ],
+                                                            "acfe_group_modal_close": 0,
+                                                            "acfe_group_modal_button": "",
+                                                            "acfe_group_modal_size": "large"
+                                                        },
+                                                        {
+                                                            "key": "field_62833a574b0c2",
+                                                            "label": "Content",
+                                                            "name": "",
+                                                            "type": "accordion",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "open": 0,
+                                                            "multi_expand": 0,
+                                                            "endpoint": 0
+                                                        },
+                                                        {
                                                             "key": "field_62833a574b0bf",
                                                             "label": "Data source",
                                                             "name": "slider_data_source",
@@ -5130,7 +5499,7 @@
                                                             "required": 0,
                                                             "conditional_logic": 0,
                                                             "wrapper": {
-                                                                "width": "30",
+                                                                "width": "25",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -5165,14 +5534,11 @@
                                                                 ]
                                                             ],
                                                             "wrapper": {
-                                                                "width": "70",
+                                                                "width": "25",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
-                                                            "post_type": [
-                                                                "post",
-                                                                "portfolio"
-                                                            ],
+                                                            "post_type": "",
                                                             "field_type": "select",
                                                             "default_value": [],
                                                             "return_format": "name",
@@ -5193,7 +5559,7 @@
                                                             "label": "Filter category",
                                                             "name": "slider_data_source_category",
                                                             "type": "acfe_taxonomy_terms",
-                                                            "instructions": "",
+                                                            "instructions": "(Hold CTRL to select multiple values)",
                                                             "required": 0,
                                                             "conditional_logic": [
                                                                 [
@@ -5205,7 +5571,7 @@
                                                                 ]
                                                             ],
                                                             "wrapper": {
-                                                                "width": "",
+                                                                "width": "50",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -5216,8 +5582,8 @@
                                                             "default_value": [],
                                                             "return_format": "object",
                                                             "ui": 0,
-                                                            "allow_null": 0,
-                                                            "multiple": 0,
+                                                            "allow_null": 1,
+                                                            "multiple": 1,
                                                             "save_terms": 0,
                                                             "load_terms": 0,
                                                             "choices": [],
@@ -5228,31 +5594,6 @@
                                                             "toggle": 0,
                                                             "allow_custom": 0,
                                                             "other_choice": 0
-                                                        },
-                                                        {
-                                                            "key": "field_62833a574b0c2",
-                                                            "label": "Post",
-                                                            "name": "",
-                                                            "type": "accordion",
-                                                            "instructions": "",
-                                                            "required": 0,
-                                                            "conditional_logic": [
-                                                                [
-                                                                    {
-                                                                        "field": "field_62833a574b0bf",
-                                                                        "operator": "==",
-                                                                        "value": "post"
-                                                                    }
-                                                                ]
-                                                            ],
-                                                            "wrapper": {
-                                                                "width": "",
-                                                                "class": "",
-                                                                "id": ""
-                                                            },
-                                                            "open": 0,
-                                                            "multi_expand": 0,
-                                                            "endpoint": 0
                                                         },
                                                         {
                                                             "key": "field_62833a574b0c3",
@@ -5291,7 +5632,7 @@
                                                                     "required": 0,
                                                                     "conditional_logic": 0,
                                                                     "wrapper": {
-                                                                        "width": "",
+                                                                        "width": "33.33",
                                                                         "class": "",
                                                                         "id": ""
                                                                     },
@@ -5312,7 +5653,7 @@
                                                                     "required": 0,
                                                                     "conditional_logic": 0,
                                                                     "wrapper": {
-                                                                        "width": "50",
+                                                                        "width": "33.33",
                                                                         "class": "",
                                                                         "id": ""
                                                                     },
@@ -5340,7 +5681,7 @@
                                                                     "required": 0,
                                                                     "conditional_logic": 0,
                                                                     "wrapper": {
-                                                                        "width": "50",
+                                                                        "width": "33.33",
                                                                         "class": "",
                                                                         "id": ""
                                                                     },
@@ -5357,14 +5698,117 @@
                                                                     "placeholder": "",
                                                                     "allow_custom": 0,
                                                                     "search_placeholder": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_637085550eae4",
+                                                                    "label": "Show title",
+                                                                    "name": "slider_show_title",
+                                                                    "type": "true_false",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "15",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "message": "",
+                                                                    "default_value": 0,
+                                                                    "ui": 1,
+                                                                    "ui_on_text": "",
+                                                                    "ui_off_text": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_637085960eae6",
+                                                                    "label": "Show description",
+                                                                    "name": "slider_show_description",
+                                                                    "type": "true_false",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "15",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "message": "",
+                                                                    "default_value": 0,
+                                                                    "ui": 1,
+                                                                    "ui_on_text": "",
+                                                                    "ui_off_text": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_637085a70eae7",
+                                                                    "label": "Show date",
+                                                                    "name": "slider_show_date",
+                                                                    "type": "true_false",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "15",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "message": "",
+                                                                    "default_value": 0,
+                                                                    "ui": 1,
+                                                                    "ui_on_text": "",
+                                                                    "ui_off_text": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_637085b90eae8",
+                                                                    "label": "Show button",
+                                                                    "name": "slider_show_button",
+                                                                    "type": "true_false",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "15",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "message": "",
+                                                                    "default_value": 0,
+                                                                    "ui": 1,
+                                                                    "ui_on_text": "",
+                                                                    "ui_off_text": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_63708c809a97b",
+                                                                    "label": "Button label",
+                                                                    "name": "slider_button_label",
+                                                                    "type": "text",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": [
+                                                                        [
+                                                                            {
+                                                                                "field": "field_637085b90eae8",
+                                                                                "operator": "==",
+                                                                                "value": "1"
+                                                                            }
+                                                                        ]
+                                                                    ],
+                                                                    "wrapper": {
+                                                                        "width": "40",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "",
+                                                                    "maxlength": ""
                                                                 }
                                                             ]
                                                         },
                                                         {
-                                                            "key": "field_62c3f6467c24d",
-                                                            "label": "Content",
-                                                            "name": "",
-                                                            "type": "accordion",
+                                                            "key": "field_63708fbe6d5b4",
+                                                            "label": "Show button",
+                                                            "name": "slider_custom_show_button",
+                                                            "type": "true_false",
                                                             "instructions": "",
                                                             "required": 0,
                                                             "conditional_logic": [
@@ -5381,9 +5825,138 @@
                                                                 "class": "",
                                                                 "id": ""
                                                             },
-                                                            "open": 0,
-                                                            "multi_expand": 0,
-                                                            "endpoint": 0
+                                                            "message": "",
+                                                            "default_value": 0,
+                                                            "ui": 1,
+                                                            "ui_on_text": "",
+                                                            "ui_off_text": ""
+                                                        },
+                                                        {
+                                                            "key": "field_636d426325e96",
+                                                            "label": "Custom settings",
+                                                            "name": "slider_custom_settings",
+                                                            "type": "repeater",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": [
+                                                                [
+                                                                    {
+                                                                        "field": "field_62833a574b0bf",
+                                                                        "operator": "==",
+                                                                        "value": "custom"
+                                                                    },
+                                                                    {
+                                                                        "field": "field_62837a9ed69bc",
+                                                                        "operator": "==",
+                                                                        "value": "slider-type-one"
+                                                                    }
+                                                                ],
+                                                                [
+                                                                    {
+                                                                        "field": "field_62833a574b0bf",
+                                                                        "operator": "==",
+                                                                        "value": "custom"
+                                                                    },
+                                                                    {
+                                                                        "field": "field_62837a9ed69bc",
+                                                                        "operator": "==",
+                                                                        "value": "slider-type-two"
+                                                                    }
+                                                                ]
+                                                            ],
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "acfe_repeater_stylised_button": 1,
+                                                            "collapsed": "field_636d432225e98",
+                                                            "min": 0,
+                                                            "max": 0,
+                                                            "layout": "table",
+                                                            "button_label": "Add Slide",
+                                                            "sub_fields": [
+                                                                {
+                                                                    "key": "field_636d42c025e97",
+                                                                    "label": "Image",
+                                                                    "name": "slider_custom_image",
+                                                                    "type": "image",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "25",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "uploader": "",
+                                                                    "acfe_thumbnail": 0,
+                                                                    "return_format": "array",
+                                                                    "preview_size": "thumbnail",
+                                                                    "min_width": "",
+                                                                    "min_height": "",
+                                                                    "min_size": "",
+                                                                    "max_width": "",
+                                                                    "max_height": "",
+                                                                    "max_size": "",
+                                                                    "mime_types": "",
+                                                                    "library": "all"
+                                                                },
+                                                                {
+                                                                    "key": "field_636d432225e98",
+                                                                    "label": "Title",
+                                                                    "name": "slider_custom_title",
+                                                                    "type": "text",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "25",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "",
+                                                                    "maxlength": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_636d434225e99",
+                                                                    "label": "Description",
+                                                                    "name": "slider_custom_description",
+                                                                    "type": "textarea",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "25",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "placeholder": "",
+                                                                    "maxlength": "",
+                                                                    "rows": 4,
+                                                                    "new_lines": "br",
+                                                                    "acfe_textarea_code": 0
+                                                                },
+                                                                {
+                                                                    "key": "field_636d436a25e9a",
+                                                                    "label": "Link",
+                                                                    "name": "slider_custom_link",
+                                                                    "type": "link",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "25",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "return_format": "array"
+                                                                }
+                                                            ]
                                                         },
                                                         {
                                                             "key": "field_62c3f6c67c24e",
@@ -5451,7 +6024,7 @@
                                                             "required": 0,
                                                             "conditional_logic": 0,
                                                             "wrapper": {
-                                                                "width": "45",
+                                                                "width": "30",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -5485,16 +6058,13 @@
                                                                 ]
                                                             ],
                                                             "wrapper": {
-                                                                "width": "",
+                                                                "width": "70",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
                                                             "layout": "block",
                                                             "acfe_seamless_style": 0,
                                                             "acfe_group_modal": 0,
-                                                            "acfe_group_modal_close": 0,
-                                                            "acfe_group_modal_button": "",
-                                                            "acfe_group_modal_size": "large",
                                                             "sub_fields": [
                                                                 {
                                                                     "key": "field_6283779a4ee12",
@@ -5550,7 +6120,10 @@
                                                                     "allow_custom": 0,
                                                                     "search_placeholder": ""
                                                                 }
-                                                            ]
+                                                            ],
+                                                            "acfe_group_modal_close": 0,
+                                                            "acfe_group_modal_button": "",
+                                                            "acfe_group_modal_size": "large"
                                                         },
                                                         {
                                                             "key": "field_62833a574b0cb",
@@ -5612,7 +6185,15 @@
                                                                     "type": "number",
                                                                     "instructions": "",
                                                                     "required": 0,
-                                                                    "conditional_logic": 0,
+                                                                    "conditional_logic": [
+                                                                        [
+                                                                            {
+                                                                                "field": "field_62837a9ed69bc",
+                                                                                "operator": "==",
+                                                                                "value": "slider-type-two"
+                                                                            }
+                                                                        ]
+                                                                    ],
                                                                     "wrapper": {
                                                                         "width": "50",
                                                                         "class": "",
@@ -5648,6 +6229,112 @@
                                                                     "step": ""
                                                                 }
                                                             ]
+                                                        },
+                                                        {
+                                                            "key": "field_6373523a2a65b",
+                                                            "label": "Slide border radius",
+                                                            "name": "slide_border_radius",
+                                                            "type": "group",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "layout": "block",
+                                                            "acfe_seamless_style": 0,
+                                                            "acfe_group_modal": 0,
+                                                            "sub_fields": [
+                                                                {
+                                                                    "key": "field_6373526f2a65c",
+                                                                    "label": "Top left",
+                                                                    "name": "slide_radius_top_left",
+                                                                    "type": "number",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "25",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "em",
+                                                                    "min": 0,
+                                                                    "max": "",
+                                                                    "step": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_637352c02a65d",
+                                                                    "label": "Top right",
+                                                                    "name": "slide_radius_top_right",
+                                                                    "type": "number",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "25",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "em",
+                                                                    "min": 0,
+                                                                    "max": "",
+                                                                    "step": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_637352d02a65e",
+                                                                    "label": "Bottom right",
+                                                                    "name": "slide_radius_bottom_right",
+                                                                    "type": "number",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "25",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "em",
+                                                                    "min": 0,
+                                                                    "max": "",
+                                                                    "step": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_637352ed2a65f",
+                                                                    "label": "Bottom left",
+                                                                    "name": "slide_radius_bottom_left",
+                                                                    "type": "number",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "25",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "placeholder": "",
+                                                                    "prepend": "",
+                                                                    "append": "em",
+                                                                    "min": 0,
+                                                                    "max": "",
+                                                                    "step": ""
+                                                                }
+                                                            ],
+                                                            "acfe_group_modal_close": 0,
+                                                            "acfe_group_modal_button": "",
+                                                            "acfe_group_modal_size": "large"
                                                         },
                                                         {
                                                             "key": "field_62833a574b0cc",
@@ -5825,7 +6512,7 @@
                                             ],
                                             "min": "",
                                             "max": "",
-                                            "acfe_flexible_modal_edit_size": "",
+                                            "acfe_flexible_modal_edit_size": "large",
                                             "acfe_flexible_settings": "",
                                             "acfe_flexible_settings_size": "medium",
                                             "acfe_flexible_thumbnail": "",
@@ -10386,5 +11073,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1664698006
+    "modified": 1668502304
 }

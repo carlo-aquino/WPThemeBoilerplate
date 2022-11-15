@@ -39,9 +39,10 @@
         } 
     }
 
-    if( have_rows('logo', 'option') ) {
+    if( have_rows('logo', 'option') ) { 
         while( have_rows('logo', 'option') ) {
             the_row();
+
             $logo_colored = get_sub_field( 'logo_colored', 'option' );
             $logo_white = get_sub_field( 'logo_white', 'option' );
 
@@ -60,10 +61,8 @@
                 $logo_white_height = $logo_white['sizes']['theme-small-height'];
                 $logo_white_alt = $logo_white['alt'];
             }
-        } 
-    } 
-
-    
+        }
+    }
 ?>
     
     <header id="header-01" class="header <?php if($sticky_header) { echo 'sticky'; } ?>"
@@ -73,8 +72,9 @@
         "
     >
         <div class="header-container <?php if( !$header_section_width ) { echo 'content-limit'; } ?>">
+            
             <div class="header-left">
-                <a href="<?php echo get_home_url(); ?>">
+                <a href="<?php echo home_url(); ?>">
                     
                     <?php 
                         if( have_rows( 'page_banner' ) ) {
@@ -95,13 +95,22 @@
                     ?>
 
                     <?php $banner = get_field('page_banner'); if( !$banner ) { echo '<h1>' . $company_name . '</h1>'; } ?>
-
-                    <img class="header-logo"
-                        src="<?php if( $header_logo=='colored' ) { echo $logo_colored_size; } else { echo $logo_white_size; } ?>"
-                        width="<?php if( $header_logo=='colored' ) { echo $logo_colored_width; } else { echo $logo_white_width; } ?>"
-                        height="<?php if( $header_logo=='colored' ) { echo $logo_colored_height; } else { echo $logo_white_height; } ?>"
-                        alt="<?php echo $company_name; ?> logo" loading="lazy"
-                    >
+                    
+                    <?php if( $logo_colored || $logo_white ): ?>
+                        <img class="header-logo img-fluid"
+                            src="<?php if( $header_logo=='colored' ) echo $logo_colored_size; else echo $logo_white_size; ?>"
+                            width="<?php if( $header_logo=='colored' ) echo $logo_colored_width; else echo $logo_white_width; ?>"
+                            height="<?php if( $header_logo=='colored' ) echo $logo_colored_height; else echo $logo_white_height; ?>"
+                            alt="<?php if( $header_logo=='colored' ) echo $logo_colored_alt; else echo $logo_white_alt; ?>" loading="lazy"
+                        >
+                    <?php else: ?>
+                        <img
+                            class="header-logo img-fluid"
+                            src="<?php bloginfo('template_directory'); ?>/dist/img/logo-white.png"
+                            alt="<?php echo $company_name; ?> logo"
+                            loading="lazy"
+                        >
+                    <?php endif; ?>
                 </a>
             </div>
 
@@ -132,14 +141,24 @@
             <?php if( $header_primary_background=='image' ) { echo 'background-image:url(' . $header_primary_background_image . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; } ?>            
         "
     >
+                      
         <div class="mobile-header__left">
-            <a href="<?php echo site_url(''); ?>">
-                <img class="header-logo"
-                    src="<?php if( $header_logo=='colored' ) { echo $logo_colored_size; } else { echo $logo_white_size; } ?>"
-                    width="<?php if( $header_logo=='colored' ) { echo $logo_colored_width; } else { echo $logo_white_width; } ?>"
-                    height="<?php if( $header_logo=='colored' ) { echo $logo_colored_height; } else { echo $logo_white_height; } ?>"
-                    alt="<?php echo $company_name; ?> logo" loading="lazy"
-                >
+            <a href="<?php echo home_url(); ?>">
+                <?php if( $logo_colored || $logo_white ): ?>  
+                    <img class="header-logo img-fluid"
+                        src="<?php if( $header_logo=='colored' ) { echo $logo_colored_size; } else { echo $logo_white_size; } ?>"
+                        width="<?php if( $header_logo=='colored' ) { echo $logo_colored_width; } else { echo $logo_white_width; } ?>"
+                        height="<?php if( $header_logo=='colored' ) { echo $logo_colored_height; } else { echo $logo_white_height; } ?>"
+                        alt="<?php if( $header_logo=='colored' ) echo $logo_colored_alt; else echo $logo_white_alt; ?>" loading="lazy"
+                    >
+                <?php else: ?>
+                    <img
+                        class="header-logo img-fluid"
+                        src="<?php bloginfo('template_directory'); ?>/dist/img/logo-white.png"
+                        alt="<?php echo $company_name; ?> logo"
+                        loading="lazy"
+                    >
+                <?php endif; ?>
             </a>
         </div>
 

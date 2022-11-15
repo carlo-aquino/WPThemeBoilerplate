@@ -84,15 +84,26 @@
                                     <?php dynamic_sidebar('footer-widget-02'); ?>
                                 </ul>
                             <?php else: ?>
+                                
                                 <div class="global-footer__row-02__col-01">
-                                    <img
-                                        class="footer-logo"
-                                        src="<?php echo $logo_colored_size; ?>"
-                                        width="<?php echo $logo_colored_width; ?>"
-                                        alt="<?php echo $company_name; ?> logo"
-                                        loading="lazy"
-                                    >
+                                    <?php if( $logo_colored ): ?>
+                                        <img
+                                            class="footer-logo"
+                                            src="<?php echo $logo_colored_size; ?>"
+                                            width="<?php echo $logo_colored_width; ?>"
+                                            alt="<?php echo $logo_colored_alt; ?>"
+                                            loading="lazy"
+                                        >
+                                    <?php else: ?>
+                                        <img
+                                            class="footer-logo"
+                                            src="<?php bloginfo('template_directory'); ?>/dist/img/logo-colored.png"
+                                            alt="<?php echo $company_name; ?> logo"
+                                            loading="lazy"
+                                        >
+                                    <?php endif; ?>
                                 </div>
+                                
                             <?php endif; ?>
 
                         <?php endif; ?> 

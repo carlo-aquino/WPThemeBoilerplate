@@ -51,12 +51,10 @@
         &__card {
             align-items: flex-end;
             background: #ccc;
-            border-radius: 8px;
             box-shadow: 0 16px 24px rgba( $primaryColor, 0.06 );
             display: flex;
             height: 15rem;
             overflow: hidden;
-            padding: 2.4em;
             position: relative;
             width: 17.5rem;
 
@@ -75,58 +73,89 @@
                 background: rgba(#594a42, 0.5);
             }
 
-            &-content {
+            &-content-container {
+                padding: 2em;
                 position: relative;
+                width: 100%;
                 z-index: 10;
 
                 h3 {
                     color: #fff;
-                    font-size: 2rem;
+                    font-size: 1.5rem;
                     line-height: 1.15em;
                     margin-bottom: 0;
                 }
 
-                span {
+                p {
                     color: #fff;
                     font-size: 0.8rem;
-                    text-transform: uppercase;
+                    line-height: 1.6;
+                    margin-bottom: 0;
+                    margin-top: 0.4em;
+
+                    @include break(tabletxl) {
+                        display: none;
+                    }
+                }
+
+                span.post-date {
+                    color: #fff;
+                    font-size: 0.8rem;
                 }
             }
         }
     }
 
     &__arrow {
+        @include break(tabletxl) {
+            display: none;
+        }
 
-        &-prev {
-            left: 0;
+        .swiper-button-prev {
+            background: $primaryColor;
+            border-radius: 50%;
+            height: 2.22rem;
+            left: 1%;
+            transition: 200ms all ease-out;
+            width: 2.22rem;
 
             &::after {
-                color: $primaryColor;
-                content: '\F284';
-                font-family: 'BootstrapIcons';
+                content: '\F12F';
+                font-family: BootstrapIcons;
+                color: #fff;
+                font-size: 1rem;
+            }
+
+            &:hover {
+                background: $accentColor;
             }
         }
 
-        &-next {
-            right: 0;
+        .swiper-button-next {
+            background: $primaryColor;
+            border-radius: 50%;
+            height: 2.22rem;
+            right: 1%;
+            transition: 200ms all ease-out;
+            width: 2.22rem;
 
             &::after {
-                color: $primaryColor;
-                content: '\F285';
-                font-family: 'BootstrapIcons';
+                content: '\F138';
+                font-family: BootstrapIcons;
+                color: #fff;
+                font-size: 1rem;
+            }
+
+            &:hover {
+                background: $accentColor;
             }
         }
     }
 
-    &__arrow.slider-03 {
-        background: rgba(#fff, 0.5);
-        height: 100%;
-        top: 53.7%;
-        transform: translateY(-50%);
-        width: 7%;
+    &__pagination--bullet {
 
-        &::after {
-            color: #3d3d3d;
+        .swiper-pagination-bullet-active {
+            background: $accentColor;
         }
     }
 }

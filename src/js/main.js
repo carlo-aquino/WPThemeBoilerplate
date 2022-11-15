@@ -1,7 +1,14 @@
 // JS Libraries
 import AOS from 'aos';
 import { Fancybox } from '@fancyapps/ui';
-import Masonry from 'masonry-layout';
+
+// Theme modules
+import featuredSlider from './modules/featuredSliderModule';
+import gallery from './modules/galleryModule';
+import mobileMenu from './modules/mobileMenu';
+import navMarker from './modules/navParentMarker';
+import themeSlider from './modules/sliderModule';
+import tabModule from './modules/tabModule';
 
 AOS.init({
     offset: 200,
@@ -9,22 +16,3 @@ AOS.init({
     once: true,
     disable: 'mobile',
 });
-
-window.onload = ()=> {
-    const galleryGrid = document.querySelector('.grid');
-
-    if( galleryGrid ) {
-        const masonry = new Masonry( galleryGrid, {
-            itemSelector: '.grid-item',
-            // horizontalOrder: true,
-            percentPosition: true,
-        }); 
-    }
-    
-};
-
-
-// Theme modules
-import navMarker from './modules/navParentMarker';
-import mobileMenu from './modules/mobileMenu';
-import tabModule from './modules/tabModule';

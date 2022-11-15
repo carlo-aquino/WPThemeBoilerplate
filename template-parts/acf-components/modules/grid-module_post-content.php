@@ -153,7 +153,6 @@
                                     array(
                                         'class' => 'img-fluid '. $grid_type,
                                         'width' => 640,
-                                        'alt'   => get_the_title(),
                                     ) 
                                 );
                             }

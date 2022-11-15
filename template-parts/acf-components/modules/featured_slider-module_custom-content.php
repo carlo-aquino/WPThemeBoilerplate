@@ -1,9 +1,11 @@
 <?php if( have_rows( 'featured_slider_module_settings' ) ): while( have_rows( 'featured_slider_module_settings' ) ): the_row();
     $featured_slider_height = get_sub_field( 'featured_slider_height' );
+
+    $randID = uniqid();
 ?>
 
     <?php if( have_rows( 'featured_slider_custom_content' ) ): ?>
-        <div class="featured-slider-module__container row g-0">
+        <div class="featured-slider-module__container row g-0<?php echo ' featured-slider-module__container-' . $randID; ?>" data-featuredsliderid="<?php echo 'featured-slider-module__container-' . $randID; ?>">
 
             <div class="featured-slider-module__wrapper swiper-wrapper--left">
                 
@@ -107,7 +109,7 @@
 
         </div>
 
-        <div class="featured-slider-module__container-mobile">
+        <div class="featured-slider-module__container-mobile<?php echo ' featured-slider-module__container__mobile-' . $randID; ?>" data-featuredsliderid="<?php echo 'featured-slider-module__container__mobile-' . $randID; ?>">
 
             <div class="featured-slider-module__wrapper">
                 
@@ -173,56 +175,3 @@
     <?php endif;?>
 
 <?php endwhile; endif; ?>  
-
-<script type="module">
-    let featuredSliderLeft = new Swiper('.featured-slider__left', {
-        grabCursor: true,
-        spaceBetween: 40,
-        centeredSlides: true,
-        loop: true,
-        loopedSlides: 3
-    });
-
-    let featuredSliderRight = new Swiper('.featured-slider__right', {
-        grabCursor: true,
-
-        touchRatio: 0.2,
-        slideToClickedSlide: false,
-        loop: true,
-        loopedSlides: 3,
-
-        navigation: {
-            nextEl: '.featured-slider-module__arrow-next',
-            prevEl: '.featured-slider-module__arrow-prev',
-        },
-
-        breakpoints: {
-            980: {
-                slidesPerView: 1.5,
-                spaceBetween: 20,
-            },
-
-            1280: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-            },
-
-            1600: {
-                slidesPerView: 2.5,
-                spaceBetween: 24,
-            },
-        },
-    });
-
-    featuredSliderLeft.controller.control = featuredSliderRight;
-    featuredSliderRight.controller.control = featuredSliderLeft;
-
-    let sliderMobile = new Swiper('.slider-mobile', {
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: 1.5,
-        slidesPerGroup: 1,
-        spaceBetween: 24,
-        loop: true,
-    });
-</script>

@@ -1,6 +1,6 @@
-<?php if( have_rows( 'page_banner' ) ): ?>
-    
-    <?php while( have_rows( 'page_banner' ) ): the_row(); $page_bg_enable = get_sub_field( 'page_bg_enable' ); ?>
+<?php if( is_page() || is_single() ): ?>
+
+    <?php if( have_rows( 'page_banner' ) ): while( have_rows( 'page_banner' ) ): the_row(); $page_bg_enable = get_sub_field( 'page_bg_enable' ); ?>
 
         <?php if( have_rows( 'banner_type' ) ): while( have_rows( 'banner_type' ) ):
             the_row(); 
@@ -64,7 +64,7 @@
 
         <?php endwhile; endif; ?>  
         
-    <?php endwhile; ?>    
+    <?php endwhile; endif; ?>   
 
 <?php else: $current_category = get_queried_object(); ?>
 
@@ -76,11 +76,11 @@
 
             <div class="page-banner__heading-container">
 
-                <?php if( is_search() ) { echo '<h1>Search Results</h1>'; } ?>
-
-                <?php if( is_category() ) { echo '<h1>Archive: ' . $current_category->name . '</h1>'; } ?>
-
-                <?php if( is_post_type_archive( 'portfolio' ) ) { echo '<h1>Portfolio</h1>'; } ?>
+                <?php
+                    if( is_search() ) echo '<h1>Search Results</h1>';
+                    if( is_category() ) echo '<h1>Archive: ' . $current_category->name . '</h1>';
+                    if( is_post_type_archive( 'portfolio' ) ) echo '<h1>Portfolio</h1>'; 
+                ?>
 
             </div>
 
