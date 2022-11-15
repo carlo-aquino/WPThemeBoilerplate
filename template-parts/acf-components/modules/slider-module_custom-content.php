@@ -10,6 +10,7 @@
     $slider_data_source_filter = get_sub_field( 'slider_data_source_filter' );
     $slider_data_source_category = get_sub_field( 'slider_data_source_category' );
     
+    $slider_custom_heading_type = get_sub_field( 'slider_custom_heading_type' );
     $slider_custom_show_button = get_sub_field( 'slider_custom_show_button' );
 
     if( have_rows( 'slider_settings' ) ) {
@@ -282,7 +283,7 @@
                                 <?php if( $slider_custom_title || $slider_custom_description ): ?>
                                     <header class="slider-module__cards__card-content">
                                         <?php if( $slider_custom_title ): ?>
-                                            <h3><?php echo $slider_custom_title; ?></h3>
+                                            <?php echo '<' . $slider_custom_heading_type . '>' . $slider_custom_title . '</' . $slider_custom_heading_type . '>'; ?>
                                         <?php endif; ?>        
 
                                         <?php if( $slider_custom_description ): ?>

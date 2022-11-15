@@ -49,6 +49,7 @@
                     $slider_order_by = get_sub_field( 'slider_order_by' );
                     $slider_order = get_sub_field( 'slider_order' );
                     $slider_show_title = get_sub_field( 'slider_show_title' );
+                    $slider_post_heading_type = get_sub_field( 'slider_post_heading_type' );
                     $slider_show_description = get_sub_field( 'slider_show_description' );
                     $slider_show_date = get_sub_field( 'slider_show_date' );
                     $slider_show_button = get_sub_field( 'slider_show_button' );
@@ -217,7 +218,7 @@
                         <?php if( $slider_show_title || $slider_show_date ): ?>
                             <header class="slider-module__cards__card-content">
                                 <?php if( $slider_show_title ): ?>
-                                    <h3><?php the_title(); ?></h3>
+                                    <?php echo '<' . $slider_post_heading_type . '>' . get_the_title() . '</' . $slider_post_heading_type . '>'; ?>
                                 <?php endif; ?>
 
                                 <?php if( $slider_show_date ): ?>

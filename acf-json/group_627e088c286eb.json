@@ -5719,6 +5719,44 @@
                                                                     "ui_off_text": ""
                                                                 },
                                                                 {
+                                                                    "key": "field_6373e107db920",
+                                                                    "label": "Heading type",
+                                                                    "name": "slider_post_heading_type",
+                                                                    "type": "select",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": [
+                                                                        [
+                                                                            {
+                                                                                "field": "field_637085550eae4",
+                                                                                "operator": "==",
+                                                                                "value": "1"
+                                                                            }
+                                                                        ]
+                                                                    ],
+                                                                    "wrapper": {
+                                                                        "width": "20",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "choices": {
+                                                                        "h2": "H2",
+                                                                        "h3": "H3",
+                                                                        "h4": "H4",
+                                                                        "h5": "H5",
+                                                                        "h6": "H6"
+                                                                    },
+                                                                    "default_value": false,
+                                                                    "allow_null": 0,
+                                                                    "multiple": 0,
+                                                                    "ui": 0,
+                                                                    "return_format": "value",
+                                                                    "ajax": 0,
+                                                                    "placeholder": "",
+                                                                    "allow_custom": 0,
+                                                                    "search_placeholder": ""
+                                                                },
+                                                                {
                                                                     "key": "field_637085960eae6",
                                                                     "label": "Show description",
                                                                     "name": "slider_show_description",
@@ -5792,7 +5830,7 @@
                                                                         ]
                                                                     ],
                                                                     "wrapper": {
-                                                                        "width": "40",
+                                                                        "width": "20",
                                                                         "class": "",
                                                                         "id": ""
                                                                     },
@@ -5803,6 +5841,44 @@
                                                                     "maxlength": ""
                                                                 }
                                                             ]
+                                                        },
+                                                        {
+                                                            "key": "field_6373dd516159a",
+                                                            "label": "Heading type",
+                                                            "name": "slider_custom_heading_type",
+                                                            "type": "select",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": [
+                                                                [
+                                                                    {
+                                                                        "field": "field_62833a574b0bf",
+                                                                        "operator": "==",
+                                                                        "value": "custom"
+                                                                    }
+                                                                ]
+                                                            ],
+                                                            "wrapper": {
+                                                                "width": "30",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "choices": {
+                                                                "h2": "H2",
+                                                                "h3": "H3",
+                                                                "h4": "H4",
+                                                                "h5": "H5",
+                                                                "h6": "H6"
+                                                            },
+                                                            "default_value": "h2",
+                                                            "allow_null": 0,
+                                                            "multiple": 0,
+                                                            "ui": 0,
+                                                            "return_format": "value",
+                                                            "ajax": 0,
+                                                            "placeholder": "",
+                                                            "allow_custom": 0,
+                                                            "search_placeholder": ""
                                                         },
                                                         {
                                                             "key": "field_63708fbe6d5b4",
@@ -5821,7 +5897,7 @@
                                                                 ]
                                                             ],
                                                             "wrapper": {
-                                                                "width": "",
+                                                                "width": "30",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -11073,5 +11149,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1668502304
+    "modified": 1668538828
 }
