@@ -3,6 +3,7 @@
     &__wrapper {
 
         a {
+            font-weight: normal;
             text-decoration: none;
         }
 
@@ -21,8 +22,9 @@
             transition: 200ms all ease-out;
 
             @include break(mobile) {
-                width: 100%;
+                padding: 1em 0;
                 text-align: center;
+                width: 100%;
             }
 
             &:hover {
