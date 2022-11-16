@@ -96,7 +96,7 @@
 
                     <?php $banner = get_field('page_banner'); if( !$banner ) { echo '<h1>' . $company_name . '</h1>'; } ?>
                     
-                    <?php if( $logo_colored || $logo_white ): ?>
+                    <?php if( have_rows('logo', 'option') && ($logo_colored || $logo_white) ): ?>
                         <img class="header-logo img-fluid"
                             src="<?php if( $header_logo=='colored' ) echo $logo_colored_size; else echo $logo_white_size; ?>"
                             width="<?php if( $header_logo=='colored' ) echo $logo_colored_width; else echo $logo_white_width; ?>"
@@ -144,7 +144,7 @@
                       
         <div class="mobile-header__left">
             <a href="<?php echo home_url(); ?>">
-                <?php if( $logo_colored || $logo_white ): ?>  
+                <?php if( have_rows('logo', 'option') && ($logo_colored || $logo_white) ): ?>  
                     <img class="header-logo img-fluid"
                         src="<?php if( $header_logo=='colored' ) { echo $logo_colored_size; } else { echo $logo_white_size; } ?>"
                         width="<?php if( $header_logo=='colored' ) { echo $logo_colored_width; } else { echo $logo_white_width; } ?>"

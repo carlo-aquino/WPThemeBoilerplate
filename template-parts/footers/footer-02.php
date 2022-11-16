@@ -86,7 +86,7 @@
                             <?php else: ?>
                                 
                                 <div class="global-footer__row-02__col-01">
-                                    <?php if( $logo_colored ): ?>
+                                    <?php if( have_rows('logo', 'option') && $logo_colored ): ?>
                                         <img
                                             class="footer-logo"
                                             src="<?php echo $logo_colored_size; ?>"
