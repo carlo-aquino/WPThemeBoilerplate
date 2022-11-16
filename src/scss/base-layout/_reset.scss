@@ -97,7 +97,10 @@ li {
 }
 
 form {
-
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1em;
+    
     label {
         color: $primaryColor;
         font-weight: bold;
@@ -128,6 +131,7 @@ form {
         font-size: 0.8rem;
         justify-content: center;
         max-width: 10rem;
+        padding: 1em 2em;
         transition: 200ms all ease-out;
 
         @include break(mobile) {

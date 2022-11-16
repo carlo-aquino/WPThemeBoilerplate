@@ -4770,84 +4770,133 @@
                                                             "endpoint": 0
                                                         },
                                                         {
-                                                            "key": "field_62e661597c456",
-                                                            "label": "Width",
-                                                            "name": "image_width",
-                                                            "type": "range",
+                                                            "key": "field_637470dc17409",
+                                                            "label": "Inherit container size",
+                                                            "name": "image_inherit_container_size",
+                                                            "type": "true_false",
                                                             "instructions": "",
                                                             "required": 0,
                                                             "conditional_logic": 0,
                                                             "wrapper": {
-                                                                "width": "50",
+                                                                "width": "30",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
-                                                            "default_value": "",
-                                                            "min": "",
-                                                            "max": 1920,
-                                                            "step": "",
-                                                            "prepend": "",
-                                                            "append": "px"
+                                                            "message": "",
+                                                            "default_value": 0,
+                                                            "ui": 1,
+                                                            "ui_on_text": "",
+                                                            "ui_off_text": ""
                                                         },
                                                         {
-                                                            "key": "field_62e661597c457",
-                                                            "label": "Height",
-                                                            "name": "image_height",
-                                                            "type": "range",
+                                                            "key": "field_63746ffea94a2",
+                                                            "label": "Sizing settings",
+                                                            "name": "image_sizing_settings",
+                                                            "type": "group",
                                                             "instructions": "",
                                                             "required": 0,
-                                                            "conditional_logic": 0,
+                                                            "conditional_logic": [
+                                                                [
+                                                                    {
+                                                                        "field": "field_637470dc17409",
+                                                                        "operator": "!=",
+                                                                        "value": "1"
+                                                                    }
+                                                                ]
+                                                            ],
                                                             "wrapper": {
-                                                                "width": "50",
+                                                                "width": "70",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
-                                                            "default_value": "",
-                                                            "min": "",
-                                                            "max": 1080,
-                                                            "step": "",
-                                                            "prepend": "",
-                                                            "append": "px"
-                                                        },
-                                                        {
-                                                            "key": "field_62e661597c458",
-                                                            "label": "Max width",
-                                                            "name": "image_max_width",
-                                                            "type": "range",
-                                                            "instructions": "",
-                                                            "required": 0,
-                                                            "conditional_logic": 0,
-                                                            "wrapper": {
-                                                                "width": "50",
-                                                                "class": "",
-                                                                "id": ""
-                                                            },
-                                                            "default_value": "",
-                                                            "min": "",
-                                                            "max": 1920,
-                                                            "step": "",
-                                                            "prepend": "",
-                                                            "append": "px"
-                                                        },
-                                                        {
-                                                            "key": "field_62e661597c459",
-                                                            "label": "Max height",
-                                                            "name": "image_max_height",
-                                                            "type": "range",
-                                                            "instructions": "",
-                                                            "required": 0,
-                                                            "conditional_logic": 0,
-                                                            "wrapper": {
-                                                                "width": "50",
-                                                                "class": "",
-                                                                "id": ""
-                                                            },
-                                                            "default_value": "",
-                                                            "min": "",
-                                                            "max": 1080,
-                                                            "step": "",
-                                                            "prepend": "",
-                                                            "append": "px"
+                                                            "layout": "block",
+                                                            "acfe_seamless_style": 0,
+                                                            "acfe_group_modal": 0,
+                                                            "sub_fields": [
+                                                                {
+                                                                    "key": "field_62e661597c456",
+                                                                    "label": "Width",
+                                                                    "name": "image_width",
+                                                                    "type": "range",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "50",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "min": "",
+                                                                    "max": 1920,
+                                                                    "step": "",
+                                                                    "prepend": "",
+                                                                    "append": "px"
+                                                                },
+                                                                {
+                                                                    "key": "field_62e661597c457",
+                                                                    "label": "Height",
+                                                                    "name": "image_height",
+                                                                    "type": "range",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "50",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "min": "",
+                                                                    "max": 1080,
+                                                                    "step": "",
+                                                                    "prepend": "",
+                                                                    "append": "px"
+                                                                },
+                                                                {
+                                                                    "key": "field_62e661597c458",
+                                                                    "label": "Max width",
+                                                                    "name": "image_max_width",
+                                                                    "type": "range",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "50",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "min": "",
+                                                                    "max": 1920,
+                                                                    "step": "",
+                                                                    "prepend": "",
+                                                                    "append": "px"
+                                                                },
+                                                                {
+                                                                    "key": "field_62e661597c459",
+                                                                    "label": "Max height",
+                                                                    "name": "image_max_height",
+                                                                    "type": "range",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "50",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "default_value": "",
+                                                                    "min": "",
+                                                                    "max": 1080,
+                                                                    "step": "",
+                                                                    "prepend": "",
+                                                                    "append": "px"
+                                                                }
+                                                            ],
+                                                            "acfe_group_modal_close": 0,
+                                                            "acfe_group_modal_button": "",
+                                                            "acfe_group_modal_size": "large"
                                                         },
                                                         {
                                                             "key": "field_62e661597c45a",
@@ -11149,5 +11198,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1668538828
+    "modified": 1668575644
 }

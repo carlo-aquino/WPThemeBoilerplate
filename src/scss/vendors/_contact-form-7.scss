@@ -1,6 +1,16 @@
 .wpcf7-form {
     position: relative;
 
+    span.wpcf7-spinner {
+        position: absolute;
+        bottom: 0;
+    }
+
+    span.form-violator {
+        font-size: 0.83rem;
+        padding-top: 1.6em;
+    }
+
     .form-footer {
         align-items: center;
         display: flex;
@@ -19,20 +29,13 @@
                 width: 100%;
             }
         }
-
-        span.wpcf7-spinner {
-            position: absolute;
-        }
-
-        span.form-violator {
-            font-size: 0.83rem;
-            padding-top: 1.6em;
-        }
     }
 
     .wpcf7-response-output {
+        border: 0 !important;
+        color: #dc3232 !important;
+        margin: 0 !important;
         text-align: center;
-        color: #595959;
     }
 
     & div.subscription {
@@ -151,4 +154,8 @@
     }
 
     
+}
+
+.wpcf7 form.sent .wpcf7-response-output {
+    color: #46b450 !important;
 }

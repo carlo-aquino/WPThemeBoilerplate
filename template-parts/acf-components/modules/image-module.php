@@ -5,6 +5,7 @@
     $image_size = get_sub_field( 'image_size' );
     $image_lightbox = get_sub_field( 'image_lightbox' );
     $image_link = get_sub_field( 'image_link' );
+    $image_inherit_container_size = get_sub_field( 'image_inherit_container_size' );
 
     if( $image_content ) {
         $image_content_size = $image_content['sizes'][$image_size];
@@ -63,8 +64,8 @@
     }           
 ?>
 
-    <div id="<?php if( $css_id ) { echo ' ' . $css_id; } ?>" class="image-module<?php if( $css_class ) { echo ' ' . $css_class; } ?>">
-        <div class="image-module__wrapper"
+    <div id="<?php if( $css_id ) { echo ' ' . $css_id; } ?>" class="image-module<?php if( $css_class ) echo ' ' . $css_class; if( $image_inherit_container_size ) echo ' inherit-container'; ?>">
+        <div class="image-module__wrapper<?php if( $image_inherit_container_size ) echo ' inherit-container';?>"
             style="
                 <?php if( $margin_top ) { echo 'margin-top:' . $margin_top . 'em;'; } ?>
                 <?php if( $margin_bottom ) { echo 'margin-bottom:' . $margin_bottom . 'em;'; } ?>
@@ -113,7 +114,7 @@
                         <source media="(max-width:425px)"
                                 srcset="<?php echo $image_content['sizes']['theme-xsmall']; ?> 425w">
 
-                        <img src="<?php echo $image_content_size; ?>" width="<?php echo $image_content_width; ?>" height="<?php echo $image_content_height; ?>" alt="<?php echo $image_content_alt; ?>" class="img-fluid">
+                        <img src="<?php echo $image_content_size; ?>" width="<?php echo $image_content_width; ?>" height="<?php echo $image_content_height; ?>" alt="<?php echo $image_content_alt; ?>" class="img-fluid<?php if( $image_inherit_container_size ) echo ' inherit-container';?>">
                     </picture>       
                 <?php endif; ?>
 
