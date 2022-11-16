@@ -9,10 +9,11 @@
 
     form {
         display: grid;
+        gap: 0;
         grid-template-columns: 1fr 72px;
-        width: 100%;
         max-width: 1360px;
         padding: 0 2.22em !important;
+        width: 100%;
 
         label {
             width: 100% !important;
