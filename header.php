@@ -94,6 +94,17 @@
                 color: <?php echo $primary_color; ?>;
             }
 
+            form label {
+                color: <?php echo $primary_color; ?>;
+            }
+
+            form input[type=email]:focus,
+            form input[type=tel]:focus,
+            form input[type=text]:focus,
+            form textarea:focus {
+                outline-color: <?php echo $primary_color; ?>;
+            }
+
             #header-01 {
                 background: <?php echo $primary_color; ?>;
             }
@@ -177,16 +188,7 @@
                 background-color: <?php echo $primary_color; ?>;
             }
 
-            .wpcf7-form label {
-                color: <?php echo $primary_color; ?>;
-            }
-
-            .wpcf7-form div.contact-us__form input[type=email]:focus,
-            .wpcf7-form div.contact-us__form input[type=tel]:focus,
-            .wpcf7-form div.contact-us__form input[type=text]:focus,
-            .wpcf7-form div.contact-us__form textarea:focus {
-                outline-color: <?php echo $primary_color; ?>;
-            }
+            
         <?php endif; ?>
 
         <?php if( $secondary_color ): ?>
@@ -233,6 +235,17 @@
         <?php if( $accent_color ): ?>
             a, a:hover {
                 color: <?php echo $accent_color; ?>; 
+            }
+
+            input[type="submit"] {
+                background-color: <?php echo $accent_color; ?> !important;
+                border-color: <?php echo $accent_color; ?> !important;
+            }
+
+            input[type="submit"]:hover {
+                background-color: transparent !important;
+                border-color: <?php echo $accent_color; ?> !important;
+                color: <?php echo $accent_color; ?> !important;
             }
 
             #header-01 .header-right nav ul li.featured-link > a {
@@ -387,6 +400,10 @@
 
         <?php if( $heading_text_color ): ?>
             h1, h2, h3, h4, h5, h6 {
+                color: <?php echo $heading_text_color; ?>;
+            }
+
+            form label {
                 color: <?php echo $heading_text_color; ?>;
             }
         <?php endif; ?>
