@@ -274,7 +274,7 @@
                                     <?php if( $slider_slides_per_view == 1 ): ?>
                                         <img src="<?php echo $slider_custom_image['sizes']['theme-full']; ?>" width="<?php echo $slider_custom_image['sizes']['theme-full-width']; ?>" height="<?php echo $slider_custom_image['sizes']['theme-full-height']; ?>" alt="<?php echo $slider_custom_image_alt; ?>" class="img-fluid">
                                     <?php else: ?>
-                                        <img src="<?php $slider_custom_image_size; ?>" width="<?php echo $slider_custom_image_width; ?>" height="<?php echo $slider_custom_image_height; ?>" alt="<?php echo $slider_custom_image_alt; ?>" class="img-fluid">
+                                        <img src="<?php echo $slider_custom_image_size; ?>" width="<?php echo $slider_custom_image_width; ?>" height="<?php echo $slider_custom_image_height; ?>" alt="<?php echo $slider_custom_image_alt; ?>" class="img-fluid">
                                     <?php endif; ?>
                                 </picture>       
                             <?php endif; ?>
