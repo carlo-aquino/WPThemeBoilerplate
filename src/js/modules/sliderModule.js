@@ -31,11 +31,11 @@ const themeSlider = ()=> {
                     breakpoints: {
                         320: {
                             slidesPerView: slider_view > 1 ? 1.5 : slider_view,
+                            spaceBetween: slider_space > 16 ? 8 : slider_space,
                         },
 
                         640: {
                             slidesPerView: slider_view > 2 ? (slider_view - 1) : slider_view,
-                            spaceBetween: slider_space > 16 ? 8 : slider_space,
                         },
 
                         768: {
