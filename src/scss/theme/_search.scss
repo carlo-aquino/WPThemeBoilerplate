@@ -68,7 +68,7 @@
                 color: #dbdbdb;
                 font-weight: normal;
                 text-decoration: none;
-                word-wrap: break-word;
+                word-break: break-all;
     
                 &:hover {
                     color: $accentColor;

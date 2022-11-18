@@ -97,9 +97,14 @@ li {
 }
 
 form {
+	flex-flow: column nowrap;
+    align-items: center;
     display: flex;
-    flex-flow: row wrap;
     gap: 1em;
+
+    span {
+        width: 100%;
+    }
     
     label {
         color: $primaryColor;
@@ -155,11 +160,18 @@ form {
     input:focus, select:focus, textarea:focus {
         outline-color: $accentColor;
     }
+    
+    input::placeholder, select::placeholder, textarea::placeholder {
+        color: #4c4c4c;
+        font-size: 1rem;
+        opacity: 0.5;
+    }
 
-    input + span {
+    input + span, textarea + span {
         font-size: 0.85rem !important;
         position: absolute;
         right: 0;
+        text-align: right;
     }
 
     .form-container {
@@ -170,7 +182,8 @@ form {
 
     .form-column {
         display: flex;
-        gap: 4.44em;
+        gap: 2em;
+        width: 100%;
 
         @include break(tabletxl) {
             flex-flow: row wrap; 
@@ -194,6 +207,10 @@ form {
                 flex-grow: 1;
             }
         }
+    }
+
+    @include break(tabletxl) {
+        gap: 1.5em;;
     }
 }
 
