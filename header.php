@@ -77,6 +77,11 @@
     <?php wp_head(); ?>
     
     <style>
+        :root {
+            --primary: #a74799;
+            --accent: #fab631;
+        }
+
         <?php if( $site_width ) : ?>
             .content-limit {
                 max-width: <?php if( $site_width ) { echo $site_width; } ?>px;
@@ -90,6 +95,10 @@
         <?php endif; ?>
             
         <?php if( $primary_color ): ?>
+            :root {
+                --primary: <?php echo $primary_color; ?>;
+            }
+
             h1, h2, h3, h4, h5, h6 {
                 color: <?php echo $primary_color; ?>;
             }
@@ -233,6 +242,10 @@
         <?php endif; ?>
 
         <?php if( $accent_color ): ?>
+            :root {
+                --accent: #fab631;
+            }
+            
             a, a:hover {
                 color: <?php echo $accent_color; ?>; 
             }

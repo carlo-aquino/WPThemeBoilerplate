@@ -100,7 +100,7 @@ form {
 	flex-flow: column nowrap;
     align-items: center;
     display: flex;
-    gap: 1em;
+    gap: 1.8em;
 
     span {
         width: 100%;
@@ -182,7 +182,7 @@ form {
 
     .form-column {
         display: flex;
-        gap: 2em;
+        gap: 1.8em;
         width: 100%;
 
         @include break(tabletxl) {
