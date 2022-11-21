@@ -21,7 +21,7 @@
 
     // add_action( 'wpcf7_before_send_mail', 'contactform7_before_send_mail' );
 
-    //Remove auto p on COntact Form 7
+    //Remove auto p on Contact Form 7
     add_filter('wpcf7_autop_or_not', '__return_false');
     
 

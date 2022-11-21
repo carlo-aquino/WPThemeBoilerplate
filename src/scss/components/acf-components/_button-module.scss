@@ -24,7 +24,7 @@
             @include break(mobile) {
                 padding: 1em 0;
                 text-align: center;
-                width: 100%;
+                width: -webkit-fill-available;
             }
 
             &:hover {
