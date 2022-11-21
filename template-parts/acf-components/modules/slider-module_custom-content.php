@@ -10,6 +10,7 @@
     $slider_data_source_filter = get_sub_field( 'slider_data_source_filter' );
     $slider_data_source_category = get_sub_field( 'slider_data_source_category' );
     
+    $slider_custom_thumbnail_size = get_sub_field( 'slider_custom_thumbnail_size' );
     $slider_custom_heading_type = get_sub_field( 'slider_custom_heading_type' );
     $slider_custom_show_button = get_sub_field( 'slider_custom_show_button' );
 
@@ -219,9 +220,9 @@
                         $slider_custom_link = get_sub_field( 'slider_custom_link' );
 
                         if( $slider_custom_image ) {
-                            $slider_custom_image_size = $slider_custom_image['sizes']['theme-small'];
-                            $slider_custom_image_width = $slider_custom_image['sizes'][ 'theme-small-width'];
-                            $slider_custom_image_height = $slider_custom_image['sizes'][ 'theme-small-height'];
+                            $slider_custom_image_size = $slider_custom_image['sizes'][$slider_custom_thumbnail_size];
+                            $slider_custom_image_width = $slider_custom_image['sizes'][$slider_custom_thumbnail_size . '-width'];
+                            $slider_custom_image_height = $slider_custom_image['sizes'][$slider_custom_thumbnail_size . '-height'];
                             $slider_custom_image_alt = $slider_custom_image['alt'];
                         }
 
@@ -270,12 +271,8 @@
                                             srcset="<?php echo $slider_custom_image['sizes']['theme-small']; ?> 640w">
                                     <source media="(max-width:425px)"
                                             srcset="<?php echo $slider_custom_image['sizes']['theme-xsmall']; ?> 425w">
-
-                                    <?php if( $slider_slides_per_view == 1 ): ?>
-                                        <img src="<?php echo $slider_custom_image['sizes']['theme-full']; ?>" width="<?php echo $slider_custom_image['sizes']['theme-full-width']; ?>" height="<?php echo $slider_custom_image['sizes']['theme-full-height']; ?>" alt="<?php echo $slider_custom_image_alt; ?>" class="img-fluid">
-                                    <?php else: ?>
-                                        <img src="<?php echo $slider_custom_image_size; ?>" width="<?php echo $slider_custom_image_width; ?>" height="<?php echo $slider_custom_image_height; ?>" alt="<?php echo $slider_custom_image_alt; ?>" class="img-fluid">
-                                    <?php endif; ?>
+                                    
+                                    <img src="<?php echo $slider_custom_image_size; ?>" width="<?php echo $slider_custom_image_width; ?>" height="<?php echo $slider_custom_image_height; ?>" alt="<?php echo $slider_custom_image_alt; ?>" class="img-fluid">
                                 </picture>       
                             <?php endif; ?>
                             

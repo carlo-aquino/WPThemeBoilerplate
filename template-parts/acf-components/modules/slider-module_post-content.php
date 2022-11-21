@@ -54,6 +54,7 @@
                     $slider_show_date = get_sub_field( 'slider_show_date' );
                     $slider_show_button = get_sub_field( 'slider_show_button' );
                     $slider_button_label = get_sub_field( 'slider_button_label' );
+                    $slider_button_thumbnail_size = get_sub_field( 'slider_button_thumbnail_size' );
                 }
             }
 
@@ -197,21 +198,12 @@
                     <div class="slider-module__cards__card-overlay background-overlay"></div>
                     
                     <?php
-                        if( $slider_slides_per_view == 1 ) {
-                            the_post_thumbnail( 'theme-full',
-                                array(
-                                    'class' => 'img-fluid',
-                                    'width' => 1920,
-                                ) 
-                            );
-                        } else {
-                            the_post_thumbnail( 'theme-small',
-                                array(
-                                    'class' => 'img-fluid',
-                                    'width' => 640,
-                                ) 
-                            );
-                        }
+                        the_post_thumbnail( $slider_button_thumbnail_size,
+                            array(
+                                'class' => 'img-fluid',
+                                'width' => $slider_button_thumbnail_size . '-width',
+                            ) 
+                        );
                     ?>
                     
                     <div class="slider-module__cards__card-content-container">

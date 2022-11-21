@@ -4812,6 +4812,9 @@
                                                             "layout": "block",
                                                             "acfe_seamless_style": 0,
                                                             "acfe_group_modal": 0,
+                                                            "acfe_group_modal_close": 0,
+                                                            "acfe_group_modal_button": "",
+                                                            "acfe_group_modal_size": "large",
                                                             "sub_fields": [
                                                                 {
                                                                     "key": "field_62e661597c456",
@@ -4893,10 +4896,7 @@
                                                                     "prepend": "",
                                                                     "append": "px"
                                                                 }
-                                                            ],
-                                                            "acfe_group_modal_close": 0,
-                                                            "acfe_group_modal_button": "",
-                                                            "acfe_group_modal_size": "large"
+                                                            ]
                                                         },
                                                         {
                                                             "key": "field_62e661597c45a",
@@ -5186,6 +5186,9 @@
                                                             "layout": "block",
                                                             "acfe_seamless_style": 0,
                                                             "acfe_group_modal": 0,
+                                                            "acfe_group_modal_close": 0,
+                                                            "acfe_group_modal_button": "",
+                                                            "acfe_group_modal_size": "large",
                                                             "sub_fields": [
                                                                 {
                                                                     "key": "field_636e0f9891aaa",
@@ -5384,10 +5387,7 @@
                                                                     "max": "",
                                                                     "step": ""
                                                                 }
-                                                            ],
-                                                            "acfe_group_modal_close": 0,
-                                                            "acfe_group_modal_button": "",
-                                                            "acfe_group_modal_size": "large"
+                                                            ]
                                                         },
                                                         {
                                                             "key": "field_636e3e7e3d00c",
@@ -5413,6 +5413,9 @@
                                                             "layout": "block",
                                                             "acfe_seamless_style": 0,
                                                             "acfe_group_modal": 0,
+                                                            "acfe_group_modal_close": 0,
+                                                            "acfe_group_modal_button": "",
+                                                            "acfe_group_modal_size": "large",
                                                             "sub_fields": [
                                                                 {
                                                                     "key": "field_636e3ea63d00d",
@@ -5517,10 +5520,7 @@
                                                                     "ui_on_text": "",
                                                                     "ui_off_text": ""
                                                                 }
-                                                            ],
-                                                            "acfe_group_modal_close": 0,
-                                                            "acfe_group_modal_button": "",
-                                                            "acfe_group_modal_size": "large"
+                                                            ]
                                                         },
                                                         {
                                                             "key": "field_62833a574b0c2",
@@ -5608,7 +5608,7 @@
                                                             "label": "Filter category",
                                                             "name": "slider_data_source_category",
                                                             "type": "acfe_taxonomy_terms",
-                                                            "instructions": "(Hold CTRL to select multiple values)",
+                                                            "instructions": "Hold CTRL to select multiple values (selected values should be in the same category)",
                                                             "required": 0,
                                                             "conditional_logic": [
                                                                 [
@@ -5888,8 +5888,83 @@
                                                                     "prepend": "",
                                                                     "append": "",
                                                                     "maxlength": ""
+                                                                },
+                                                                {
+                                                                    "key": "field_637b2b753a9d8",
+                                                                    "label": "Thumbnail size",
+                                                                    "name": "slider_button_thumbnail_size",
+                                                                    "type": "select",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "35",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "choices": {
+                                                                        "thumb": "Thumb (150 x 150 pixels)",
+                                                                        "medium": "Exrta Small (300 x300 pixels)",
+                                                                        "theme-small": "Small (640 x 640 pixels)",
+                                                                        "theme-medium": "Medium (768 x 768 pixels)",
+                                                                        "large": "Large (1024 x 1024 pixels)",
+                                                                        "theme-full": "Full"
+                                                                    },
+                                                                    "default_value": "theme-full",
+                                                                    "allow_null": 0,
+                                                                    "multiple": 0,
+                                                                    "ui": 0,
+                                                                    "return_format": "value",
+                                                                    "ajax": 0,
+                                                                    "placeholder": "",
+                                                                    "allow_custom": 0,
+                                                                    "search_placeholder": ""
                                                                 }
                                                             ]
+                                                        },
+                                                        {
+                                                            "key": "field_637b21e5a808f",
+                                                            "label": "Thumbnail size",
+                                                            "name": "slider_custom_thumbnail_size",
+                                                            "type": "select",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": [
+                                                                [
+                                                                    {
+                                                                        "field": "field_62833a574b0bf",
+                                                                        "operator": "==",
+                                                                        "value": "custom"
+                                                                    },
+                                                                    {
+                                                                        "field": "field_62837a9ed69bc",
+                                                                        "operator": "!=",
+                                                                        "value": "slider-type-three"
+                                                                    }
+                                                                ]
+                                                            ],
+                                                            "wrapper": {
+                                                                "width": "35",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "choices": {
+                                                                "thumb": "Thumb (150 x 150 pixels)",
+                                                                "medium": "Exrta Small (300 x300 pixels)",
+                                                                "theme-small": "Small (640 x 640 pixels)",
+                                                                "theme-medium": "Medium (768 x 768 pixels)",
+                                                                "large": "Large (1024 x 1024 pixels)",
+                                                                "theme-full": "Full"
+                                                            },
+                                                            "default_value": "theme-full",
+                                                            "allow_null": 0,
+                                                            "multiple": 0,
+                                                            "ui": 0,
+                                                            "return_format": "value",
+                                                            "ajax": 0,
+                                                            "placeholder": "",
+                                                            "allow_custom": 0,
+                                                            "search_placeholder": ""
                                                         },
                                                         {
                                                             "key": "field_6373dd516159a",
@@ -5904,11 +5979,16 @@
                                                                         "field": "field_62833a574b0bf",
                                                                         "operator": "==",
                                                                         "value": "custom"
+                                                                    },
+                                                                    {
+                                                                        "field": "field_62837a9ed69bc",
+                                                                        "operator": "!=",
+                                                                        "value": "slider-type-three"
                                                                     }
                                                                 ]
                                                             ],
                                                             "wrapper": {
-                                                                "width": "30",
+                                                                "width": "20",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -5942,11 +6022,16 @@
                                                                         "field": "field_62833a574b0bf",
                                                                         "operator": "==",
                                                                         "value": "custom"
+                                                                    },
+                                                                    {
+                                                                        "field": "field_62837a9ed69bc",
+                                                                        "operator": "!=",
+                                                                        "value": "slider-type-three"
                                                                     }
                                                                 ]
                                                             ],
                                                             "wrapper": {
-                                                                "width": "30",
+                                                                "width": "20",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -6190,6 +6275,9 @@
                                                             "layout": "block",
                                                             "acfe_seamless_style": 0,
                                                             "acfe_group_modal": 0,
+                                                            "acfe_group_modal_close": 0,
+                                                            "acfe_group_modal_button": "",
+                                                            "acfe_group_modal_size": "large",
                                                             "sub_fields": [
                                                                 {
                                                                     "key": "field_6283779a4ee12",
@@ -6245,10 +6333,7 @@
                                                                     "allow_custom": 0,
                                                                     "search_placeholder": ""
                                                                 }
-                                                            ],
-                                                            "acfe_group_modal_close": 0,
-                                                            "acfe_group_modal_button": "",
-                                                            "acfe_group_modal_size": "large"
+                                                            ]
                                                         },
                                                         {
                                                             "key": "field_62833a574b0cb",
@@ -6371,6 +6456,9 @@
                                                             "layout": "block",
                                                             "acfe_seamless_style": 0,
                                                             "acfe_group_modal": 0,
+                                                            "acfe_group_modal_close": 0,
+                                                            "acfe_group_modal_button": "",
+                                                            "acfe_group_modal_size": "large",
                                                             "sub_fields": [
                                                                 {
                                                                     "key": "field_6373526f2a65c",
@@ -6456,10 +6544,7 @@
                                                                     "max": "",
                                                                     "step": ""
                                                                 }
-                                                            ],
-                                                            "acfe_group_modal_close": 0,
-                                                            "acfe_group_modal_button": "",
-                                                            "acfe_group_modal_size": "large"
+                                                            ]
                                                         },
                                                         {
                                                             "key": "field_62833a574b0cc",
@@ -11198,5 +11283,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1668575644
+    "modified": 1669019328
 }
