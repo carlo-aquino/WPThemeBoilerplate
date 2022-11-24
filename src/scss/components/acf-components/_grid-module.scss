@@ -5,6 +5,10 @@
         flex-flow: column nowrap;
         align-items: center;
         overflow: visible;
+
+        @include break(phablet) {
+            margin: unset !important;
+        }
     }
 
     &__cards {
@@ -12,21 +16,28 @@
         gap: 1.6em;
         width: 100%;
 
-        .grid-col {
-            gap: 1.6em;
+        @include break(tabletxl) {
+            grid-template-columns: 1fr 1fr !important;
         }
 
-        .grid-col--2 {
-
-            @include break(phablet) {
-                display: none;
-            }
+        @include break(phablet) {
+            grid-template-columns: 1fr !important;
         }
 
         &__card {
             display: flex;
             flex-flow: column nowrap;
             position: relative;
+
+            @include break(tabletxl) {                
+                width: 50% !important;
+            }
+
+            @include break(phablet) {
+                padding-left: 0 !important;
+                padding-right: 0 !important;
+                width: 100% !important;
+            }
 
             img.type-one {
                 border-radius: 4px;
@@ -102,12 +113,6 @@
         }
 
         &__card.type-two {
-            border-radius: 8px;
-            box-shadow: 0 16px 24px rgba( $primaryColor, 0.06 );
-            height: 24rem;
-            justify-content: flex-end;
-            overflow: hidden;
-            padding: 2.4em;
 
             h2, h3, h4, h5, h6  {
                 color: #fff;
@@ -116,6 +121,22 @@
             span {
                 color: #fff;
             }
+
+            p {
+                color: #fff;
+                line-height: 1.6;
+            }
+        }
+
+        &__card-container.type-two {
+            align-items: flex-end;
+            border-radius: 8px;
+            box-shadow: 0 16px 24px rgba( $primaryColor, 0.06 );
+            display: flex;
+            height: 100%;
+            overflow: hidden;
+            padding: 2.4em;
+            position: relative;
         }
     }
 

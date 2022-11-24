@@ -6,9 +6,9 @@
     $banner_video_file =  get_sub_field('banner_video_file');
 
     if( $banner_custom_image ) {
-        $banner_custom_image_size = $banner_custom_image['sizes']['theme-xlarge'];
-        $banner_custom_image_width = $banner_custom_image['sizes'][ 'theme-xlarge-width'];
-        $banner_custom_image_height = $banner_custom_image['sizes'][ 'theme-xlarge-height'];
+        $banner_custom_image_size = $banner_custom_image['sizes']['theme-full'];
+        $banner_custom_image_width = $banner_custom_image['sizes'][ 'theme-full-width'];
+        $banner_custom_image_height = $banner_custom_image['sizes'][ 'theme-full-height'];
         $banner_custom_image_alt = $banner_custom_image['alt'];
     }
 ?>
@@ -29,7 +29,7 @@
                 <source media="(max-width:425px)"
                         srcset="<?php echo the_post_thumbnail_url('theme-xsmall'); ?> 425w">
 
-                <img src="<?php echo the_post_thumbnail_url('theme-xlarge'); ?>">
+                <img src="<?php echo the_post_thumbnail_url('theme-full'); ?>">
             </picture>
             
         <?php elseif( $banner_image_source == 'custom' && $banner_custom_image ): ?>

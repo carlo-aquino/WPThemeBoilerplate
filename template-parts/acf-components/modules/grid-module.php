@@ -6,6 +6,7 @@
             $grid_data_source = get_sub_field( 'grid_data_source' );
             $grid_items_per_row = get_sub_field( 'grid_items_per_row' );
             $grid_gap = get_sub_field( 'grid_gap' );
+            $grid_masonry_toggle = get_sub_field( 'grid_masonry_toggle' );
             
             if( have_rows( 'margin_settings' ) ) {
                 while( have_rows( 'margin_settings' ) ) {
@@ -54,6 +55,8 @@
                 <?php if( $padding_bottom ) { echo 'padding-bottom:' . $padding_bottom . 'em;'; } ?>
                 <?php if( $padding_left ) { echo 'padding-left:' . $padding_left . 'em;'; } ?>
                 <?php if( $padding_right ) { echo 'padding-right:' . $padding_right . 'em;'; } ?>
+
+                <?php if( $grid_gap && $grid_masonry_toggle ) echo 'margin:' . -( $grid_gap / 2 )  . 'em;'; ?>
             "
         >
 

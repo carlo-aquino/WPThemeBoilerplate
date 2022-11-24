@@ -4,7 +4,6 @@
         while( have_rows( 'grid_module_settings' ) ) {
             
             the_row();
-            $grid_image_toggle = get_sub_field( 'grid_image_toggle' );
             $grid_title_toggle = get_sub_field( 'grid_title_toggle' );
             $grid_description_toggle = get_sub_field( 'grid_description_toggle' );
             $grid_heading = get_sub_field( 'grid_heading' );
@@ -16,6 +15,15 @@
             $grid_items_per_row = get_sub_field( 'grid_items_per_row' );
             $grid_gap = get_sub_field( 'grid_gap' );
             $grid_masonry_toggle = get_sub_field( 'grid_masonry_toggle' );
+
+            if( have_rows( 'grid_image_group' ) ) {
+                while( have_rows( 'grid_image_group' ) ) {
+                    the_row();
+        
+                    $grid_image_toggle = get_sub_field( 'grid_image_toggle' );
+                    $grid_image_size = get_sub_field( 'grid_image_size' );
+                }
+            }
 
             if( have_rows( 'grid_button_group' ) ) {
                 while( have_rows( 'grid_button_group' ) ) {
@@ -88,34 +96,43 @@
             )
         ) : '',
     ));
-?>
 
+    $column_count = 0;
+
+    if( $grid_items_per_row == 'one') { $column_count = 1; }
+    if( $grid_items_per_row == 'two') { $column_count = 2; }
+    if( $grid_items_per_row == 'three') { $column_count = 3; }
+    if( $grid_items_per_row == 'four') { $column_count = 4; }
+
+    
+?>
+    
     <?php if( $grid_post_query->have_posts() ): ?>
         
-        <div class="grid-module__cards<?php if( $grid_masonry_toggle ) { echo ' grid'; } ?>
-            <?php 
-                if( $grid_items_per_row=='one' ) { echo ' grid-per-row__01'; } 
-                if( $grid_items_per_row=='two' ) { echo ' grid-per-row__02'; } 
-                if( $grid_items_per_row=='three' ) { echo ' grid-per-row__03'; } 
-                if( $grid_items_per_row=='four' ) { echo ' grid-per-row__04'; } 
-            ?>"
-
+        <div class="grid-module__cards<?php if( $grid_masonry_toggle ) { echo ' grid js-masonry'; } ?>"
             style="
-                <?php if( $grid_gap ) { echo 'gap: ' . $grid_gap . 'em'; } ?>
+                <?php if( !$grid_masonry_toggle ) echo 'grid-template-columns:repeat(' . $column_count . ', 1fr);'; ?>
+                <?php if( $grid_gap && $grid_masonry_toggle ) echo 'gap:' . $grid_gap . 'em;'; ?>
             "
         >
-
-            <?php
-                if( $grid_masonry_toggle ){
-                    for ( $x = 1; $x <= $grid_column_count; $x++ ) {
-                        echo '<div style="gap: ' . $grid_gap . 'em" class="grid-col grid-col--' . $x .'"></div>';
-                    }
-                }
-            ?>
             
             <?php while( $grid_post_query->have_posts() ): $grid_post_query->the_post(); ?>
                 <article class="grid-module__cards__card<?php echo ' ' . $grid_type; ?><?php if( $grid_masonry_toggle ) { echo ' grid-item'; } ?>"
-                    style=" <?php if( $grid_masonry_toggle && $grid_type == 'type-two' ) { echo 'height: 100%;'; } ?>"
+                    style="
+                        <?php if( $grid_masonry_toggle && $grid_type == 'type-two' ) { echo 'height: auto;'; } ?>
+                        <?php if( !$grid_masonry_toggle && $grid_type == 'type-two' ) { echo 'height: 100%;'; } ?>
+
+                        <?php
+                            if( $grid_masonry_toggle ) {
+                                if( $grid_items_per_row == 'four' ) echo 'width: 25%;';
+                                if( $grid_items_per_row == 'three' ) echo 'width: 33.33%;';
+                                if( $grid_items_per_row == 'two' ) echo 'width: 50%;';
+                                if( $grid_items_per_row == 'one' ) echo 'width: 100%;';        
+                            } 
+                        ?>
+
+                        <?php if( $grid_gap && $grid_masonry_toggle ) echo 'padding:' . ( $grid_gap / 2 )  . 'em;'; ?>
+                    "
 
                     <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
                         data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
@@ -144,15 +161,17 @@
                         </div>
                     <?php endif; ?>
                         
-                    <div class="grid-module__cards__card-overlay background-overlay<?php echo ' ' . $grid_type; ?>"></div>
                     
-                    <div class="grid-module__cards__card-container">
+                    
+                    <div class="grid-module__cards__card-container<?php echo ' ' . $grid_type; ?>">
+                        <div class="grid-module__cards__card-overlay background-overlay<?php echo ' ' . $grid_type; ?>"></div>
+
                         <?php
                             if( $grid_image_toggle ) {
-                                the_post_thumbnail( 'theme-small',
+                                the_post_thumbnail( $grid_image_size,
                                     array(
                                         'class' => 'img-fluid '. $grid_type,
-                                        'width' => 640,
+                                        'width' => $grid_image_size . '-width',
                                     ) 
                                 );
                             }

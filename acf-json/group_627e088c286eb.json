@@ -3733,12 +3733,7 @@
                                                                 "class": "",
                                                                 "id": ""
                                                             },
-                                                            "post_type": [
-                                                                "post",
-                                                                "portfolio",
-                                                                "careers",
-                                                                "community"
-                                                            ],
+                                                            "post_type": "",
                                                             "field_type": "select",
                                                             "default_value": [],
                                                             "return_format": "name",
@@ -3759,7 +3754,7 @@
                                                             "label": "Filter category",
                                                             "name": "grid_data_source_category",
                                                             "type": "acfe_taxonomy_terms",
-                                                            "instructions": "",
+                                                            "instructions": "Hold CTRL to select multiple values (selected values should be in the same category)",
                                                             "required": 0,
                                                             "conditional_logic": [
                                                                 [
@@ -3796,23 +3791,84 @@
                                                             "other_choice": 0
                                                         },
                                                         {
-                                                            "key": "field_62b87e6611f6c",
-                                                            "label": "Image",
-                                                            "name": "grid_image_toggle",
-                                                            "type": "true_false",
+                                                            "key": "field_637f0e2a6a421",
+                                                            "label": "Grid Image",
+                                                            "name": "grid_image_group",
+                                                            "type": "group",
                                                             "instructions": "",
                                                             "required": 0,
                                                             "conditional_logic": 0,
                                                             "wrapper": {
-                                                                "width": "20",
+                                                                "width": "30",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
-                                                            "message": "",
-                                                            "default_value": 1,
-                                                            "ui": 1,
-                                                            "ui_on_text": "Enabled",
-                                                            "ui_off_text": "Disabled"
+                                                            "layout": "block",
+                                                            "acfe_seamless_style": 0,
+                                                            "acfe_group_modal": 0,
+                                                            "sub_fields": [
+                                                                {
+                                                                    "key": "field_62b87e6611f6c",
+                                                                    "label": "Image",
+                                                                    "name": "grid_image_toggle",
+                                                                    "type": "true_false",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": 0,
+                                                                    "wrapper": {
+                                                                        "width": "",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "message": "",
+                                                                    "default_value": 1,
+                                                                    "ui": 1,
+                                                                    "ui_on_text": "Enabled",
+                                                                    "ui_off_text": "Disabled"
+                                                                },
+                                                                {
+                                                                    "key": "field_637f0efd6a423",
+                                                                    "label": "Image size",
+                                                                    "name": "grid_image_size",
+                                                                    "type": "select",
+                                                                    "instructions": "",
+                                                                    "required": 0,
+                                                                    "conditional_logic": [
+                                                                        [
+                                                                            {
+                                                                                "field": "field_62b87e6611f6c",
+                                                                                "operator": "==",
+                                                                                "value": "1"
+                                                                            }
+                                                                        ]
+                                                                    ],
+                                                                    "wrapper": {
+                                                                        "width": "",
+                                                                        "class": "",
+                                                                        "id": ""
+                                                                    },
+                                                                    "choices": {
+                                                                        "thumb": "Thumb (150 x 150 pixels)",
+                                                                        "medium": "Exrta Small (300 x300 pixels)",
+                                                                        "theme-small": "Small (640 x 640 pixels)",
+                                                                        "theme-medium": "Medium (768 x 768 pixels)",
+                                                                        "large": "Large (1024 x 1024 pixels)",
+                                                                        "theme-full": "Full"
+                                                                    },
+                                                                    "default_value": "theme-full",
+                                                                    "allow_null": 0,
+                                                                    "multiple": 0,
+                                                                    "ui": 0,
+                                                                    "return_format": "value",
+                                                                    "ajax": 0,
+                                                                    "placeholder": "",
+                                                                    "allow_custom": 0,
+                                                                    "search_placeholder": ""
+                                                                }
+                                                            ],
+                                                            "acfe_group_modal_close": 0,
+                                                            "acfe_group_modal_button": "",
+                                                            "acfe_group_modal_size": "large"
                                                         },
                                                         {
                                                             "key": "field_62b87ea111f6d",
@@ -3850,7 +3906,7 @@
                                                                 ]
                                                             ],
                                                             "wrapper": {
-                                                                "width": "20",
+                                                                "width": "10",
                                                                 "class": "",
                                                                 "id": ""
                                                             },
@@ -11285,5 +11341,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1669024856
+    "modified": 1669272188
 }
