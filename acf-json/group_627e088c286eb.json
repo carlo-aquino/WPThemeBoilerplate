@@ -2974,6 +2974,37 @@
                                                             "endpoint": 0
                                                         },
                                                         {
+                                                            "key": "field_637f255c8f191",
+                                                            "label": "Image size",
+                                                            "name": "gallery_image_size",
+                                                            "type": "select",
+                                                            "instructions": "",
+                                                            "required": 0,
+                                                            "conditional_logic": 0,
+                                                            "wrapper": {
+                                                                "width": "40",
+                                                                "class": "",
+                                                                "id": ""
+                                                            },
+                                                            "choices": {
+                                                                "thumb": "Thumb (150 x 150 pixels)",
+                                                                "medium": "Exrta Small (300 x300 pixels)",
+                                                                "theme-small": "Small (640 x 640 pixels)",
+                                                                "theme-medium": "Medium (768 x 768 pixels)",
+                                                                "large": "Large (1024 x 1024 pixels)",
+                                                                "theme-full": "Full"
+                                                            },
+                                                            "default_value": "theme-full",
+                                                            "allow_null": 0,
+                                                            "multiple": 0,
+                                                            "ui": 0,
+                                                            "return_format": "value",
+                                                            "ajax": 0,
+                                                            "placeholder": "",
+                                                            "allow_custom": 0,
+                                                            "search_placeholder": ""
+                                                        },
+                                                        {
                                                             "key": "field_627a27ce5633f",
                                                             "label": "Images",
                                                             "name": "gallery_images",
@@ -11341,5 +11372,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1669272188
+    "modified": 1669277236
 }

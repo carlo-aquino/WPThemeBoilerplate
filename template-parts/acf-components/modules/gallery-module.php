@@ -3,6 +3,7 @@
         while( have_rows( 'gallery_module_settings' ) ) {
             the_row();
             
+            $gallery_image_size = get_sub_field( 'gallery_image_size' );
             $gallery_images = get_sub_field( 'gallery_images' );
             $gallery_items_per_row = get_sub_field( 'gallery_items_per_row' );
             $gallery_gap = get_sub_field( 'gallery_gap' );
@@ -117,7 +118,7 @@
                                     <source media="(max-width:425px)"
                                             srcset="<?php echo $image['sizes']['theme-xsmall']; ?> 425w">
 
-                                    <img src="<?php echo $image['sizes']['theme-medium']; ?>" class="img-fluid" width="<?php echo $image['sizes']['theme-small-width']; ?>"
+                                    <img src="<?php echo $image['sizes'][$gallery_image_size]; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" width="<?php echo $image['sizes'][$gallery_image_size . '-width']; ?>" height="<?php echo $image['sizes'][$gallery_image_size . '-height']; ?>"
 
                                         <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
                                             data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
