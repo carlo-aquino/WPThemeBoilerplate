@@ -178,7 +178,9 @@
             <?php endif; ?>
 
             <div class="mobile-header__drawer-content">
-                <?php globalMenu(); ?>
+                <div class="mobile-header__drawer-content__wrapper">
+                    <?php globalMenu(); ?>
+                </div>
             </div>
 
             <div class="mobile-header__drawer-footer">

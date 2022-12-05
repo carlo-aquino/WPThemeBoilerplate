@@ -243,7 +243,7 @@
 
         <?php if( $accent_color ): ?>
             :root {
-                --accent: #fab631;
+                --accent: <?php echo $accent_color; ?>;
             }
             
             a, a:hover {

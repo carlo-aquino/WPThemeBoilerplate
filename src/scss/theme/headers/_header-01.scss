@@ -336,92 +336,108 @@
 
     &-content {
         align-items: center;
+        align-self: center;
         display: flex;
-        flex-flow: column wrap;
+        flex-flow: column nowrap;
         flex-grow: 1;
         justify-content: center;
+        overflow-y: auto;
         padding: 0 3.11em;
         text-align: center;
+        width: 80%;
 
-        nav {
+        &__wrapper {
             width: 100%;
+            height: -webkit-fill-available;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
 
-            ul {
-                list-style-type: none;
-
-                li {
-                    color: #fff;
-                    font-size: 1.3rem;
-                    font-weight: 500;
-                    line-height: 3.1em;
-
-                    a {
+            nav {
+                height: -webkit-fill-available;
+                width: 100%;
+                display: flex;
+                flex-flow: column nowrap;
+                justify-content: center;
+    
+                ul {
+                    list-style-type: none;
+    
+                    li {
                         color: #fff;
-                        text-decoration: none;
-                    }
-
-                    ul {
-                        display: flex;
-                        flex-flow: column wrap;
-                        justify-content: center;
-                        position: absolute;
-                        top: 0;
-                        right: 0;
-                        width: 90%;
-                        height: 100%;
-                        background-color: #fff;
-                        padding: 0 2em;
-                        transform: translateX(100%);
-                        transition: 200ms all ease-out;
-                        z-index: 100;
-
-                        li {
-                            font-weight: 600;
-                            line-height: 1.56em;
-                            color: $primaryColor;
-                            padding: 0.57em 0;
-
-                            a {
+                        font-size: 1.3rem;
+                        font-weight: 500;
+                        line-height: 3em;
+                        position: relative;
+    
+                        a {
+                            color: #fff;
+                            text-decoration: none;
+                        }
+    
+                        ul {
+                            display: flex;
+                            flex-flow: column wrap;
+                            justify-content: center;
+                            position: fixed;
+                            top: 0;
+                            right: 0;
+                            width: 80%;
+                            height: 100%;
+                            background-color: #fff;
+                            padding: 0 2em;
+                            transform: translateX(100%);
+                            transition: 200ms all ease-out;
+                            z-index: 100;
+    
+                            li {
+                                font-weight: 600;
+                                line-height: 1.56em;
                                 color: $primaryColor;
-                            }
-
-                            ul {
-                                display: flex;
-                                flex-flow: column wrap;
-                                justify-content: center;
-                                position: absolute;
-                                top: 0;
-                                right: 0;
-                                width: 90%;
-                                height: 100%;
-                                background-color: $primaryColor;
-                                padding: 0 1.33em;
-                                transform: translateX(100%);
-                                transition: 200ms all ease-out;
-        
-                                li {
-                                    font-weight: 500;
-                                    line-height: 2em;
-                                    color: #fff;
-        
-                                    a {
+                                padding: 0.57em 0;
+    
+                                a {
+                                    color: $primaryColor;
+                                }
+    
+                                ul {
+                                    display: flex;
+                                    flex-flow: column wrap;
+                                    justify-content: center;
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    width: 90%;
+                                    height: 100%;
+                                    background-color: $primaryColor;
+                                    padding: 0 1.33em;
+                                    transform: translateX(100%);
+                                    transition: 200ms all ease-out;
+            
+                                    li {
+                                        font-weight: 500;
+                                        line-height: 2em;
                                         color: #fff;
+            
+                                        a {
+                                            color: #fff;
+                                        }
                                     }
                                 }
-                            }
-
-                            &:hover > ul,
-                            &:focus > ul,
-                            &:active > ul {
-                                transform: translateX(0);
+    
+                                &:hover > ul,
+                                &:focus > ul,
+                                &:active > ul {
+                                    transform: translateX(0);
+                                }
                             }
                         }
-                    }
-
-                    &:hover > ul,
-                    &:focus > ul,
-                    &:active > ul {
-                        transform: translateX(0);
+    
+                        &:hover > ul,
+                        &:focus > ul,
+                        &:active > ul {
+                            transform: translateX(0);
+                        }
                     }
                 }
             }
