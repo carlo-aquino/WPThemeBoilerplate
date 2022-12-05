@@ -196,28 +196,11 @@
             .accordion-module__content label {
                 background-color: <?php echo $primary_color; ?>;
             }
-
-            
         <?php endif; ?>
 
         <?php if( $secondary_color ): ?>
             .page-content__search-results__left span strong {
                 color: <?php echo $secondary_color; ?>;
-            }
-
-            .page-content__search-item span a:hover {
-                color: <?php echo $secondary_color; ?>;
-            }
-
-            .page-content__search-pagination a {
-                color: <?php echo $secondary_color; ?>;
-                border-color: <?php echo $secondary_color; ?>;
-                color: <?php echo $secondary_color; ?>
-            }
-
-            .page-content__search-pagination a:hover {
-                background: <?php echo $secondary_color; ?>;
-                border-color: <?php echo $secondary_color; ?>;
             }
 
             .button-module__wrapper span {
@@ -293,6 +276,20 @@
                 color: <?php echo $accent_color; ?>;
             }
 
+            .page-content__search-item span a:hover {
+                color: <?php echo $accent_color; ?>;
+            }
+
+            .page-content__search-pagination a {
+                color: <?php echo $accent_color; ?>;
+                border-color: <?php echo $accent_color; ?>;
+                color: <?php echo $accent_color; ?>
+            }
+
+            .page-content__search-pagination a:hover {
+                background: <?php echo $accent_color; ?>;
+            }
+
             .page-404__right-content__quick-links__links ul li a {
                 background-color: <?php echo $accent_color; ?>;
                 border-color: <?php echo $accent_color; ?>;
@@ -324,6 +321,17 @@
 
             .page-content__search-results__left span strong {
                 color: <?php echo $accent_color; ?>;
+            }
+
+            .page-content__search-pagination a {
+                color: <?php echo $secondary_color; ?>;
+                border-color: <?php echo $secondary_color; ?>;
+                color: <?php echo $secondary_color; ?>
+            }
+
+            .page-content__search-pagination a:hover {
+                background: <?php echo $secondary_color; ?>;
+                border-color: <?php echo $secondary_color; ?>;
             }
 
             .button-primary {
