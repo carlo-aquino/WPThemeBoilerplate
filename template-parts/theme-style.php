@@ -26,6 +26,8 @@
         --primary: #a74799;
         --secondary: #a74799;
         --accent: #fab631;
+        --heading: #a74799;
+        --body: #595959;
     }
 
     <?php if( $site_width ) : ?>
@@ -370,6 +372,10 @@
     <?php endif; ?>
 
     <?php if( $heading_text_color ): ?>
+        :root {
+            --heading: <?php echo $heading_text_color; ?>;
+        }
+
         h1, h2, h3, h4, h5, h6 {
             color: <?php echo $heading_text_color; ?>;
         }
@@ -380,6 +386,10 @@
     <?php endif; ?>
 
     <?php if( $body_text_color ): ?>
+        :root {
+            --body: <?php echo $body_text_color; ?>;
+        }
+
         p, ol, ul, li, span {
             color: <?php echo $body_text_color; ?>;
         }
