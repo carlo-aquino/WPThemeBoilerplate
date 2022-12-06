@@ -226,7 +226,7 @@
                         <?php if( $slider_show_button ): ?>
                             <div class="button-module">
                                 <div class="button-module__wrapper">
-                                    <a href="<?php the_permalink(); ?>">
+                                    <a href="<?php the_permalink(); ?>" role="button">
                                         <span class="custom-primary-btn">
                                             <?php if( $slider_button_label ) echo $slider_button_label; else echo 'Read more'; ?>
                                         </span>

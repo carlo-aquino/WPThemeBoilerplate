@@ -46,7 +46,7 @@
                             <?php if ( $banner_cta_button ): ?>
                                 <div class="button-module">
                                     <div class="button-module__wrapper">
-                                        <a href="<?php echo esc_url( $banner_cta_button_url ); ?>" target="<?php echo esc_attr( $banner_cta_button_target ); ?>">
+                                        <a href="<?php echo esc_url( $banner_cta_button_url ); ?>" target="<?php echo esc_attr( $banner_cta_button_target ); ?>" role="button">
                                             <span><?php echo esc_html( $banner_cta_button_title ); ?></span>
                                         </a>
                                     </div>

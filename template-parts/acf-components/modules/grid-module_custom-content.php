@@ -161,7 +161,7 @@
                     <?php if( $grid_button_toggle && $grid_custom_link ): ?>
                         <div class="grid-module__cards__card-cta button-module">
                             <div class="button-module__wrapper">
-                                <a href="<?php echo esc_url( $grid_custom_link_url ); ?>" target="<?php echo esc_attr( $grid_custom_link_target ); ?>">  
+                                <a href="<?php echo esc_url( $grid_custom_link_url ); ?>" target="<?php echo esc_attr( $grid_custom_link_target ); ?>" role="button">  
                                     <span>
                                         <?php echo $grid_custom_link_title; ?>
                                     </span>

@@ -92,7 +92,7 @@
                 <div class="tab-module__tabs">
 
                     <div class="tab-module__heading">
-                        <ul class="tab-module__heading-wrapper">
+                        <ul class="tab-module__heading-wrapper" role="tablist">
 
                             <?php while( have_rows( 'tab_repeater' ) ): the_row();
                                 $tab_heading = get_sub_field( 'tab_heading' );
@@ -106,7 +106,7 @@
                                 }
                             ?>
 
-                                <li class="tab-module__tab<?php if( $css_class ) { echo ' ' . $css_class; } if( $tabHeadingCTR == 1 ) { echo ' active'; } ?>" data-tab-target="<?php echo '#tab-content-' . $randID . '-' . $tabHeadingCTR; ?>">
+                                <li class="tab-module__tab<?php if( $css_class ) { echo ' ' . $css_class; } if( $tabHeadingCTR == 1 ) { echo ' active'; } ?>" data-tab-target="<?php echo '#tab-content-' . $randID . '-' . $tabHeadingCTR; ?>" role="tab" tabindex="<?php echo $tabHeadingCTR-1; ?>">
                                     <?php echo $tab_heading; ?>
                                 </li>
 
@@ -115,7 +115,7 @@
                         </ul>
                     </div>
 
-                    <div class="tab-module__content">
+                    <div class="tab-module__content" role="tabpanel">
 
                         <?php while( have_rows( 'tab_repeater' ) ): the_row();
                             $tab_heading = get_sub_field( 'tab_heading' );

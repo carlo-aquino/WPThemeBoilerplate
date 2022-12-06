@@ -59,7 +59,7 @@
                                     <div class="button-module">
                                         <div class="button-module__wrapper">
                                             
-                                            <a href="<?php the_permalink(); ?>">
+                                            <a href="<?php the_permalink(); ?>" role="button">
                                                 <span class="custom-primary-btn">More Info</span>
                                             </a> 
 

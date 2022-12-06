@@ -292,7 +292,7 @@
                                 <?php if( $slider_custom_show_button && $slider_custom_link ): ?>
                                     <div class="button-module">
                                         <div class="button-module__wrapper">
-                                            <a href="<?php echo esc_url( $slider_custom_link_url ); ?>" target="<?php echo esc_attr( $slider_custom_link_target ); ?>">
+                                            <a href="<?php echo esc_url( $slider_custom_link_url ); ?>" target="<?php echo esc_attr( $slider_custom_link_target ); ?>" role="button">
                                                 <span class="custom-primary-btn">
                                                     <?php if( $slider_custom_link_title ) echo esc_html( $slider_custom_link_title ); ?>
                                                 </span>

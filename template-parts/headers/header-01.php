@@ -74,8 +74,7 @@
         <div class="header-container <?php if( !$header_section_width ) { echo 'content-limit'; } ?>">
             
             <div class="header-left">
-                <a href="<?php echo home_url(); ?>">
-                    
+                <a href="<?php echo home_url(); ?>" aria-label="<?php echo $company_name; ?>">
                     <?php 
                         if( have_rows( 'page_banner' ) ) {
                             while( have_rows( 'page_banner' ) ){
@@ -143,7 +142,7 @@
     >
                       
         <div class="mobile-header__left">
-            <a href="<?php echo home_url(); ?>">
+            <a href="<?php echo home_url(); ?>" aria-label="<?php echo $company_name; ?>">
                 <?php if( have_rows('logo', 'option') && ($logo_colored || $logo_white) ): ?>  
                     <img class="header-logo img-fluid"
                         src="<?php if( $header_logo=='colored' ) { echo $logo_colored_size; } else { echo $logo_white_size; } ?>"

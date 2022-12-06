@@ -94,7 +94,7 @@
     >
 
         <?php if( $button_link ): ?>
-            <a href="<?php echo esc_url( $button_link_url ); ?>" target="<?php echo esc_attr( $button_link_target ); ?>">
+            <a href="<?php echo esc_url( $button_link_url ); ?>" target="<?php echo esc_attr( $button_link_target ); ?>" role="button">
         <?php endif; ?>    
 
             <span id="<?php if( $css_id ) { echo $css_id; } ?>" class="<?php if(  $css_class ) { echo  $css_class; } ?>">

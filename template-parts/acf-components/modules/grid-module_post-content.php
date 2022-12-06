@@ -206,7 +206,7 @@
                         <?php if( $grid_button_toggle && $grid_button_text ): ?>
                             <div class="grid-module__cards__card-cta button-module">
                                 <div class="button-module__wrapper">
-                                    <a href="<?php the_permalink(); ?>">  
+                                    <a href="<?php the_permalink(); ?>" role="button">  
                                         <span><?php echo $grid_button_text; ?></span>
                                     </a>
                                 </div>

@@ -41,7 +41,7 @@
                                         <div class="button-module">
                                             <div class="button-module__wrapper">
                                                 
-                                                <a href="<?php echo $featured_slider_custom_link_url; ?>" target="<?php echo $featured_slider_custom_link_target; ?>">
+                                                <a href="<?php echo $featured_slider_custom_link_url; ?>" target="<?php echo $featured_slider_custom_link_target; ?>" role="button">
                                                     <span class="custom-primary-btn"><?php echo $featured_slider_custom_link_title; ?></span>
                                                 </a> 
 
