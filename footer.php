@@ -10,7 +10,7 @@
             } 
         }
 
-        if( $footer_toggle ) {
+        if( $footer_toggle && !is_404() ) {
             if( $footer_type == 'footer-01' ) {
                 get_template_part( 'template-parts/footers/footer', '01' );
             }

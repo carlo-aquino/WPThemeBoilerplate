@@ -15,6 +15,7 @@ body {
     display: flex;
     flex-flow: column nowrap;
     font-family: $bodyText;
+    justify-content: center;
     min-height: 100%;
     text-rendering: optimizeLegibility;
     width: 100%;

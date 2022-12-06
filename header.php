@@ -76,7 +76,7 @@
 
         }  
 
-        if( $header_toggle ) {
+        if( $header_toggle && !is_404() ) {
             if( $header_type == 'header-01' ) {
                 get_template_part( 'template-parts/headers/header', '01' );
             }
