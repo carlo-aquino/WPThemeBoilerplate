@@ -87,10 +87,6 @@
     margin: 0 auto;
 }
 
-.full-bleed {
-    padding: 0 !important;
-}
-
 .grid-per-row__01 {
     display: grid;
     grid-template-columns: 1fr;
@@ -164,6 +160,10 @@
     @include break(tablet) {
         padding-bottom: 0 !important;
     }
+}
+
+.full-bleed {
+    padding: 0 !important;
 }
 
 .section-heading {
