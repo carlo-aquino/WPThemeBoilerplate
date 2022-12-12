@@ -44,8 +44,8 @@ const navMarker = ()=> {
         const header = document.querySelectorAll('.header');
         
         header.forEach( item => {
-            if( item && item.dataset.sticky === 'yes' ) {
-                item.classList.toggle('sticky', window.scrollY > 0);
+            if( item && item.dataset.sticky === 'yes' && item.dataset.transparent === 'yes' ) {
+                item.classList.toggle('sticky-transparent', window.scrollY > 0);
             }
         });
     });

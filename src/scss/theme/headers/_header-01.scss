@@ -256,6 +256,17 @@
     }
 }
 
+#header-01.transparent,
+#header-01-mobile-header {
+    background: transparent;
+    box-shadow: none;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: 200ms all ease-out;
+    z-index: 60;
+}
+
 .mobile-header__drawer {
     display: none;
     height: 100%;

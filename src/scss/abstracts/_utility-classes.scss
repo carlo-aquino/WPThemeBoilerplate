@@ -173,8 +173,18 @@
 
 .sticky {
     left: 0;
+    position: sticky !important;
+    top: 0;
+    transition: 200ms all ease-out;
+    z-index: 60;
+}
+
+.sticky-transparent {
+    background: $primaryColor;
+    left: 0;
     position: fixed !important;
     top: 0;
+    transition: 200ms all ease-out;
     z-index: 60;
 }
 

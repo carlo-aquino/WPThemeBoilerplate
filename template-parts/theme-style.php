@@ -17,6 +17,13 @@
         while( have_rows('custom_header', 'option') ) {
             the_row();
             $header_navigation_color = get_sub_field( 'header_navigation_color', 'option' );
+
+            if( have_rows('header_background_primary_settings', 'option') ) {
+                while( have_rows('header_background_primary_settings', 'option') ) {
+                    the_row();
+                    $header_primary_background_transparent = get_sub_field( 'header_primary_background_transparent', 'option' );
+                } 
+            }
         } 
     } 
 ?>
@@ -62,16 +69,20 @@
             outline-color: <?php echo $primary_color; ?>;
         }
 
-        #header-01 {
+        <?php if( !$header_primary_background_transparent ): ?>
+            #header-01,
+            #header-01-mobile-header {
+                background: <?php echo $primary_color; ?>;
+            }
+        <?php endif; ?>
+
+        #header-01.sticky-transparent,
+        #header-01-mobile-header.sticky-transparent {
             background: <?php echo $primary_color; ?>;
         }
 
         #header-01 .header-right nav ul li.featured-link > a:hover {
             color: <?php echo $primary_color; ?>;
-        }
-
-        #header-01-mobile-header {
-            background: <?php echo $primary_color; ?>;
         }
 
         .mobile-header__drawer-content nav ul li ul li ul {

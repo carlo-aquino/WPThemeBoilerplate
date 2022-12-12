@@ -27,6 +27,7 @@
                     $header_primary_background = get_sub_field( 'header_primary_background', 'option' );
                     $header_primary_background_color = get_sub_field( 'header_primary_background_color', 'option' );
                     $header_primary_background_image = get_sub_field( 'header_primary_background_image', 'option' );
+                    $header_primary_background_transparent = get_sub_field( 'header_primary_background_transparent', 'option' );
                 } 
             }
         } 
@@ -65,7 +66,9 @@
     }
 ?>
     
-    <header id="header-01" class="header" data-sticky="<?php $sticky_header ? print 'yes' : print 'no'; ?>"
+    <header id="header-01" class="header<?php $header_primary_background_transparent ? print ' transparent' : ''; ?><?php $sticky_header && !$header_primary_background_transparent ? print ' sticky' : print ''; ?>"
+        data-sticky="<?php $sticky_header ? print 'yes' : print 'no'; ?>"
+        data-transparent="<?php $header_primary_background_transparent ? print 'yes' : print 'no'; ?>"
         style="
             <?php if( $header_primary_background=='color' && $header_primary_background_color ) { echo 'background:' . $header_primary_background_color . ';'; } ?>
             <?php if( $header_primary_background=='image' ) { echo 'background-image:url(' . $header_primary_background_image . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; } ?>
@@ -134,7 +137,9 @@
         </div>
     </header>
 
-    <header id="header-01-mobile-header" class="header" data-sticky="<?php $sticky_header ? print 'yes' : print 'no'; ?>"
+    <header id="header-01-mobile-header" class="header<?php $header_primary_background_transparent ? print ' transparent' : ''; ?><?php $sticky_header && !$header_primary_background_transparent ? print ' sticky' : print ''; ?>"
+        data-sticky="<?php $sticky_header ? print 'yes' : print 'no'; ?>"
+        data-transparent="<?php $header_primary_background_transparent ? print 'yes' : print 'no'; ?>"
         style="
             <?php if( $header_primary_background=='color' && $header_primary_background_color ) { echo 'background:' . $header_primary_background_color . ';'; } ?>
             <?php if( $header_primary_background=='image' ) { echo 'background-image:url(' . $header_primary_background_image . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; } ?>            
