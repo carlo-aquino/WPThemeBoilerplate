@@ -38,13 +38,20 @@
     }
     
     $ctr = $transition_delay;
-
     $column_count = 0;
 
     if( $grid_items_per_row == 'one') { $column_count = 1; }
     if( $grid_items_per_row == 'two') { $column_count = 2; }
     if( $grid_items_per_row == 'three') { $column_count = 3; }
     if( $grid_items_per_row == 'four') { $column_count = 4; }
+
+    $grid_item_count = 1;
+    $grid_content_count = 0;
+    $grid_content = get_sub_field('grid_custom_settings');
+
+    if ( is_array($grid_content) ) {
+        $grid_content_count = count($grid_content);
+    }
 ?>
 
     <div class="grid-module__cards<?php if( $grid_masonry_toggle ) { echo ' grid'; } ?>"
@@ -55,7 +62,6 @@
     >
 
         <?php if( have_rows( 'grid_custom_settings' ) ): while( have_rows( 'grid_custom_settings' ) ):
-            
             the_row();
             $grid_custom_image = get_sub_field( 'grid_custom_image' );
             $grid_custom_title = get_sub_field( 'grid_custom_title' );
@@ -76,7 +82,7 @@
                 $grid_custom_link_target = $grid_custom_link['target'] ? $grid_custom_link['target'] : '_self';
             } 
         ?>   
-
+            
             <article class="grid-module__cards__card<?php echo ' ' . $grid_type; ?><?php if( $grid_masonry_toggle ) { echo ' grid-item'; } ?>"
                 style="
                     <?php if( $grid_masonry_toggle && $grid_type == 'type-two'  ) { echo 'height: auto;'; } ?>
@@ -110,6 +116,8 @@
                 <?php endif; ?>
                 
                 data-aos-delay="<?php echo $ctr; ?>"
+
+                role="group" aria-label="<?php echo $grid_item_count . ' / ' . $grid_content_count; ?>"
             >
                 
                 <?php if( $grid_custom_link && !$grid_button_toggle ): ?>
@@ -174,7 +182,7 @@
 
             </article>
             
-        <?php $ctr = $ctr+200; endwhile; endif; ?>
+        <?php $ctr = $ctr+200; $grid_item_count++; endwhile; endif; ?>
     
     </div>
 

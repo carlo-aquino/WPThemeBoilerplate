@@ -98,6 +98,7 @@
     ));
 
     $column_count = 0;
+    $post_count = 1;
 
     if( $grid_items_per_row == 'one') { $column_count = 1; }
     if( $grid_items_per_row == 'two') { $column_count = 2; }
@@ -149,6 +150,8 @@
                     <?php endif; ?>
                     
                     data-aos-delay="<?php echo $ctr; ?>"
+
+                    role="group" aria-label="<?php echo $post_count . ' / ' . $grid_post_query->found_posts; ?>"
                 >
                     
                     <?php if( !$grid_button_toggle || !$grid_button_text ): ?>
@@ -216,7 +219,7 @@
                     </div>
 
                 </article>
-            <?php $ctr = $ctr+200; endwhile; ?>
+            <?php $ctr = $ctr+200; $post_count++; endwhile; ?>
             
         </div>
 
