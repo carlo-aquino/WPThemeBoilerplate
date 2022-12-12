@@ -65,7 +65,7 @@
     }
 ?>
     
-    <header id="header-01" class="header <?php if($sticky_header) { echo 'sticky'; } ?>"
+    <header id="header-01" class="header" data-sticky="<?php $sticky_header ? print 'yes' : print 'no'; ?>"
         style="
             <?php if( $header_primary_background=='color' && $header_primary_background_color ) { echo 'background:' . $header_primary_background_color . ';'; } ?>
             <?php if( $header_primary_background=='image' ) { echo 'background-image:url(' . $header_primary_background_image . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; } ?>
@@ -134,7 +134,7 @@
         </div>
     </header>
 
-    <header id="header-01-mobile-header" class="header <?php if($sticky_header) { echo 'sticky'; } ?>"
+    <header id="header-01-mobile-header" class="header" data-sticky="<?php $sticky_header ? print 'yes' : print 'no'; ?>"
         style="
             <?php if( $header_primary_background=='color' && $header_primary_background_color ) { echo 'background:' . $header_primary_background_color . ';'; } ?>
             <?php if( $header_primary_background=='image' ) { echo 'background-image:url(' . $header_primary_background_image . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; } ?>            

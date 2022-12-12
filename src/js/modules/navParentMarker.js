@@ -38,6 +38,17 @@ const navMarker = ()=> {
             menu.parentElement.classList.add( 'add-icon-03' );
         } );
     }
+
+    //sticky header
+    window.addEventListener('scroll', ()=> {
+        const header = document.querySelectorAll('.header');
+        
+        header.forEach( item => {
+            if( item && item.dataset.sticky === 'yes' ) {
+                item.classList.toggle('sticky', window.scrollY > 0);
+            }
+        });
+    });
 }
 
 export default navMarker();
