@@ -152,7 +152,7 @@
                 >
                     
                     <?php if( !$grid_button_toggle || !$grid_button_text ): ?>
-                        <a href="<?php the_permalink(); ?>"><span class="hit-area"></span></a>
+                        <a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>"><span class="hit-area"></span></a>
                     <?php endif;?>
 
                     <?php if( is_sticky() ): ?>

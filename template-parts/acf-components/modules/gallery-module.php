@@ -107,7 +107,7 @@
                             "
                         >
 
-                            <a href="<?php echo $image['sizes']['theme-xlarge']; ?>" data-fancybox="gallery-module-image" data-caption="<?php echo $image['caption']; ?>">
+                            <a href="<?php echo $image['sizes']['theme-xlarge']; ?>" data-fancybox="gallery-module-image" data-caption="<?php echo $image['caption']; ?>" aria-label="<?php echo $image['alt']; ?>">
                                 <picture>
                                     <source media="(max-width:980px)"
                                             srcset="<?php echo $image['sizes']['theme-large']; ?> 980w">

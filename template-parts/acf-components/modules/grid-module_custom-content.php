@@ -113,7 +113,7 @@
             >
                 
                 <?php if( $grid_custom_link && !$grid_button_toggle ): ?>
-                    <a href="<?php echo esc_url( $grid_custom_link_url ); ?>" target="<?php echo esc_attr( $grid_custom_link_target ); ?>">
+                    <a href="<?php echo esc_url( $grid_custom_link_url ); ?>" target="<?php echo esc_attr( $grid_custom_link_target ); ?>" aria-label="<?php echo $grid_custom_title; ?>">
                         <span class="hit-area"></span>
                     </a>
                 <?php endif; ?>

@@ -119,7 +119,7 @@
                         
                             <article class="featured-slider-module__cards__card swiper-slide column-center">
                                         
-                                <a href="<?php the_permalink(); ?>"><span class="hit-area"></span></a>
+                                <a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>"><span class="hit-area"></span></a>
 
                                 <div class="featured-slider-module__cards__card-overlay background-overlay"></div>
 

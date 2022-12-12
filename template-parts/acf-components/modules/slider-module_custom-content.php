@@ -254,7 +254,7 @@
                             "
                         >
                             <?php if( $slider_custom_link && !$slider_custom_show_button ) : ?>
-                                <a href="<?php echo esc_url( $slider_custom_link_url ); ?>" target="<?php echo esc_attr( $slider_custom_link_target ); ?>">
+                                <a href="<?php echo esc_url( $slider_custom_link_url ); ?>" target="<?php echo esc_attr( $slider_custom_link_target ); ?>" aria-label="<?php echo $slider_custom_title; ?>">
                                     <span class="hit-area"></span>
                                 </a>
                             <?php endif; ?>

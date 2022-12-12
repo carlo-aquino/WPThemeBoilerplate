@@ -192,7 +192,7 @@
                 >
                     
                     <?php if( !$slider_show_button ): ?>
-                        <a href="<?php the_permalink(); ?>"><span class="hit-area"></span></a>
+                        <a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>"><span class="hit-area"></span></a>
                     <?php endif; ?>
                         
                     <div class="slider-module__cards__card-overlay background-overlay"></div>

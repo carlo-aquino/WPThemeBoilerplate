@@ -96,7 +96,7 @@
         >
 
             <?php if( $image_link && !$image_lightbox ): ?>
-                <a href="<?php echo esc_url( $image_link_url ); ?>" target="<?php echo esc_attr( $image_link_target ); ?>">
+                <a href="<?php echo esc_url( $image_link_url ); ?>" target="<?php echo esc_attr( $image_link_target ); ?>" aria-label="<?php echo $image_content_alt; ?>">
             <?php endif; ?>   
             
             <?php if( $image_lightbox ): ?>

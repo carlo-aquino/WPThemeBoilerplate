@@ -138,7 +138,7 @@
                         
                             <article class="featured-slider-module__cards__card swiper-slide column-center">
                                         
-                                <a href="<?php echo $featured_slider_custom_link_url; ?>"><span class="hit-area"></span></a>
+                                <a href="<?php echo $featured_slider_custom_link_url; ?>" aria-label="<?php echo $featured_slider_custom_title; ?>"><span class="hit-area"></span></a>
 
                                 <div class="featured-slider-module__cards__card-overlay background-overlay"></div>
 
