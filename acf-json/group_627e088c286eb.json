@@ -8061,7 +8061,7 @@
                                             "required": 0,
                                             "conditional_logic": 0,
                                             "wrapper": {
-                                                "width": "40",
+                                                "width": "30",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -8097,7 +8097,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": "60",
+                                                "width": "70",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -8120,7 +8120,7 @@
                                                 ]
                                             ],
                                             "wrapper": {
-                                                "width": "60",
+                                                "width": "40",
                                                 "class": "",
                                                 "id": ""
                                             },
@@ -8136,6 +8136,33 @@
                                             "max_size": "",
                                             "mime_types": "",
                                             "library": "all"
+                                        },
+                                        {
+                                            "key": "field_63981044aee11",
+                                            "label": "Fixed",
+                                            "name": "background_image_fixed",
+                                            "type": "true_false",
+                                            "instructions": "",
+                                            "required": 0,
+                                            "conditional_logic": [
+                                                [
+                                                    {
+                                                        "field": "field_622ee2700a697",
+                                                        "operator": "==",
+                                                        "value": "image"
+                                                    }
+                                                ]
+                                            ],
+                                            "wrapper": {
+                                                "width": "30",
+                                                "class": "",
+                                                "id": ""
+                                            },
+                                            "message": "",
+                                            "default_value": 0,
+                                            "ui": 1,
+                                            "ui_on_text": "",
+                                            "ui_off_text": ""
                                         },
                                         {
                                             "key": "field_622ee2700a69a",
@@ -11372,5 +11399,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1669277236
+    "modified": 1670910271
 }

@@ -22,6 +22,7 @@
             $background_type = get_sub_field( 'background_type' );
             $background_color = get_sub_field( 'background_color' );
             $background_image = get_sub_field( 'background_image' );
+            $background_image_fixed = get_sub_field( 'background_image_fixed' );
             $background_image_overlay = get_sub_field( 'background_image_overlay' );
             $background_image_overlay_color = get_sub_field( 'background_image_overlay_color' );
             $background_image_overlay_opacity = get_sub_field( 'background_image_overlay_opacity' );
@@ -84,6 +85,7 @@
 
             <?php if( $background_type=='color' ) { echo 'background-color:' . $background_color . ';'; } ?>
             <?php if( $background_type=='image' ) { echo 'background-image:url(' . $background_image . ');'; } ?>
+            <?php if( $background_image_fixed && $background_image ) { echo 'background-attachment: fixed;'; } ?>
 
             <?php if( $margin_top ) { echo 'margin-top:' . $margin_top . 'em;'; } ?>
             <?php if( $margin_bottom ) { echo 'margin-bottom:' . $margin_bottom . 'em;'; } ?>
@@ -138,6 +140,7 @@
                         $background_type = get_sub_field( 'background_type' );
                         $background_color = get_sub_field( 'background_color' );
                         $background_image = get_sub_field( 'background_image' );
+                        $background_image_fixed = get_sub_field( 'background_image_fixed' );
                         $background_image_overlay = get_sub_field( 'background_image_overlay' );
                         $background_image_overlay_color = get_sub_field( 'background_image_overlay_color' );
                         $background_image_overlay_opacity = get_sub_field( 'background_image_overlay_opacity' );
@@ -194,6 +197,7 @@
                             style="
                                 <?php if( $background_type=='color' ) { echo 'background-color:' . $background_color . ';'; } ?>
                                 <?php if( $background_type=='image' ) { echo 'background-image:url(' . $background_image . ');'; } ?>
+                                <?php if( $background_image_fixed && $background_image ) { echo 'background-attachment: fixed;'; } ?>
                             " 
                             
                             <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
@@ -312,6 +316,7 @@
                             $background_type = get_sub_field( 'background_type' );
                             $background_color = get_sub_field( 'background_color' );
                             $background_image = get_sub_field( 'background_image' );
+                            $background_image_fixed = get_sub_field( 'background_image_fixed' );
                             $background_image_overlay = get_sub_field( 'background_image_overlay' );
                             $background_image_overlay_color = get_sub_field( 'background_image_overlay_color' );
                             $background_image_overlay_opacity = get_sub_field( 'background_image_overlay_opacity' );
@@ -368,6 +373,7 @@
                             style="
                                 <?php if( $background_type=='color' ) { echo 'background-color:' . $background_color . ';'; } ?>
                                 <?php if( $background_type=='image' ) { echo 'background-image:url(' . $background_image . ');'; } ?>
+                                <?php if( $background_image_fixed && $background_image ) { echo 'background-attachment: fixed;'; } ?>
                             "    
                         
                             <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
