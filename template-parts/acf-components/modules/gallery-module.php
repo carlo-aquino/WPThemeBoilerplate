@@ -110,13 +110,13 @@
                             <a href="<?php echo esc_url($image['sizes']['theme-xlarge']); ?>" data-fancybox="gallery-module-image" data-caption="<?php echo esc_attr($image['caption']); ?>" aria-label="<?php echo esc_attr($image['alt']); ?>">
                                 <picture>
                                     <source media="(max-width:980px)"
-                                            srcset="<?php echo $image['sizes']['theme-large']; ?> 980w">
+                                            srcset="<?php echo esc_url($image['sizes']['theme-large']); ?> 980w">
                                     <source media="(max-width:768px)"
-                                            srcset="<?php echo $image['sizes']['theme-medium']; ?> 768w">
+                                            srcset="<?php echo esc_url($image['sizes']['theme-medium']); ?> 768w">
                                     <source media="(max-width:640px)"
-                                            srcset="<?php echo $image['sizes']['theme-small']; ?> 640w">
+                                            srcset="<?php echo esc_url($image['sizes']['theme-small']); ?> 640w">
                                     <source media="(max-width:425px)"
-                                            srcset="<?php echo $image['sizes']['theme-xsmall']; ?> 425w">
+                                            srcset="<?php echo esc_url($image['sizes']['theme-xsmall']); ?> 425w">
 
                                     <img src="<?php echo esc_url($image['sizes'][$gallery_image_size]); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="img-fluid" width="<?php echo esc_attr($image['sizes'][$gallery_image_size . '-width']); ?>" height="<?php echo esc_attr($image['sizes'][$gallery_image_size . '-height']); ?>"
 

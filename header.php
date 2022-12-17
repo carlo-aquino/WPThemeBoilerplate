@@ -71,7 +71,7 @@
         if( $body_code_toggle ) {
 
             if( $body_code_content ) {
-                echo esc_html($body_code_content);
+                echo $body_code_content;
             }
 
         }  

@@ -82,13 +82,13 @@
                                 <?php if( $featured_slider_custom_image ): ?>
                                     <picture>
                                         <source media="(max-width:980px)"
-                                                srcset="<?php echo $featured_slider_custom_image['sizes']['theme-large']; ?> 980w">
+                                                srcset="<?php echo esc_url($featured_slider_custom_image['sizes']['theme-large']); ?> 980w">
                                         <source media="(max-width:768px)"
-                                                srcset="<?php echo $featured_slider_custom_image['sizes']['theme-medium']; ?> 768w">
+                                                srcset="<?php echo esc_url($featured_slider_custom_image['sizes']['theme-medium']); ?> 768w">
                                         <source media="(max-width:640px)"
-                                                srcset="<?php echo $featured_slider_custom_image['sizes']['theme-small']; ?> 640w">
+                                                srcset="<?php echo esc_url($featured_slider_custom_image['sizes']['theme-small']); ?> 640w">
                                         <source media="(max-width:425px)"
-                                                srcset="<?php echo $featured_slider_custom_image['sizes']['theme-xsmall']; ?> 425w">
+                                                srcset="<?php echo esc_url($featured_slider_custom_image['sizes']['theme-xsmall']); ?> 425w">
 
                                         <img src="<?php echo esc_url($featured_slider_custom_image_size); ?>" width="<?php echo esc_attr($featured_slider_custom_image_width); ?>" height="<?php echo esc_attr($featured_slider_custom_image_height); ?>" alt="<?php echo esc_attr($featured_slider_custom_image_alt); ?>" class="img-fluid">
                                     </picture>       

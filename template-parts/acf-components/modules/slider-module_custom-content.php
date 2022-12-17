@@ -132,13 +132,13 @@
                     
                     <picture class="swiper-slide">
                         <source media="(max-width:980px)"
-                                srcset="<?php echo $image['sizes']['theme-large']; ?> 980w">
+                                srcset="<?php echo esc_url($image['sizes']['theme-large']); ?> 980w">
                         <source media="(max-width:768px)"
-                                srcset="<?php echo $image['sizes']['theme-medium']; ?> 768w">
+                                srcset="<?php echo esc_url($image['sizes']['theme-medium']); ?> 768w">
                         <source media="(max-width:640px)"
-                                srcset="<?php echo $image['sizes']['theme-small']; ?> 640w">
+                                srcset="<?php echo esc_url($image['sizes']['theme-small']); ?> 640w">
                         <source media="(max-width:425px)"
-                                srcset="<?php echo $image['sizes']['theme-xsmall']; ?> 425w">
+                                srcset="<?php echo esc_url($image['sizes']['theme-xsmall']); ?> 425w">
 
                         <img <?php if( $image['alt'] ) echo 'alt="' . esc_attr($image['alt']) . '"'; ?> src="<?php echo esc_url($image['sizes']['theme-xlarge']); ?>" class="img-fluid" width="<?php echo esc_attr($image['sizes']['theme-xlarge-width']); ?>">
                     </picture>
@@ -264,13 +264,13 @@
                             <?php if( $slider_custom_image ): ?>
                                 <picture>
                                     <source media="(max-width:980px)"
-                                            srcset="<?php echo $slider_custom_image['sizes']['theme-large']; ?> 980w">
+                                            srcset="<?php echo esc_url($slider_custom_image['sizes']['theme-large']); ?> 980w">
                                     <source media="(max-width:768px)"
-                                            srcset="<?php echo $slider_custom_image['sizes']['theme-medium']; ?> 768w">
+                                            srcset="<?php echo esc_url($slider_custom_image['sizes']['theme-medium']); ?> 768w">
                                     <source media="(max-width:640px)"
-                                            srcset="<?php echo $slider_custom_image['sizes']['theme-small']; ?> 640w">
+                                            srcset="<?php echo esc_url($slider_custom_image['sizes']['theme-small']); ?> 640w">
                                     <source media="(max-width:425px)"
-                                            srcset="<?php echo $slider_custom_image['sizes']['theme-xsmall']; ?> 425w">
+                                            srcset="<?php echo esc_url($slider_custom_image['sizes']['theme-xsmall']); ?> 425w">
                                     
                                     <img src="<?php echo esc_url($slider_custom_image_size); ?>" width="<?php echo esc_attr($slider_custom_image_width); ?>" height="<?php echo esc_attr($slider_custom_image_height); ?>" alt="<?php echo esc_attr($slider_custom_image_alt); ?>" class="img-fluid">
                                 </picture>       

@@ -106,13 +106,13 @@
                 <?php if( $image_content ): ?>
                     <picture>
                         <source media="(max-width:980px)"
-                                srcset="<?php echo $image_content['sizes']['theme-large']; ?> 980w">
+                                srcset="<?php echo esc_url($image_content['sizes']['theme-large']); ?> 980w">
                         <source media="(max-width:768px)"
-                                srcset="<?php echo $image_content['sizes']['theme-medium']; ?> 768w">
+                                srcset="<?php echo esc_url($image_content['sizes']['theme-medium']); ?> 768w">
                         <source media="(max-width:640px)"
-                                srcset="<?php echo $image_content['sizes']['theme-small']; ?> 640w">
+                                srcset="<?php echo esc_url($image_content['sizes']['theme-small']); ?> 640w">
                         <source media="(max-width:425px)"
-                                srcset="<?php echo $image_content['sizes']['theme-xsmall']; ?> 425w">
+                                srcset="<?php echo esc_url($image_content['sizes']['theme-xsmall']); ?> 425w">
 
                         <img src="<?php echo esc_url($image_content_size); ?>" width="<?php echo esc_attr($image_content_width); ?>" height="<?php echo esc_attr($image_content_height); ?>" alt="<?php echo esc_attr($image_content_alt); ?>" class="img-fluid<?php if( $image_inherit_container_size ) echo ' inherit-container';?>">
                     </picture>       

@@ -169,7 +169,7 @@
                             <div class="button-module__wrapper">
                                 <a href="<?php echo esc_url( $grid_custom_link_url ); ?>" target="<?php echo esc_attr( $grid_custom_link_target ); ?>" role="button">  
                                     <span>
-                                        <?php echo $grid_custom_link_title; ?>
+                                        <?php echo esc_html($grid_custom_link_title); ?>
                                     </span>
                                 </a>
                             </div>
