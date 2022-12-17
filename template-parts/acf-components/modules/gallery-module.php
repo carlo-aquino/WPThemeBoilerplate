@@ -64,36 +64,36 @@
     }   
 ?>    
     
-    <div id="<?php if( $css_id ) { echo ' ' . $css_id; } ?>" class="gallery-module<?php if( $css_class ) { echo ' ' . $css_class; } ?>">
+    <div id="<?php if( $css_id ) echo ' ' . esc_attr($css_id); ?>" class="gallery-module<?php if( $css_class ) echo ' ' . esc_attr($css_class); ?>">
 
         <div class="gallery-module__wrapper"
             style="
-                <?php if( $margin_top ) { echo 'margin-top:' . $margin_top . 'em;'; } ?>
-                <?php if( $margin_bottom ) { echo 'margin-bottom:' . $margin_bottom . 'em;'; } ?>
-                <?php if( $margin_left ) { echo 'margin-left:' . $margin_left . 'em;'; } ?>
-                <?php if( $margin_right ) { echo 'margin-right:' . $margin_right . 'em;'; } ?>
+                <?php if( $margin_top ) echo 'margin-top:' . esc_attr($margin_top) . 'em;'; ?>
+                <?php if( $margin_bottom ) echo 'margin-bottom:' . esc_attr($margin_bottom) . 'em;'; ?>
+                <?php if( $margin_left ) echo 'margin-left:' . esc_attr($margin_left) . 'em;'; ?>
+                <?php if( $margin_right ) echo 'margin-right:' . esc_attr($margin_right) . 'em;'; ?>
 
-                <?php if( $padding_top ) { echo 'padding-top:' . $padding_top . 'em;'; } ?>
-                <?php if( $padding_bottom ) { echo 'padding-bottom:' . $padding_bottom . 'em;'; } ?>
-                <?php if( $padding_left ) { echo 'padding-left:' . $padding_left . 'em;'; } ?>
-                <?php if( $padding_right ) { echo 'padding-right:' . $padding_right . 'em;'; } ?>
+                <?php if( $padding_top ) echo 'padding-top:' . esc_attr($padding_top) . 'em;'; ?>
+                <?php if( $padding_bottom ) echo 'padding-bottom:' . esc_attr($padding_bottom) . 'em;'; ?>
+                <?php if( $padding_left ) echo 'padding-left:' . esc_attr($padding_left) . 'em;'; ?>
+                <?php if( $padding_right ) echo 'padding-right:' . esc_attr($padding_right) . 'em;'; ?>
             "
         >
 
             <?php if( $gallery_images ): ?>
 
-                <div class="gallery-module__content<?php if( $gallery_masonry_toggle ) { echo ' grid js-masonry'; } ?>"
+                <div class="gallery-module__content<?php if( $gallery_masonry_toggle ) echo ' grid js-masonry'; ?>"
                     style="
-                        <?php if( !$gallery_masonry_toggle ) echo 'grid-template-columns:repeat(' . $column_count . ', 1fr);'; ?>
-                        <?php if( $gallery_gap ) echo 'gap:' . $gallery_gap . ';'; ?>
+                        <?php if( !$gallery_masonry_toggle ) echo 'grid-template-columns:repeat(' . esc_attr($column_count) . ', 1fr);'; ?>
+                        <?php if( $gallery_gap ) echo 'gap:' . esc_attr($gallery_gap) . ';'; ?>
                     "
                 >
 
                     <?php foreach( $gallery_images as $image ): ?>
                         
-                        <div class="gallery-module__item<?php if( $gallery_masonry_toggle ) { echo ' grid-item'; } ?>"
+                        <div class="gallery-module__item<?php if( $gallery_masonry_toggle ) echo ' grid-item'; ?>"
                             style="
-                                <?php if( !$gallery_masonry_toggle && $gallery_image_height ) { echo 'height: ' . $gallery_image_height . 'rem'; } ?>
+                                <?php if( !$gallery_masonry_toggle && $gallery_image_height ) echo 'height: ' . esc_attr($gallery_image_height) . 'rem'; ?>
                                 <?php
                                     if( $gallery_masonry_toggle ) {
                                         if( $gallery_items_per_row == 'four' ) echo 'width: 25%;';
@@ -103,11 +103,11 @@
                                     } 
                                 ?>
 
-                                <?php if( $gallery_gap ) echo 'padding:' . ( $gallery_gap / 2 )  . 'em;'; ?>
+                                <?php if( $gallery_gap ) echo 'padding:' . ( esc_attr($gallery_gap) / 2 )  . 'em;'; ?>
                             "
                         >
 
-                            <a href="<?php echo $image['sizes']['theme-xlarge']; ?>" data-fancybox="gallery-module-image" data-caption="<?php echo $image['caption']; ?>" aria-label="<?php echo $image['alt']; ?>">
+                            <a href="<?php echo esc_url($image['sizes']['theme-xlarge']); ?>" data-fancybox="gallery-module-image" data-caption="<?php echo esc_attr($image['caption']); ?>" aria-label="<?php echo esc_attr($image['alt']); ?>">
                                 <picture>
                                     <source media="(max-width:980px)"
                                             srcset="<?php echo $image['sizes']['theme-large']; ?> 980w">
@@ -118,20 +118,20 @@
                                     <source media="(max-width:425px)"
                                             srcset="<?php echo $image['sizes']['theme-xsmall']; ?> 425w">
 
-                                    <img src="<?php echo $image['sizes'][$gallery_image_size]; ?>" alt="<?php echo $image['alt']; ?>" class="img-fluid" width="<?php echo $image['sizes'][$gallery_image_size . '-width']; ?>" height="<?php echo $image['sizes'][$gallery_image_size . '-height']; ?>"
+                                    <img src="<?php echo esc_url($image['sizes'][$gallery_image_size]); ?>" alt="<?php echo esc_attr($image['alt']); ?>" class="img-fluid" width="<?php echo esc_attr($image['sizes'][$gallery_image_size . '-width']); ?>" height="<?php echo esc_attr($image['sizes'][$gallery_image_size . '-height']); ?>"
 
                                         <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
-                                            data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
+                                            data-aos="<?php echo esc_attr($transition_animation . '-' . $transition_direction); ?>"
                                         <?php endif; ?>
                                         
                                         <?php if( $transition_animation == 'zoom' ): ?>
-                                            data-aos="<?php echo $transition_animation . '-in'; ?>"
+                                            data-aos="<?php echo esc_attr($transition_animation . '-in'); ?>"
                                         <?php endif; ?>
 
-                                        data-aos="<?php echo $transition_animation; ?>"
+                                        data-aos="<?php echo esc_attr($transition_animation); ?>"
 
                                         <?php if( $transition_duration ): ?>
-                                            data-aos-duration="<?php echo $transition_duration; ?>"
+                                            data-aos-duration="<?php echo esc_attr($transition_duration); ?>"
                                         <?php endif; ?>
                                         
                                         data-aos-delay="<?php echo $gallery_ctr; ?>"

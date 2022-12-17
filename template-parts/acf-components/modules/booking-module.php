@@ -69,56 +69,56 @@
     }
 ?>    
     
-    <div id="<?php if( $css_id ) { echo ' ' . $css_id; } ?>" class="booking-module<?php if( $css_class ) { echo ' ' . $css_class; } ?>">
+    <div id="<?php if( $css_id ) echo ' ' . esc_attr($css_id); ?>" class="booking-module<?php if( $css_class ) echo ' ' . esc_attr($css_class); ?>">
 
         <div class="booking-module__wrapper"
             style="
-                <?php if( $margin_top ) { echo 'margin-top:' . $margin_top . 'em;'; } ?>
-                <?php if( $margin_bottom ) { echo 'margin-bottom:' . $margin_bottom . 'em;'; } ?>
-                <?php if( $margin_left ) { echo 'margin-left:' . $margin_left . 'em;'; } ?>
-                <?php if( $margin_right ) { echo 'margin-right:' . $margin_right . 'em;'; } ?>
+                <?php if( $margin_top ) echo 'margin-top:' . esc_attr($margin_top) . 'em;'; ?>
+                <?php if( $margin_bottom ) echo 'margin-bottom:' . esc_attr($margin_bottom) . 'em;'; ?>
+                <?php if( $margin_left ) echo 'margin-left:' . esc_attr($margin_left) . 'em;'; ?>
+                <?php if( $margin_right ) echo 'margin-right:' . esc_attr($margin_right) . 'em;'; ?>
 
-                <?php if( $padding_top ) { echo 'padding-top:' . $padding_top . 'em;'; } ?>
-                <?php if( $padding_bottom ) { echo 'padding-bottom:' . $padding_bottom . 'em;'; } ?>
-                <?php if( $padding_left ) { echo 'padding-left:' . $padding_left . 'em;'; } ?>
-                <?php if( $padding_right ) { echo 'padding-right:' . $padding_right . 'em;'; } ?>
+                <?php if( $padding_top ) echo 'padding-top:' . esc_attr($padding_top) . 'em;'; ?>
+                <?php if( $padding_bottom ) echo 'padding-bottom:' . esc_attr($padding_bottom) . 'em;'; ?>
+                <?php if( $padding_left ) echo 'padding-left:' . esc_attr($padding_left) . 'em;'; ?>
+                <?php if( $padding_right ) echo 'padding-right:' . esc_attr($padding_right) . 'em;'; ?>
             "
 
             <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
-                data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
+                data-aos="<?php echo esc_attr($transition_animation . '-' . $transition_direction); ?>"
             <?php endif; ?>
             
             <?php if( $transition_animation == 'zoom' ): ?>
-                data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
+                data-aos="<?php echo esc_attr($transition_animation . '-' . $transition_zoom_direction); ?>"
             <?php endif; ?>
 
-            data-aos="<?php echo $transition_animation; ?>"
+            data-aos="<?php echo esc_attr($transition_animation); ?>"
 
             <?php if( $transition_duration ): ?>
-                data-aos-duration="<?php echo $transition_duration; ?>"
+                data-aos-duration="<?php echo esc_attr($transition_duration); ?>"
             <?php endif; ?>
             
-            data-aos-delay="<?php echo $transition_delay; ?>"
+            data-aos-delay="<?php echo esc_attr($transition_delay); ?>"
         >
 
             <?php if( $booking_heading && $booking_heading_content ): ?>
                 <div class="booking-module__heading">
-                    <?php echo $booking_heading_content; ?>
+                    <?php echo esc_html($booking_heading_content); ?>
                 </div>
             <?php endif; ?>
 
-            <?php echo do_shortcode( '[ea_bootstrap width="100%" scroll_off="true" show_remaining_slots="1" layout_cols="' . $booking_layout . '"]' ); ?>
+            <?php echo do_shortcode( '[ea_bootstrap width="100%" scroll_off="true" show_remaining_slots="1" layout_cols="' . esc_attr($booking_layout) . '"]' ); ?>
 
             <?php if( $booking_target_location && $booking_location_id ): ?>
-                <?php echo do_shortcode( '[ea_bootstrap width="100%" scroll_off="true" show_remaining_slots="1" layout_cols="' . $booking_layout . '" location="' . $booking_location_id . '"]' ); ?>   
+                <?php echo do_shortcode( '[ea_bootstrap width="100%" scroll_off="true" show_remaining_slots="1" layout_cols="' . esc_attr($booking_layout) . '" location="' . esc_attr($booking_location_id) . '"]' ); ?>   
             <?php endif; ?>
 
             <?php if( $booking_target_service && $booking_service_id ): ?>
-                <?php echo do_shortcode( '[ea_bootstrap width="100%" scroll_off="true" show_remaining_slots="1" layout_cols="' . $booking_layout . '" service="' . $booking_service_id . '"]' ); ?>   
+                <?php echo do_shortcode( '[ea_bootstrap width="100%" scroll_off="true" show_remaining_slots="1" layout_cols="' . esc_attr($booking_layout) . '" service="' . esc_attr($booking_service_id) . '"]' ); ?>   
             <?php endif; ?>
 
             <?php if( $booking_target_employee && $booking_employee_id ): ?>
-                <?php echo do_shortcode( '[ea_bootstrap width="100%" scroll_off="true" show_remaining_slots="1" layout_cols="' . $booking_layout . '" worker="' . $booking_employee_id . '"]' ); ?>   
+                <?php echo do_shortcode( '[ea_bootstrap width="100%" scroll_off="true" show_remaining_slots="1" layout_cols="' . esc_attr($booking_layout) . '" worker="' . esc_attr($booking_employee_id) . '"]' ); ?>   
             <?php endif; ?>
         </div>
     </div>

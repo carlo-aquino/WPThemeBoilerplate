@@ -18,9 +18,9 @@
 ?> 
 
 
-    <div id="<?php if( $css_id ) { echo ' ' . $css_id; } ?>" class="empty-space-module<?php if( $css_class ) { echo ' ' . $css_class; } ?>"
+    <div id="<?php if( $css_id ) { echo ' ' . esc_attr($css_id); } ?>" class="empty-space-module<?php if( $css_class ) echo ' ' . esc_attr($css_class); ?>"
         style="height: <?php echo $empty_space_height; ?>rem;" >
 
-        <div class="empty-space-module__wrapper" style="height: <?php echo $empty_space_height; ?>rem;"></div>
+        <div class="empty-space-module__wrapper" style="height: <?php echo esc_attr($empty_space_height); ?>rem;"></div>
 
     </div>

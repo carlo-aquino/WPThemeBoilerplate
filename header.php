@@ -42,7 +42,7 @@
                 echo 'Page not found';
             } else {
                 echo the_title( get_post_format() );
-                if( is_front_page() ) { echo ' | ' . $company_name; }
+                if( is_front_page() ) { echo ' | ' . esc_html($company_name); }
             }
         ?>
     </title>
@@ -58,7 +58,7 @@
     ?>
 
     <?php if( $favicon ): ?>
-        <link rel="shortcut icon" type="image/x-icon" href="<?php echo $favicon; ?>">
+        <link rel="shortcut icon" type="image/x-icon" href="<?php echo esc_url($favicon); ?>">
     <?php endif; ?>
 
     <?php wp_head(); ?>
@@ -71,7 +71,7 @@
         if( $body_code_toggle ) {
 
             if( $body_code_content ) {
-                echo $body_code_content;
+                echo esc_html($body_code_content);
             }
 
         }  

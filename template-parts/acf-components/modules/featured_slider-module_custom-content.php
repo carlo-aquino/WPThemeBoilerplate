@@ -28,12 +28,12 @@
                                 
                                 <?php if( $featured_slider_custom_title ): ?>
                                     <header class="featured-slider-module__cards__card-content">
-                                        <h2><?php echo $featured_slider_custom_title; ?></h2>
+                                        <h2><?php echo esc_html($featured_slider_custom_title); ?></h2>
                                     </header>
                                 <?php endif; ?>
 
                                 <?php if( $featured_slider_custom_description ): ?>
-                                    <p><?php echo $featured_slider_custom_description; ?></p>
+                                    <p><?php echo esc_html($featured_slider_custom_description); ?></p>
                                 <?php endif; ?>
 
                                 <?php if( $featured_slider_custom_link ): ?>
@@ -41,8 +41,8 @@
                                         <div class="button-module">
                                             <div class="button-module__wrapper">
                                                 
-                                                <a href="<?php echo $featured_slider_custom_link_url; ?>" target="<?php echo $featured_slider_custom_link_target; ?>" role="button">
-                                                    <span class="custom-primary-btn"><?php echo $featured_slider_custom_link_title; ?></span>
+                                                <a href="<?php echo esc_url($featured_slider_custom_link_url); ?>" target="<?php echo esc_attr($featured_slider_custom_link_target); ?>" role="button">
+                                                    <span class="custom-primary-btn"><?php echo esc_html($featured_slider_custom_link_title); ?></span>
                                                 </a> 
 
                                             </div>
@@ -60,7 +60,7 @@
 
             <div class="featured-slider-module__wrapper swiper-wrapper--right">
                 
-                <div class="featured-slider-module__cards featured-slider__right slider-right"<?php if( $featured_slider_height ){ echo ' style="height: ' . $featured_slider_height . 'rem";'; } ?> data-aos="slide-left" data-aos-duration="1000" data-aos-easing="ease-out-sine">
+                <div class="featured-slider-module__cards featured-slider__right slider-right"<?php if( $featured_slider_height ){ echo ' style="height: ' . esc_attr($featured_slider_height) . 'rem";'; } ?> data-aos="slide-left" data-aos-duration="1000" data-aos-easing="ease-out-sine">
 
                     <div class="featured-slider-module__cards-wrapper swiper-wrapper">
 
@@ -90,7 +90,7 @@
                                         <source media="(max-width:425px)"
                                                 srcset="<?php echo $featured_slider_custom_image['sizes']['theme-xsmall']; ?> 425w">
 
-                                        <img src="<?php echo $featured_slider_custom_image_size; ?>" width="<?php echo $featured_slider_custom_image_width; ?>" height="<?php echo $featured_slider_custom_image_height; ?>" alt="<?php echo $featured_slider_custom_image_alt; ?>" class="img-fluid">
+                                        <img src="<?php echo esc_url($featured_slider_custom_image_size); ?>" width="<?php echo esc_attr($featured_slider_custom_image_width); ?>" height="<?php echo esc_attr($featured_slider_custom_image_height); ?>" alt="<?php echo esc_attr($featured_slider_custom_image_alt); ?>" class="img-fluid">
                                     </picture>       
                                 <?php endif; ?>
 
@@ -138,12 +138,12 @@
                         
                             <article class="featured-slider-module__cards__card swiper-slide column-center">
                                         
-                                <a href="<?php echo $featured_slider_custom_link_url; ?>" aria-label="<?php echo $featured_slider_custom_title; ?>"><span class="hit-area"></span></a>
+                                <a href="<?php echo esc_url($featured_slider_custom_link_url); ?>" aria-label="<?php echo esc_html($featured_slider_custom_title); ?>"><span class="hit-area"></span></a>
 
                                 <div class="featured-slider-module__cards__card-overlay background-overlay"></div>
 
                                 <div class="featured-slider-module__cards__card-heading title-overlay">
-                                    <h2><?php echo $featured_slider_custom_title; ?></h2>
+                                    <h2><?php echo esc_html($featured_slider_custom_title); ?></h2>
                                 </div>
                                 
                                 <?php if( $featured_slider_custom_image ): ?>
@@ -157,7 +157,7 @@
                                         <source media="(max-width:425px)"
                                                 srcset="<?php echo $featured_slider_custom_image['sizes']['theme-xsmall']; ?> 425w">
 
-                                        <img src="<?php echo $featured_slider_custom_image_size; ?>" width="<?php echo $featured_slider_custom_image_width; ?>" height="<?php echo $featured_slider_custom_image_height; ?>" alt="<?php echo $featured_slider_custom_image_alt; ?>" class="img-fluid">
+                                        <img src="<?php echo esc_url($featured_slider_custom_image_size); ?>" width="<?php echo esc_attr($featured_slider_custom_image_width); ?>" height="<?php echo esc_attr($featured_slider_custom_image_height); ?>" alt="<?php echo esc_attr($featured_slider_custom_image_alt); ?>" class="img-fluid">
                                     </picture>       
                                 <?php endif; ?>
 

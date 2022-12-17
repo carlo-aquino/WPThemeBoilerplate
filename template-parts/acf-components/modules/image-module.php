@@ -64,43 +64,43 @@
     }           
 ?>
 
-    <div id="<?php if( $css_id ) { echo ' ' . $css_id; } ?>" class="image-module<?php if( $css_class ) echo ' ' . $css_class; if( $image_inherit_container_size ) echo ' inherit-container'; ?>">
+    <div id="<?php if( $css_id ) echo ' ' . esc_attr($css_id); ?>" class="image-module<?php if( $css_class ) echo ' ' . esc_attr($css_class); if( $image_inherit_container_size ) echo ' inherit-container'; ?>">
         <div class="image-module__wrapper<?php if( $image_inherit_container_size ) echo ' inherit-container';?>"
             style="
-                <?php if( $margin_top ) { echo 'margin-top:' . $margin_top . 'em;'; } ?>
-                <?php if( $margin_bottom ) { echo 'margin-bottom:' . $margin_bottom . 'em;'; } ?>
-                <?php if( $margin_left ) { echo 'margin-left:' . $margin_left . 'em;'; } ?>
-                <?php if( $margin_right ) { echo 'margin-right:' . $margin_right . 'em;'; } ?>
+                <?php if( $margin_top ) echo 'margin-top:' . esc_attr($margin_top) . 'em;'; ?>
+                <?php if( $margin_bottom ) echo 'margin-bottom:' . esc_attr($margin_bottom) . 'em;'; ?>
+                <?php if( $margin_left ) echo 'margin-left:' . esc_attr($margin_left) . 'em;'; ?>
+                <?php if( $margin_right ) echo 'margin-right:' . esc_attr($margin_right) . 'em;'; ?>
 
-                <?php if( $padding_top ) { echo 'padding-top:' . $padding_top . 'em;'; } ?>
-                <?php if( $padding_bottom ) { echo 'padding-bottom:' . $padding_bottom . 'em;'; } ?>
-                <?php if( $padding_left ) { echo 'padding-left:' . $padding_left . 'em;'; } ?>
-                <?php if( $padding_right ) { echo 'padding-right:' . $padding_right . 'em;'; } ?>
+                <?php if( $padding_top ) echo 'padding-top:' . esc_attr($padding_top) . 'em;'; ?>
+                <?php if( $padding_bottom ) echo 'padding-bottom:' . esc_attr($padding_bottom) . 'em;'; ?>
+                <?php if( $padding_left ) echo 'padding-left:' . esc_attr($padding_left) . 'em;'; ?>
+                <?php if( $padding_right ) echo 'padding-right:' . esc_attr($padding_right) . 'em;'; ?>
             "
 
             <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
-                data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
+                data-aos="<?php echo esc_attr($transition_animation . '-' . $transition_direction); ?>"
             <?php endif; ?>
             
             <?php if( $transition_animation == 'zoom' ): ?>
-                data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
+                data-aos="<?php echo esc_attr($transition_animation . '-' . $transition_zoom_direction); ?>"
             <?php endif; ?>
 
             <?php if( $transition_duration ): ?>
-                data-aos-duration="<?php echo $transition_duration; ?>"
+                data-aos-duration="<?php echo esc_attr($transition_duration); ?>"
             <?php endif; ?>
 
-            data-aos="<?php echo $transition_animation; ?>"
+            data-aos="<?php echo esc_attr($transition_animation); ?>"
             
-            data-aos-delay="<?php echo $transition_delay; ?>"
+            data-aos-delay="<?php echo esc_attr($transition_delay); ?>"
         >
 
             <?php if( $image_link && !$image_lightbox ): ?>
-                <a href="<?php echo esc_url( $image_link_url ); ?>" target="<?php echo esc_attr( $image_link_target ); ?>" aria-label="<?php echo $image_content_alt; ?>">
+                <a href="<?php echo esc_url( $image_link_url ); ?>" target="<?php echo esc_attr( $image_link_target ); ?>" aria-label="<?php echo esc_attr($image_content_alt); ?>">
             <?php endif; ?>   
             
             <?php if( $image_lightbox ): ?>
-                <a href="<?php echo $image_content['sizes']['theme-xlarge']; ?>" data-fancybox="images">
+                <a href="<?php echo esc_url($image_content['sizes']['theme-xlarge']); ?>" data-fancybox="images">
             <?php endif; ?> 
 
                 <?php if( $image_content ): ?>
@@ -114,7 +114,7 @@
                         <source media="(max-width:425px)"
                                 srcset="<?php echo $image_content['sizes']['theme-xsmall']; ?> 425w">
 
-                        <img src="<?php echo $image_content_size; ?>" width="<?php echo $image_content_width; ?>" height="<?php echo $image_content_height; ?>" alt="<?php echo $image_content_alt; ?>" class="img-fluid<?php if( $image_inherit_container_size ) echo ' inherit-container';?>">
+                        <img src="<?php echo esc_url($image_content_size); ?>" width="<?php echo esc_attr($image_content_width); ?>" height="<?php echo esc_attr($image_content_height); ?>" alt="<?php echo esc_attr($image_content_alt); ?>" class="img-fluid<?php if( $image_inherit_container_size ) echo ' inherit-container';?>">
                     </picture>       
                 <?php endif; ?>
 

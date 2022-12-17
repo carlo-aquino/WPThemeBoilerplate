@@ -40,24 +40,22 @@
     $ctr = $transition_delay;
     $column_count = 0;
 
-    if( $grid_items_per_row == 'one') { $column_count = 1; }
-    if( $grid_items_per_row == 'two') { $column_count = 2; }
-    if( $grid_items_per_row == 'three') { $column_count = 3; }
-    if( $grid_items_per_row == 'four') { $column_count = 4; }
+    if( $grid_items_per_row == 'one') $column_count = 1;
+    if( $grid_items_per_row == 'two') $column_count = 2;
+    if( $grid_items_per_row == 'three') $column_count = 3;
+    if( $grid_items_per_row == 'four') $column_count = 4;
 
     $grid_item_count = 1;
     $grid_content_count = 0;
     $grid_content = get_sub_field('grid_custom_settings');
 
-    if ( is_array($grid_content) ) {
-        $grid_content_count = count($grid_content);
-    }
+    if ( is_array($grid_content) ) $grid_content_count = count($grid_content);
 ?>
 
-    <div class="grid-module__cards<?php if( $grid_masonry_toggle ) { echo ' grid'; } ?>"
+    <div class="grid-module__cards<?php if( $grid_masonry_toggle ) echo ' grid'; ?>"
         style="
             <?php if( !$grid_masonry_toggle ) echo 'grid-template-columns:repeat(' . $column_count . ', 1fr);'; ?>
-            <?php if( $grid_gap ) echo 'gap:' . $grid_gap . 'em;'; ?>
+            <?php if( $grid_gap ) echo 'gap:' . esc_attr($grid_gap) . 'em;'; ?>
         "
     >
 
@@ -83,11 +81,11 @@
             } 
         ?>   
             
-            <article class="grid-module__cards__card<?php echo ' ' . $grid_type; ?><?php if( $grid_masonry_toggle ) { echo ' grid-item'; } ?>"
+            <article class="grid-module__cards__card<?php echo ' ' . esc_attr($grid_type); ?><?php if( $grid_masonry_toggle ) echo ' grid-item'; ?>"
                 style="
-                    <?php if( $grid_masonry_toggle && $grid_type == 'type-two'  ) { echo 'height: auto;'; } ?>
-                    <?php if( !$grid_masonry_toggle && $grid_type == 'type-two' && $grid_description_toggle  ) { echo 'height: 100%;'; } ?>
-                    <?php if( !$grid_masonry_toggle && $grid_type == 'type-two' && !$grid_description_toggle  ) { echo 'height: 15rem;'; } ?>
+                    <?php if( $grid_masonry_toggle && $grid_type == 'type-two'  ) echo 'height: auto;'; ?>
+                    <?php if( !$grid_masonry_toggle && $grid_type == 'type-two' && $grid_description_toggle  ) echo 'height: 100%;'; ?>
+                    <?php if( !$grid_masonry_toggle && $grid_type == 'type-two' && !$grid_description_toggle  ) echo 'height: 15rem;'; ?>
 
                     <?php
                         if( $grid_masonry_toggle ) {
@@ -98,36 +96,36 @@
                         } 
                     ?>
 
-                    <?php if( $grid_gap && $grid_masonry_toggle ) echo 'padding:' . ( $grid_gap / 2 )  . 'em;'; ?>
+                    <?php if( $grid_gap && $grid_masonry_toggle ) echo 'padding:' . ( esc_attr($grid_gap) / 2 )  . 'em;'; ?>
                 "
 
                 <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
-                    data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
+                    data-aos="<?php echo esc_html($transition_animation . '-' . $transition_direction); ?>"
                 <?php endif; ?>
                 
                 <?php if( $transition_animation == 'zoom' ): ?>
-                    data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
+                    data-aos="<?php echo esc_html($transition_animation . '-' . $transition_zoom_direction); ?>"
                 <?php endif; ?>
 
-                data-aos="<?php echo $transition_animation; ?>"
+                data-aos="<?php echo esc_html($transition_animation); ?>"
 
                 <?php if( $transition_duration ): ?>
-                    data-aos-duration="<?php echo $transition_duration; ?>"
+                    data-aos-duration="<?php echo esc_html($transition_duration); ?>"
                 <?php endif; ?>
                 
                 data-aos-delay="<?php echo $ctr; ?>"
 
-                role="group" aria-label="<?php echo $grid_item_count . ' / ' . $grid_content_count; ?>"
+                role="group" aria-label="<?php echo esc_html($grid_item_count . ' / ' . $grid_content_count); ?>"
             >
                 
                 <?php if( $grid_custom_link && !$grid_button_toggle ): ?>
-                    <a href="<?php echo esc_url( $grid_custom_link_url ); ?>" target="<?php echo esc_attr( $grid_custom_link_target ); ?>" aria-label="<?php echo $grid_custom_title; ?>">
+                    <a href="<?php echo esc_url( $grid_custom_link_url ); ?>" target="<?php echo esc_attr( $grid_custom_link_target ); ?>" aria-label="<?php echo esc_attr($grid_custom_title); ?>">
                         <span class="hit-area"></span>
                     </a>
                 <?php endif; ?>
                 
-                <div class="grid-module__cards__card-container<?php echo ' ' . $grid_type; ?>">
-                    <div class="grid-module__cards__card-overlay background-overlay<?php echo ' ' . $grid_type; ?>"></div>
+                <div class="grid-module__cards__card-container<?php echo ' ' . esc_attr($grid_type); ?>">
+                    <div class="grid-module__cards__card-overlay background-overlay<?php echo ' ' . esc_attr($grid_type); ?>"></div>
 
                     <?php if( $grid_image_toggle && $grid_custom_image ): ?>
                         <div class="grid-module__cards__card-image">
@@ -141,7 +139,7 @@
                                 <source media="(max-width:425px)"
                                         srcset="<?php echo $grid_custom_image['sizes']['theme-xsmall']; ?> 425w">
 
-                                <img src="<?php echo $grid_custom_image_size; ?>" width="<?php echo $grid_custom_image_width; ?>" alt="<?php echo $grid_custom_image_alt; ?>" class="img-fluid<?php echo ' ' . $grid_type; ?>">
+                                <img src="<?php echo esc_url($grid_custom_image_size); ?>" width="<?php echo esc_attr($grid_custom_image_width); ?>" alt="<?php echo esc_attr($grid_custom_image_alt); ?>" class="img-fluid<?php echo ' ' . esc_attr($grid_type); ?>">
                             </picture>
                         </div>
                     <?php endif; ?>
@@ -153,14 +151,14 @@
                                 <?php if( $grid_custom_title ): ?>
 
                                     <?php echo '<' . $grid_heading . '>'; ?>
-                                        <?php echo $grid_custom_title; ?>
+                                        <?php echo esc_html($grid_custom_title); ?>
                                     <?php echo '</' . $grid_heading . '>'; ?>
 
                                 <?php endif; ?>
                             </header>
                                 
                             <?php if( $grid_description_toggle && $grid_custom_description ): ?>
-                                <p><?php echo $grid_custom_description; ?></p>
+                                <p><?php echo esc_html($grid_custom_description); ?></p>
                             <?php endif; ?>
 
                         </div>

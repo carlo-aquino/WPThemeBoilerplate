@@ -50,15 +50,15 @@
     
     <footer id="footer-02" class="global-footer"
         style="
-            <?php if( $footer_primary_background=='color' && $footer_primary_background_color ) { echo 'background-color:' . $footer_primary_background_color . ';'; } ?>
-            <?php if( $footer_primary_background=='image' ) { echo 'background-image:url(' . $footer_primary_background_image . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; } ?>
+            <?php if( $footer_primary_background=='color' && $footer_primary_background_color ) echo 'background-color:' . esc_attr($footer_primary_background_color) . ';'; ?>
+            <?php if( $footer_primary_background=='image' ) echo 'background-image:url(' . esc_url($footer_primary_background_image) . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; ?>
         "
     >
         <div class="global-footer__wrapper">
             <?php if( $footer_widget_01 ): ?> 
                 <div class="global-footer__row-01 mobile-spacer">
                     
-                    <div class="global-footer__row-01__wrapper<?php if( !$footer_section_width ) { echo ' content-limit'; } ?>">
+                    <div class="global-footer__row-01__wrapper<?php if( !$footer_section_width ) echo ' content-limit'; ?>">
                         <?php if( is_active_sidebar('footer-widget-01') ): ?>
                             <ul class="site-widget footer-widget-01">
                                 <?php dynamic_sidebar('footer-widget-01'); ?>
@@ -75,7 +75,7 @@
 
             <?php if( $footer_widget_02 || $footer_widget_03 || $footer_widget_04  ): ?> 
                 <div class="global-footer__row-02 mobile-spacer">
-                    <div class="global-footer__row-02__wrapper<?php if( !$footer_section_width ) { echo ' content-limit'; } ?>">
+                    <div class="global-footer__row-02__wrapper<?php if( !$footer_section_width ) echo ' content-limit'; ?>">
                         
                         <?php if( $footer_widget_02 ): ?>   
 
@@ -89,16 +89,16 @@
                                     <?php if( have_rows('logo', 'option') && $logo_colored ): ?>
                                         <img
                                             class="footer-logo"
-                                            src="<?php echo $logo_colored_size; ?>"
-                                            width="<?php echo $logo_colored_width; ?>"
-                                            alt="<?php echo $logo_colored_alt; ?>"
+                                            src="<?php echo esc_url($logo_colored_size); ?>"
+                                            width="<?php echo esc_attr($logo_colored_width); ?>"
+                                            alt="<?php echo esc_attr($logo_colored_alt); ?>"
                                             loading="lazy"
                                         >
                                     <?php else: ?>
                                         <img
                                             class="footer-logo"
                                             src="<?php bloginfo('template_directory'); ?>/dist/img/logo-colored.png"
-                                            alt="<?php echo $company_name; ?> logo"
+                                            alt="<?php echo esc_attr($company_name); ?> logo"
                                             loading="lazy"
                                         >
                                     <?php endif; ?>
@@ -123,9 +123,9 @@
 
                                     <div class="contact-info">
                                         <h3>Contact us</h3>
-                                        <?php if( $company_address ) { echo '<p>' . $company_address . '</p>'; } ?>
-                                        <?php if( $company_contact ) { echo '<p>' . $company_contact . '</p>'; } ?>
-                                        <?php if( $company_email ) { echo '<p><a href="mailto:' . $company_email . '">' . $company_email . '</a></p>'; } ?>
+                                        <?php if( $company_address ) echo '<p>' . esc_html($company_address) . '</p>'; ?>
+                                        <?php if( $company_contact ) echo '<p>' . esc_html($company_contact) . '</p>'; ?>
+                                        <?php if( $company_email ) echo '<p><a href="mailto:' . esc_url($company_email) . '">' . esc_html($company_email) . '</a></p>'; ?>
                                     </div>
                                 </div>
                             <?php endif; ?>
@@ -197,7 +197,7 @@
             
             <?php if( $copyright_widget ): ?>   
                 <div class="global-footer__row-03">
-                    <div class="global-footer__row-01__wrapper<?php if( !$footer_section_width ) { echo ' content-limit'; } ?>">
+                    <div class="global-footer__row-01__wrapper<?php if( !$footer_section_width ) echo ' content-limit'; ?>">
                         
                         <?php if( is_active_sidebar('copyright-widget') ): ?>
                             <ul class="site-widget copyright-widget">
@@ -205,7 +205,7 @@
                             </ul>
                         <?php else: ?>
                             <div class="copyright-wrapper">
-                                <span>Copyright <?php the_time('Y'); ?>. <?php echo $company_name; ?>. All Rights Reserved.</span> 
+                                <span>Copyright <?php the_time('Y'); ?>. <?php echo esc_html($company_name); ?>. All Rights Reserved.</span> 
                             </div>
                         <?php endif; ?>
 

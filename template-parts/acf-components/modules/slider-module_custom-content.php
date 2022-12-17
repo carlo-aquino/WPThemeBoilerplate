@@ -99,31 +99,31 @@
     <?php if( $slider_type=='slider-type-three' && $slider_gallery ): ?>
         <div class="slider-module__wrapper slider-type-three__gallery-top<?php echo ' slider-module__wrapper-' . $randID; ?>"
             data-sliderid="<?php echo 'slider-module__wrapper-' . $randID; ?>"
-            data-slidertype="<?php echo $slider_type ?>"
+            data-slidertype="<?php echo esc_attr($slider_type) ?>"
             data-slidercentered="<?php if( $slider_centered_slides ) echo 'true'; else echo 'false'; ?>"
-            data-sliderinitial="<?php echo $slider_initial_slide ?>"
+            data-sliderinitial="<?php echo esc_attr($slider_initial_slide) ?>"
             data-sliderloop="<?php if( $slider_loop ) echo 'true'; else echo 'false'; ?>"
-            data-sliderpergroup="<?php echo $slider_slides_per_group ?>"
-            data-sliderperview="<?php if($slider_slides_per_view === 0) echo 'auto'; else echo $slider_slides_per_view; ?>"
-            data-sliderspace="<?php echo $slider_space_between ?>"
+            data-sliderpergroup="<?php echo esc_attr($slider_slides_per_group); ?>"
+            data-sliderperview="<?php if($slider_slides_per_view === 0) echo 'auto'; else echo esc_attr($slider_slides_per_view); ?>"
+            data-sliderspace="<?php echo esc_attr($slider_space_between) ?>"
             data-sliderautoplay="<?php if( $slider_carousel && $slider_carousel_autoplay ) echo 'true'; else echo 'false'; ?>"
-            data-sliderdelay="<?php echo $slider_carousel_delay; ?>"
+            data-sliderdelay="<?php echo esc_attr($slider_carousel_delay); ?>"
 
             <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
-                data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
+                data-aos="<?php echo esc_attr($transition_animation . '-' . $transition_direction); ?>"
             <?php endif; ?>
             
             <?php if( $transition_animation == 'zoom' ): ?>
-                data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
+                data-aos="<?php echo esc_attr($transition_animation . '-' . $transition_zoom_direction); ?>"
             <?php endif; ?>
 
-            data-aos="<?php echo $transition_animation; ?>"
+            data-aos="<?php echo esc_attr($transition_animation); ?>"
 
             <?php if( $transition_duration ): ?>
-                data-aos-duration="<?php echo $transition_duration; ?>"
+                data-aos-duration="<?php echo esc_attr($transition_duration); ?>"
             <?php endif; ?>
             
-            data-aos-delay="<?php echo $transition_delay; ?>"
+            data-aos-delay="<?php echo esc_attr($transition_delay); ?>"
         >
         
             <div class="slider-module__cards swiper-wrapper">
@@ -140,7 +140,7 @@
                         <source media="(max-width:425px)"
                                 srcset="<?php echo $image['sizes']['theme-xsmall']; ?> 425w">
 
-                        <img <?php if( $image['alt'] ) echo 'alt="' . $image['alt'] . '"'; ?> src="<?php echo $image['sizes']['theme-xlarge']; ?>" class="img-fluid" width="<?php echo $image['sizes']['theme-xlarge-width']; ?>">
+                        <img <?php if( $image['alt'] ) echo 'alt="' . esc_attr($image['alt']) . '"'; ?> src="<?php echo esc_url($image['sizes']['theme-xlarge']); ?>" class="img-fluid" width="<?php echo esc_attr($image['sizes']['theme-xlarge-width']); ?>">
                     </picture>
                             
                 <?php endforeach; ?>  
@@ -162,7 +162,7 @@
                 <?php if( sizeof( $slider_gallery ) > 1 ): ?>
                     <?php foreach( $slider_gallery as $thumb ): ?>
                         <div class="swiper-slide">
-                            <img <?php if( $thumb['alt'] ) echo 'alt="' . $thumb['alt'] . '"'; ?> src="<?php echo $thumb['sizes']['theme-xsmall']; ?>" class="img-fluid" width="<?php echo $thumb['sizes']['theme-xsmall-width']; ?>">
+                            <img <?php if( $thumb['alt'] ) echo 'alt="' . esc_attr($thumb['alt']) . '"'; ?> src="<?php echo esc_url($thumb['sizes']['theme-xsmall']); ?>" class="img-fluid" width="<?php echo esc_attr($thumb['sizes']['theme-xsmall-width']); ?>">
                         </div>        
                     <?php endforeach; ?>  
                 <?php endif; ?>    
@@ -174,39 +174,39 @@
     <?php else:?>
         <div class="slider-module__wrapper<?php if( $slider_type ) { echo ' ' . $slider_type; } ?><?php echo ' slider-module__wrapper-' . $randID; ?>"
             data-sliderid="<?php echo 'slider-module__wrapper-' . $randID; ?>"
-            data-slidertype="<?php echo $slider_type ?>"
+            data-slidertype="<?php echo esc_attr($slider_type) ?>"
             data-slidercentered="<?php if( $slider_centered_slides ) echo 'true'; else echo 'false'; ?>"
-            data-sliderinitial="<?php echo $slider_initial_slide ?>"
+            data-sliderinitial="<?php echo esc_attr($slider_initial_slide) ?>"
             data-sliderloop="<?php if( $slider_loop ) echo 'true'; else echo 'false'; ?>"
-            data-sliderpergroup="<?php echo $slider_slides_per_group ?>"
-            data-sliderperview="<?php if($slider_slides_per_view === 0) echo 'auto'; else echo $slider_slides_per_view; ?>"
-            data-sliderspace="<?php echo $slider_space_between ?>"
+            data-sliderpergroup="<?php echo esc_attr($slider_slides_per_group); ?>"
+            data-sliderperview="<?php if($slider_slides_per_view === 0) echo 'auto'; else echo esc_attr($slider_slides_per_view); ?>"
+            data-sliderspace="<?php echo esc_attr($slider_space_between); ?>"
             data-sliderautoplay="<?php if( $slider_carousel && $slider_carousel_autoplay ) echo 'true'; else echo 'false'; ?>"
-            data-sliderdelay="<?php echo $slider_carousel_delay; ?>"
+            data-sliderdelay="<?php echo esc_attr($slider_carousel_delay); ?>"
 
             <?php if( $slider_type=='slider-type-two' ): ?>
-                data-coverflowrotate="<?php echo $coverflow_rotate ?>"
-                data-coverflowstretch="<?php echo $coverflow_stretch ?>"
-                data-coverflowdepth="<?php echo $coverflow_depth ?>"
-                data-coverflowmodifier="<?php echo $coverflow_modifier ?>"
+                data-coverflowrotate="<?php echo esc_attr($coverflow_rotate); ?>"
+                data-coverflowstretch="<?php echo esc_attr($coverflow_stretch); ?>"
+                data-coverflowdepth="<?php echo esc_attr($coverflow_depth); ?>"
+                data-coverflowmodifier="<?php echo esc_attr($coverflow_modifier); ?>"
                 data-coverflowshadow="<?php if( $coverflow_shadows ) echo 'true'; else echo 'false'; ?>"
             <?php endif; ?>
 
             <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
-                data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
+                data-aos="<?php echo esc_attr($transition_animation . '-' . $transition_direction); ?>"
             <?php endif; ?>
             
             <?php if( $transition_animation == 'zoom' ): ?>
-                data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
+                data-aos="<?php echo esc_attr($transition_animation . '-' . $transition_zoom_direction); ?>"
             <?php endif; ?>
 
-            data-aos="<?php echo $transition_animation; ?>"
+            data-aos="<?php echo esc_attr($transition_animation); ?>"
 
             <?php if( $transition_duration ): ?>
-                data-aos-duration="<?php echo $transition_duration; ?>"
+                data-aos-duration="<?php echo esc_attr($transition_duration); ?>"
             <?php endif; ?>
             
-            data-aos-delay="<?php echo $transition_delay; ?>"
+            data-aos-delay="<?php echo esc_attr($transition_delay); ?>"
         >
 
             <?php if( have_rows( 'slider_custom_settings' ) ): ?>   
@@ -237,24 +237,24 @@
                             style="
                                 <?php 
                                     if( $slider_type == 'slider-type-two' ) {
-                                        if( $slider_slide_width ) echo 'width:' . $slider_slide_width . 'rem;'; 
+                                        if( $slider_slide_width ) echo 'width:' .esc_attr( $slider_slide_width) . 'rem;'; 
                                     }
         
                                     if( $slider_type == 'slider-type-one' || $slider_type == 'slider-type-two' ) {
-                                        if( $slider_slide_height ) echo 'height:' . $slider_slide_height . 'rem;';
+                                        if( $slider_slide_height ) echo 'height:' . esc_attr($slider_slide_height) . 'rem;';
                                     }
                                 ?>
 
                                 <?php 
-                                    if( $slide_radius_top_left ) echo 'border-top-left-radius: ' . $slide_radius_top_left . 'em;';
-                                    if( $slide_radius_top_right ) echo 'border-top-right-radius: ' . $slide_radius_top_right . 'em;';
-                                    if( $slide_radius_bottom_right ) echo 'border-bottom-right-radius: ' . $slide_radius_bottom_right . 'em;';
-                                    if( $slide_radius_bottom_left ) echo 'border-bottom-left-radius: ' . $slide_radius_bottom_left . 'em;';
+                                    if( $slide_radius_top_left ) echo 'border-top-left-radius: ' . esc_attr($slide_radius_top_left) . 'em;';
+                                    if( $slide_radius_top_right ) echo 'border-top-right-radius: ' . esc_attr($slide_radius_top_right) . 'em;';
+                                    if( $slide_radius_bottom_right ) echo 'border-bottom-right-radius: ' . esc_attr($slide_radius_bottom_right) . 'em;';
+                                    if( $slide_radius_bottom_left ) echo 'border-bottom-left-radius: ' . esc_attr($slide_radius_bottom_left) . 'em;';
                                 ?>
                             "
                         >
                             <?php if( $slider_custom_link && !$slider_custom_show_button ) : ?>
-                                <a href="<?php echo esc_url( $slider_custom_link_url ); ?>" target="<?php echo esc_attr( $slider_custom_link_target ); ?>" aria-label="<?php echo $slider_custom_title; ?>">
+                                <a href="<?php echo esc_url( $slider_custom_link_url ); ?>" target="<?php echo esc_attr( $slider_custom_link_target ); ?>" aria-label="<?php echo esc_attr($slider_custom_title); ?>">
                                     <span class="hit-area"></span>
                                 </a>
                             <?php endif; ?>
@@ -272,7 +272,7 @@
                                     <source media="(max-width:425px)"
                                             srcset="<?php echo $slider_custom_image['sizes']['theme-xsmall']; ?> 425w">
                                     
-                                    <img src="<?php echo $slider_custom_image_size; ?>" width="<?php echo $slider_custom_image_width; ?>" height="<?php echo $slider_custom_image_height; ?>" alt="<?php echo $slider_custom_image_alt; ?>" class="img-fluid">
+                                    <img src="<?php echo esc_url($slider_custom_image_size); ?>" width="<?php echo esc_attr($slider_custom_image_width); ?>" height="<?php echo esc_attr($slider_custom_image_height); ?>" alt="<?php echo esc_attr($slider_custom_image_alt); ?>" class="img-fluid">
                                 </picture>       
                             <?php endif; ?>
                             
@@ -280,11 +280,11 @@
                                 <?php if( $slider_custom_title || $slider_custom_description ): ?>
                                     <header class="slider-module__cards__card-content">
                                         <?php if( $slider_custom_title ): ?>
-                                            <?php echo '<' . $slider_custom_heading_type . '>' . $slider_custom_title . '</' . $slider_custom_heading_type . '>'; ?>
+                                            <?php echo '<' . $slider_custom_heading_type . '>' . esc_html($slider_custom_title) . '</' . $slider_custom_heading_type . '>'; ?>
                                         <?php endif; ?>        
 
                                         <?php if( $slider_custom_description ): ?>
-                                            <p><?php echo $slider_custom_description; ?></p>
+                                            <p><?php echo esc_html($slider_custom_description); ?></p>
                                         <?php endif; ?>
                                     </header>
                                 <?php endif; ?>

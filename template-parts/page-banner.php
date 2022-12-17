@@ -29,7 +29,7 @@
                                 <?php if( $banner_text_toggle ): ?>
                                     <h1><?php 
                                         if( $banner_text ) {
-                                            echo $banner_text;
+                                            echo esc_html($banner_text);
                                         } elseif( is_home() ) {
                                             single_post_title();
                                         } else {
@@ -39,7 +39,7 @@
                                 <?php endif; ?>
 
                                 <?php if( $banner_text_toggle && $banner_subtitle ): ?>
-                                    <p><?php echo $banner_subtitle; ?></p>
+                                    <p><?php echo esc_html($banner_subtitle); ?></p>
                                 <?php endif; ?>
                             </div>
 

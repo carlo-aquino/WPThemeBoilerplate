@@ -39,7 +39,7 @@
     }
 ?>
 
-    <div id="<?php if( $css_id ) { echo ' ' . $css_id; } ?>" class="featured-slider-module container-fluid g-0<?php if( $css_class ) { echo ' ' . $css_class; } ?>">
+    <div id="<?php if( $css_id ) echo ' ' . esc_attr($css_id); ?>" class="featured-slider-module container-fluid g-0<?php if( $css_class ) echo ' ' . esc_attr($css_class); ?>">
         
         <?php
 

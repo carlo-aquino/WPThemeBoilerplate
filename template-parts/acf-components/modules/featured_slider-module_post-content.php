@@ -77,7 +77,7 @@
 
             <div class="featured-slider-module__wrapper swiper-wrapper--right">
                 
-                <div class="featured-slider-module__cards featured-slider__right slider-right"<?php if( $featured_slider_height ){ echo ' style="height: ' . $featured_slider_height . 'rem";'; } ?> data-aos="slide-left" data-aos-duration="1000" data-aos-easing="ease-out-sine">
+                <div class="featured-slider-module__cards featured-slider__right slider-right"<?php if( $featured_slider_height ){ echo ' style="height: ' . esc_attr($featured_slider_height) . 'rem";'; } ?> data-aos="slide-left" data-aos-duration="1000" data-aos-easing="ease-out-sine">
 
                     <div class="featured-slider-module__cards-wrapper swiper-wrapper">
                         <?php while( $slider_post_query->have_posts() ): $slider_post_query->the_post(); ?>

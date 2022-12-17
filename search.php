@@ -16,7 +16,7 @@
                     } ?>
 
                     <div class="page-content__search-results__left">
-                        <span>Search result(s) for: <strong><em><?php echo $_GET['s']; ?></em></strong></span>
+                        <span>Search result(s) for: <strong><em><?php echo esc_html($_GET['s']); ?></em></strong></span>
                     </div>
 
                     <div class="page-content__search-results__right">

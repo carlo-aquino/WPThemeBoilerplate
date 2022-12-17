@@ -29,11 +29,11 @@
     
     <footer id="footer-01" class="global-footer mobile-spacer"
         style="
-            <?php if( $footer_primary_background=='color' && $footer_primary_background_color ) { echo 'background-color:' . $footer_primary_background_color . ';'; } ?>
-            <?php if( $footer_primary_background=='image' ) { echo 'background-image:url(' . $footer_primary_background_image . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; } ?>
+            <?php if( $footer_primary_background=='color' && $footer_primary_background_color ) echo 'background-color:' . esc_attr($footer_primary_background_color) . ';'; ?>
+            <?php if( $footer_primary_background=='image' ) echo 'background-image:url(' . esc_url($footer_primary_background_image) . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; ?>
         "
     >
-        <div class="global-footer__wrapper<?php if( !$footer_section_width ) { echo ' content-limit'; } ?>">
+        <div class="global-footer__wrapper<?php if( !$footer_section_width ) echo ' content-limit'; ?>">
 
             <?php if( $footer_widget_01 ): ?>   
 
@@ -44,7 +44,7 @@
                 <?php else: ?>
                     <div class="subscription-wrapper"
                         style="
-                            <?php if( $accent_color ) { echo 'background:' . $accent_color . ';'; } ?>
+                            <?php if( $accent_color ) echo 'background:' . esc_attr($accent_color) . ';'; ?>
                         "
                     >
                             <?php echo do_shortcode( '[contact-form-7 id="808" title="Subscription Form"]' ); ?>
@@ -98,7 +98,7 @@
                     </ul>
                 <?php else: ?>
                     <div class="copyright-wrapper">
-                        <span>Copyright <?php the_time('Y'); ?>. <?php echo $company_name; ?>. All Rights Reserved.</span> 
+                        <span>Copyright <?php the_time('Y'); ?>. <?php echo esc_html($company_name); ?>. All Rights Reserved.</span> 
                     </div>
                 <?php endif; ?>
 

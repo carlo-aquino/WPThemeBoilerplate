@@ -70,14 +70,14 @@
         data-sticky="<?php $sticky_header ? print 'yes' : print 'no'; ?>"
         data-transparent="<?php $header_primary_background_transparent ? print 'yes' : print 'no'; ?>"
         style="
-            <?php if( $header_primary_background=='color' && $header_primary_background_color ) { echo 'background:' . $header_primary_background_color . ';'; } ?>
-            <?php if( $header_primary_background=='image' ) { echo 'background-image:url(' . $header_primary_background_image . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; } ?>
+            <?php if( $header_primary_background=='color' && $header_primary_background_color ) echo 'background:' . esc_attr($header_primary_background_color) . ';'; ?>
+            <?php if( $header_primary_background=='image' ) echo 'background-image:url(' . esc_url($header_primary_background_image) . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; ?>
         "
     >
-        <div class="header-container <?php if( !$header_section_width ) { echo 'content-limit'; } ?>">
+        <div class="header-container <?php if( !$header_section_width ) echo 'content-limit'; ?>">
             
             <div class="header-left">
-                <a href="<?php echo home_url(); ?>" aria-label="<?php echo $company_name; ?>">
+                <a href="<?php echo home_url(); ?>" aria-label="<?php echo esc_attr($company_name); ?>">
                     <?php 
                         if( have_rows( 'page_banner' ) ) {
                             while( have_rows( 'page_banner' ) ){
@@ -89,27 +89,27 @@
                                         the_row(); 
                                         $banner_text_toggle = get_sub_field( 'banner_text_toggle' );
 
-                                        if( !$page_bg_enable || !$banner_text_toggle ) { echo '<h1>' . $company_name . '</h1>'; }
+                                        if( !$page_bg_enable || !$banner_text_toggle ) echo '<h1>' . esc_attr($company_name) . '</h1>';
                                     }  
                                 }
                             }  
                         }
                     ?>
 
-                    <?php $banner = get_field('page_banner'); if( !$banner ) { echo '<h1>' . $company_name . '</h1>'; } ?>
+                    <?php $banner = get_field('page_banner'); if( !$banner ) echo '<h1>' . $company_name . '</h1>'; ?>
                     
                     <?php if( have_rows('logo', 'option') && ($logo_colored || $logo_white) ): ?>
                         <img class="header-logo img-fluid"
-                            src="<?php if( $header_logo=='colored' ) echo $logo_colored_size; else echo $logo_white_size; ?>"
-                            width="<?php if( $header_logo=='colored' ) echo $logo_colored_width; else echo $logo_white_width; ?>"
-                            height="<?php if( $header_logo=='colored' ) echo $logo_colored_height; else echo $logo_white_height; ?>"
-                            alt="<?php if( $header_logo=='colored' ) echo $logo_colored_alt; else echo $logo_white_alt; ?>" loading="lazy"
+                            src="<?php if( $header_logo=='colored' ) echo esc_url($logo_colored_size); else echo esc_url($logo_white_size); ?>"
+                            width="<?php if( $header_logo=='colored' ) echo esc_attr($logo_colored_width); else echo esc_attr($logo_white_width); ?>"
+                            height="<?php if( $header_logo=='colored' ) echo esc_attr($logo_colored_height); else echo esc_attr($logo_white_height); ?>"
+                            alt="<?php if( $header_logo=='colored' ) echo esc_attr($logo_colored_alt); else echo esc_attr($logo_white_alt); ?>" loading="lazy"
                         >
                     <?php else: ?>
                         <img
                             class="header-logo img-fluid"
                             src="<?php bloginfo('template_directory'); ?>/dist/img/logo-white.png"
-                            alt="<?php echo $company_name; ?> logo"
+                            alt="<?php echo esc_attr($company_name); ?> logo"
                             loading="lazy"
                         >
                     <?php endif; ?>
@@ -141,25 +141,25 @@
         data-sticky="<?php $sticky_header ? print 'yes' : print 'no'; ?>"
         data-transparent="<?php $header_primary_background_transparent ? print 'yes' : print 'no'; ?>"
         style="
-            <?php if( $header_primary_background=='color' && $header_primary_background_color ) { echo 'background:' . $header_primary_background_color . ';'; } ?>
-            <?php if( $header_primary_background=='image' ) { echo 'background-image:url(' . $header_primary_background_image . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; } ?>            
+            <?php if( $header_primary_background=='color' && $header_primary_background_color ) echo 'background:' . esc_attr($header_primary_background_color) . ';'; ?>
+            <?php if( $header_primary_background=='image' ) echo 'background-image:url(' . esc_url($header_primary_background_image) . '); background-size:cover; background-position:center; background-repeat:no-repeat;'; ?>            
         "
     >
                       
         <div class="mobile-header__left">
-            <a href="<?php echo home_url(); ?>" aria-label="<?php echo $company_name; ?>">
+            <a href="<?php echo home_url(); ?>" aria-label="<?php echo esc_attr($company_name); ?>">
                 <?php if( have_rows('logo', 'option') && ($logo_colored || $logo_white) ): ?>  
                     <img class="header-logo img-fluid"
-                        src="<?php if( $header_logo=='colored' ) { echo $logo_colored_size; } else { echo $logo_white_size; } ?>"
-                        width="<?php if( $header_logo=='colored' ) { echo $logo_colored_width; } else { echo $logo_white_width; } ?>"
-                        height="<?php if( $header_logo=='colored' ) { echo $logo_colored_height; } else { echo $logo_white_height; } ?>"
-                        alt="<?php if( $header_logo=='colored' ) echo $logo_colored_alt; else echo $logo_white_alt; ?>" loading="lazy"
+                        src="<?php if( $header_logo=='colored' ) echo esc_url($logo_colored_size); else echo esc_url($logo_white_size); ?>"
+                        width="<?php if( $header_logo=='colored' ) echo esc_attr($logo_colored_width); else echo esc_attr($logo_white_width); ?>"
+                        height="<?php if( $header_logo=='colored' ) echo esc_attr($logo_colored_height); else echo esc_attr($logo_white_height); ?>"
+                        alt="<?php if( $header_logo=='colored' ) echo esc_attr($logo_colored_alt); else echo esc_attr($logo_white_alt); ?>" loading="lazy"
                     >
                 <?php else: ?>
                     <img
                         class="header-logo img-fluid"
                         src="<?php bloginfo('template_directory'); ?>/dist/img/logo-white.png"
-                        alt="<?php echo $company_name; ?> logo"
+                        alt="<?php echo esc_attr($company_name); ?> logo"
                         loading="lazy"
                     >
                 <?php endif; ?>

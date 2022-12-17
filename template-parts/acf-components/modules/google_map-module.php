@@ -50,33 +50,33 @@
         }
     ?>
 
-        <div id="<?php if( $css_id ) { echo ' ' . $css_id; } ?>" class="google-map-module<?php if( $css_class ) { echo ' ' . $css_class; } ?>">
+        <div id="<?php if( $css_id ) echo ' ' . esc_attr($css_id); ?>" class="google-map-module<?php if( $css_class ) echo ' ' . esc_attr($css_class); ?>">
             
             <div class="google-map-module__wrapper"
                 style="
-                    <?php if( $margin_top ) { echo 'margin-top:' . $margin_top . 'em;'; } ?>
-                    <?php if( $margin_bottom ) { echo 'margin-bottom:' . $margin_bottom . 'em;'; } ?>
-                    <?php if( $margin_left ) { echo 'margin-left:' . $margin_left . 'em;'; } ?>
-                    <?php if( $margin_right ) { echo 'margin-right:' . $margin_right . 'em;'; } ?>
+                    <?php if( $margin_top ) echo 'margin-top:' . esc_attr($margin_top) . 'em;'; ?>
+                    <?php if( $margin_bottom ) echo 'margin-bottom:' . esc_attr($margin_bottom) . 'em;'; ?>
+                    <?php if( $margin_left ) echo 'margin-left:' . esc_attr($margin_left) . 'em;'; ?>
+                    <?php if( $margin_right ) echo 'margin-right:' . esc_attr($margin_right) . 'em;'; ?>
 
-                    <?php if( $padding_top ) { echo 'padding-top:' . $padding_top . 'em;'; } ?>
-                    <?php if( $padding_bottom ) { echo 'padding-bottom:' . $padding_bottom . 'em;'; } ?>
-                    <?php if( $padding_left ) { echo 'padding-left:' . $padding_left . 'em;'; } ?>
-                    <?php if( $padding_right ) { echo 'padding-right:' . $padding_right . 'em;'; } ?>
+                    <?php if( $padding_top ) echo 'padding-top:' . esc_attr($padding_top) . 'em;'; ?>
+                    <?php if( $padding_bottom ) echo 'padding-bottom:' . esc_attr($padding_bottom) . 'em;'; ?>
+                    <?php if( $padding_left ) echo 'padding-left:' . esc_attr($padding_left) . 'em;'; ?>
+                    <?php if( $padding_right ) echo 'padding-right:' . esc_attr($padding_right) . 'em;'; ?>
                 "
 
                 <?php if( $transition_animation == 'fade' || $transition_animation == 'flip' || $transition_animation == 'slide' ): ?>
-                    data-aos="<?php echo $transition_animation . '-' . $transition_direction; ?>"
+                    data-aos="<?php echo esc_attr($transition_animation . '-' . $transition_direction); ?>"
                 <?php endif; ?>
                 
                 <?php if( $transition_animation == 'zoom' ): ?>
-                    data-aos="<?php echo $transition_animation . '-' . $transition_zoom_direction; ?>"
+                    data-aos="<?php echo esc_attr($transition_animation . '-' . $transition_zoom_direction); ?>"
                 <?php endif; ?>
 
-                data-aos="<?php echo $transition_animation; ?>"
+                data-aos="<?php echo esc_attr($transition_animation); ?>"
 
                 <?php if( $transition_duration ): ?>
-                    data-aos-duration="<?php echo $transition_duration; ?>"
+                    data-aos-duration="<?php echo esc_attr($transition_duration); ?>"
                 <?php endif; ?>
                 
                 
@@ -86,13 +86,13 @@
                 <iframe
                     title="Google Map"
                     width="100%"
-                    height="<?php if( $google_map_height ) { echo $google_map_height; } else { echo '100%'; } ?>"
+                    height="<?php if( $google_map_height ) echo esc_attr($google_map_height); else echo '100%'; ?>"
                     style="border:0"
                     loading="lazy"
                     allowfullscreen
                     referrerpolicy="no-referrer-when-downgrade"
-                    src="https://www.google.com/maps/embed/v1/place?key=<?php echo $gmap_api_key; ?>
-                        &q=<?php echo $google_map_address; ?>" >
+                    src="<?php echo esc_url('https://www.google.com/maps/embed/v1/place?key=' . $gmap_api_key .
+                        '&q=' . $google_map_address); ?>" >
                 </iframe>
 
             </div>
