@@ -83,7 +83,7 @@
             data-aos-delay="<?php echo esc_attr($transition_delay); ?>"
         >
 
-            <?php if( $code_content ) { echo $code_content; } ?>
+            <?php if( $code_content ) echo $code_content; ?>
             
         </div>
         

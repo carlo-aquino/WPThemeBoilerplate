@@ -42,12 +42,8 @@
                         <?php dynamic_sidebar('footer-widget-01'); ?>
                     </ul>
                 <?php else: ?>
-                    <div class="subscription-wrapper"
-                        style="
-                            <?php if( $accent_color ) echo 'background:' . esc_attr($accent_color) . ';'; ?>
-                        "
-                    >
-                            <?php echo do_shortcode( '[contact-form-7 id="808" title="Subscription Form"]' ); ?>
+                    <div class="subscription-wrapper" style="<?php if( $accent_color ) echo 'background:' . esc_attr($accent_color) . ';'; ?>">
+                        <?php echo do_shortcode( '[contact-form-7 id="808" title="Subscription Form"]' ); ?>
                     </div>
                 <?php endif; ?>
 

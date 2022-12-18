@@ -91,10 +91,10 @@
         >
 
             <?php if( $text_link ): ?>
-                <a href="<?php echo esc_url( $text_link_url ); ?>" target="<?php echo esc_attr( $text_link_target ); ?>">
+                <a href="<?php echo esc_url($text_link_url); ?>" target="<?php echo esc_attr($text_link_target); ?>">
             <?php endif; ?>    
 
-                <?php if( $text_content ) { echo $text_content; } ?>
+                <?php if( $text_content ) echo $text_content; ?>
 
             <?php if( $text_link ): ?>
                 </a>

@@ -56,10 +56,10 @@
             $gallery_ctr = $transition_delay;
             $column_count = 0;
 
-            if( $gallery_items_per_row == 'one') { $column_count = 1; }
-            if( $gallery_items_per_row == 'two') { $column_count = 2; }
-            if( $gallery_items_per_row == 'three') { $column_count = 3; }
-            if( $gallery_items_per_row == 'four') { $column_count = 4; }
+            if( $gallery_items_per_row == 'one') $column_count = 1;
+            if( $gallery_items_per_row == 'two') $column_count = 2;
+            if( $gallery_items_per_row == 'three') $column_count = 3;
+            if( $gallery_items_per_row == 'four') $column_count = 4;
         }
     }   
 ?>    
